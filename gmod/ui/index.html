@@ -9,24 +9,24 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>reflection</title>
-    <meta name="title" content="reflection">
-    <meta name="description" content="Responsible for lua-scripting execution and handling of API access cross-states. You can use this to also contact other lua_State instances, and...">
+    <title>ui</title>
+    <meta name="title" content="ui">
+    <meta name="description" content="Responsible creating menu elements within the cheat.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://secretservice.club/libraries/reflection/">
+    <link rel="canonical" href="https://secretservice.club/gmod/ui/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://secretservice.club/libraries/reflection/">
-    <meta property="og:title" content="reflection">
-    <meta property="og:description" content="Responsible for lua-scripting execution and handling of API access cross-states. You can use this to also contact other lua_State instances, and...">
+    <meta property="og:url" content="https://secretservice.club/gmod/ui/">
+    <meta property="og:title" content="ui">
+    <meta property="og:description" content="Responsible creating menu elements within the cheat.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://secretservice.club/libraries/reflection/">
-    <meta property="twitter:title" content="reflection">
-    <meta property="twitter:description" content="Responsible for lua-scripting execution and handling of API access cross-states. You can use this to also contact other lua_State instances, and...">
+    <meta property="twitter:url" content="https://secretservice.club/gmod/ui/">
+    <meta property="twitter:title" content="ui">
+    <meta property="twitter:description" content="Responsible creating menu elements within the cheat.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -198,37 +198,13 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="reflection" class="break-words">
+<doc-anchor-target id="ui" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#reflection">#</doc-anchor-trigger>
-        <span>reflection</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ui">#</doc-anchor-trigger>
+        <span>ui</span>
     </h1>
 </doc-anchor-target>
-<p>Responsible for lua-scripting execution and handling of API access cross-states.<br />
-You can use this to also contact other lua_State instances, and create new ones.<br />
-Do note you are responsible for spinning up new states.</p>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
-                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>lua_State Data Transfer</h5>
-<p>Data transfer for these types are prohibited due to complications &amp; safety:</p>
-<ul>
-<li>Thread</li>
-<li>Proto</li>
-<li>Function</li>
-</ul>
-        </div>
-    </div>
-</div>
+<p>Responsible creating menu elements within the cheat.</p>
 <doc-anchor-target id="functions">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#functions">#</doc-anchor-trigger>
@@ -236,112 +212,88 @@ Do note you are responsible for spinning up new states.</p>
     </h2>
 </doc-anchor-target>
 <code class="language-typescript" style="text-align:center; font-size:16px;">
-reflection.is(name: string): boolean
+ui.create_groupbox(tab: string, side: string, name: string, height: number)
 </code>
 <ul>
-<li>checks if the current execution is of a named <code v-pre>lua_State</code></li>
-</ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
-reflection.get(name: string): lua_State?
-</code>
-<ul>
-<li>attempts to locate a <code v-pre>lua_State</code></li>
-</ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
-reflection.current(): lua_State
-</code>
-<ul>
-<li>gets the current <code v-pre>lua_State</code> this is executed in</li>
-</ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
-reflection.all(): {[index: string]: lua_State}
-</code>
-<ul>
-<li>gets all instances of <code v-pre>lua_State</code> and their names</li>
-</ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
-reflection.name(lua_State* state): string
-</code>
-<ul>
-<li>converts a <code v-pre>lua_State</code> to its named counterpart</li>
-</ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
-reflection.execute(source: string, name: string, state?: lua_State): string?
-</code>
-<ul>
-<li>executes lua on a <code v-pre>lua_State</code> or the current active state its in</li>
-</ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
-reflection.compile(source: string, name: string): function | string
-</code>
-<ul>
-<li>compiles lua on the the current active state its in</li>
-</ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
-reflection.replicate(func: function, state: lua_State): string?
-</code>
-<ul>
-<li>transfers a function to run on another <code v-pre>lua_State</code></li>
-<li>no upvalues must be present in the passed function</li>
-</ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
-reflection.open(name: string): lua_State
-</code>
-<ul>
-<li>spawns a new <code v-pre>lua_State</code> instance or returns one if it already exists</li>
+<li>Creates a groupbox within the specified tab of the menu.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-lua"><code v-pre class="language-lua">-- creates a new lua_State
-local state = reflection.open(&quot;lua_State.magic&quot;)
-
--- execute lua right onto the stack
-reflection.execute([[
-    print(&quot;new lua_State boys!&quot;)
-]], &quot;test&quot;, state)
-
--- you can use basic stack manipulation here as well
-print(&quot;\nprinting this lua_State's stuff&quot;)
-reflection.stack(function(L)
-    L.pushvalue(-10002)
-    L.pushnil()
-    while L.next(-2) do
-        if L.isstring(-2) then
-            print(L.getstring(-2))
-        end
-        L.pop()
-    end
-end, state)
-
--- if you really don't need it, you can close it
-reflection.close(state)</code></pre>
+<pre class="language-lua"><code v-pre class="language-lua">secret.ui.create_groupbox(&quot;lua&quot;, &quot;right&quot;, &quot;elements&quot;, 200)</code></pre>
 </doc-codeblock></div>
 <code class="language-typescript" style="text-align:center; font-size:16px;">
-reflection.close(state: lua_State)
+ui.create_checkbox(tab: string, groupbox: string, name: string, config_name: string)
 </code>
 <ul>
-<li>destroys a <code v-pre>lua_State</code> instance</li>
-<li>this won&#x27;t work on games with built-in <code v-pre>lua_State</code> instances</li>
+<li>Creates a checkbox UI element within the specified tab and groupbox of the menu.</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px;">
-reflection.stack(func: function(api: lua_capi), state?: lua_State): any...
+ui.create_button(tab: string, groupbox: string, name: string, config_name: string)
 </code>
 <ul>
-<li>creates a temporary bridge between two lua states</li>
-<li>this is for users with knowledge of Interstellar C Module</li>
+<li>Creates a checkbox UI element within the specified tab and groupbox of the menu.</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px;">
+ui.create_slider(tab: string, groupbox: string, name: string, min: number, max: number, config_name: string)
+</code>
+<ul>
+<li>Creates a slider UI element within the specified tab and groupbox of the menu.</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px;">
+ui.create_colorpicker(tab: string, groupbox: string, name: string, config_name: string)
+</code>
+<ul>
+<li>Creates a colorpicker UI element within the specified tab and groupbox of the menu.</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px;">
+ui.create_inputbox(tab: string, groupbox: string, name: string, config_name: string)
+</code>
+<ul>
+<li>Creates an inputbox UI element within the specified tab and groupbox of the menu.</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px;">
+ui.create_hotkey(tab: string, groupbox: string, name: string, config_name: string, display: string)
+</code>
+<ul>
+<li>Creates a hotkey UI element within the specified tab and groupbox of the menu.</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px;">
+ui.create_dropdown(tab: string, groupbox: string, name: string, config_name: string, items: table)
+</code>
+<ul>
+<li>Creates a dropdown UI element within the specified tab and groupbox of the menu.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-lua"><code v-pre class="language-lua">-- this is in menu-state or another lua-state
-local other_state = reflection.get(&quot;other_state&quot;)
+<pre class="language-lua"><code v-pre class="language-lua">secret.ui.create_groupbox(&quot;lua&quot;, &quot;right&quot;, &quot;elements&quot;, 200) -- create a groupbox called &quot;elements&quot;
 
-local res = reflection.stack(function(L)
-    L.pushnumber(20)
-    local num = L.tonumber(-1)
-    L.pop()
-    return num
-end, other_state)
-
-print(res) -- 20</code></pre>
+secret.ui.create_dropdown(&quot;lua&quot;, &quot;elements&quot;, &quot;My Lua Dropdown&quot;, &quot;lua_dropdown&quot;, {&quot;Item1&quot;, &quot;Item2&quot;, &quot;Item3&quot;})</code></pre>
 </doc-codeblock></div>
+<code class="language-typescript" style="text-align:center; font-size:16px;">
+ui.clear_elements()
+</code>
+<ul>
+<li>Clears all the current elements made with lua, such as secret.ui.create_checkbox, etc.</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px;">
+ui.menu_open(): boolean
+</code>
+<ul>
+<li>Returns a boolean value of the menu being open.</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px;">
+ui.console_open(): boolean
+</code>
+<ul>
+<li>Returns a boolean value of the console being open.</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px;">
+ui.notify(text: string, type: number)
+</code>
+<ul>
+<li>Creates a new notification at the top left corner of the screen with the specified text and type.</li>
+<li>0 = Default</li>
+<li>1 = Warning</li>
+<li>2 = Error</li>
+</ul>
 <div hidden>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-typescript"><code v-pre class="language-typescript"></code></pre>
@@ -356,20 +308,20 @@ print(res) -- 20</code></pre>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/os/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../gmod/linker/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">os</span>
+                                                <span class="block mt-1">linker</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/signal/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../gmod/config/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">signal</span>
+                                                <span class="block mt-1">config</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -413,6 +365,6 @@ print(res) -- 20</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "reflection", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "ui", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
