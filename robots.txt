@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://secretservice.club/sitemap.xml.gz
+Sitemap: https://secretserviceclub.github.io/sitemap.xml.gz
