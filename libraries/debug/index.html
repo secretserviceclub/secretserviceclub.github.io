@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.790921048686">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.790970826836">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.790921048686" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.790970826836" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.790921048686" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.790970826836" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.790921048686" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.790921048686" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.790970826836" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.790970826836" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -231,69 +231,69 @@ As well as providing security features for safety of instrusions to lua-based AP
         <span>Functions</span>
     </h2>
 </doc-anchor-target>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.detour(target: function, detour: function): function
 </code>
 <ul>
 <li>creates a memory-based hook towards a target lua function or C function</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.isdetour(target: function): boolean
 </code>
 <ul>
 <li>if a function has a memory-mapping to another function</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.original(target: function): function
 </code>
 <ul>
 <li>if a function has a memory-mapping, this will return the original</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.restore(target: function)
 </code>
 <ul>
 <li>restores the memory-mapped function</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.clone(value: function | proto | userdata): function | proto | userdata
 </code>
 <ul>
 <li>copys a value in memory, creating a completely new value but with the same characteristics</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.replace(target: function | proto | userdata, value: function | proto | userdata)
 </code>
 <ul>
 <li>replaces a value by reference in memory, effectively replacing all occurences of it.</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.newcclosure(func: function): function
 </code>
 <ul>
 <li>creates a new cfunction closure which is untraceable</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.getgc(): (table | function | proto | userdata)[]
 </code>
 <ul>
 <li>gets the garbage collector table</li>
 <li>do note this contains every value in existance</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.topointer(data: any, str: boolean): string | number
 </code>
 <ul>
 <li>converts a datatype into it&#x27;s absolute pointer location</li>
 <li>output looks like this: <code v-pre>&quot;0xd8ad9caa&quot;</code> or <code v-pre>3635244450</code></li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.frompointer(ptr: number): function | table | proto | userdata
 </code>
 <ul>
 <li>scans memory to find the pointer association</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.setbuiltin(func: cfunction, ffid: number)
 </code>
 <ul>
@@ -301,13 +301,13 @@ debug.setbuiltin(func: cfunction, ffid: number)
 <li>this will make them appear as <code v-pre>&quot;builtin: xx&quot;</code></li>
 <li>use newcclosure if you plan to make a detour with this</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.getbuiltin(func: cfunction): number
 </code>
 <ul>
 <li>gets the ffid number of a cfunction</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.getupvalues(func: function): {[index: string]: any}
 </code>
 <ul>
@@ -319,21 +319,21 @@ local f = function() print(a, b, c) end
 PrintTable(secret.debug.getupvalues(f))
 -- prints: {&quot;a&quot; = 1, &quot;b&quot; = 2, &quot;c&quot; = 3}</code></pre>
 </doc-codeblock></div>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.typestack(count?: number): string
 </code>
 <ul>
 <li>fetches a list of the current stack memory</li>
 <li>this is used to debug and print out what it looks like</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.getstack(index: number): any
 </code>
 <ul>
 <li>fetchs directly from the lua stack</li>
 <li>this can be used to get values in stack memory</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.setstack(index: number, data: any)
 </code>
 <ul>

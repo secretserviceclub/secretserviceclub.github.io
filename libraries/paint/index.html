@@ -9,24 +9,24 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>signal</title>
-    <meta name="title" content="signal">
-    <meta name="description" content="The Lua event handler for interstate & C++ calls. You can use this to contact other lua_State objects, make calls to C">
+    <title>paint</title>
+    <meta name="title" content="paint">
+    <meta name="description" content="An alternative method of creating visuals & graphics on higher level access. Instead of using in-game drawing systems, this uses an external version...">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://secretserviceclub.github.io/libraries/signal/">
+    <link rel="canonical" href="https://secretserviceclub.github.io/libraries/paint/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://secretserviceclub.github.io/libraries/signal/">
-    <meta property="og:title" content="signal">
-    <meta property="og:description" content="The Lua event handler for interstate & C++ calls. You can use this to contact other lua_State objects, make calls to C">
+    <meta property="og:url" content="https://secretserviceclub.github.io/libraries/paint/">
+    <meta property="og:title" content="paint">
+    <meta property="og:description" content="An alternative method of creating visuals & graphics on higher level access. Instead of using in-game drawing systems, this uses an external version...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://secretserviceclub.github.io/libraries/signal/">
-    <meta property="twitter:title" content="signal">
-    <meta property="twitter:description" content="The Lua event handler for interstate & C++ calls. You can use this to contact other lua_State objects, make calls to C">
+    <meta property="twitter:url" content="https://secretserviceclub.github.io/libraries/paint/">
+    <meta property="twitter:title" content="paint">
+    <meta property="twitter:description" content="An alternative method of creating visuals & graphics on higher level access. Instead of using in-game drawing systems, this uses an external version...">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -198,167 +198,213 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="signal" class="break-words">
+<doc-anchor-target id="paint" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#signal">#</doc-anchor-trigger>
-        <span>signal</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#paint">#</doc-anchor-trigger>
+        <span>paint</span>
     </h1>
 </doc-anchor-target>
-<p>The Lua event handler for interstate &amp; C++ calls.<br />
-You can use this to contact other <code v-pre>lua_State</code> objects, make calls to C++, or have C++ make calls to you.<br />
-Some libraries will have a <code v-pre>Signal</code> section to let you know of events they have, the functions here are for those libraries.</p>
-<doc-anchor-target id="lua-functions">
+<p>An alternative method of creating visuals &amp; graphics on higher level access.<br />
+Instead of using in-game drawing systems, this uses an external version on a separated thread.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-red-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-red-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M21.71 6.15L15.85.29c-.19-.18-.44-.29-.71-.29H6.86c-.27 0-.52.11-.71.29L.29 6.15c-.18.19-.29.44-.29.71v8.28c0 .27.11.52.29.71l5.86 5.86c.19.18.44.29.71.29h8.28c.27 0 .52-.11.71-.29l5.86-5.86a.99.99 0 00.29-.71V6.86c0-.27-.11-.52-.29-.71zM20 14.73L14.73 20H7.27L2 14.73V7.27L7.27 2h7.45L20 7.27v7.46z"></path>
+                    <path d="M11 12c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .55.45 1 1 1zM11.01 14c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Development Branch</h5>
+<p>This library is currently under development.<br />
+All functions here are subject to change in the future.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="optimizing">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lua-functions">#</doc-anchor-trigger>
-        <span>Lua Functions</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#optimizing">#</doc-anchor-trigger>
+        <span>Optimizing</span>
     </h2>
 </doc-anchor-target>
-<p>This is strictly for Lua based calls without a C++ counterpart.<br />
-Supports interstate functionality, so that you can make calls to other <code v-pre>lua_State</code> threads.</p>
+<p>When you perform drawing objects, its good practice to localize &amp; reuse data.<br />
+Try to minimize object creation if you can, paint.point.* may be harder to localize.<br />
+This is due to the idea of dynamically changing vectors, which can be a problem but do-able.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-lua"><code v-pre class="language-lua">local state = reflection.open(&quot;example&quot;)
-
-reflection.execute([[
-signal.add(&quot;test&quot;, &quot;example&quot;, function(...)
-    print(...)
+<pre class="language-lua"><code v-pre class="language-lua">paint.add(&quot;example&quot;, function(w, h)
+    -- don't do this, you are creating a new object every time
+    local color = paint.color.rgba(255, 255, 255, 255)
 end)
-]], &quot;example_name&quot;, state)
 
-signal.call(state, &quot;test&quot;, &quot;hello world&quot;) -- print on example lua_State: [example] hello world</code></pre>
+-- instead do this
+local white = paint.color.rgba(255, 255, 255, 255)
+paint.add(&quot;example&quot;, function(w, h)
+    -- access white here, its now an upvalue
+end)
+
+-- if you need to change it at runtime
+local dynamic = paint.color.rgba(255, 255, 255, 255)
+paint.add(&quot;example&quot;, function(w, h)
+    dynamic.r = (os.clock() % 1) * 255
+    -- in here we are just changing the color object's &quot;R&quot; stat
+end)</code></pre>
 </doc-codeblock></div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.add(name: string, identity: string, callback: function)
-</code>
-<ul>
-<li>Adds a function to an signal, this will call the callback when C++ invokes it</li>
-</ul>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.remove(name: string, identity: string)
-</code>
-<ul>
-<li>Removes a function from a signal</li>
-</ul>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.get(name: string, identity: string): function?
-</code>
-<ul>
-<li>Attempts to retrieve a function from the signal callbacks</li>
-</ul>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.call(state: lua_State, name: string, ...any): ...any
-</code>
-<ul>
-<li>Calls events on a <code v-pre>lua_State</code></li>
-<li>Must have the same matching name for them to actually call</li>
-</ul>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.connect(name: string, callback: function, identity: string)
-</code>
-<ul>
-<li>Same as<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.add(name: string, identity: string, callback: function)
-</code></li>
-<li>Different call style under the RBLX standard</li>
-</ul>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.disconnect(name: string, identity: string)
-</code>
-<ul>
-<li>Same as<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.remove(name: string, identity: string)
-</code></li>
-<li>Different call style under the RBLX standard</li>
-</ul>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.connection(name: string, identity: string): function?
-</code>
-<ul>
-<li>Same as<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.get(name: string, identity: string): function?
-</code></li>
-<li>Different call style under the RBLX standard</li>
-</ul>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.fire(state: lua_State, name: string, ...any): ...any
-</code>
-<ul>
-<li>Same as<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.call(state: lua_State, name: string, ...any): ...any
-</code></li>
-<li>Different call style under the RBLX standard</li>
-</ul>
-<doc-anchor-target id="library-functions">
+<doc-anchor-target id="types">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#library-functions">#</doc-anchor-trigger>
-        <span>Library Functions</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#types">#</doc-anchor-trigger>
+        <span>Types</span>
     </h2>
 </doc-anchor-target>
-<p>These exists on libraries that have events or invokers, you can use these to talk to C++</p>
+<p>Paint uses two different vector types.<br />
+Both types are recognized by their index characteristics.<br />
+Which means using internal game-software mechanics like &quot;Vector&quot;, would also work.</p>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.add(name: string, identity: string, callback: function)
+paint.point.vector2(x: number, y: number): paint_point
 </code>
 <ul>
-<li>Adds a function to an signal, this will call the callback when C++ invokes it</li>
+<li>Creates a 2D vector for paint to recognize</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.remove(name: string, identity: string)
+paint.point.vector3(x: number, y: number, z: number): paint_point
 </code>
 <ul>
-<li>Removes a function from a signal</li>
+<li>Creates a 3D vector for paint to recognize</li>
+</ul>
+<hr>
+<p>Paint also uses its own color system due to the fact of interop with other frameworks.</p>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.color.rgb(r: number, g: number, b: number): paint_color
+</code>
+<ul>
+<li>Creates an RGB based color</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.get(name: string, identity: string): function?
+paint.color.rgba(r: number, g: number, b: number, a: number): paint_color
 </code>
 <ul>
-<li>Attempts to retrieve a function from the signal callbacks</li>
-</ul>
-<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
-    <span>stub</span>
-</span> <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.call(name: string, ...any): ...any
-</code></p>
-<ul>
-<li>Useful under conditions where C++ has multiple functions for a single purpose</li>
-<li>Depends on the C++ developer&#x27;s implementation</li>
+<li>Creates an RGBA based color</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.connect(name: string, callback: function, identity: string)
+paint.color.hex(hex: string): paint_color
 </code>
 <ul>
-<li>Same as<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.add(name: string, identity: string, callback: function)
-</code></li>
-<li>Different call style under the RBLX standard</li>
+<li>Creates an RGBA based color from hex strings</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.disconnect(name: string, identity: string)
+paint.color.hsv(h: number, s: number, v: number, a?: number): paint_color
 </code>
 <ul>
-<li>Same as<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.remove(name: string, identity: string)
-</code></li>
-<li>Different call style under the RBLX standard</li>
+<li>Creates an RGBA based color from HSV</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.connection(name: string, identity: string): function?
+paint.color.hsl(h: number, s: number, l: number, a?: number): paint_color
 </code>
 <ul>
-<li>Same as<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.get(name: string, identity: string): function?
-</code></li>
-<li>Different call style under the RBLX standard</li>
+<li>Creates an RGBA based color from HSL</li>
 </ul>
-<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
-    <span>stub</span>
-</span> <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.fire(name: string, ...any): ...any
-</code></p>
+<doc-anchor-target id="functions">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#functions">#</doc-anchor-trigger>
+        <span>Functions</span>
+    </h2>
+</doc-anchor-target>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.line(p1: paint_point, p2: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+</code>
 <ul>
-<li>Same as<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-signal.call(name: string, ...any): ...any
-</code></li>
-<li>Different call style under the RBLX standard</li>
+<li>Creates a line between points A and B</li>
 </ul>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.circle.hollow(center: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+</code>
+<ul>
+<li>Creates a circle around a center point that is hollow</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.circle.filled(center: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+</code>
+<ul>
+<li>Creates a circle around a center point that is filled</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.tri.hollow(p1: paint_point, p2: paint_point, p3: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+</code>
+<ul>
+<li>Creates a triangle from three points that is hollow</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.tri.filled(p1: paint_point, p2: paint_point, p3: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+</code>
+<ul>
+<li>Creates a triangle from three points that is filled</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.rect.hollow(top_left: paint_point, size: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+</code>
+<ul>
+<li>Creates a rectangle that is hollow</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.rect.filled(top_left: paint_point, size: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+</code>
+<ul>
+<li>Creates a rectangle that is filled</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.quad.hollow(p1: paint_point, p2: paint_point, p3: paint_point, p4: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+</code>
+<ul>
+<li>Creates a quadrilateral that is hollow</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.quad.filled(p1: paint_point, p2: paint_point, p3: paint_point, p4: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+</code>
+<ul>
+<li>Creates a quadrilateral that is filled</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.text.font(font?: string): string
+</code>
+<ul>
+<li>Changes the font of text further on the call stack</li>
+<li>Not supplying a font string, will just return what font is active</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.text.left(point: paint_point, text: string, size: number, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+</code>
+<ul>
+<li>Creates text thats aligned to the left</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.text.center(point: paint_point, text: string, size: number, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+</code>
+<ul>
+<li>Creates text thats aligned to the center</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.text.right(point: paint_point, text: string, size: number, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+</code>
+<ul>
+<li>Creates text thats aligned to the right</li>
+</ul>
+<doc-anchor-target id="events">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#events">#</doc-anchor-trigger>
+        <span>Events</span>
+    </h2>
+</doc-anchor-target>
+<p>Paint uses a slighly different type of <strong>Signal</strong><br />
+You don&#x27;t have to provide a name, instead its just an identifier.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">-- instead of:
+paint.listener.add(&quot;paint&quot;, &quot;identity&quot;, function(w, h) end)
+-- its:
+paint.add(&quot;identity&quot;, function(w, h) end)</code></pre>
+</doc-codeblock></div>
+<p>This is to make it simpler since paint really only has one event handler.</p>
 <div hidden>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-typescript"><code v-pre class="language-typescript"></code></pre>
@@ -373,20 +419,20 @@ signal.call(name: string, ...any): ...any
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/reflection/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/os/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">reflection</span>
+                                                <span class="block mt-1">os</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/string/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/reflection/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">string</span>
+                                                <span class="block mt-1">reflection</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -430,6 +476,6 @@ signal.call(name: string, ...any): ...any
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "signal", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "paint", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

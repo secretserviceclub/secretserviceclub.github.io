@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.790921048686">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.790970826836">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.790921048686" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.790970826836" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.790921048686" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.790970826836" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.790921048686" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.790921048686" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.790970826836" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.790970826836" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -235,56 +235,56 @@ Do note you are responsible for spinning up new states.</p>
         <span>Functions</span>
     </h2>
 </doc-anchor-target>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.is(name: string): boolean
 </code>
 <ul>
 <li>checks if the current execution is of a named <code v-pre>lua_State</code></li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.get(name: string): lua_State?
 </code>
 <ul>
 <li>attempts to locate a <code v-pre>lua_State</code></li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.current(): lua_State
 </code>
 <ul>
 <li>gets the current <code v-pre>lua_State</code> this is executed in</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.all(): {[index: string]: lua_State}
 </code>
 <ul>
 <li>gets all instances of <code v-pre>lua_State</code> and their names</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.name(lua_State* state): string
 </code>
 <ul>
 <li>converts a <code v-pre>lua_State</code> to its named counterpart</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.execute(source: string, name: string, state?: lua_State): string?
 </code>
 <ul>
 <li>executes lua on a <code v-pre>lua_State</code> or the current active state its in</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.compile(source: string, name: string): function | string
 </code>
 <ul>
 <li>compiles lua on the the current active state its in</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.replicate(func: function, state: lua_State): string?
 </code>
 <ul>
 <li>transfers a function to run on another <code v-pre>lua_State</code></li>
 <li>no upvalues must be present in the passed function</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.open(name: string): lua_State
 </code>
 <ul>
@@ -315,14 +315,14 @@ end, state)
 -- if you really don't need it, you can close it
 reflection.close(state)</code></pre>
 </doc-codeblock></div>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.close(state: lua_State)
 </code>
 <ul>
 <li>destroys a <code v-pre>lua_State</code> instance</li>
 <li>this won&#x27;t work on games with built-in <code v-pre>lua_State</code> instances</li>
 </ul>
-<code class="language-typescript" style="text-align:center; font-size:16px;">
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.stack(func: function(api: lua_capi), state?: lua_State): any...
 </code>
 <ul>
@@ -356,11 +356,11 @@ print(res) -- 20</code></pre>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/os/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/paint/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">os</span>
+                                                <span class="block mt-1">paint</span>
                                             </span>
                                         </a>
                                     </div>
