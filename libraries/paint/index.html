@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.790970826836">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791069291160">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.790970826836" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.791069291160" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.790970826836" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791069291160" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.790970826836" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.790970826836" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791069291160" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.791069291160" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -218,9 +218,8 @@ Instead of using in-game drawing systems, this uses an external version on a sep
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Development Branch</h5>
-<p>This library is currently under development.<br />
-All functions here are subject to change in the future.</p>
+            <h5>Dev-Locked</h5>
+<p>We are missing some features such as FONT &amp; FONTSIZE handlers.</p>
         </div>
     </div>
 </div>
@@ -282,7 +281,7 @@ paint.color.rgb(r: number, g: number, b: number): paint_color
 <li>Creates an RGB based color</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-paint.color.rgba(r: number, g: number, b: number, a: number): paint_color
+paint.color.rgba(r: number, g: number, b: number, a?: number): paint_color
 </code>
 <ul>
 <li>Creates an RGBA based color</li>
@@ -292,6 +291,7 @@ paint.color.hex(hex: string): paint_color
 </code>
 <ul>
 <li>Creates an RGBA based color from hex strings</li>
+<li>Accepts format #RRGGBBAA or #RRGGBB</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.color.hsv(h: number, s: number, v: number, a?: number): paint_color
@@ -318,16 +318,22 @@ paint.line(p1: paint_point, p2: paint_point, color: paint_color, thickness?: num
 <li>Creates a line between points A and B</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-paint.circle.hollow(center: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+paint.circle.filled(center: paint_point, color: paint_color, radius: number, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+</code>
+<ul>
+<li>Creates a circle around a center point that is filled</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.circle.hollow(center: paint_point, color: paint_color, radius: number, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
 </code>
 <ul>
 <li>Creates a circle around a center point that is hollow</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-paint.circle.filled(center: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+paint.tri.filled(p1: paint_point, p2: paint_point, p3: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
 </code>
 <ul>
-<li>Creates a circle around a center point that is filled</li>
+<li>Creates a triangle from three points that is filled</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.tri.hollow(p1: paint_point, p2: paint_point, p3: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
@@ -336,10 +342,10 @@ paint.tri.hollow(p1: paint_point, p2: paint_point, p3: paint_point, color: paint
 <li>Creates a triangle from three points that is hollow</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-paint.tri.filled(p1: paint_point, p2: paint_point, p3: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+paint.rect.filled(top_left: paint_point, size: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
 </code>
 <ul>
-<li>Creates a triangle from three points that is filled</li>
+<li>Creates a rectangle that is filled</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.rect.hollow(top_left: paint_point, size: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
@@ -348,10 +354,10 @@ paint.rect.hollow(top_left: paint_point, size: paint_point, color: paint_color, 
 <li>Creates a rectangle that is hollow</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-paint.rect.filled(top_left: paint_point, size: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+paint.quad.filled(p1: paint_point, p2: paint_point, p3: paint_point, p4: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
 </code>
 <ul>
-<li>Creates a rectangle that is filled</li>
+<li>Creates a quadrilateral that is filled</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.quad.hollow(p1: paint_point, p2: paint_point, p3: paint_point, p4: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
@@ -360,32 +366,19 @@ paint.quad.hollow(p1: paint_point, p2: paint_point, p3: paint_point, p4: paint_p
 <li>Creates a quadrilateral that is hollow</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-paint.quad.filled(p1: paint_point, p2: paint_point, p3: paint_point, p4: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
-</code>
-<ul>
-<li>Creates a quadrilateral that is filled</li>
-</ul>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-paint.text.font(font?: string): string
-</code>
-<ul>
-<li>Changes the font of text further on the call stack</li>
-<li>Not supplying a font string, will just return what font is active</li>
-</ul>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-paint.text.left(point: paint_point, text: string, size: number, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+paint.text.left(point: paint_point, text: string, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
 </code>
 <ul>
 <li>Creates text thats aligned to the left</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-paint.text.center(point: paint_point, text: string, size: number, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+paint.text.center(point: paint_point, text: string, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
 </code>
 <ul>
 <li>Creates text thats aligned to the center</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-paint.text.right(point: paint_point, text: string, size: number, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+paint.text.right(point: paint_point, text: string, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
 </code>
 <ul>
 <li>Creates text thats aligned to the right</li>
