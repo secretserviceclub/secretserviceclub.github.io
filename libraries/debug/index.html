@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791069291160">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791091857323">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.791069291160" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.791091857323" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791069291160" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791091857323" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791069291160" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.791069291160" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791091857323" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.791091857323" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -235,83 +235,118 @@ As well as providing security features for safety of instrusions to lua-based AP
 debug.detour(target: function, detour: function): function
 </code>
 <ul>
-<li>creates a memory-based hook towards a target lua function or C function</li>
+<li>Creates a memory-based hook towards a target lua function or C function</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.isdetour(target: function): boolean
 </code>
 <ul>
-<li>if a function has a memory-mapping to another function</li>
+<li>If a function has a memory-mapping to another function</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.original(target: function): function
 </code>
 <ul>
-<li>if a function has a memory-mapping, this will return the original</li>
+<li>If a function has a memory-mapping, this will return the original</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.restore(target: function)
 </code>
 <ul>
-<li>restores the memory-mapped function</li>
+<li>Restores the memory-mapped function</li>
 </ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">local original
+original = secret.debug.detour(print, function(...)
+       MsgC( Color( 255, 0, 0 ), &quot;[Detour working!]&quot; )
+       return original(...)
+end)
+
+print(&quot;This is a test!&quot;) -- Outputs: [Detour working!]This is a test!
+
+if secret.debug.isdetour(print) then
+    print(&quot;The `print` function has been detoured.&quot;)
+else
+    print(&quot;The `print` function is not detoured.&quot;)
+end
+
+local original_print = secret.debug.original(print)
+original_print(&quot;This bypasses the detour!&quot;)
+
+secret.debug.restore(print) -- Restores the original `print` function.
+print(&quot;Detour has been restored!&quot;) -- Outputs normally without detour.</code></pre>
+</doc-codeblock></div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.clone(value: function | proto | userdata): function | proto | userdata
 </code>
 <ul>
-<li>copys a value in memory, creating a completely new value but with the same characteristics</li>
+<li>Copys a value in memory, creating a completely new value but with the same characteristics</li>
 </ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">local original_func = function(a, b) return a + b end
+local cloned_func = secret.debug.clone(original_func)
+
+print(original_func(5, 3))  -- Output: 8
+print(cloned_func(5, 3))    -- Output: 8 (cloned function has the same behavior)</code></pre>
+</doc-codeblock></div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.replace(target: function | proto | userdata, value: function | proto | userdata)
 </code>
 <ul>
-<li>replaces a value by reference in memory, effectively replacing all occurences of it.</li>
+<li>Replaces a value by reference in memory, effectively replacing all occurences of it.</li>
 </ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">local original = function() print(&quot;original call!&quot;) end
+local replaced = function() print(&quot;replaced call!&quot;) end 
+original()
+secret.debug.replace(original, replaced) --  replace, now its gonna print &quot;replaced call!&quot; instead of &quot;original call!&quot;
+original()</code></pre>
+</doc-codeblock></div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.newcclosure(func: function): function
 </code>
 <ul>
-<li>creates a new cfunction closure which is untraceable</li>
+<li>Creates a new cfunction closure which is untraceable</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.getgc(): (table | function | proto | userdata)[]
 </code>
 <ul>
-<li>gets the garbage collector table</li>
-<li>do note this contains every value in existance</li>
+<li>Gets the garbage collector table</li>
+<li>Do note this contains every value in existance</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.topointer(data: any, str: boolean): string | number
 </code>
 <ul>
-<li>converts a datatype into it&#x27;s absolute pointer location</li>
-<li>output looks like this: <code v-pre>&quot;0xd8ad9caa&quot;</code> or <code v-pre>3635244450</code></li>
+<li>Converts a datatype into it&#x27;s absolute pointer location</li>
+<li>Output looks like this: <code v-pre>&quot;0xd8ad9caa&quot;</code> or <code v-pre>3635244450</code></li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.frompointer(ptr: number): function | table | proto | userdata
 </code>
 <ul>
-<li>scans memory to find the pointer association</li>
+<li>Scans memory to find the pointer association</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.setbuiltin(func: cfunction, ffid: number)
 </code>
 <ul>
-<li>changes a cfunction to be a Fast Function with an ID</li>
-<li>this will make them appear as <code v-pre>&quot;builtin: xx&quot;</code></li>
-<li>use newcclosure if you plan to make a detour with this</li>
+<li>Changes a cfunction to be a Fast Function with an ID</li>
+<li>This will make them appear as <code v-pre>&quot;builtin: xx&quot;</code></li>
+<li>Use newcclosure if you plan to make a detour with this</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.getbuiltin(func: cfunction): number
 </code>
 <ul>
-<li>gets the ffid number of a cfunction</li>
+<li>Gets the ffid number of a cfunction</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.getupvalues(func: function): {[index: string]: any}
 </code>
 <ul>
-<li>gets a list of upvalues and that a function has</li>
+<li>Gets a list of upvalues and that a function has</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-lua"><code v-pre class="language-lua">local a, b, c = 1, 2, 3
@@ -323,22 +358,22 @@ PrintTable(secret.debug.getupvalues(f))
 debug.typestack(count?: number): string
 </code>
 <ul>
-<li>fetches a list of the current stack memory</li>
-<li>this is used to debug and print out what it looks like</li>
+<li>Fetches a list of the current stack memory</li>
+<li>This is used to debug and print out what it looks like</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.getstack(index: number): any
 </code>
 <ul>
-<li>fetchs directly from the lua stack</li>
-<li>this can be used to get values in stack memory</li>
+<li>Fetchs directly from the lua stack</li>
+<li>This can be used to get values in stack memory</li>
 </ul>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 debug.setstack(index: number, data: any)
 </code>
 <ul>
-<li>sets a value at an index in stack memory</li>
-<li>warning: this is rather dangerous and can poison the lua stack</li>
+<li>Sets a value at an index in stack memory</li>
+<li>Warning: this is rather dangerous and can poison the lua stack</li>
 </ul>
 <div hidden>
 <div class="codeblock-wrapper"><doc-codeblock>
