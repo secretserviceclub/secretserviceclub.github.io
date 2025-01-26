@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791236908783">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791238781564">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.791236908783" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.791238781564" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791236908783" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791238781564" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791236908783" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.791236908783" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791238781564" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.791238781564" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -232,9 +232,7 @@ Its also a powerful library utilizing reflection&#x27;s interstate capabilities.
 </doc-anchor-target>
 <p>You can call some functions cross-state if you feel the client-side is too unsafe.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-lua"><code v-pre class="language-lua">local linker = secret.linker
-
--- do note safety of isolate function still applies here
+<pre class="language-lua"><code v-pre class="language-lua">-- do note safety of isolate function still applies here
 local print = print
 local tostring = tostring
 local setmetatable = debug.setmetatable
@@ -257,7 +255,8 @@ PrintTable(color)
 
 linker.isolate(false)</code></pre>
 </doc-codeblock></div>
-<p>You can also use hooks from the game cross-state.</p>
+<p>You can also use hooks from the game cross-state.<br />
+This means you can manipulate the game engine from another lua_State.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-lua"><code v-pre class="language-lua">local V = debug.getmetatable(Vector())
 local A = debug.getmetatable(Angle())
@@ -272,6 +271,14 @@ linker.hook.add(&quot;CalcViewModelView&quot;, &quot;No-Sway&quot;, function(wep
     -- do ur math here!
     return ovec, oang
 end)</code></pre>
+</doc-codeblock></div>
+<p>Some functions have been transferred simply for ease of access like net.*, nw.* and nvar.*<br />
+Do consider looking at the Garry&#x27;s Mod official wiki for more information about their usage.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">// lua_run util.AddNetworkString(&quot;test&quot;) net.Receive(&quot;test&quot;, function() print(net.ReadString()) end)
+linker.net.Start(&quot;test&quot;)
+linker.net.WriteString(&quot;hello world&quot;)
+linker.net.SendToServer() -- prints &quot;hello world&quot; on the server</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="functions">
     <h2>
@@ -311,6 +318,21 @@ local a = some_random_global_variable -- error, linker does not recognize this g
 secret.linker.isolate(false)
 
 local a = some_random_global_variable -- doesn't error as env is restored</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="extern">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extern">#</doc-anchor-trigger>
+        <span>Extern</span>
+    </h2>
+</doc-anchor-target>
+<p>We port over some functions to your environment just for ease of access.<br />
+You can view them under linker tables named net.*, nw.* and nvar.*<br />
+These are simply to help you easily access common usage functions.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">// lua_run util.AddNetworkString(&quot;test&quot;) net.Receive(&quot;test&quot;, function() print(net.ReadString()) end)
+linker.net.Start(&quot;test&quot;)
+linker.net.WriteString(&quot;hello world&quot;)
+linker.net.SendToServer() -- prints &quot;hello world&quot; on the server</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="events">
     <h2>
