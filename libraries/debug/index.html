@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791238781564">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791239545291">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.791238781564" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.791239545291" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791238781564" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791239545291" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791238781564" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.791238781564" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791239545291" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.791239545291" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -257,23 +257,23 @@ debug.restore(target: function)
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-lua"><code v-pre class="language-lua">local original
-original = secret.debug.detour(print, function(...)
+original = debug.detour(print, function(...)
        MsgC( Color( 255, 0, 0 ), &quot;[Detour working!]&quot; )
        return original(...)
 end)
 
 print(&quot;This is a test!&quot;) -- Outputs: [Detour working!]This is a test!
 
-if secret.debug.isdetour(print) then
+if debug.isdetour(print) then
     print(&quot;The `print` function has been detoured.&quot;)
 else
     print(&quot;The `print` function is not detoured.&quot;)
 end
 
-local original_print = secret.debug.original(print)
+local original_print = debug.original(print)
 original_print(&quot;This bypasses the detour!&quot;)
 
-secret.debug.restore(print) -- Restores the original `print` function.
+debug.restore(print) -- Restores the original `print` function.
 print(&quot;Detour has been restored!&quot;) -- Outputs normally without detour.</code></pre>
 </doc-codeblock></div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -284,7 +284,7 @@ debug.clone(value: function | proto | userdata): function | proto | userdata
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-lua"><code v-pre class="language-lua">local original_func = function(a, b) return a + b end
-local cloned_func = secret.debug.clone(original_func)
+local cloned_func = debug.clone(original_func)
 
 print(original_func(5, 3))  -- Output: 8
 print(cloned_func(5, 3))    -- Output: 8 (cloned function has the same behavior)</code></pre>
@@ -299,7 +299,7 @@ debug.replace(target: function | proto | userdata, value: function | proto | use
 <pre class="language-lua"><code v-pre class="language-lua">local original = function() print(&quot;original call!&quot;) end
 local replaced = function() print(&quot;replaced call!&quot;) end 
 original()
-secret.debug.replace(original, replaced) --  replace, now its gonna print &quot;replaced call!&quot; instead of &quot;original call!&quot;
+debug.replace(original, replaced) --  replace, now its gonna print &quot;replaced call!&quot; instead of &quot;original call!&quot;
 original()</code></pre>
 </doc-codeblock></div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -351,7 +351,7 @@ debug.getupvalues(func: function): {[index: string]: any}
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-lua"><code v-pre class="language-lua">local a, b, c = 1, 2, 3
 local f = function() print(a, b, c) end
-PrintTable(secret.debug.getupvalues(f))
+PrintTable(debug.getupvalues(f))
 -- prints: {&quot;a&quot; = 1, &quot;b&quot; = 2, &quot;c&quot; = 3}</code></pre>
 </doc-codeblock></div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
