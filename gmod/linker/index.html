@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791316187852">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791593362269">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.791316187852" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.791593362269" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791316187852" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791593362269" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791316187852" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.791316187852" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791593362269" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.791593362269" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -333,6 +333,35 @@ These are simply to help you easily access common usage functions.</p>
 linker.net.Start(&quot;test&quot;)
 linker.net.WriteString(&quot;hello world&quot;)
 linker.net.SendToServer() -- prints &quot;hello world&quot; on the server</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="override">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#override">#</doc-anchor-trigger>
+        <span>Override</span>
+    </h2>
+</doc-anchor-target>
+<p>Override provides special events specifically to functions used for malicious intent of tracking users.<br />
+This will allow you to override or block behaviors of certain functions we deemed as part of tracking users or in usage of malicious intent.<br />
+These are special in a sense they directly hook and change features of Lua from C++, making them untraceable and highly capable of mimicing behaviors.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">secret.linker.listener.add(&quot;command&quot;, &quot;log&quot;, function(trace, command, arguments)
+    if trace:find(&quot;cl_bad.lua&quot;) then
+        print(&quot;cl_bad, ran &quot; .. command)
+    end
+end)
+
+secret.linker.blocker.add(&quot;command&quot;, &quot;blockdis&quot;, function(trace, command, arguments)
+    if trace:find(&quot;cl_bad.lua&quot;) then
+        print(&quot;cl_bad tried to run&quot;, command)
+        return true -- block command
+    end
+end)
+  
+secret.linker.override.add(&quot;file.Exists&quot;, &quot;overridedis&quot;, function(trace, filename, pathname)
+    if trace:find(&quot;cl_bad.lua&quot;) then
+        return false -- make file.Exists return false
+    end
+end)</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="events">
     <h2>
