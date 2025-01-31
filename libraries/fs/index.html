@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791615924610">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791655603925">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.791615924610" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.791655603925" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791615924610" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791655603925" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791615924610" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.791615924610" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791655603925" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.791655603925" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -284,6 +284,24 @@ fs.append(path: string, data: string)
 </code>
 <ul>
 <li>Appends data onto the specified file</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+fs.forward(path: string): string
+</code>
+<ul>
+<li>Changes all &quot;&quot; separators to &quot;/&quot;</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+fs.backward(path: string): string
+</code>
+<ul>
+<li>Changes all &quot;/&quot; separators to &quot;&quot;</li>
+</ul>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+fs.join(a: string, b: string): string
+</code>
+<ul>
+<li>Joins two paths together</li>
 </ul>
 <div hidden>
 <div class="codeblock-wrapper"><doc-codeblock>
