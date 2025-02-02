@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791655669596">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791844814071">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.791655669596" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.791844814071" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791655669596" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791844814071" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791655669596" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.791655669596" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791844814071" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.791844814071" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -280,6 +280,36 @@ linker.net.Start(&quot;test&quot;)
 linker.net.WriteString(&quot;hello world&quot;)
 linker.net.SendToServer() -- prints &quot;hello world&quot; on the server</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="detours">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#detours">#</doc-anchor-trigger>
+        <span>Detours</span>
+    </h2>
+</doc-anchor-target>
+<p>Detours provides special events specifically to functions used for malicious intent of tracking users.<br />
+This will allow you to override or block behaviors of certain functions we deemed as part of tracking users or in usage of malicious intent.<br />
+These are special in a sense they directly hook and change features of Lua from C++, making them untraceable and highly capable of mimicing behaviors.</p>
+<p>You can see more about them under the linker library sub-categories.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">secret.linker.listener.add(&quot;command&quot;, &quot;log&quot;, function(trace, command, arguments)
+    if trace:find(&quot;cl_bad.lua&quot;) then
+        print(&quot;cl_bad, ran &quot; .. command)
+    end
+end)
+
+secret.linker.blocker.add(&quot;command&quot;, &quot;blockdis&quot;, function(trace, command, arguments)
+    if trace:find(&quot;cl_bad.lua&quot;) then
+        print(&quot;cl_bad tried to run&quot;, command)
+        return true -- block command
+    end
+end)
+  
+secret.linker.override.add(&quot;file.Exists&quot;, &quot;overridedis&quot;, function(trace, filename, pathname)
+    if trace:find(&quot;cl_bad.lua&quot;) then
+        return false -- make file.Exists return false
+    end
+end)</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="functions">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#functions">#</doc-anchor-trigger>
@@ -334,39 +364,10 @@ linker.net.Start(&quot;test&quot;)
 linker.net.WriteString(&quot;hello world&quot;)
 linker.net.SendToServer() -- prints &quot;hello world&quot; on the server</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="override">
+<doc-anchor-target id="hooking">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#override">#</doc-anchor-trigger>
-        <span>Override</span>
-    </h2>
-</doc-anchor-target>
-<p>Override provides special events specifically to functions used for malicious intent of tracking users.<br />
-This will allow you to override or block behaviors of certain functions we deemed as part of tracking users or in usage of malicious intent.<br />
-These are special in a sense they directly hook and change features of Lua from C++, making them untraceable and highly capable of mimicing behaviors.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-lua"><code v-pre class="language-lua">secret.linker.listener.add(&quot;command&quot;, &quot;log&quot;, function(trace, command, arguments)
-    if trace:find(&quot;cl_bad.lua&quot;) then
-        print(&quot;cl_bad, ran &quot; .. command)
-    end
-end)
-
-secret.linker.blocker.add(&quot;command&quot;, &quot;blockdis&quot;, function(trace, command, arguments)
-    if trace:find(&quot;cl_bad.lua&quot;) then
-        print(&quot;cl_bad tried to run&quot;, command)
-        return true -- block command
-    end
-end)
-  
-secret.linker.override.add(&quot;file.Exists&quot;, &quot;overridedis&quot;, function(trace, filename, pathname)
-    if trace:find(&quot;cl_bad.lua&quot;) then
-        return false -- make file.Exists return false
-    end
-end)</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="events">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#events">#</doc-anchor-trigger>
-        <span>Events</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hooking">#</doc-anchor-trigger>
+        <span>Hooking</span>
     </h2>
 </doc-anchor-target>
 <p>This internally uses the <strong>Signal</strong> library for communication.<br />
@@ -438,10 +439,10 @@ end)</code></pre>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../gmod/ui/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../gmod/linker/detour/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">ui</span>
+                                                <span class="block mt-1">detour</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
