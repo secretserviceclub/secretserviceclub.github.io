@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792038885384">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792053427347">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.792038885384" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.792053427347" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792038885384" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792053427347" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792038885384" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.792038885384" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792053427347" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.792053427347" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -225,10 +225,222 @@ As well as providing security features for safety of instrusions to lua-based AP
         </div>
     </div>
 </div>
+<hr>
 <doc-anchor-target id="functions">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#functions">#</doc-anchor-trigger>
         <span>Functions</span>
+    </h2>
+</doc-anchor-target>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debuggetfenvobj-function--number-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debuggetfenvobj-function--number-table">#</doc-anchor-trigger>
+        <span>debug.getfenv(obj: function | number): table?</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.getfenv(obj: function | number): table?
+</code>
+<ul>
+<li>Returns the environment of object obj.</li>
+<li>This differs a bit from the base function getfenv, which takes a function or a level number, and converts the level number into a function.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debuggethookthread-thread--function--number-function-number-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debuggethookthread-thread--function--number-function-number-number">#</doc-anchor-trigger>
+        <span>debug.gethook(thread: thread | function | number): function, number, number</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.gethook(thread: thread | function | number): function, number, number
+</code>
+<ul>
+<li>Returns the current hook settings as three values: Hook Function, Mask, Count</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debuggetinfothread-thread--function--number-field-string-what-function-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debuggetinfothread-thread--function--number-field-string-what-function-table">#</doc-anchor-trigger>
+        <span>debug.getinfo(thread: thread | function | number, field?: string, what?: function): table</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.getinfo(thread: thread | function | number, field?: string, what?: function): table
+</code>
+<ul>
+<li>Returns a table with information about a function or stack level</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">f - returns &quot;func&quot; field
+l - returns &quot;currentline&quot; field
+L - returns a table whose indices are the numbers of the lines that are valid on the function. (A valid line is a line with some associated code, that is, a line where you can put a break point. Non-valid lines include empty lines and comments.)
+n - returns &quot;name&quot; and &quot;namewhat&quot; fields
+S - returns &quot;source&quot;, &quot;short_src&quot;, &quot;linedefined&quot; and &quot;what&quot; fields
+u - returns &quot;nups&quot; field</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debuggetlocallevel-number--function-local-number-string-any">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debuggetlocallevel-number--function-local-number-string-any">#</doc-anchor-trigger>
+        <span>debug.getlocal(level: number | function, local: number): string, any</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.getlocal(level: number, local: number): string, any
+</code>
+<ul>
+<li>Returns the name and value of the local variable with the index &#x27;local&#x27; of the function at &#x27;level&#x27; on the stack.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debuggetmetatableobj-proto--function--table--userdata-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debuggetmetatableobj-proto--function--table--userdata-table">#</doc-anchor-trigger>
+        <span>debug.getmetatable(obj: proto | function | table | userdata): table?</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.getmetatable(obj: proto | function | table | userdata): table?
+</code>
+<ul>
+<li>Returns the metatable of the given object or nil if it does not have a metatable.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debuggetregistry-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debuggetregistry-table">#</doc-anchor-trigger>
+        <span>debug.getregistry(): table</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.getregistry(): table
+</code>
+<ul>
+<li>Returns the registry table, which is a special table used by C functions to store information it wants to keep isolated from Lua functions.</li>
+<li>This can act as permanent storage for variables to be retreived later on.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debuggetupvaluelevel-number--function-upvalue-number-string-any">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debuggetupvaluelevel-number--function-upvalue-number-string-any">#</doc-anchor-trigger>
+        <span>debug.getupvalue(level: number | function, upvalue: number): string, any</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.getupvalue(level: number | function, upvalue: number): string, any
+</code>
+<ul>
+<li>Similar to debug.getlocal, returns the names and values of the upvalues for the nominated function.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debugsetfenvobj-function--number-tbl-table-any">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debugsetfenvobj-function--number-tbl-table-any">#</doc-anchor-trigger>
+        <span>debug.setfenv(obj: function | number, tbl: table): any</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.setfenv(obj: function | number, tbl: table): any
+</code>
+<ul>
+<li>Sets the environment of the given object to the given table, returns the object.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debugsetlocalobj-function--number-local-number-value-any">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debugsetlocalobj-function--number-local-number-value-any">#</doc-anchor-trigger>
+        <span>debug.setlocal(obj: function | number, local: number, value: any)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.setlocal(obj: function | number, local: number, value: any)
+</code>
+<ul>
+<li>Sets the value of the local variable with the index &#x27;local&#x27; of the function at &#x27;level&#x27; on the stack.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debugsethookthread-thread--function--number-f-function-mask-number-count-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debugsethookthread-thread--function--number-f-function-mask-number-count-number">#</doc-anchor-trigger>
+        <span>debug.sethook(thread: thread | function | number, f?: function, mask?: number, count?: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.sethook(thread: thread | function | number, f?: function, mask?: number, count?: number)
+</code>
+<ul>
+<li>Sets the function f as a hook to be called when the &quot;mask&quot; condition is satisfied.</li>
+<li>If count is non-zero, it is called after every &quot;count&quot; instructions.</li>
+<li>The thread argument is optional and defaults to the current thread.</li>
+<li>If called without arguments, turns off the hook.</li>
+<li>The function f is called with its first parameter being a string, which can be one of: <code v-pre>call, return, tail return, line, count</code></li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">c - called every time Lua calls a function
+r - called every time Lua returns from a function
+l - called every time Lua enters a new line of code</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debugsetmetatableobj-proto--function--table--userdata-tbl-table-any">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debugsetmetatableobj-proto--function--table--userdata-tbl-table-any">#</doc-anchor-trigger>
+        <span>debug.setmetatable(obj: proto | function | table | userdata, tbl: table): any</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.setmetatable(obj: proto | function | table | userdata, tbl: table): any
+</code>
+<ul>
+<li>Sets the metatable for the given object to the given table (which can be nil).</li>
+<li>Bypasses the check for the &quot;__metatable&quot; entry.</li>
+<li>Returns the object.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debugsetupvaluelevel-number--function-upvalue-number-value-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debugsetupvaluelevel-number--function-upvalue-number-value-number">#</doc-anchor-trigger>
+        <span>debug.setupvalue(level: number | function, upvalue: number, value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.setupvalue(level: number | function, upvalue: number, value: number)
+</code>
+<ul>
+<li>Similar to debug.setlocal, sets the values of the upvalue for the nominated function.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debugtracebackthread-number--function--string-message-string-level-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debugtracebackthread-number--function--string-message-string-level-number">#</doc-anchor-trigger>
+        <span>debug.traceback(thread?: number | function | string, message?: string, level?: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.traceback(thread?: number | function | string, message?: string, level?: number)
+</code>
+<ul>
+<li>Returns a string with a traceback of the stack call.</li>
+<li>An optional message string is prepended to the beginning of the traceback message.</li>
+</ul>
+<hr>
+<doc-anchor-target id="extension">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extension">#</doc-anchor-trigger>
+        <span>Extension</span>
     </h2>
 </doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
@@ -243,7 +455,7 @@ As well as providing security features for safety of instrusions to lua-based AP
 debug.detour(target: function, detour: function): function
 </code>
 <ul>
-<li>Creates a memory-based hook towards a target lua function or C function</li>
+<li>Creates a memory-based hook towards a target lua function or C function.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugisdetourtarget-function-boolean">
@@ -257,7 +469,7 @@ debug.detour(target: function, detour: function): function
 debug.isdetour(target: function): boolean
 </code>
 <ul>
-<li>If a function has a memory-mapping to another function</li>
+<li>If a function has a memory-mapping to another function.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugoriginaltarget-function-function">
@@ -271,7 +483,7 @@ debug.isdetour(target: function): boolean
 debug.original(target: function): function
 </code>
 <ul>
-<li>If a function has a memory-mapping, this will return the original</li>
+<li>If a function has a memory-mapping, this will return the original.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugrestoretarget-function">
@@ -285,7 +497,7 @@ debug.original(target: function): function
 debug.restore(target: function)
 </code>
 <ul>
-<li>Restores the memory-mapped function</li>
+<li>Restores the memory-mapped function.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-lua"><code v-pre class="language-lua">local original
@@ -320,7 +532,7 @@ print(&quot;Detour has been restored!&quot;) -- Outputs normally without detour.
 debug.clone(value: function | proto | userdata): function | proto | userdata
 </code>
 <ul>
-<li>Copys a value in memory, creating a completely new value but with the same characteristics</li>
+<li>Copys a value in memory, creating a completely new value but with the same characteristics.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-lua"><code v-pre class="language-lua">local original_func = function(a, b) return a + b end
@@ -362,7 +574,7 @@ original()</code></pre>
 debug.newcclosure(func: function): function
 </code>
 <ul>
-<li>Creates a new cfunction closure which is untraceable</li>
+<li>Creates a new cfunction closure which is untraceable.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debuggetgc-table--function--proto--userdata">
@@ -376,8 +588,8 @@ debug.newcclosure(func: function): function
 debug.getgc(): (table | function | proto | userdata)[]
 </code>
 <ul>
-<li>Gets the garbage collector table</li>
-<li>Do note this contains every value in existance</li>
+<li>Gets the garbage collector table.</li>
+<li>Do note this contains every value in existance.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugtopointerdata-any-str-boolean-string--number">
@@ -391,7 +603,7 @@ debug.getgc(): (table | function | proto | userdata)[]
 debug.topointer(data: any, str: boolean): string | number
 </code>
 <ul>
-<li>Converts a datatype into it&#x27;s absolute pointer location</li>
+<li>Converts a datatype into it&#x27;s absolute pointer location.</li>
 <li>Output looks like this: <code v-pre>&quot;0xd8ad9caa&quot;</code> or <code v-pre>3635244450</code></li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
@@ -406,7 +618,7 @@ debug.topointer(data: any, str: boolean): string | number
 debug.frompointer(ptr: number): function | table | proto | userdata
 </code>
 <ul>
-<li>Scans memory to find the pointer association</li>
+<li>Scans memory to find the pointer association.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugsetbuiltinfunc-cfunction-ffid-number">
@@ -420,9 +632,9 @@ debug.frompointer(ptr: number): function | table | proto | userdata
 debug.setbuiltin(func: cfunction, ffid: number)
 </code>
 <ul>
-<li>Changes a cfunction to be a Fast Function with an ID</li>
+<li>Changes a cfunction to be a Fast Function with an ID.</li>
 <li>This will make them appear as <code v-pre>&quot;builtin: xx&quot;</code></li>
-<li>Use newcclosure if you plan to make a detour with this</li>
+<li>Use newcclosure if you plan to make a detour with this.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debuggetbuiltinfunc-cfunction-number">
@@ -436,7 +648,7 @@ debug.setbuiltin(func: cfunction, ffid: number)
 debug.getbuiltin(func: cfunction): number
 </code>
 <ul>
-<li>Gets the ffid number of a cfunction</li>
+<li>Gets the ffid number of a cfunction.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debuggetupvaluesfunc-function-index-string-any">
@@ -450,7 +662,7 @@ debug.getbuiltin(func: cfunction): number
 debug.getupvalues(func: function): {[index: string]: any}
 </code>
 <ul>
-<li>Gets a list of upvalues and that a function has</li>
+<li>Gets a list of upvalues and that a function has.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-lua"><code v-pre class="language-lua">local a, b, c = 1, 2, 3
@@ -470,8 +682,8 @@ PrintTable(debug.getupvalues(f))
 debug.typestack(count?: number): string
 </code>
 <ul>
-<li>Fetches a list of the current stack memory</li>
-<li>This is used to debug and print out what it looks like</li>
+<li>Fetches a list of the current stack memory.</li>
+<li>This is used to debug and print out what it looks like.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debuggetstackindex-number-any">
@@ -485,8 +697,8 @@ debug.typestack(count?: number): string
 debug.getstack(index: number): any
 </code>
 <ul>
-<li>Fetchs directly from the lua stack</li>
-<li>This can be used to get values in stack memory</li>
+<li>Fetchs directly from the lua stack.</li>
+<li>This can be used to get values in stack memory.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugsetstackindex-number-data-any">
@@ -500,8 +712,8 @@ debug.getstack(index: number): any
 debug.setstack(index: number, data: any)
 </code>
 <ul>
-<li>Sets a value at an index in stack memory</li>
-<li>Warning: this is rather dangerous and can poison the lua stack</li>
+<li>Sets a value at an index in stack memory.</li>
+<li>Warning: this is rather dangerous and can poison the lua stack.</li>
 </ul>
 <div hidden>
 <div class="codeblock-wrapper"><doc-codeblock>
