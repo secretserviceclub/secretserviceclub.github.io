@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792038488869">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792038885384">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.792038488869" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.792038885384" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792038488869" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792038885384" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792038488869" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.792038488869" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792038885384" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.792038885384" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -231,7 +231,7 @@ As well as providing security features for safety of instrusions to lua-based AP
         <span>Functions</span>
     </h2>
 </doc-anchor-target>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugdetourtarget-function-detour-function-function">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debugdetourtarget-function-detour-function-function">#</doc-anchor-trigger>
@@ -245,7 +245,7 @@ debug.detour(target: function, detour: function): function
 <ul>
 <li>Creates a memory-based hook towards a target lua function or C function</li>
 </ul>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugisdetourtarget-function-boolean">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debugisdetourtarget-function-boolean">#</doc-anchor-trigger>
@@ -259,7 +259,7 @@ debug.isdetour(target: function): boolean
 <ul>
 <li>If a function has a memory-mapping to another function</li>
 </ul>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugoriginaltarget-function-function">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debugoriginaltarget-function-function">#</doc-anchor-trigger>
@@ -273,7 +273,7 @@ debug.original(target: function): function
 <ul>
 <li>If a function has a memory-mapping, this will return the original</li>
 </ul>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugrestoretarget-function">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debugrestoretarget-function">#</doc-anchor-trigger>
@@ -308,7 +308,7 @@ original_print(&quot;This bypasses the detour!&quot;)
 debug.restore(print) -- Restores the original `print` function.
 print(&quot;Detour has been restored!&quot;) -- Outputs normally without detour.</code></pre>
 </doc-codeblock></div>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugclonevalue-function--proto--userdata-function--proto--userdata">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debugclonevalue-function--proto--userdata-function--proto--userdata">#</doc-anchor-trigger>
@@ -329,7 +329,7 @@ local cloned_func = debug.clone(original_func)
 print(original_func(5, 3))  -- Output: 8
 print(cloned_func(5, 3))    -- Output: 8 (cloned function has the same behavior)</code></pre>
 </doc-codeblock></div>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugreplacetarget-function--proto--userdata-value-function--proto--userdata">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debugreplacetarget-function--proto--userdata-value-function--proto--userdata">#</doc-anchor-trigger>
@@ -350,7 +350,7 @@ original()
 debug.replace(original, replaced) --  replace, now its gonna print &quot;replaced call!&quot; instead of &quot;original call!&quot;
 original()</code></pre>
 </doc-codeblock></div>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugnewcclosurefunc-function-function">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debugnewcclosurefunc-function-function">#</doc-anchor-trigger>
@@ -364,7 +364,7 @@ debug.newcclosure(func: function): function
 <ul>
 <li>Creates a new cfunction closure which is untraceable</li>
 </ul>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debuggetgc-table--function--proto--userdata">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debuggetgc-table--function--proto--userdata">#</doc-anchor-trigger>
@@ -379,7 +379,7 @@ debug.getgc(): (table | function | proto | userdata)[]
 <li>Gets the garbage collector table</li>
 <li>Do note this contains every value in existance</li>
 </ul>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugtopointerdata-any-str-boolean-string--number">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debugtopointerdata-any-str-boolean-string--number">#</doc-anchor-trigger>
@@ -394,7 +394,7 @@ debug.topointer(data: any, str: boolean): string | number
 <li>Converts a datatype into it&#x27;s absolute pointer location</li>
 <li>Output looks like this: <code v-pre>&quot;0xd8ad9caa&quot;</code> or <code v-pre>3635244450</code></li>
 </ul>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugfrompointerptr-number-function--table--proto--userdata">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debugfrompointerptr-number-function--table--proto--userdata">#</doc-anchor-trigger>
@@ -408,7 +408,7 @@ debug.frompointer(ptr: number): function | table | proto | userdata
 <ul>
 <li>Scans memory to find the pointer association</li>
 </ul>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugsetbuiltinfunc-cfunction-ffid-number">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debugsetbuiltinfunc-cfunction-ffid-number">#</doc-anchor-trigger>
@@ -424,7 +424,7 @@ debug.setbuiltin(func: cfunction, ffid: number)
 <li>This will make them appear as <code v-pre>&quot;builtin: xx&quot;</code></li>
 <li>Use newcclosure if you plan to make a detour with this</li>
 </ul>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debuggetbuiltinfunc-cfunction-number">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debuggetbuiltinfunc-cfunction-number">#</doc-anchor-trigger>
@@ -438,7 +438,7 @@ debug.getbuiltin(func: cfunction): number
 <ul>
 <li>Gets the ffid number of a cfunction</li>
 </ul>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debuggetupvaluesfunc-function-index-string-any">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debuggetupvaluesfunc-function-index-string-any">#</doc-anchor-trigger>
@@ -458,7 +458,7 @@ local f = function() print(a, b, c) end
 PrintTable(debug.getupvalues(f))
 -- prints: {&quot;a&quot; = 1, &quot;b&quot; = 2, &quot;c&quot; = 3}</code></pre>
 </doc-codeblock></div>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugtypestackcount-number-string">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debugtypestackcount-number-string">#</doc-anchor-trigger>
@@ -473,7 +473,7 @@ debug.typestack(count?: number): string
 <li>Fetches a list of the current stack memory</li>
 <li>This is used to debug and print out what it looks like</li>
 </ul>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debuggetstackindex-number-any">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debuggetstackindex-number-any">#</doc-anchor-trigger>
@@ -488,7 +488,7 @@ debug.getstack(index: number): any
 <li>Fetchs directly from the lua stack</li>
 <li>This can be used to get values in stack memory</li>
 </ul>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugsetstackindex-number-data-any">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debugsetstackindex-number-data-any">#</doc-anchor-trigger>

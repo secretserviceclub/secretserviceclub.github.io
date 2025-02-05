@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792038488869">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792038885384">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.792038488869" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.792038885384" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792038488869" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792038885384" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792038488869" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.792038488869" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792038885384" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.792038885384" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -211,7 +211,7 @@
         <span>Functions</span>
     </h2>
 </doc-anchor-target>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="miscget_username-string">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscget_username-string">#</doc-anchor-trigger>
@@ -229,7 +229,7 @@ misc.get_username(): string
 <pre class="language-lua"><code v-pre class="language-lua">local username = secret.misc.get_username()
 print(&quot;Current username:&quot;, username) </code></pre>
 </doc-codeblock></div>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="miscin_screenshot-boolean">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscin_screenshot-boolean">#</doc-anchor-trigger>
@@ -250,7 +250,7 @@ else
     print(&quot;No screen capture detected.&quot;)
 end</code></pre>
 </doc-codeblock></div>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="miscget_freecam_pos-table">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscget_freecam_pos-table">#</doc-anchor-trigger>
@@ -276,7 +276,7 @@ else
     print(&quot;Freecam is not enabled.&quot;)
 end</code></pre>
 </doc-codeblock></div>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="miscget_freecam_angles-table">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscget_freecam_angles-table">#</doc-anchor-trigger>
@@ -290,7 +290,7 @@ misc.get_freecam_angles(): table
 <ul>
 <li>Retrieves the current angles of the freecam.</li>
 </ul>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="miscmouse_eventdwflags-number-dx-number-dy-number-dwdata-number">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscmouse_eventdwflags-number-dx-number-dy-number-dwdata-number">#</doc-anchor-trigger>
@@ -310,7 +310,7 @@ local MOUSEEVENTF_LEFTUP = 0x0004
 secret.misc.mouse_event(MOUSEEVENTF_LEFTDOWN, 100, 100, 0) -- Press left mouse button 
 secret.misc.mouse_event(MOUSEEVENTF_LEFTUP, 100, 100, 0) -- Release left mouse button </code></pre>
 </doc-codeblock></div>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="misckeybd_eventbvk-number-bscan-number-dwflags-number-dwextrainfo-number">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#misckeybd_eventbvk-number-bscan-number-dwflags-number-dwextrainfo-number">#</doc-anchor-trigger>
@@ -331,7 +331,7 @@ local KEYEVENTF_KEYUP = 0x0002
 secret.misc.keybd_event(VK_A, 0, KEYEVENTF_KEYDOWN, 0) -- Press 'A' key
 secret.misc.keybd_event(VK_A, 0, KEYEVENTF_KEYUP, 0) -- Release 'A' key</code></pre>
 </doc-codeblock></div>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="miscadd_to_player_espindex-number-text-string-color-table-position-number">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscadd_to_player_espindex-number-text-string-color-table-position-number">#</doc-anchor-trigger>
@@ -358,7 +358,7 @@ secret.listener.add(&quot;view_render_post&quot;, &quot;Api Example&quot;, funct
   end
 end)</code></pre>
 </doc-codeblock></div>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="miscadd_to_ent_espindex-number-text-string-color-table-position-number">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscadd_to_ent_espindex-number-text-string-color-table-position-number">#</doc-anchor-trigger>
@@ -388,7 +388,7 @@ misc.add_to_ent_esp(index: number, text: string, color: table, position: number)
         </div>
     </div>
 </div>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="miscin_safe_render-boolean">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscin_safe_render-boolean">#</doc-anchor-trigger>
@@ -418,7 +418,7 @@ misc.in_safe_render(): boolean
         </div>
     </div>
 </div>
-<div style="visibility: hidden; height: 0px; width: 0px;">
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="miscget_aimbot_target-number">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscget_aimbot_target-number">#</doc-anchor-trigger>
