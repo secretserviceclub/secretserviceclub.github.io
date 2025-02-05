@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791946757252">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792038488869">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.791946757252" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.792038488869" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791946757252" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792038488869" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791946757252" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.791946757252" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792038488869" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.792038488869" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -226,24 +226,56 @@ end)
 
 signal.call(state, &quot;test&quot;, &quot;hello world&quot;) -- print on example lua_State: [example] hello world</code></pre>
 </doc-codeblock></div>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="signaladdname-string-identity-string-callback-function">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#signaladdname-string-identity-string-callback-function">#</doc-anchor-trigger>
+        <span>signal.add(name: string, identity: string, callback: function)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 signal.add(name: string, identity: string, callback: function)
 </code>
 <ul>
 <li>Adds a function to an signal, this will call the callback when C++ invokes it</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="signalremovename-string-identity-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#signalremovename-string-identity-string">#</doc-anchor-trigger>
+        <span>signal.remove(name: string, identity: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 signal.remove(name: string, identity: string)
 </code>
 <ul>
 <li>Removes a function from a signal</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="signalgetname-string-identity-string-function">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#signalgetname-string-identity-string-function">#</doc-anchor-trigger>
+        <span>signal.get(name: string, identity: string): function?</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 signal.get(name: string, identity: string): function?
 </code>
 <ul>
 <li>Attempts to retrieve a function from the signal callbacks</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="signalcallstate-lua_state-name-string-any-any">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#signalcallstate-lua_state-name-string-any-any">#</doc-anchor-trigger>
+        <span>signal.call(state: lua_State, name: string, ...any): ...any</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 signal.call(state: lua_State, name: string, ...any): ...any
 </code>
@@ -251,6 +283,14 @@ signal.call(state: lua_State, name: string, ...any): ...any
 <li>Calls events on a <code v-pre>lua_State</code></li>
 <li>Must have the same matching name for them to actually call</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="signalconnectname-string-callback-function-identity-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#signalconnectname-string-callback-function-identity-string">#</doc-anchor-trigger>
+        <span>signal.connect(name: string, callback: function, identity: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 signal.connect(name: string, callback: function, identity: string)
 </code>
@@ -260,6 +300,14 @@ signal.add(name: string, identity: string, callback: function)
 </code></li>
 <li>Different call style under the RBLX standard</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="signaldisconnectname-string-identity-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#signaldisconnectname-string-identity-string">#</doc-anchor-trigger>
+        <span>signal.disconnect(name: string, identity: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 signal.disconnect(name: string, identity: string)
 </code>
@@ -269,6 +317,14 @@ signal.remove(name: string, identity: string)
 </code></li>
 <li>Different call style under the RBLX standard</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="signalconnectionname-string-identity-string-function">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#signalconnectionname-string-identity-string-function">#</doc-anchor-trigger>
+        <span>signal.connection(name: string, identity: string): function?</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 signal.connection(name: string, identity: string): function?
 </code>
@@ -278,6 +334,14 @@ signal.get(name: string, identity: string): function?
 </code></li>
 <li>Different call style under the RBLX standard</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="signalfirestate-lua_state-name-string-any-any">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#signalfirestate-lua_state-name-string-any-any">#</doc-anchor-trigger>
+        <span>signal.fire(state: lua_State, name: string, ...any): ...any</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 signal.fire(state: lua_State, name: string, ...any): ...any
 </code>
@@ -294,18 +358,42 @@ signal.call(state: lua_State, name: string, ...any): ...any
     </h2>
 </doc-anchor-target>
 <p>These exists on libraries that have events or invokers, you can use these to talk to C++</p>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="signaladdname-string-identity-string-callback-function-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#signaladdname-string-identity-string-callback-function-1">#</doc-anchor-trigger>
+        <span>signal.add(name: string, identity: string, callback: function)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 signal.add(name: string, identity: string, callback: function)
 </code>
 <ul>
 <li>Adds a function to an signal, this will call the callback when C++ invokes it</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="signalremovename-string-identity-string-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#signalremovename-string-identity-string-1">#</doc-anchor-trigger>
+        <span>signal.remove(name: string, identity: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 signal.remove(name: string, identity: string)
 </code>
 <ul>
 <li>Removes a function from a signal</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="signalgetname-string-identity-string-function-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#signalgetname-string-identity-string-function-1">#</doc-anchor-trigger>
+        <span>signal.get(name: string, identity: string): function?</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 signal.get(name: string, identity: string): function?
 </code>
@@ -321,6 +409,14 @@ signal.call(name: string, ...any): ...any
 <li>Useful under conditions where C++ has multiple functions for a single purpose</li>
 <li>Depends on the C++ developer&#x27;s implementation</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="signalconnectname-string-callback-function-identity-string-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#signalconnectname-string-callback-function-identity-string-1">#</doc-anchor-trigger>
+        <span>signal.connect(name: string, callback: function, identity: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 signal.connect(name: string, callback: function, identity: string)
 </code>
@@ -330,6 +426,14 @@ signal.add(name: string, identity: string, callback: function)
 </code></li>
 <li>Different call style under the RBLX standard</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="signaldisconnectname-string-identity-string-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#signaldisconnectname-string-identity-string-1">#</doc-anchor-trigger>
+        <span>signal.disconnect(name: string, identity: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 signal.disconnect(name: string, identity: string)
 </code>
@@ -339,6 +443,14 @@ signal.remove(name: string, identity: string)
 </code></li>
 <li>Different call style under the RBLX standard</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="signalconnectionname-string-identity-string-function-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#signalconnectionname-string-identity-string-function-1">#</doc-anchor-trigger>
+        <span>signal.connection(name: string, identity: string): function?</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 signal.connection(name: string, identity: string): function?
 </code>

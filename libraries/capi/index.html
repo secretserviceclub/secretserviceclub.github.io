@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791946757252">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792038488869">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.791946757252" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.792038488869" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791946757252" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792038488869" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791946757252" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.791946757252" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792038488869" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.792038488869" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -289,12 +289,28 @@ end
     </h2>
 </doc-anchor-target>
 <hr>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lapi-api">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lapi-api">#</doc-anchor-trigger>
+        <span>L.api(): API</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.api(): API
 </code>
 <ul>
 <li>Pushes the API onto the stack for access</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lcallinputs-number-outputs-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lcallinputs-number-outputs-number">#</doc-anchor-trigger>
+        <span>L.call(inputs: number, outputs: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.call(inputs: number, outputs: number)
 </code>
@@ -307,24 +323,56 @@ L.call(inputs: number, outputs: number)
 L.pushstring(&quot;hello world&quot;)
 L.call(1, 0) -- calls &quot;example&quot; with &quot;hello world&quot;</code></pre>
 </doc-codeblock></div>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lpopcount-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lpopcount-number">#</doc-anchor-trigger>
+        <span>L.pop(count?: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.pop(count?: number)
 </code>
 <ul>
 <li>Pops a value off of the stack at the top</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lremoveindex-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lremoveindex-number">#</doc-anchor-trigger>
+        <span>L.remove(index: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.remove(index: number)
 </code>
 <ul>
 <li>Removes a value at an index off of the stack</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="llengthindex-number-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#llengthindex-number-number">#</doc-anchor-trigger>
+        <span>L.length(index: number): number</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.length(index: number): number
 </code>
 <ul>
 <li>Used to get the length of a value</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lnextindex-number-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lnextindex-number-boolean">#</doc-anchor-trigger>
+        <span>L.next(index: number): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.next(index: number): boolean
 </code>
@@ -354,6 +402,14 @@ L.gettransfer(index: number): any
 <ul>
 <li>Transfers any datatype from the stack to your environment</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lgettop-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lgettop-number">#</doc-anchor-trigger>
+        <span>L.gettop(): number</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.gettop(): number
 </code>
@@ -361,12 +417,28 @@ L.gettop(): number
 <li>Gets the current size of the Lua stack</li>
 <li>This is useful for vararg style handling</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lgettypeindex-number-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lgettypeindex-number-number">#</doc-anchor-trigger>
+        <span>L.gettype(index: number): number</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.gettype(index: number): number
 </code>
 <ul>
 <li>Gets the type ID of a given value</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lgettypenameindex-number-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lgettypenameindex-number-string">#</doc-anchor-trigger>
+        <span>L.gettypename(index: number): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.gettypename(index: number): string
 </code>
@@ -374,12 +446,28 @@ L.gettypename(index: number): string
 <li>Gets the typename of a given value</li>
 </ul>
 <hr>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lnewtable">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lnewtable">#</doc-anchor-trigger>
+        <span>L.newtable()</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.newtable()
 </code>
 <ul>
 <li>Generates a blank table and pushes it onto the stack</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lnewrefindex-number-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lnewrefindex-number-number">#</doc-anchor-trigger>
+        <span>L.newref(index: number): number</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.newref(index: number): number
 </code>
@@ -387,18 +475,42 @@ L.newref(index: number): number
 <li>Creates a reference link to a value</li>
 <li>This will make the value immune to the garbage collector</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lpushrefreference-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lpushrefreference-number">#</doc-anchor-trigger>
+        <span>L.pushref(reference: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.pushref(reference: number)
 </code>
 <ul>
 <li>Pushes the referenced value back onto the stack</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lrmrefreference-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lrmrefreference-number">#</doc-anchor-trigger>
+        <span>L.rmref(reference: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.rmref(reference: number)
 </code>
 <ul>
 <li>Removes the referenced value from registry</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lgetupvalueindex-number-id-number-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lgetupvalueindex-number-id-number-string">#</doc-anchor-trigger>
+        <span>L.getupvalue(index: number, id: number): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.getupvalue(index: number, id: number): string
 </code>
@@ -406,12 +518,28 @@ L.getupvalue(index: number, id: number): string
 <li>Gets the &quot;upvalue&quot; of a function at the top of the stack</li>
 <li>Upvalues are values passed to a function not as a parameter, but by reference</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lsetupvalueindex-number-id-number-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lsetupvalueindex-number-id-number-string">#</doc-anchor-trigger>
+        <span>L.setupvalue(index: number, id: number): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.setupvalue(index: number, id: number): string
 </code>
 <ul>
 <li>Sets the &quot;upvalue&quot; of a function at the top of the stack</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lgetfenvindex-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lgetfenvindex-number">#</doc-anchor-trigger>
+        <span>L.getfenv(index: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.getfenv(index: number)
 </code>
@@ -419,6 +547,14 @@ L.getfenv(index: number)
 <li>Grabs the ENV and pushes it onto the stack</li>
 <li>You can use this to manipulate the environment</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lsetfenvindex-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lsetfenvindex-number">#</doc-anchor-trigger>
+        <span>L.setfenv(index: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.setfenv(index: number)
 </code>
@@ -427,6 +563,14 @@ L.setfenv(index: number)
 <li>This consumes the table you provide it at the top of the stack</li>
 <li>You can use this to manipulate the environment</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lgetmetatableindex-number-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lgetmetatableindex-number-boolean">#</doc-anchor-trigger>
+        <span>L.getmetatable(index: number): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.getmetatable(index: number): boolean
 </code>
@@ -434,6 +578,14 @@ L.getmetatable(index: number): boolean
 <li>Grabs the metatable of a table or userdata, and pushes it onto the stack</li>
 <li>The boolean is provided for if it fails to grab the metatable</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lsetmetatableindex-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lsetmetatableindex-number">#</doc-anchor-trigger>
+        <span>L.setmetatable(index: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.setmetatable(index: number)
 </code>
@@ -441,12 +593,28 @@ L.setmetatable(index: number)
 <li>Sets the metatable of a table or userdata at the index</li>
 <li>This consumes the table you provide it at the top of the stack</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lgetfieldindex-number-key-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lgetfieldindex-number-key-string">#</doc-anchor-trigger>
+        <span>L.getfield(index: number, key: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.getfield(index: number, key: string)
 </code>
 <ul>
 <li>Gets the value from a table and pushes it onto the stack</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lsetfieldindex-number-key-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lsetfieldindex-number-key-string">#</doc-anchor-trigger>
+        <span>L.setfield(index: number, key: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.setfield(index: number, key: string)
 </code>
@@ -454,6 +622,14 @@ L.setfield(index: number, key: string)
 <li>Sets a value in a table by key</li>
 <li>Index corresponds to where the table is on the stack</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lgettableindex-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lgettableindex-number">#</doc-anchor-trigger>
+        <span>L.gettable(index: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.gettable(index: number)
 </code>
@@ -461,6 +637,14 @@ L.gettable(index: number)
 <li>Gets the value from a table and pushes it onto the stack</li>
 <li>This will consume a value just before it to determine the key</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lsettableindex-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lsettableindex-number">#</doc-anchor-trigger>
+        <span>L.settable(index: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.settable(index: number)
 </code>
@@ -468,6 +652,14 @@ L.settable(index: number)
 <li>Sets a value in a table by the key at the top of the stack</li>
 <li>The top of the stack is the key, and top-1 is the value</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lrawgetindex-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lrawgetindex-number">#</doc-anchor-trigger>
+        <span>L.rawget(index: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.rawget(index: number)
 </code>
@@ -476,6 +668,14 @@ L.rawget(index: number)
 <li>This will consume a value just before it to determine the key</li>
 <li>Unlike gettable this will not invoke metatable callbacks</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lrawsetindex-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lrawsetindex-number">#</doc-anchor-trigger>
+        <span>L.rawset(index: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.rawset(index: number)
 </code>
@@ -485,6 +685,14 @@ L.rawset(index: number)
 <li>Unlike settable this will not invoke metatable callbacks</li>
 </ul>
 <hr>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lgetbooleanindex-number-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lgetbooleanindex-number-boolean">#</doc-anchor-trigger>
+        <span>L.getboolean(index: number): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.getboolean(index: number): boolean
 </code>
@@ -492,6 +700,14 @@ L.getboolean(index: number): boolean
 <li>Attempts to get a boolean value from the Lua stack</li>
 <li>If the type is invalid, an error will be thrown</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lgetnumberindex-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lgetnumberindex-number">#</doc-anchor-trigger>
+        <span>L.getnumber(index: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.getnumber(index: number)
 </code>
@@ -499,6 +715,14 @@ L.getnumber(index: number)
 <li>Attempts to get a number value from the Lua stack</li>
 <li>If the type is invalid, an error will be thrown</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lgetstringindex-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lgetstringindex-number">#</doc-anchor-trigger>
+        <span>L.getstring(index: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.getstring(index: number)
 </code>
@@ -507,30 +731,70 @@ L.getstring(index: number)
 <li>If the type is invalid, an error will be thrown</li>
 </ul>
 <hr>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lpushbooleanvalue-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lpushbooleanvalue-boolean">#</doc-anchor-trigger>
+        <span>L.pushboolean(value: boolean)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.pushboolean(value: boolean)
 </code>
 <ul>
 <li>Pushes a boolean onto the stack</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lpushnil">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lpushnil">#</doc-anchor-trigger>
+        <span>L.pushnil()</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.pushnil()
 </code>
 <ul>
 <li>Pushes a nil value onto the stack</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lpushnumbervalue-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lpushnumbervalue-number">#</doc-anchor-trigger>
+        <span>L.pushnumber(value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.pushnumber(value: number)
 </code>
 <ul>
 <li>Pushes a number onto the stack</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lpushstringvalue-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lpushstringvalue-string">#</doc-anchor-trigger>
+        <span>L.pushstring(value: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.pushstring(value: string)
 </code>
 <ul>
 <li>Pushes a string onto the stack</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lpushvalueindex-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lpushvalueindex-number">#</doc-anchor-trigger>
+        <span>L.pushvalue(index: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.pushvalue(index: number)
 </code>
@@ -538,66 +802,154 @@ L.pushvalue(index: number)
 <li>Makes a copy of a value at the index and pushes it to the top of the stack</li>
 </ul>
 <hr>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lisbooleanindex-number-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lisbooleanindex-number-boolean">#</doc-anchor-trigger>
+        <span>L.isboolean(index: number): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.isboolean(index: number): boolean
 </code>
 <ul>
 <li>Checks if the value at index on the stack is a boolean</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="liscfunctionindex-number-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#liscfunctionindex-number-boolean">#</doc-anchor-trigger>
+        <span>L.iscfunction(index: number): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.iscfunction(index: number): boolean
 </code>
 <ul>
 <li>Checks if the value at index on the stack is a cfunction</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lisfunctionindex-number-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lisfunctionindex-number-boolean">#</doc-anchor-trigger>
+        <span>L.isfunction(index: number): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.isfunction(index: number): boolean
 </code>
 <ul>
 <li>Checks if the value at index on the stack is a function</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lislightuserdataindex-number-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lislightuserdataindex-number-boolean">#</doc-anchor-trigger>
+        <span>L.islightuserdata(index: number): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.islightuserdata(index: number): boolean
 </code>
 <ul>
 <li>Checks if the value at index on the stack is a lightuserdata</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lisnilindex-number-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lisnilindex-number-boolean">#</doc-anchor-trigger>
+        <span>L.isnil(index: number): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.isnil(index: number): boolean
 </code>
 <ul>
 <li>Checks if the value at index on the stack is nil</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lisnumberindex-number-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lisnumberindex-number-boolean">#</doc-anchor-trigger>
+        <span>L.isnumber(index: number): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.isnumber(index: number): boolean
 </code>
 <ul>
 <li>Checks if the value at index on the stack is a number</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lisstringindex-number-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lisstringindex-number-boolean">#</doc-anchor-trigger>
+        <span>L.isstring(index: number): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.isstring(index: number): boolean
 </code>
 <ul>
 <li>Checks if the value at index on the stack is a string</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="listableindex-number-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#listableindex-number-boolean">#</doc-anchor-trigger>
+        <span>L.istable(index: number): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.istable(index: number): boolean
 </code>
 <ul>
 <li>Checks if the value at index on the stack is a table</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="listhreadindex-number-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#listhreadindex-number-boolean">#</doc-anchor-trigger>
+        <span>L.isthread(index: number): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.isthread(index: number): boolean
 </code>
 <ul>
 <li>Checks if the value at index on the stack is a thread</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="lisuserdataindex-number-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lisuserdataindex-number-boolean">#</doc-anchor-trigger>
+        <span>L.isuserdata(index: number): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.isuserdata(index: number): boolean
 </code>
 <ul>
 <li>Checks if the value at index on the stack is a userdata</li>
 </ul>
+<div style="visibility: hidden; height: 0px; width: 0px;">
+<doc-anchor-target id="listypeindex-number-type-number-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#listypeindex-number-type-number-boolean">#</doc-anchor-trigger>
+        <span>L.istype(index: number, type: number): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L.istype(index: number, type: number): boolean
 </code>
