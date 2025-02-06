@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792099596104">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792172850462">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.792099596104" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.792172850462" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.792099596104" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.792172850462" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.792099596104" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.792099596104" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.792172850462" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.792172850462" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -208,6 +208,28 @@
 These are C++ made detours using <code v-pre>linker</code>, providing you with a unique way of changing the behaviors of functions.<br />
 This is not limited to the client-state, we have provided interstate capabilities.</p>
 <hr>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="luasource_code-string-source_path-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#luasource_code-string-source_path-string">#</doc-anchor-trigger>
+        <span>lua(source_code: string, source_path: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+lua(source_code: string, source_path: string)
+</code>
+<ul>
+<li>The events usable by this function is<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+linker.listener.*
+</code>&amp;<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+linker.blocker.*
+</code>&amp;<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+linker.override.*
+</code></li>
+<li>Blocker will make <code v-pre>lua</code> not run.</li>
+<li>Override changes the returns of <code v-pre>lua</code>, you can use this to override the source code or source path.</li>
+</ul>
 <doc-anchor-target id="file">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#file">#</doc-anchor-trigger>
