@@ -9,33 +9,33 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>table</title>
-    <meta name="title" content="table">
-    <meta name="description" content="This is an expansion to the existing Lua Table library.">
+    <title>extern</title>
+    <meta name="title" content="extern">
+    <meta name="description" content="These are functions that are ported to allow for easy access. This makes it easier to use insteasd of just relying on">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://secretserviceclub.github.io/libraries/table/">
+    <link rel="canonical" href="https://secretserviceclub.github.io/gmod/linker/extern/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://secretserviceclub.github.io/libraries/table/">
-    <meta property="og:title" content="table">
-    <meta property="og:description" content="This is an expansion to the existing Lua Table library.">
+    <meta property="og:url" content="https://secretserviceclub.github.io/gmod/linker/extern/">
+    <meta property="og:title" content="extern">
+    <meta property="og:description" content="These are functions that are ported to allow for easy access. This makes it easier to use insteasd of just relying on">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://secretserviceclub.github.io/libraries/table/">
-    <meta property="twitter:title" content="table">
-    <meta property="twitter:description" content="This is an expansion to the existing Lua Table library.">
+    <meta property="twitter:url" content="https://secretserviceclub.github.io/gmod/linker/extern/">
+    <meta property="twitter:title" content="extern">
+    <meta property="twitter:description" content="These are functions that are ported to allow for easy access. This makes it easier to use insteasd of just relying on">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.792355756999" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.792355756999" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792355756999" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792355756999" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.792355756999" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.792355756999" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.792355756999" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.792355756999" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -50,7 +50,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">secretservice</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
                     </div>
@@ -198,164 +198,463 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="table" class="break-words">
+<doc-anchor-target id="extern" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#table">#</doc-anchor-trigger>
-        <span>table</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extern">#</doc-anchor-trigger>
+        <span>extern</span>
     </h1>
 </doc-anchor-target>
-<p>This is an expansion to the existing Lua Table library.</p>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>Expansion Library</h5>
-<p>This is an expansion to builtins provided by Lua itself, see more about them on the official Lua/LuaJIT wikis.</p>
-        </div>
-    </div>
-</div>
+<p>These are functions that are ported to allow for easy access.<br />
+This makes it easier to use insteasd of just relying on<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+linker.meta(library: string, name: string): function
+</code>and<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+linker.global(library: string, name: string): function
+</code></p>
 <hr>
-<doc-anchor-target id="functions">
+<doc-anchor-target id="net">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#functions">#</doc-anchor-trigger>
-        <span>Functions</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#net">#</doc-anchor-trigger>
+        <span>NET</span>
     </h2>
 </doc-anchor-target>
+<p>You can access this by doing<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+linker.net.*
+</code></p>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="tableconcatt-table-sep-string-start-number-end-number">
+<doc-anchor-target id="netgetlist-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tableconcatt-table-sep-string-start-number-end-number">#</doc-anchor-trigger>
-        <span>table.concat(t: table, sep: string, start?: number, end?: number)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netgetlist-string">#</doc-anchor-trigger>
+        <span>net.GetList(): string[]</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-table.concat(t: table, sep: string, start?: number, end?: number): string
+net.GetList(): string[]
 </code>
 <ul>
-<li>Returns the (numeric) entries in the table t, concatenated together with &quot;sep&quot; as the separator, starting at index &#x27;start&#x27; and ending at index &#x27;end&#x27;.</li>
-<li>The entries are returned as a single string variable.</li>
-<li>Contrast this to the &quot;unpack&quot; function which returns a table as individual variables.</li>
+<li>Retrieves a list of all network names</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="tableforeacht-table-f-functionkey-any-value-any">
+<doc-anchor-target id="netidtostringid-number-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tableforeacht-table-f-functionkey-any-value-any">#</doc-anchor-trigger>
-        <span>table.foreach(t: table, f: function(key: any, value: any))</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netidtostringid-number-string">#</doc-anchor-trigger>
+        <span>net.IDToString(id: number): string?</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-table.foreach(t: table, f: function(key: any, value: any)): any?
+net.IDToString(id: number): string?
 </code>
 <ul>
-<li>Executes f for each element in table t.</li>
-<li>If f returns a non-nil value the loop is broken, and this value is returned as the result from table.foreach.</li>
-<li>Effectively this could be used to find an element inside a table matching a certain condition.</li>
+<li>Converts a network ID to its string counterpart</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="tableforeachit-table-f-functionkey-any-value-any">
+<doc-anchor-target id="netstringtoidname-string-number">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tableforeachit-table-f-functionkey-any-value-any">#</doc-anchor-trigger>
-        <span>table.foreachi(t: table, f: function(key: any, value: any))</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netstringtoidname-string-number">#</doc-anchor-trigger>
+        <span>net.StringToID(name: string): number?</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-table.foreachi(t: table, f: function(key: any, value: any)): any?
+net.StringToID(name: string): number?
 </code>
 <ul>
-<li>Similar to table.foreach, except that only numeric keys in the range 1 to n are processed.</li>
+<li>Converts a network name to its ID counterpart</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="tablegetnt-table-number">
+<doc-anchor-target id="netstartmessagename-string-unreliable-boolean--false">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tablegetnt-table-number">#</doc-anchor-trigger>
-        <span>table.getn(t: table): number</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netstartmessagename-string-unreliable-boolean--false">#</doc-anchor-trigger>
+        <span>net.Start(messageName: string, unreliable?: boolean = false)</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-table.getn(t: table): number
+net.Start(messageName: string, unreliable?: boolean = false)
 </code>
 <ul>
-<li>Returns the size of a numerically-keyed table.</li>
-<li>A table&#x27;s size (which is only relevant for &quot;numeric&quot; indexed tables) is one less than the first integer index with a nil value.</li>
-<li>If the table has &quot;holes&quot; in it - that is, numeric keys with gaps in the sequence - then the table size is not guaranteed to be the the last gap.</li>
-<li>Lua does a binary search to try to find a gap, it does not necessarily find the first or last one.</li>
-</ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="tableinsertt-table-pos-number-value-any">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tableinsertt-table-pos-number-value-any">#</doc-anchor-trigger>
-        <span>table.insert(t: table, pos: number, value: any)</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-table.insert(t: table, pos: number, value: any)
-</code>
-<ul>
-<li>Inserts the value at (optional) position &#x27;pos&#x27;, renumbering existing elements if necessary to make room. Thus the new element becomes the one with index &#x27;pos&#x27;.</li>
-<li>If called with 2 arguments, the value is inserted at n+1, that is, the end of the table.</li>
-</ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="tablemaxnt-table-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tablemaxnt-table-number">#</doc-anchor-trigger>
-        <span>table.maxn(t: table): number</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-table.maxn(t: table): number
-</code>
-<ul>
-<li>Returns the highest numeric key in the table, by examining each entry in the entire table.</li>
-<li>This will necessarily be slower than doing table.getn, but would be needed if the keys have gaps in the sequence.</li>
-<li>f the table does not have gaps in the keys, it is faster to use<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-table.getn(t: table): number
+<li>Begins a new net message.</li>
+<li>If another net message is already started and hasn&#x27;t been sent yet, it will be discarded.</li>
+<li>After calling this function, you will want to call <code v-pre>net.Write*</code> functions to write your data, if any, and then finish with<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+net.SendToServer()
 </code></li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="tableremovet-table-pos-number-any">
+<doc-anchor-target id="netsendtoserver">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tableremovet-table-pos-number-any">#</doc-anchor-trigger>
-        <span>table.remove(t: table, pos?: number): any</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netsendtoserver">#</doc-anchor-trigger>
+        <span>net.SendToServer()</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-table.remove(t: table, pos?: number): any
+net.SendToServer()
 </code>
 <ul>
-<li>Removes the element at position &#x27;pos&#x27; from the table, returning the value of the removed element.</li>
-<li>If &#x27;pos&#x27; is omitted it defaults to the end of the table (n), thus removing the last element.</li>
+<li>Sends the current net message to the server.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="tablesortt-table-f-function">
+<doc-anchor-target id="netwritebitboolean-boolean">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tablesortt-table-f-function">#</doc-anchor-trigger>
-        <span>table.sort(t: table, f?: function)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netwritebitboolean-boolean">#</doc-anchor-trigger>
+        <span>net.WriteBit(boolean: boolean)</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-table.sort(t: table, f?: function)
+net.WriteBit(boolean: boolean)
 </code>
 <ul>
-<li>Sorts the table using the supplied function f as the comparison function for each element.</li>
-<li>Function f should return true if the first element is &lt; the second element. If the function omitted it defaults to the operator &lt;.</li>
-<li>Sorting is not stable, that is, the sequence of equal keys is not necessarily preserved.</li>
+<li>Appends a boolean (as 1 or 0) to the current net message.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="netwriteuintvalue-number-size-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netwriteuintvalue-number-size-number">#</doc-anchor-trigger>
+        <span>net.WriteUInt(value: number, size: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+net.WriteUInt(value: number, size: number)
+</code>
+<ul>
+<li>Appends an unsigned integer with the specified number of bits to the current net message.</li>
+<li>For size reference: <code v-pre>1 = bit, 4 = nibble, 8 = byte, 16 = short, 32 = long</code></li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="netwriteintvalue-number-size-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netwriteintvalue-number-size-number">#</doc-anchor-trigger>
+        <span>net.WriteInt(value: number, size: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+net.WriteInt(value: number, size: number)
+</code>
+<ul>
+<li>Appends an integer with the specified number of bits to the current net message.</li>
+<li>For size reference: <code v-pre>1 = bit, 4 = nibble, 8 = byte, 16 = short, 32 = long</code></li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="netwritestringvalue-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netwritestringvalue-string">#</doc-anchor-trigger>
+        <span>net.WriteString(value: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+net.WriteString(value: string)
+</code>
+<ul>
+<li>Appends a string to the current net message.</li>
+<li>The size of the written data is 8 bits for every ASCII character in the string + 8 bits for the null terminator.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="netwritefloatvalue-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netwritefloatvalue-number">#</doc-anchor-trigger>
+        <span>net.WriteFloat(value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+net.WriteFloat(value: number)
+</code>
+<ul>
+<li>Appends a float (number with decimals) to the current net message.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="netwritedoublevalue-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netwritedoublevalue-number">#</doc-anchor-trigger>
+        <span>net.WriteDouble(value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+net.WriteDouble(value: number)
+</code>
+<ul>
+<li>Appends a double (number with decimals) to the current net message.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="netwritevectorvalue-vector">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netwritevectorvalue-vector">#</doc-anchor-trigger>
+        <span>net.WriteVector(value: Vector)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+net.WriteVector(value: Vector)
+</code>
+<ul>
+<li>Appends a vector to the current net message.</li>
+<li>Vectors sent by this function are compressed, which may result in precision loss.</li>
+<li>XYZ components greater than 16384 or less than -16384 are irrecoverably altered (most significant bits are trimmed) and precision after the decimal point is low.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="netwriteanglevalue-angle">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netwriteanglevalue-angle">#</doc-anchor-trigger>
+        <span>net.WriteAngle(value: Angle)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+net.WriteAngle(value: Angle)
+</code>
+<ul>
+<li>Similar to<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+net.WriteVector(value: Vector)
+</code>however uses a different lua class to inherit Angle metatables</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="netwritematrixvalue-matrix">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netwritematrixvalue-matrix">#</doc-anchor-trigger>
+        <span>net.WriteMatrix(value: Matrix)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+net.WriteMatrix(value: Matrix) 
+</code>
+<ul>
+<li>Writes a VMatrix to the current net message.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="netwritedatavalue-string-size-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netwritedatavalue-string-size-number">#</doc-anchor-trigger>
+        <span>net.WriteData(value: string, size: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+net.WriteData(value: string, size: number)
+</code>
+<ul>
+<li>Writes a chunk of binary data to the message.</li>
+<li>The size determines the length of the message, having a different size than the message size would cut-off or corrupt data.</li>
+</ul>
+<doc-anchor-target id="nw">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nw">#</doc-anchor-trigger>
+        <span>NW</span>
+    </h2>
+</doc-anchor-target>
+<p>You can access this by doing<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+linker.nw.*
+</code></p>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="nwgetbooltarget-entity-key-string-fallback-any-boolean--any">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nwgetbooltarget-entity-key-string-fallback-any-boolean--any">#</doc-anchor-trigger>
+        <span>nw.GetBool(target: Entity, key: string, fallback?: any): boolean | any</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+nw.GetBool(target: Entity, key: string, fallback?: any): boolean | any
+</code>
+<ul>
+<li>Retrieves a networked boolean value at specified index on the entity.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="nwgetinttarget-entity-key-string-fallback-any-number--any">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nwgetinttarget-entity-key-string-fallback-any-number--any">#</doc-anchor-trigger>
+        <span>nw.GetInt(target: Entity, key: string, fallback?: any): number | any</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+nw.GetInt(target: Entity, key: string, fallback?: any): number | any
+</code>
+<ul>
+<li>Retrieves a networked integer (whole number) value at specified index on the entity.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="nwgetfloattarget-entity-key-string-fallback-any-number--any">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nwgetfloattarget-entity-key-string-fallback-any-number--any">#</doc-anchor-trigger>
+        <span>nw.GetFloat(target: Entity, key: string, fallback?: any): number | any</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+nw.GetFloat(target: Entity, key: string, fallback?: any): number | any
+</code>
+<ul>
+<li>Retrieves a networked float value at specified index on the entity.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="nwgetstringtarget-entity-key-string-fallback-any-string--any">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nwgetstringtarget-entity-key-string-fallback-any-string--any">#</doc-anchor-trigger>
+        <span>nw.GetString(target: Entity, key: string, fallback?: any): string | any</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+nw.GetString(target: Entity, key: string, fallback?: any): string | any
+</code>
+<ul>
+<li>Retrieves a networked string value at specified index on the entity.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="nwgetvectortarget-entity-key-string-fallback-any-vector--any">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nwgetvectortarget-entity-key-string-fallback-any-vector--any">#</doc-anchor-trigger>
+        <span>nw.GetVector(target: Entity, key: string, fallback?: any): Vector | any</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+nw.GetVector(target: Entity, key: string, fallback?: any): Vector | any
+</code>
+<ul>
+<li>Retrieves a networked vector value at specified index on the entity.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="nwgetangletarget-entity-key-string-fallback-any-angle--any">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nwgetangletarget-entity-key-string-fallback-any-angle--any">#</doc-anchor-trigger>
+        <span>nw.GetAngle(target: Entity, key: string, fallback?: any): Angle | any</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+nw.GetAngle(target: Entity, key: string, fallback?: any): Angle | any
+</code>
+<ul>
+<li>Retrieves a networked angle value at specified index on the entity.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="nwgetentitytarget-entity-key-string-fallback-any-entity--any">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nwgetentitytarget-entity-key-string-fallback-any-entity--any">#</doc-anchor-trigger>
+        <span>nw.GetEntity(target: Entity, key: string, fallback?: any): Entity | any</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+nw.GetEntity(target: Entity, key: string, fallback?: any): Entity | any
+</code>
+<ul>
+<li>Retrieves a networked entity value at specified index on the entity.</li>
+</ul>
+<doc-anchor-target id="nvar">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nvar">#</doc-anchor-trigger>
+        <span>NVAR</span>
+    </h2>
+</doc-anchor-target>
+<p>You can access this by doing<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+linker.nvar.*
+</code></p>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="nvargetbooltarget-entity-key-number-boolean--nil">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nvargetbooltarget-entity-key-number-boolean--nil">#</doc-anchor-trigger>
+        <span>nvar.GetBool(target: Entity, key: number): boolean | nil</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+nvar.GetBool(target: Entity, key: number): boolean | nil
+</code>
+<ul>
+<li>Retrieves a networked boolean value at specified index on the entity.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="nvargetinttarget-entity-key-number-number--nil">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nvargetinttarget-entity-key-number-number--nil">#</doc-anchor-trigger>
+        <span>nvar.GetInt(target: Entity, key: number): number | nil</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+nvar.GetInt(target: Entity, key: number): number | nil
+</code>
+<ul>
+<li>Retrieves a networked integer (whole number) value at specified index on the entity.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="nvargetfloattarget-entity-key-number-number--nil">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nvargetfloattarget-entity-key-number-number--nil">#</doc-anchor-trigger>
+        <span>nvar.GetFloat(target: Entity, key: number): number | nil</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+nvar.GetFloat(target: Entity, key: number): number | nil
+</code>
+<ul>
+<li>Retrieves a networked float value at specified index on the entity.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="nvargetstringtarget-entity-key-number-string--nil">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nvargetstringtarget-entity-key-number-string--nil">#</doc-anchor-trigger>
+        <span>nvar.GetString(target: Entity, key: number): string | nil</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+nvar.GetString(target: Entity, key: number): string | nil
+</code>
+<ul>
+<li>Retrieves a networked string value at specified index on the entity.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="nvargetvectortarget-entity-key-number-vector--nil">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nvargetvectortarget-entity-key-number-vector--nil">#</doc-anchor-trigger>
+        <span>nvar.GetVector(target: Entity, key: number): Vector | nil</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+nvar.GetVector(target: Entity, key: number): Vector | nil
+</code>
+<ul>
+<li>Retrieves a networked vector value at specified index on the entity.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="nvargetangletarget-entity-key-number-angle--nil">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nvargetangletarget-entity-key-number-angle--nil">#</doc-anchor-trigger>
+        <span>nvar.GetAngle(target: Entity, key: number): Angle | nil</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+nvar.GetAngle(target: Entity, key: number): Angle | nil
+</code>
+<ul>
+<li>Retrieves a networked angle value at specified index on the entity.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="nvargetentitytarget-entity-key-number-entity--nil">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nvargetentitytarget-entity-key-number-entity--nil">#</doc-anchor-trigger>
+        <span>nvar.GetEntity(target: Entity, key: number): Entity | nil</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+nvar.GetEntity(target: Entity, key: number): Entity | nil
+</code>
+<ul>
+<li>Retrieves a networked entity value at specified index on the entity.</li>
 </ul>
 <div hidden>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -371,20 +670,20 @@ table.sort(t: table, f?: function)
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/string/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../gmod/linker/detour/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">string</span>
+                                                <span class="block mt-1">detour</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../gmod/linker/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../gmod/ui/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">linker</span>
+                                                <span class="block mt-1">ui</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -428,6 +727,6 @@ table.sort(t: table, f?: function)
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "table", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "extern", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
