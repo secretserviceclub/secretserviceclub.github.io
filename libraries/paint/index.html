@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792513856330">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792523571746">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.792513856330" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.792523571746" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792513856330" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792523571746" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792513856330" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.792513856330" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792523571746" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.792523571746" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -382,6 +382,7 @@ paint.line(p1: paint_point, p2: paint_point, color: paint_color, thickness?: num
 <ul>
 <li>Creates a line between points A and B</li>
 </ul>
+<hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="paintcirclefilledcenter-paint_point-color-paint_color-radius-number-outline-paint_color--0-0-0-255-outline_thickness-number--0">
     <h3>
@@ -410,6 +411,7 @@ paint.circle.hollow(center: paint_point, color: paint_color, radius: number, thi
 <ul>
 <li>Creates a circle around a center point that is hollow</li>
 </ul>
+<hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="painttrifilledp1-paint_point-p2-paint_point-p3-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">
     <h3>
@@ -438,6 +440,7 @@ paint.tri.hollow(p1: paint_point, p2: paint_point, p3: paint_point, color: paint
 <ul>
 <li>Creates a triangle from three points that is hollow</li>
 </ul>
+<hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="paintrectfilledtop_left-paint_point-size-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">
     <h3>
@@ -467,6 +470,34 @@ paint.rect.hollow(top_left: paint_point, size: paint_point, color: paint_color, 
 <li>Creates a rectangle that is hollow</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="paintrectrfilledrounding-number-top_left-paint_point-size-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#paintrectrfilledrounding-number-top_left-paint_point-size-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
+        <span>paint.rect.rfilled(rounding: number, top_left: paint_point, size: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.rect.rfilled(rounding: number, top_left: paint_point, size: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+</code>
+<ul>
+<li>Creates a rectangle that is filled with rounding</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="paintrectrhollowrounding-number-top_left-paint_point-size-paint_point-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#paintrectrhollowrounding-number-top_left-paint_point-size-paint_point-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
+        <span>paint.rect.rhollow(rounding: number, top_left: paint_point, size: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.rect.rhollow(rounding: number, top_left: paint_point, size: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+</code>
+<ul>
+<li>Creates a rectangle that is hollow with rounding</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="paintrectgradienttop_left-paint_point-size-paint_point-up_left-paint_color-up_right-paint_color-bottom_left-color_paint-bottom_right-color_paint-outline-paint_color--0-0-0-255-outline_thickness-number--0">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#paintrectgradienttop_left-paint_point-size-paint_point-up_left-paint_color-up_right-paint_color-bottom_left-color_paint-bottom_right-color_paint-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
@@ -480,6 +511,7 @@ paint.rect.gradient(top_left: paint_point, size: paint_point, up_left: paint_col
 <ul>
 <li>Creates a rectangle using a gradient of colors</li>
 </ul>
+<hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="paintqrotfilledcenter-paint_point-size-paint_point-color-paint_color-rotation-number-outline-paint_color--0-0-0-255-outline_thickness-number--0">
     <h3>
@@ -510,6 +542,7 @@ paint.qrot.hollow(center: paint_point, size: paint_point, color: paint_color, ro
 <li>Creates a rectangle that is hollow with rotation in degrees</li>
 <li>These rectangles are centered</li>
 </ul>
+<hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="paintquadfilledp1-paint_point-p2-paint_point-p3-paint_point-p4-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">
     <h3>
@@ -538,6 +571,7 @@ paint.quad.hollow(p1: paint_point, p2: paint_point, p3: paint_point, p4: paint_p
 <ul>
 <li>Creates a quadrilateral that is hollow</li>
 </ul>
+<hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="painttextleftpoint-paint_point-text-string-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">
     <h3>
@@ -650,6 +684,64 @@ paint.text.font(font_name?: string): string
 <ul>
 <li>Makes all future text renderers use a specific font</li>
 <li>Returns the current font being used currently</li>
+</ul>
+<hr>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="paintimagebakedata-string-image--false">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#paintimagebakedata-string-image--false">#</doc-anchor-trigger>
+        <span>paint.image.bake(data: string): image | false</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.image.bake(data: string): image | false
+</code>
+<ul>
+<li>Bakes an image into memory, so that you can use it</li>
+<li>Images are managed by reference, so if its no longer used in lua, it will eventually de-allocate</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">local data = fs.read(&quot;sample.jpg&quot;)
+local image = paint.image.bake(data)
+if not pimage then
+    error(&quot;Couldn't load image!&quot;)
+end
+
+local point = paint.point.vector2(50, 50)
+local size = paint.point.vector2(128, 128)
+local white = paint.color.rgb(255, 255, 255)
+paint.add(&quot;example&quot;, function(w, h)
+    paint.image.normal(image, point, size, white)
+end)</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="paintimagenormalimage-image-top_left-paint_point-size-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#paintimagenormalimage-image-top_left-paint_point-size-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
+        <span>paint.image.normal(image: image, top_left: paint_point, size: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.image.normal(image: image, top_left: paint_point, size: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+</code>
+<ul>
+<li>Creates a rectangle image</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="paintimageroundimage-image-rounding-number-top_left-paint_point-size-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#paintimageroundimage-image-rounding-number-top_left-paint_point-size-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
+        <span>paint.image.round(image: image, rounding: number, top_left: paint_point, size: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.image.round(image: image, rounding: number, top_left: paint_point, size: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+</code>
+<ul>
+<li>Creates a rectangle image with rounding</li>
 </ul>
 <hr>
 <doc-anchor-target id="events">
