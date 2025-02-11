@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792523676253">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792560520359">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.792523676253" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.792560520359" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792523676253" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792560520359" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792523676253" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.792523676253" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792560520359" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.792560520359" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -245,7 +245,32 @@ iot.http(url: string, callback: function(response: http_response), options?: htt
 <ul>
 <li>Makes an HTTP/HTTPS request to an address or domain.</li>
 <li>This function is asynchronous, meaning this will not &quot;freeze&quot; Lua.</li>
+<li>The interface types<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+http_options
+</code>&amp;<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+http_response
+</code>can be seen here:</li>
 </ul>
+<doc-tabs>
+<doc-tab v-cloak id="http-options">
+<template #title>http_options</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">method?: string
+headers?: {[index: string]: string}
+parameters?: {[index: string]: string}</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="http-response">
+<template #title>http_response</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">headers: {[index: string]: string}
+body: string
+status: number
+reason: string
+url: string</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="iotsocketurl-string-options-socket_options-socket_class">
     <h3>
@@ -254,73 +279,22 @@ iot.http(url: string, callback: function(response: http_response), options?: htt
     </h3>
 </doc-anchor-target>
 </div>
-<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
-    <span>stub</span>
-</span><code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-iot.socket(url: string, options?: socket_options): socket_class
-</code></p>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+iot.socket(url: string, headers?: {[index: string]: string}): socket_class
+</code>
 <ul>
 <li>Creates a socket object which is connected to an address or domain.</li>
 <li>Upon creation, the socket isn&#x27;t activated until you invoke it to do so.</li>
+<li>Sockets work by reference, so if there is no-longer a use in lua, it will destroy itself.</li>
 </ul>
-<hr>
-<doc-anchor-target id="http">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#http">#</doc-anchor-trigger>
-        <span>HTTP</span>
-    </h2>
-</doc-anchor-target>
-<p>These are interface definitions for how we handles <code v-pre>http_options</code> and <code v-pre>http_response</code></p>
-<doc-anchor-target id="http_options">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#http_options">#</doc-anchor-trigger>
-        <span>http_options</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">method?: string
-headers?: {[index: string]: string}
-parameters?: {[index: string]: string}
-authentication?: {
-    username: string
-    password: string
-}</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="http_response">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#http_response">#</doc-anchor-trigger>
-        <span>http_response</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">headers: {[index: string]: string}
-body: string
-status: number
-reason: string</code></pre>
-</doc-codeblock></div>
 <hr>
 <doc-anchor-target id="socket">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socket">#</doc-anchor-trigger>
-        <span>SOCKET</span>
+        <span>Socket</span>
     </h2>
 </doc-anchor-target>
-<p>These are interface &amp; function definitions for how we handle <code v-pre>socket_options</code> and <code v-pre>socket_class</code></p>
-<doc-anchor-target id="socket_options">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socket_options">#</doc-anchor-trigger>
-        <span>socket_options</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">method?: string
-headers?: {[index: string]: string}
-parameters?: {[index: string]: string}
-authentication?: {
-    username: string
-    password: string
-}</code></pre>
-</doc-codeblock></div>
+<p>These are interface &amp; function definitions for how we handle <code v-pre>socket_class</code></p>
 <doc-anchor-target id="functions-1">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#functions-1">#</doc-anchor-trigger>
@@ -331,40 +305,68 @@ authentication?: {
 <doc-anchor-target id="socketconnect">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketconnect">#</doc-anchor-trigger>
-        <span>socket.connect()</span>
+        <span>socket:connect()</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-socket.connect()
+socket:connect()
 </code>
 <ul>
 <li>Attempt to connect the socket to the constructed URL from creation.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketsendpayload-string-binary-boolean">
+<doc-anchor-target id="socketdisconnectreason-string">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketsendpayload-string-binary-boolean">#</doc-anchor-trigger>
-        <span>socket.send(payload: string, binary?: boolean)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#socketdisconnectreason-string">#</doc-anchor-trigger>
+        <span>socket:disconnect(reason?: string)</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-socket.send(payload: string, binary?: boolean)
+socket:disconnect(reason?: string)
+</code>
+<ul>
+<li>Disconnects from a socket server with a message if needed.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sockettextpayload-string">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sockettextpayload-string">#</doc-anchor-trigger>
+        <span>socket:text(payload: string)</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+socket:text(payload: string)
 </code>
 <ul>
 <li>Send a payload message to the socket server.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketclosereason-string">
+<doc-anchor-target id="socketbinarypayload-string">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketclosereason-string">#</doc-anchor-trigger>
-        <span>socket.close(reason?: string)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#socketbinarypayload-string">#</doc-anchor-trigger>
+        <span>socket:binary(payload: string)</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-socket.close(reason?: string)
+socket:binary(payload: string)
+</code>
+<ul>
+<li>Send a payload message to the socket server in binary format.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="socketclosereason-string">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#socketclosereason-string">#</doc-anchor-trigger>
+        <span>socket:close(reason?: string)</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+socket:close(reason?: string)
 </code>
 <ul>
 <li>Closes the socket connection, this usually also sends a message.</li>
@@ -374,12 +376,12 @@ socket.close(reason?: string)
 <doc-anchor-target id="socketpingreason-string">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketpingreason-string">#</doc-anchor-trigger>
-        <span>socket.ping(reason?: string)</span>
+        <span>socket:ping(reason?: string)</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-socket.ping(reason?: string)
+socket:ping(reason?: string)
 </code>
 <ul>
 <li>Sends a ping payload to the socket server.</li>
@@ -388,29 +390,43 @@ socket.ping(reason?: string)
 <doc-anchor-target id="socketpongreason-string">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketpongreason-string">#</doc-anchor-trigger>
-        <span>socket.pong(reason?: string)</span>
+        <span>socket:pong(reason?: string)</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-socket.pong(reason?: string)
+socket:pong(reason?: string)
 </code>
 <ul>
 <li>Sends a pong payload to the socket server.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketstate-number">
+<doc-anchor-target id="socketalive-boolean">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketstate-number">#</doc-anchor-trigger>
-        <span>socket.state(): number</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#socketalive-boolean">#</doc-anchor-trigger>
+        <span>socket:alive(): boolean</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-socket.state(): number
+socket:alive(): boolean
 </code>
 <ul>
-<li>Returns whats the state of the socket engine.</li>
+<li>Returns if the socket is still connected and running.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sockettls-boolean">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sockettls-boolean">#</doc-anchor-trigger>
+        <span>socket:tls(): boolean</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+socket:tls(): boolean
+</code>
+<ul>
+<li>Returns if the socket is using TLS as it&#x27;s connection layer.</li>
 </ul>
 <doc-anchor-target id="events">
     <h3>
@@ -445,35 +461,35 @@ These can be accessed for example by: <code class="language-typescript" style="t
 open()
 </code>
 <ul>
-<li>Called when the socket engine has made a successful connection</li>
+<li>Called when the socket engine has made a successful connection.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="failurecode-number-reason-string">
+<doc-anchor-target id="failreason-string">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#failurecode-number-reason-string">#</doc-anchor-trigger>
-        <span>failure(code: number, reason: string)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#failreason-string">#</doc-anchor-trigger>
+        <span>fail(reason: string)</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-failure(code: number, reason: string)
+fail(reason: string)
 </code>
 <ul>
-<li>Called if there was a connection failure</li>
+<li>Called if there was a connection failure.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="closecode-number-reason-string">
+<doc-anchor-target id="closereason-string">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#closecode-number-reason-string">#</doc-anchor-trigger>
-        <span>close(code: number, reason: string)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#closereason-string">#</doc-anchor-trigger>
+        <span>close(reason: string)</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-close(code: number, reason: string)
+close(reason: string)
 </code>
 <ul>
-<li>Called when the connection closes, this can contain an error reason</li>
+<li>Called when the connection closes, this can contain an error reason.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="messagepayload-string">
@@ -484,10 +500,10 @@ close(code: number, reason: string)
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-message(payload: string)
+receive(payload: string, is_binary: boolean)
 </code>
 <ul>
-<li>Called when a message has been received</li>
+<li>Called when a message has been received.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="pingreason-string">
@@ -501,9 +517,9 @@ message(payload: string)
 ping(reason: string)
 </code>
 <ul>
-<li>Called when the socket server sent a ping</li>
-<li>This can be used as an &quot;isalive&quot; status refresh</li>
-<li>However this is managed internally by interstellar</li>
+<li>Called when the socket server sent a ping.</li>
+<li>This can be used as an &quot;isalive&quot; status refresh.</li>
+<li>However this is managed internally by interstellar.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="pongreason-string">
@@ -517,9 +533,8 @@ ping(reason: string)
 pong(reason: string)
 </code>
 <ul>
-<li>Called when the socket server sent a pong</li>
-<li>This can be used as an &quot;isalive&quot; status refresh</li>
-<li>However this is managed internally by interstellar</li>
+<li>Called when the socket server sent a pong.</li>
+<li>This can be used as an &quot;isalive&quot; status refresh.</li>
 </ul>
 <div hidden>
 <div class="codeblock-wrapper"><doc-codeblock>
