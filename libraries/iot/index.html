@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792965247662">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.793074393209">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.792965247662" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.793074393209" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792965247662" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.793074393209" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792965247662" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.792965247662" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.793074393209" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.793074393209" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -232,15 +232,15 @@ Please use these functions simply for I/O &amp; communication.</p>
     </h2>
 </doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="iothttpurl-string-options-http_options-callback-functionresponse-http_response">
+<doc-anchor-target id="iothttpurl-string-callback-functionresponse-http_response-options-http_options">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#iothttpurl-string-options-http_options-callback-functionresponse-http_response">#</doc-anchor-trigger>
-        <span>iot.http(url: string, options?: http_options, callback?: function(response: http_response))</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#iothttpurl-string-callback-functionresponse-http_response-options-http_options">#</doc-anchor-trigger>
+        <span>iot.http(url: string, callback?: function(response: http_response), options?: http_options)</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-iot.http(url: string, callback: function(response: http_response), options?: http_options)
+iot.http(url: string, callback?: function(response: http_response), options?: http_options)
 </code>
 <ul>
 <li>Makes an HTTP/HTTPS request to an address or domain.</li>
@@ -271,6 +271,25 @@ url: string</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="iotstreamurl-string-callback-functionresponse-http_response-options-http_options">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#iotstreamurl-string-callback-functionresponse-http_response-options-http_options">#</doc-anchor-trigger>
+        <span>iot.stream(url: string, callback?: function(response: http_response), options?: http_options)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+iot.stream(url: string, callback?: function(response: http_response), options?: http_options)
+</code>
+<ul>
+<li>Similar to<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+iot.http
+</code>except allows multiple returns from segments of encoded chunks.</li>
+<li>When receiving chunks, all responses will have a <code v-pre>100</code> status code for continuing.</li>
+<li>Once finished, the status code will either be <code v-pre>200</code> or a different value if it errored.</li>
+<li>Returning <code v-pre>false</code> inside the callback will cancel the stream.</li>
+</ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="iotsocketurl-string-options-socket_options-socket_class">
     <h3>
