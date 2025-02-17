@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.793084049424">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.793138321261">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.793084049424" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.793138321261" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.793084049424" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.793138321261" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.793084049424" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.793084049424" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.793138321261" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.793138321261" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -399,6 +399,65 @@ fs.join(a: string, b: string): string
 </code>
 <ul>
 <li>Joins two paths together</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="fsextnamepath-string-replace-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fsextnamepath-string-replace-string-string">#</doc-anchor-trigger>
+        <span>fs.extname(path: string, replace?: string): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+fs.extname(path: string, replace?: string): string
+</code>
+<ul>
+<li>Gets the extension name of a path</li>
+<li>If provided a replacement, will return the replaced path&#x27;s extension</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="fsfilenamepath-string-replace-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fsfilenamepath-string-replace-string-string">#</doc-anchor-trigger>
+        <span>fs.filename(path: string, replace?: string): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+fs.filename(path: string, replace?: string): string
+</code>
+<ul>
+<li>Gets the file name of a path</li>
+<li>If provided a replacement, will return the replaced path&#x27;s file</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="fsdirnamepath-string-replace-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fsdirnamepath-string-replace-string-string">#</doc-anchor-trigger>
+        <span>fs.dirname(path: string, replace?: string): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+fs.dirname(path: string, replace?: string): string
+</code>
+<ul>
+<li>Gets the directory name of a path</li>
+<li>If provided a replacement, will return the replaced path&#x27;s directory</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="fssanitizepath-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fssanitizepath-string-string">#</doc-anchor-trigger>
+        <span>fs.sanitize(path: string): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+fs.sanitize(path: string): string
+</code>
+<ul>
+<li>Removes any oddities in the path, replacing them with &quot;_&quot; instead.</li>
 </ul>
 <div hidden>
 <div class="codeblock-wrapper"><doc-codeblock>
