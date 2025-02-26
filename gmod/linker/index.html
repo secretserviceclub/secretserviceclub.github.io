@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.793864908240">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.793904121838">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.793864908240" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.793904121838" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.793864908240" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.793904121838" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.793864908240" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.793864908240" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.793904121838" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.793904121838" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -218,17 +218,17 @@ Its also a powerful library utilizing reflection&#x27;s interstate capabilities.
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Interstate Limitations</h5>
-<p>Some functionality of this library doesn&#x27;t work cross-states.<br />
-(However you can try to do so) <span class="docs-emoji">&#x1F609;</span></p>
+            <h5>Meta-Table Transfer</h5>
+<p>We do not transfer metatables for security reasons (for now).<br />
+However you can repair them using <code v-pre>debug.setmetatable</code>.</p>
         </div>
     </div>
 </div>
 <hr>
-<doc-anchor-target id="interstate">
+<doc-anchor-target id="example">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#interstate">#</doc-anchor-trigger>
-        <span>Interstate</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example">#</doc-anchor-trigger>
+        <span>Example</span>
     </h2>
 </doc-anchor-target>
 <p>You can call some functions cross-state if you feel the client-side is too unsafe.</p>
@@ -256,62 +256,6 @@ PrintTable(color)
 
 linker.isolate(false)</code></pre>
 </doc-codeblock></div>
-<p>You can also use hooks from the game cross-state.<br />
-This means you can manipulate the game engine from another lua_State.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-lua"><code v-pre class="language-lua">local V = debug.getmetatable(Vector())
-local A = debug.getmetatable(Angle())
-
-linker.hook.add(&quot;CalcViewModelView&quot;, &quot;No-Sway&quot;, function(wep, vm, ovec, oang, vec, ang)
-    -- fix up metatables
-    debug.setmetatable(ovec, V)
-    debug.setmetatable(oang, A)
-    debug.setmetatable(vec, V)
-    debug.setmetatable(ang, A)
-    
-    -- do ur math here!
-    return ovec, oang
-end)</code></pre>
-</doc-codeblock></div>
-<p>Some functions have been transferred simply for ease of access like net.*, nw.* and nvar.*<br />
-Do consider looking at the Garry&#x27;s Mod official wiki for more information about their usage.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-lua"><code v-pre class="language-lua">// lua_run util.AddNetworkString(&quot;test&quot;) net.Receive(&quot;test&quot;, function() print(net.ReadString()) end)
-linker.net.Start(&quot;test&quot;)
-linker.net.WriteString(&quot;hello world&quot;)
-linker.net.SendToServer() -- prints &quot;hello world&quot; on the server</code></pre>
-</doc-codeblock></div>
-<hr>
-<doc-anchor-target id="detours">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#detours">#</doc-anchor-trigger>
-        <span>Detours</span>
-    </h2>
-</doc-anchor-target>
-<p>Detours provides special events specifically to functions used for malicious intent of tracking users.<br />
-This will allow you to override or block behaviors of certain functions we deemed as part of tracking users or in usage of malicious intent.<br />
-These are special in a sense they directly hook and change features of Lua from C++, making them untraceable and highly capable of mimicing behaviors.</p>
-<p>You can see more about them under the linker library sub-categories.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-lua"><code v-pre class="language-lua">linker.listener.add(&quot;Player.ConCommand&quot;, &quot;log&quot;, function(trace, command)
-    if trace:find(&quot;cl_bad.lua&quot;) then
-        print(&quot;cl_bad, ran &quot; .. command)
-    end
-end)
-
-linker.blocker.add(&quot;Player.ConCommand&quot;, &quot;blockdis&quot;, function(trace, command)
-    if trace:find(&quot;cl_bad.lua&quot;) then
-        print(&quot;cl_bad tried to run&quot;, command)
-        return true -- block command
-    end
-end)
-  
-linker.override.add(&quot;file.Exists&quot;, &quot;overridedis&quot;, function(trace, filename, pathname)
-    if trace:find(&quot;cl_bad.lua&quot;) then
-        return false -- make file.Exists return false
-    end
-end)</code></pre>
-</doc-codeblock></div>
 <hr>
 <doc-anchor-target id="functions">
     <h2>
@@ -334,6 +278,11 @@ linker.meta(library: string, name?: string): function | table
 <li>Fetches a metatable class function, like <code v-pre>&quot;Player.GetEyeAngles&quot;</code></li>
 <li>Not providing a name will return the entire table</li>
 </ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">local GetEyeAngles = linker.meta(&quot;Player&quot;, &quot;GetEyeAngles&quot;) -- Get's Player's metatable GetEyeAngles
+local Entity = linker.meta(&quot;Entity&quot;) -- Get's Entity.*, basically all functions under Entity
+--&gt; ex: Entity.GetClass</code></pre>
+</doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="linkergloballibrary-string-name-string-function--table">
     <h3>
@@ -350,6 +299,11 @@ linker.global(library: string, name?: string): function | table
 <li>To fetch raw globals do <code v-pre>&quot;GLOBAL&quot;</code>, like <code v-pre>&quot;GLOBAL.SysTime&quot;</code></li>
 <li>Not providing a name will return the entire table</li>
 </ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">local SysTime = linker.global(&quot;GLOBAL&quot;, &quot;SysTime&quot;) -- Get's SysTime global
+local util = linker.global(&quot;util&quot;) -- Get's util.*, basically all functions under util
+--&gt; ex: util.TraceLine</code></pre>
+</doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="linkerisolatestate-boolean-boolean">
     <h3>
@@ -366,7 +320,7 @@ linker.isolate(state?: boolean): boolean
 <li>This is for absolute safety, if any access happens thats not available in linker, it will throw an error for protection reasons</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-lua"><code v-pre class="language-lua">secret.linker.isolate(true)
+<pre class="language-lua"><code v-pre class="language-lua">linker.isolate(true)
 
 -- creates detour resistance, these will always be original functions
 net.Start(&quot;example&quot;)
@@ -374,77 +328,9 @@ net.SendToServer()
 
 local a = some_random_global_variable -- error, linker does not recognize this global
 
-secret.linker.isolate(false)
+linker.isolate(false)
 
 local a = some_random_global_variable -- doesn't error as env is restored</code></pre>
-</doc-codeblock></div>
-<hr>
-<doc-anchor-target id="extern">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#extern">#</doc-anchor-trigger>
-        <span>Extern</span>
-    </h2>
-</doc-anchor-target>
-<p>We port over some functions to your environment just for ease of access.<br />
-You can view them under linker tables named net.*, nw.* and nvar.*<br />
-These are simply to help you easily access common usage functions.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-lua"><code v-pre class="language-lua">// lua_run util.AddNetworkString(&quot;test&quot;) net.Receive(&quot;test&quot;, function() print(net.ReadString()) end)
-linker.net.Start(&quot;test&quot;)
-linker.net.WriteString(&quot;hello world&quot;)
-linker.net.SendToServer() -- prints &quot;hello world&quot; on the server</code></pre>
-</doc-codeblock></div>
-<hr>
-<doc-anchor-target id="hooking">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#hooking">#</doc-anchor-trigger>
-        <span>Hooking</span>
-    </h2>
-</doc-anchor-target>
-<p>This internally uses the <strong>Signal</strong> library for communication.<br />
-All Garry&#x27;s Mod hooks are first-order calls to this signal carrier.<br />
-These can be accessed for example by: <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">linker.hook.add(...)</code>
-<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
-    <div class="flex items-center text-blue-500 dark:text-blue-400">
-        <span class="inline-block mb-px">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
-        </span>
-        <span class="inline-block font-medium ml-2">Signal</span>
-    </div>
-    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
-        <span>../../libraries/signal/#library-functions</span>
-    </div>
-    <a href="../../libraries/signal/#library-functions" class="absolute block inset-0"></a>
-</div>
-</p>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
-                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>Metatable Transfers</h5>
-<p>Metatables from userdata values such as CUserCmd do not transfer.<br />
-Therefore functionality of some hooks are reduced, but still accessible.</p>
-        </div>
-    </div>
-</div>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-lua"><code v-pre class="language-lua">-- print example
-linker.hook.add(&quot;InitPostEntity&quot;, &quot;example&quot;, function()
-    print(&quot;looks like we are loaded in&quot;)
-end)
-
--- always draw local player
-linker.hook.add(&quot;ShouldDrawLocalPlayer&quot;, &quot;example&quot;, function(player)
-    return true
-end)</code></pre>
 </doc-codeblock></div>
 <div hidden>
 <div class="codeblock-wrapper"><doc-codeblock>
