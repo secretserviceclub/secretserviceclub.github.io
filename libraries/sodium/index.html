@@ -9,24 +9,24 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>fs</title>
-    <meta name="title" content="fs">
-    <meta name="description" content="File system access with restrictions & canonical resolution. This one allows the use of \"..\", without breaching the workspace.">
+    <title>sodium</title>
+    <meta name="title" content="sodium">
+    <meta name="description" content="The popular salt-based cryptographic library from libsodium. Specializing in cryptographic practices for security various types of data.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://secretserviceclub.github.io/libraries/fs/">
+    <link rel="canonical" href="https://secretserviceclub.github.io/libraries/sodium/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://secretserviceclub.github.io/libraries/fs/">
-    <meta property="og:title" content="fs">
-    <meta property="og:description" content="File system access with restrictions & canonical resolution. This one allows the use of \"..\", without breaching the workspace.">
+    <meta property="og:url" content="https://secretserviceclub.github.io/libraries/sodium/">
+    <meta property="og:title" content="sodium">
+    <meta property="og:description" content="The popular salt-based cryptographic library from libsodium. Specializing in cryptographic practices for security various types of data.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://secretserviceclub.github.io/libraries/fs/">
-    <meta property="twitter:title" content="fs">
-    <meta property="twitter:description" content="File system access with restrictions & canonical resolution. This one allows the use of \"..\", without breaching the workspace.">
+    <meta property="twitter:url" content="https://secretserviceclub.github.io/libraries/sodium/">
+    <meta property="twitter:title" content="sodium">
+    <meta property="twitter:description" content="The popular salt-based cryptographic library from libsodium. Specializing in cryptographic practices for security various types of data.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -198,32 +198,15 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="fs" class="break-words">
+<doc-anchor-target id="sodium" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fs">#</doc-anchor-trigger>
-        <span>fs</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodium">#</doc-anchor-trigger>
+        <span>sodium</span>
     </h1>
 </doc-anchor-target>
-<p>File system access with restrictions &amp; canonical resolution.<br />
-This one allows the use of &quot;..&quot;, without breaching the workspace.</p>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
-                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>Environment Risks</h5>
-<p>For best security, we recommend you do not run this in a <code v-pre>lua_State</code>
-that could compromise you by a bad actor.</p>
-        </div>
-    </div>
-</div>
+<p>The popular salt-based cryptographic library from <a href="https://doc.libsodium.org/">libsodium</a>.<br />
+Specializing in cryptographic practices for security various types of data.<br />
+All data created by this library is formatted in hexadecimal for memory safety.</p>
 <hr>
 <doc-anchor-target id="functions">
     <h2>
@@ -232,232 +215,588 @@ that could compromise you by a bad actor.</p>
     </h2>
 </doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="fsreadpath-string-string">
+<doc-anchor-target id="sodiumrandommin-number-max-number-alpha-boolean-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fsreadpath-string-string">#</doc-anchor-trigger>
-        <span>fs.read(path: string): string</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumrandommin-number-max-number-alpha-boolean-string">#</doc-anchor-trigger>
+        <span>sodium.random(min: number, max: number, alpha?: boolean): string</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-fs.read(path: string): string
+sodium.random(min: number, max: number, alpha?: boolean): string
 </code>
 <ul>
-<li>Reads a file from a given path</li>
+<li>Creates a randomly generated string.</li>
+<li>If alpha is <code v-pre>true</code> then strings will be alphabets rather than hexadecimal.</li>
+</ul>
+<hr>
+<doc-anchor-target id="hex">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hex">#</doc-anchor-trigger>
+        <span>Hex</span>
+    </h3>
+</doc-anchor-target>
+<p>Hexadecimal (or &quot;hex&quot;) is a base-16 number system commonly used to represent binary data in a compact form.</p>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumhexencodeinput-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumhexencodeinput-string-string">#</doc-anchor-trigger>
+        <span>sodium.hex.encode(input: string): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.hex.encode(input: string): string
+</code>
+<ul>
+<li>Converts data into it&#x27;s hexadecimal form.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="fswritepath-string-data-string">
+<doc-anchor-target id="sodiumhexdecodeinput-string-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fswritepath-string-data-string">#</doc-anchor-trigger>
-        <span>fs.write(path: string, data: string)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumhexdecodeinput-string-string">#</doc-anchor-trigger>
+        <span>sodium.hex.decode(input: string): string</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-fs.write(path: string, data: string)
+sodium.hex.decode(input: string): string
 </code>
 <ul>
-<li>Writes to a file provided by the path</li>
+<li>Converts hexadecimal formatted data into it&#x27;s original data.</li>
+</ul>
+<hr>
+<doc-anchor-target id="base64">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#base64">#</doc-anchor-trigger>
+        <span>Base64</span>
+    </h3>
+</doc-anchor-target>
+<p>Base64 is a method of encoding binary data into an ASCII string using a fixed-size alphabet, which makes it easier to transmit or store the data over media that are designed to deal with textual data.</p>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumbase64encodeinput-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumbase64encodeinput-string-string">#</doc-anchor-trigger>
+        <span>sodium.base64.encode(input: string): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.base64.encode(input: string): string
+</code>
+<ul>
+<li>Converts data into it&#x27;s base64 form.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="fsisfilepath-string-boolean">
+<doc-anchor-target id="sodiumbase64decodeinput-string-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fsisfilepath-string-boolean">#</doc-anchor-trigger>
-        <span>fs.isfile(path: string): boolean</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumbase64decodeinput-string-string">#</doc-anchor-trigger>
+        <span>sodium.base64.decode(input: string): string</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-fs.isfile(path: string): boolean
+sodium.base64.decode(input: string): string
 </code>
 <ul>
-<li>Checks if a filesystem object is a file</li>
+<li>Converts base64 formatted data into it&#x27;s original data.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="fsisfolderpath-string-boolean">
+<doc-anchor-target id="sodiumbase64xencodeinput-string-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fsisfolderpath-string-boolean">#</doc-anchor-trigger>
-        <span>fs.isfolder(path: string): boolean</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumbase64xencodeinput-string-string">#</doc-anchor-trigger>
+        <span>sodium.base64.xencode(input: string): string</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-fs.isfolder(path: string): boolean
+sodium.base64.xencode(input: string): string
 </code>
 <ul>
-<li>Checks if a filesystem object is a folder</li>
+<li>Converts hexadecimal formatted data into it&#x27;s base64 form.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="fslistfilespath-string-string">
+<doc-anchor-target id="sodiumbase64xdecodeinput-string-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fslistfilespath-string-string">#</doc-anchor-trigger>
-        <span>fs.listfiles(path: string): string[]</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumbase64xdecodeinput-string-string">#</doc-anchor-trigger>
+        <span>sodium.base64.xdecode(input: string): string</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-fs.listfiles(path: string): string[]
+sodium.base64.xdecode(input: string): string
 </code>
 <ul>
-<li>Lists files in the specified path</li>
+<li>Converts base64 formatted data into it&#x27;s hexadecimal form.</li>
+</ul>
+<hr>
+<doc-anchor-target id="hash">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hash">#</doc-anchor-trigger>
+        <span>HASH</span>
+    </h3>
+</doc-anchor-target>
+<p>Cryptographic hash function that provides data integrity by creating a unique &quot;fingerprint&quot; of the input data.<br />
+Not generally considered a cipher in the traditional sense, but rather a building block for various cryptographic protocols and algorithms.</p>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumhashenc256input-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumhashenc256input-string-string">#</doc-anchor-trigger>
+        <span>sodium.hash.enc256(input: string): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.hash.enc256(input: string): string
+</code>
+<ul>
+<li>Creates a SHA-256 block hash based on the input data.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="fsmakefolderpath-string">
+<doc-anchor-target id="sodiumhashenc512input-string-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fsmakefolderpath-string">#</doc-anchor-trigger>
-        <span>fs.makefolder(path: string)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumhashenc512input-string-string">#</doc-anchor-trigger>
+        <span>sodium.hash.enc512(input: string): string</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-fs.makefolder(path: string)
+sodium.hash.enc512(input: string): string
 </code>
 <ul>
-<li>Creates a folder in the specified path</li>
-<li>This is recursive, allowing it to generate multiple folders</li>
+<li>Creates a SHA-512 block hash based on the input data.</li>
+</ul>
+<hr>
+<doc-anchor-target id="hmac">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hmac">#</doc-anchor-trigger>
+        <span>HMAC</span>
+    </h3>
+</doc-anchor-target>
+<p>HMAC (Hash-based Message Authentication Code) is a type of message authentication code that provides both authenticity and integrity by using a cryptographic hash function in combination with a secret key to produce a &quot;tag&quot; that verifies the message.</p>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumhmackey256-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumhmackey256-string">#</doc-anchor-trigger>
+        <span>sodium.hmac.key256(): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.hmac.key256(): string
+</code>
+<ul>
+<li>Creates a HMAC-256 cipher key.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="fsdelfolderpath-string">
+<doc-anchor-target id="sodiumhmacenc256input-string-key-string-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fsdelfolderpath-string">#</doc-anchor-trigger>
-        <span>fs.delfolder(path: string)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumhmacenc256input-string-key-string-string">#</doc-anchor-trigger>
+        <span>sodium.hmac.enc256(input: string, key: string): string</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-fs.delfolder(path: string)
+sodium.hmac.enc256(input: string, key: string): string
 </code>
 <ul>
-<li>Deletes a folder from the specified path</li>
+<li>Creates a HMAC-256 block hash based on the input data.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="fsdelfilepath-string">
+<doc-anchor-target id="sodiumhmackey512-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fsdelfilepath-string">#</doc-anchor-trigger>
-        <span>fs.delfile(path: string)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumhmackey512-string">#</doc-anchor-trigger>
+        <span>sodium.hmac.key512(): string</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-fs.delfile(path: string)
+sodium.hmac.key512(): string
 </code>
 <ul>
-<li>Deletes a file from the specified path</li>
+<li>Creates a HMAC-512 cipher key.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="fsappendpath-string-data-string">
+<doc-anchor-target id="sodiumhmacenc512input-string-key-string-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fsappendpath-string-data-string">#</doc-anchor-trigger>
-        <span>fs.append(path: string, data: string)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumhmacenc512input-string-key-string-string">#</doc-anchor-trigger>
+        <span>sodium.hmac.enc512(input: string, key: string): string</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-fs.append(path: string, data: string)
+sodium.hmac.enc512(input: string, key: string): string
 </code>
 <ul>
-<li>Appends data onto the specified file</li>
+<li>Creates a HMAC-512 block hash based on the input data.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="fsforwardpath-string-string">
+<doc-anchor-target id="sodiumhmackey512256-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fsforwardpath-string-string">#</doc-anchor-trigger>
-        <span>fs.forward(path: string): string</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumhmackey512256-string">#</doc-anchor-trigger>
+        <span>sodium.hmac.key512256(): string</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-fs.forward(path: string): string
+sodium.hmac.key512256(): string
 </code>
 <ul>
-<li>Changes all &quot;\&quot; separators to &quot;/&quot;</li>
+<li>Creates a HMAC-512256 cipher key.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="fsbackwardpath-string-string">
+<doc-anchor-target id="sodiumhmacenc512256input-string-key-string-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fsbackwardpath-string-string">#</doc-anchor-trigger>
-        <span>fs.backward(path: string): string</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumhmacenc512256input-string-key-string-string">#</doc-anchor-trigger>
+        <span>sodium.hmac.enc512256(input: string, key: string): string</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-fs.backward(path: string): string
+sodium.hmac.enc512256(input: string, key: string): string
 </code>
 <ul>
-<li>Changes all &quot;/&quot; separators to &quot;\&quot;</li>
+<li>Creates a HMAC-512256 block hash based on the input data.</li>
+</ul>
+<hr>
+<doc-anchor-target id="signature">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#signature">#</doc-anchor-trigger>
+        <span>Signature</span>
+    </h3>
+</doc-anchor-target>
+<p>Digital signatures are used to provide authenticity and integrity of a cipher message.<br />
+They use public-key cryptography and a hash function to create a unique digital signature that can be used to verify the authenticity and integrity of the message.</p>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumsignaturekey-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumsignaturekey-string-string">#</doc-anchor-trigger>
+        <span>sodium.signature.key(): string, string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.signature.key(): string, string
+</code>
+<ul>
+<li>Creates a two-pair signature key.</li>
+<li>Return in order of &quot;Public Key&quot; and &quot;Secret Key&quot;.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="fsjoina-string-b-string-string">
+<doc-anchor-target id="sodiumsignatureencodeinput-string-sk-string-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fsjoina-string-b-string-string">#</doc-anchor-trigger>
-        <span>fs.join(a: string, b: string): string</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumsignatureencodeinput-string-sk-string-string">#</doc-anchor-trigger>
+        <span>sodium.signature.encode(input: string, sk: string): string</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-fs.join(a: string, b: string): string
+sodium.signature.encode(input: string, sk: string): string
 </code>
 <ul>
-<li>Joins two paths together</li>
+<li>Encodes a message with the secret key.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="fsextnamepath-string-replace-string-string">
+<doc-anchor-target id="sodiumsignaturedecodeinput-string-pk-string-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fsextnamepath-string-replace-string-string">#</doc-anchor-trigger>
-        <span>fs.extname(path: string, replace?: string): string</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumsignaturedecodeinput-string-pk-string-string">#</doc-anchor-trigger>
+        <span>sodium.signature.decode(input: string, pk: string): string</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-fs.extname(path: string, replace?: string): string
+sodium.signature.decode(input: string, pk: string): string
 </code>
 <ul>
-<li>Gets the extension name of a path</li>
-<li>If provided a replacement, will return the replaced path&#x27;s extension</li>
+<li>Decodes a message with the public key.</li>
+</ul>
+<hr>
+<doc-anchor-target id="aead">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#aead">#</doc-anchor-trigger>
+        <span>AEAD</span>
+    </h3>
+</doc-anchor-target>
+<p>Authenticated Encryption with Associated Data (AEAD) is a type of encryption algorithm that provides both confidentiality and authenticity for data.</p>
+<doc-anchor-target id="chacha20poly1305">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chacha20poly1305">#</doc-anchor-trigger>
+        <span>ChaCha20Poly1305</span>
+    </h4>
+</doc-anchor-target>
+<p>An authenticated encryption algorithm that uses the ChaCha stream cipher for encryption and the Poly1305 message authentication code.</p>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumaeadchachapolynonce-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumaeadchachapolynonce-string">#</doc-anchor-trigger>
+        <span>sodium.aead.chachapoly.nonce(): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.aead.chachapoly.nonce(): string
+</code>
+<ul>
+<li>Generates a nonce which is used in securing uniqueness.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="fsfilenamepath-string-replace-string-string">
+<doc-anchor-target id="sodiumaeadchachapolykeybase-string-salt-string-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fsfilenamepath-string-replace-string-string">#</doc-anchor-trigger>
-        <span>fs.filename(path: string, replace?: string): string</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumaeadchachapolykeybase-string-salt-string-string">#</doc-anchor-trigger>
+        <span>sodium.aead.chachapoly.key(base?: string, salt?: string): string</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-fs.filename(path: string, replace?: string): string
+sodium.aead.chachapoly.key(base?: string, salt?: string): string
 </code>
 <ul>
-<li>Gets the file name of a path</li>
-<li>If provided a replacement, will return the replaced path&#x27;s file</li>
+<li>Generates a key, providing a base acts as an offset, with providing a salt for greater resiliance.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="fsdirnamepath-string-replace-string-string">
+<doc-anchor-target id="sodiumaeadchachapolyencryptinput-string-key-string-nonce-string-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fsdirnamepath-string-replace-string-string">#</doc-anchor-trigger>
-        <span>fs.dirname(path: string, replace?: string): string</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumaeadchachapolyencryptinput-string-key-string-nonce-string-string">#</doc-anchor-trigger>
+        <span>sodium.aead.chachapoly.encrypt(input: string, key: string, nonce: string): string</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-fs.dirname(path: string, replace?: string): string
+sodium.aead.chachapoly.encrypt(input: string, key: string, nonce: string): string
 </code>
 <ul>
-<li>Gets the directory name of a path</li>
-<li>If provided a replacement, will return the replaced path&#x27;s directory</li>
+<li>Encrypts a messages based on the key and added nonce.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="fssanitizepath-string-string">
+<doc-anchor-target id="sodiumaeadchachapolydecryptinput-string-key-string-nonce-string-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fssanitizepath-string-string">#</doc-anchor-trigger>
-        <span>fs.sanitize(path: string): string</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumaeadchachapolydecryptinput-string-key-string-nonce-string-string">#</doc-anchor-trigger>
+        <span>sodium.aead.chachapoly.decrypt(input: string, key: string, nonce: string): string</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-fs.sanitize(path: string): string
+sodium.aead.chachapoly.decrypt(input: string, key: string, nonce: string): string
 </code>
 <ul>
-<li>Removes any oddities in the path, replacing them with &quot;_&quot; instead.</li>
+<li>Decrypts a messages based on the key and added nonce.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumaeadchachapolyencodeinput-string-key-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumaeadchachapolyencodeinput-string-key-string-string">#</doc-anchor-trigger>
+        <span>sodium.aead.chachapoly.encode(input: string, key: string): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.aead.chachapoly.encode(input: string, key: string): string
+</code>
+<ul>
+<li>Encrypts a message based on the key, this generates its own nonce internally.</li>
+<li>The nonce is applied to the start of the message.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumaeadchachapolydecodeinput-string-key-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumaeadchachapolydecodeinput-string-key-string-string">#</doc-anchor-trigger>
+        <span>sodium.aead.chachapoly.decode(input: string, key: string): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.aead.chachapoly.decode(input: string, key: string): string
+</code>
+<ul>
+<li>Decrypts a message based on the key, this handles its own nonce internally.</li>
+<li>The nonce is applied to the start of the message.</li>
+</ul>
+<doc-anchor-target id="gcm-256">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#gcm-256">#</doc-anchor-trigger>
+        <span>GCM-256</span>
+    </h4>
+</doc-anchor-target>
+<p>A block cipher mode of operation called Galois/Counter Mode (GCM) that provides both confidentiality and authenticity, using a 256-bit key.</p>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumaeadgcmnonce-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumaeadgcmnonce-string">#</doc-anchor-trigger>
+        <span>sodium.aead.gcm.nonce(): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.aead.gcm.nonce(): string
+</code>
+<ul>
+<li>Generates a nonce which is used in securing uniqueness.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumaeadgcmkeybase-string-salt-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumaeadgcmkeybase-string-salt-string-string">#</doc-anchor-trigger>
+        <span>sodium.aead.gcm.key(base?: string, salt?: string): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.aead.gcm.key(base?: string, salt?: string): string
+</code>
+<ul>
+<li>Generates a key, providing a base acts as an offset, with providing a salt for greater resiliance.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumaeadgcmencryptinput-string-key-string-nonce-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumaeadgcmencryptinput-string-key-string-nonce-string-string">#</doc-anchor-trigger>
+        <span>sodium.aead.gcm.encrypt(input: string, key: string, nonce: string): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.aead.gcm.encrypt(input: string, key: string, nonce: string): string
+</code>
+<ul>
+<li>Encrypts a messages based on the key and added nonce.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumaeadgcmdecryptinput-string-key-string-nonce-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumaeadgcmdecryptinput-string-key-string-nonce-string-string">#</doc-anchor-trigger>
+        <span>sodium.aead.gcm.decrypt(input: string, key: string, nonce: string): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.aead.gcm.decrypt(input: string, key: string, nonce: string): string
+</code>
+<ul>
+<li>Decrypts a messages based on the key and added nonce.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumaeadgcmencodeinput-string-key-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumaeadgcmencodeinput-string-key-string-string">#</doc-anchor-trigger>
+        <span>sodium.aead.gcm.encode(input: string, key: string): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.aead.gcm.encode(input: string, key: string): string
+</code>
+<ul>
+<li>Encrypts a message based on the key, this generates its own nonce internally.</li>
+<li>The nonce is applied to the start of the message.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumaeadgcmdecodeinput-string-key-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumaeadgcmdecodeinput-string-key-string-string">#</doc-anchor-trigger>
+        <span>sodium.aead.gcm.decode(input: string, key: string): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.aead.gcm.decode(input: string, key: string): string
+</code>
+<ul>
+<li>Decrypts a message based on the key, this handles its own nonce internally.</li>
+<li>The nonce is applied to the start of the message.</li>
+</ul>
+<doc-anchor-target id="aegis-256">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#aegis-256">#</doc-anchor-trigger>
+        <span>AEGIS-256</span>
+    </h4>
+</doc-anchor-target>
+<p>A new authenticated encryption algorithm that is designed to be fast and secure, using a 256-bit key.<br />
+For applications these might not be standardized yet.</p>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumaeadaegisnonce-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumaeadaegisnonce-string">#</doc-anchor-trigger>
+        <span>sodium.aead.aegis.nonce(): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.aead.aegis.nonce(): string
+</code>
+<ul>
+<li>Generates a nonce which is used in securing uniqueness.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumaeadaegiskeybase-string-salt-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumaeadaegiskeybase-string-salt-string-string">#</doc-anchor-trigger>
+        <span>sodium.aead.aegis.key(base?: string, salt?: string): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.aead.aegis.key(base?: string, salt?: string): string
+</code>
+<ul>
+<li>Generates a key, providing a base acts as an offset, with providing a salt for greater resiliance.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumaeadaegisencryptinput-string-key-string-nonce-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumaeadaegisencryptinput-string-key-string-nonce-string-string">#</doc-anchor-trigger>
+        <span>sodium.aead.aegis.encrypt(input: string, key: string, nonce: string): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.aead.aegis.encrypt(input: string, key: string, nonce: string): string
+</code>
+<ul>
+<li>Encrypts a messages based on the key and added nonce.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumaeadaegisdecryptinput-string-key-string-nonce-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumaeadaegisdecryptinput-string-key-string-nonce-string-string">#</doc-anchor-trigger>
+        <span>sodium.aead.aegis.decrypt(input: string, key: string, nonce: string): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.aead.aegis.decrypt(input: string, key: string, nonce: string): string
+</code>
+<ul>
+<li>Decrypts a messages based on the key and added nonce.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumaeadaegisencodeinput-string-key-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumaeadaegisencodeinput-string-key-string-string">#</doc-anchor-trigger>
+        <span>sodium.aead.aegis.encode(input: string, key: string): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.aead.aegis.encode(input: string, key: string): string
+</code>
+<ul>
+<li>Encrypts a message based on the key, this generates its own nonce internally.</li>
+<li>The nonce is applied to the start of the message.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="sodiumaeadaegisdecodeinput-string-key-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sodiumaeadaegisdecodeinput-string-key-string-string">#</doc-anchor-trigger>
+        <span>sodium.aead.aegis.decode(input: string, key: string): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+sodium.aead.aegis.decode(input: string, key: string): string
+</code>
+<ul>
+<li>Decrypts a message based on the key, this handles its own nonce internally.</li>
+<li>The nonce is applied to the start of the message.</li>
 </ul>
 <div hidden>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -473,20 +812,20 @@ fs.sanitize(path: string): string
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/debug/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/signal/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">debug</span>
+                                                <span class="block mt-1">signal</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/iot/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/string/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">iot</span>
+                                                <span class="block mt-1">string</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -530,6 +869,6 @@ fs.sanitize(path: string): string
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "fs", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "sodium", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
