@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.793995156495">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794174183766">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.793995156495" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.794174183766" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.793995156495" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.794174183766" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.793995156495" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.793995156495" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.794174183766" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.794174183766" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -364,6 +364,20 @@ socket:text(payload: string)
 <li>Send a payload message to the socket server.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="socketutf8payload-string">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#socketutf8payload-string">#</doc-anchor-trigger>
+        <span>socket:utf8(payload: string)</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+socket:utf8(payload: string)
+</code>
+<ul>
+<li>Send a payload message to the socket server in UTF8 format.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketbinarypayload-string">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketbinarypayload-string">#</doc-anchor-trigger>
@@ -401,52 +415,192 @@ socket:close(reason?: string)
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-socket:ping(reason?: string)
+socket:ping(message?: string)
 </code>
 <ul>
 <li>Sends a ping payload to the socket server.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketpongreason-string">
+<doc-anchor-target id="socketget_url-string">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketpongreason-string">#</doc-anchor-trigger>
-        <span>socket:pong(reason?: string)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#socketget_url-string">#</doc-anchor-trigger>
+        <span>socket:get_url(): string</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-socket:pong(reason?: string)
+socket:get_url(): string
 </code>
 <ul>
-<li>Sends a pong payload to the socket server.</li>
+<li>Gets the current full connection URL.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketalive-boolean">
+<doc-anchor-target id="socketget_host-string">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketalive-boolean">#</doc-anchor-trigger>
-        <span>socket:alive(): boolean</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#socketget_host-string">#</doc-anchor-trigger>
+        <span>socket:get_host(): string</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-socket:alive(): boolean
+socket:get_host(): string
 </code>
 <ul>
-<li>Returns if the socket is still connected and running.</li>
+<li>Gets the current host from the URL.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="sockettls-boolean">
+<doc-anchor-target id="socketget_port-string">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#sockettls-boolean">#</doc-anchor-trigger>
-        <span>socket:tls(): boolean</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#socketget_port-string">#</doc-anchor-trigger>
+        <span>socket:get_port(): string</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-socket:tls(): boolean
+socket:get_port(): string
 </code>
 <ul>
-<li>Returns if the socket is using TLS as it&#x27;s connection layer.</li>
+<li>Gets the current port from the URL.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="socketget_path-string">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#socketget_path-string">#</doc-anchor-trigger>
+        <span>socket:get_path(): string</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+socket:get_path(): string
+</code>
+<ul>
+<li>Gets the current path from the URL.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="socketheaders_addkey-string-value-string">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#socketheaders_addkey-string-value-string">#</doc-anchor-trigger>
+        <span>socket:headers_add(key: string, value: string)</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+socket:headers_add(key: string, value: string)
+</code>
+<ul>
+<li>Adds a header to the list of headers to be sent on connection.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="socketheaders_removekey-string">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#socketheaders_removekey-string">#</doc-anchor-trigger>
+        <span>socket:headers_remove(key: string)</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+socket:headers_remove(key: string)
+</code>
+<ul>
+<li>Removes a header from the list of headers to be sent on connection.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="socketheaders_getkey-string-string">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#socketheaders_getkey-string-string">#</doc-anchor-trigger>
+        <span>socket:headers_get(key: string): string?</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+socket:headers_get(key: string): string?
+</code>
+<ul>
+<li>Gets a header by the key-name.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="socketheaders_allkey-string-index-string-string">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#socketheaders_allkey-string-index-string-string">#</doc-anchor-trigger>
+        <span>socket:headers_all(key: string): {[index: string]: string}</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+socket:headers_all(key: string): {[index: string]: string}
+</code>
+<ul>
+<li>Gets a list of all headers applied.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="socketis_open-boolean">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#socketis_open-boolean">#</doc-anchor-trigger>
+        <span>socket:is_open(): boolean</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+socket:is_open(): boolean
+</code>
+<ul>
+<li>If the socket is currently connected.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="socketis_connecting-boolean">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#socketis_connecting-boolean">#</doc-anchor-trigger>
+        <span>socket:is_connecting(): boolean</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+socket:is_connecting(): boolean
+</code>
+<ul>
+<li>If the socket is currently connecting.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="socketis_closing-boolean">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#socketis_closing-boolean">#</doc-anchor-trigger>
+        <span>socket:is_closing(): boolean</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+socket:is_closing(): boolean
+</code>
+<ul>
+<li>If the socket is currently closing.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="socketis_closed-boolean">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#socketis_closed-boolean">#</doc-anchor-trigger>
+        <span>socket:is_closed(): boolean</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+socket:is_closed(): boolean
+</code>
+<ul>
+<li>If the socket is currently closed.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="socketis_tls-boolean">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#socketis_tls-boolean">#</doc-anchor-trigger>
+        <span>socket:is_tls(): boolean</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+socket:is_tls(): boolean
+</code>
+<ul>
+<li>If the socket is using TLS as it&#x27;s connection layer.</li>
 </ul>
 <doc-anchor-target id="events">
     <h3>
@@ -484,29 +638,29 @@ open()
 <li>Called when the socket engine has made a successful connection.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="failreason-string">
+<doc-anchor-target id="errorcode-number-reason-string">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#failreason-string">#</doc-anchor-trigger>
-        <span>fail(reason: string)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#errorcode-number-reason-string">#</doc-anchor-trigger>
+        <span>error(code: number, reason: string)</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-fail(reason: string)
+error(code: number, reason: string)
 </code>
 <ul>
 <li>Called if there was a connection failure.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="closereason-string">
+<doc-anchor-target id="closestatus-number-reason-string">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#closereason-string">#</doc-anchor-trigger>
-        <span>close(reason: string)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#closestatus-number-reason-string">#</doc-anchor-trigger>
+        <span>close(status: number, reason: string)</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-close(reason: string)
+close(status: number, reason: string)
 </code>
 <ul>
 <li>Called when the connection closes, this can contain an error reason.</li>
@@ -520,7 +674,7 @@ close(reason: string)
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-receive(payload: string, is_binary: boolean)
+message(payload: string, is_binary: boolean)
 </code>
 <ul>
 <li>Called when a message has been received.</li>
@@ -534,7 +688,7 @@ receive(payload: string, is_binary: boolean)
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-ping(reason: string)
+ping(message: string)
 </code>
 <ul>
 <li>Called when the socket server sent a ping.</li>
@@ -550,7 +704,7 @@ ping(reason: string)
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-pong(reason: string)
+pong(message: string)
 </code>
 <ul>
 <li>Called when the socket server sent a pong.</li>
