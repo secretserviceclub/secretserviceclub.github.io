@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795540836839">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795997944476">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.795540836839" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.795997944476" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795540836839" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795997944476" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795540836839" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.795540836839" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795997944476" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.795997944476" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -213,18 +213,46 @@
     </h2>
 </doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="pathfinderdestinationx-number-y-number-z-number">
+<doc-anchor-target id="pathfinderset_destinationx-number-y-number-z-number">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pathfinderdestinationx-number-y-number-z-number">#</doc-anchor-trigger>
-        <span>pathfinder.destination(x: number, y: number, z: number)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pathfinderset_destinationx-number-y-number-z-number">#</doc-anchor-trigger>
+        <span>pathfinder.set_destination(x: number, y: number, z: number)</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-pathfinder.destination(x: number, y: number, z: number)
+pathfinder.set_destination(x: number, y: number, z: number)
 </code>
 <ul>
 <li>Sets the destination for the pathfinder.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="pathfinderadd_destinationx-number-y-number-z-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pathfinderadd_destinationx-number-y-number-z-number">#</doc-anchor-trigger>
+        <span>pathfinder.add_destination(x: number, y: number, z: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+pathfinder.add_destination(x: number, y: number, z: number)
+</code>
+<ul>
+<li>Adds a destination to the pathfinder.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="pathfinderclear_destinations">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pathfinderclear_destinations">#</doc-anchor-trigger>
+        <span>pathfinder.clear_destinations()</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+pathfinder.clear_destinations()
+</code>
+<ul>
+<li>Clears all the destinations in the pathfinder.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="pathfinderrecalc">
@@ -240,6 +268,27 @@ pathfinder.recalc()
 <ul>
 <li>Force the pathfinder to recalculate the path.</li>
 </ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="pathfinderget_destinations-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pathfinderget_destinations-table">#</doc-anchor-trigger>
+        <span>pathfinder.get_destinations(): table</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+pathfinder.get_destinations(): table
+</code>
+<ul>
+<li>Retrieves all the destinations in the pathfinder system.</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">local destinations = secret.pathfinder.get_destinations()
+
+for i, node in ipairs(destinations) do
+    print(&quot;destination &quot; .. i .. &quot;: X=&quot; .. node.x .. &quot;, Y=&quot; .. node.y .. &quot;, Z=&quot; .. node.z)
+end</code></pre>
+</doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="pathfinderget_nodes-table">
     <h3>
