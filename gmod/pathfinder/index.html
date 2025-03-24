@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.796155202375">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.796172701531">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.796155202375" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.796172701531" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.796155202375" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.796172701531" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.796155202375" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.796155202375" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.796172701531" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.796172701531" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -290,6 +290,38 @@ for i, node in ipairs(destinations) do
 end</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="pathfindercurrent_destination-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pathfindercurrent_destination-number">#</doc-anchor-trigger>
+        <span>pathfinder.current_destination(): number</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+pathfinder.current_destination(): number
+</code>
+<ul>
+<li>Returns the index of the current destination in the pathfinding sequence.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="pathfindercurrent_destination_pos-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pathfindercurrent_destination_pos-table">#</doc-anchor-trigger>
+        <span>pathfinder.current_destination_pos(): table</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+pathfinder.current_destination_pos(): table
+</code>
+<ul>
+<li>Returns the position of the destination in the pathfinding.</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">local pos = secret.pathfinder.current_destination_pos()
+print(pos.x, pos.y, pos.z)</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="pathfinderget_nodes-table">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#pathfinderget_nodes-table">#</doc-anchor-trigger>
@@ -372,6 +404,89 @@ pathfinder.set_path(path: table)
 
 secret.pathfinder.set_path(new_path)</code></pre>
 </doc-codeblock></div>
+<hr>
+<doc-anchor-target id="events">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#events">#</doc-anchor-trigger>
+        <span>Events</span>
+    </h2>
+</doc-anchor-target>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Signal</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>../../libraries/signal/#library-functions</span>
+    </div>
+    <a href="../../libraries/signal/#library-functions" class="absolute block inset-0"></a>
+</div>
+</p>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="path_found">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#path_found">#</doc-anchor-trigger>
+        <span>path_found()</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+path_found()
+</code>
+<ul>
+<li>Called when the pathfinder successfully calculates a valid path to the target destination.</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">secret.pathfinder.listener.add(&quot;path_found&quot;, &quot;Example&quot;, function()
+    print(&quot;path was found!&quot;)
+end)</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="start_walking">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#start_walking">#</doc-anchor-trigger>
+        <span>start_walking()</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+start_walking()
+</code>
+<ul>
+<li>Called when the pathfinder begins moving along the calculated path.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="stuck">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#stuck">#</doc-anchor-trigger>
+        <span>stuck()</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+stuck()
+</code>
+<ul>
+<li>Called when pathfinder is unable to proceed due to an obstruction or unexpected issue.</li>
+<li>Internally, the pathfinder will attempt to recalculate the path when this is called.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="path_finished">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#path_finished">#</doc-anchor-trigger>
+        <span>path_finished()</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+path_finished()
+</code>
+<ul>
+<li>Called when the pathfinder reaches the target destination.</li>
+</ul>
 <div hidden>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-typescript"><code v-pre class="language-typescript"></code></pre>
