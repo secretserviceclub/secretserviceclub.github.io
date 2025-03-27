@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.796237950648">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.796405289722">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.796237950648" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.796405289722" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.796237950648" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.796405289722" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.796237950648" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.796237950648" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.796405289722" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.796405289722" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -314,15 +314,15 @@ ui.create_hotkey(tab: string, groupbox: string, name: string, config_name: strin
 <li>Creates a hotkey UI element within the specified tab and groupbox of the menu.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="uicreate_dropdowntab-string-groupbox-string-name-string-config_name-string-items-table">
+<doc-anchor-target id="uicreate_dropdowntab-string-groupbox-string-name-string-config_name-string-items-table-multi-boolean">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#uicreate_dropdowntab-string-groupbox-string-name-string-config_name-string-items-table">#</doc-anchor-trigger>
-        <span>ui.create_dropdown(tab: string, groupbox: string, name: string, config_name: string, items: table)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uicreate_dropdowntab-string-groupbox-string-name-string-config_name-string-items-table-multi-boolean">#</doc-anchor-trigger>
+        <span>ui.create_dropdown(tab: string, groupbox: string, name: string, config_name: string, items: table, multi: boolean)</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-ui.create_dropdown(tab: string, groupbox: string, name: string, config_name: string, items: table)
+ui.create_dropdown(tab: string, groupbox: string, name: string, config_name: string, items: table, multi: boolean)
 </code>
 <ul>
 <li>Creates a dropdown UI element within the specified tab and groupbox of the menu.</li>
@@ -330,7 +330,7 @@ ui.create_dropdown(tab: string, groupbox: string, name: string, config_name: str
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-lua"><code v-pre class="language-lua">secret.ui.create_groupbox(&quot;lua&quot;, &quot;right&quot;, &quot;elements&quot;, 200) -- create a groupbox called &quot;elements&quot;
 
-secret.ui.create_dropdown(&quot;lua&quot;, &quot;elements&quot;, &quot;My Lua Dropdown&quot;, &quot;lua_dropdown&quot;, {&quot;Item1&quot;, &quot;Item2&quot;, &quot;Item3&quot;})</code></pre>
+secret.ui.create_dropdown(&quot;lua&quot;, &quot;elements&quot;, &quot;My Lua Dropdown&quot;, &quot;lua_dropdown&quot;, {&quot;Item1&quot;, &quot;Item2&quot;, &quot;Item3&quot;}, false)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="uicreate_playerlist_texttext-string-index-number">
