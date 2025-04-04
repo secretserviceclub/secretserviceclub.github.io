@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.796575127463">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.797093681426">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.796575127463" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.797093681426" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.796575127463" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.797093681426" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.796575127463" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.796575127463" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.797093681426" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.797093681426" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -438,6 +438,35 @@ memory.read.char(input: memory.address): number?
 <li>Attempts to read a <code v-pre>char</code> value.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memoryreaducharinput-memoryaddress-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memoryreaducharinput-memoryaddress-number">#</doc-anchor-trigger>
+        <span>memory.read.uchar(input: memory.address): number?</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.read.uchar(input: memory.address): number?
+</code>
+<ul>
+<li>Attempts to read a <code v-pre>unsigned char</code> value.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memoryreadsequenceinput-memoryaddress-size-number-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memoryreadsequenceinput-memoryaddress-size-number-string">#</doc-anchor-trigger>
+        <span>memory.read.sequence(input: memory.address, size: number): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.read.sequence(input: memory.address, size: number): string
+</code>
+<ul>
+<li>Attempts to read a sequence of bytes.</li>
+<li>Example returns: <code v-pre>A1 B2 C3</code></li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="memoryreadintinput-memoryaddress-number">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#memoryreadintinput-memoryaddress-number">#</doc-anchor-trigger>
@@ -464,6 +493,34 @@ memory.read.uint(input: memory.address): number?
 </code>
 <ul>
 <li>Attempts to read a <code v-pre>unsigned int</code> value.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memoryreadfloatinput-memoryaddress-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memoryreadfloatinput-memoryaddress-number">#</doc-anchor-trigger>
+        <span>memory.read.float(input: memory.address): number?</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.read.float(input: memory.address): number?
+</code>
+<ul>
+<li>Attempts to read a <code v-pre>float</code> value.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memoryreaddoubleinput-memoryaddress-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memoryreaddoubleinput-memoryaddress-number">#</doc-anchor-trigger>
+        <span>memory.read.double(input: memory.address): number?</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.read.double(input: memory.address): number?
+</code>
+<ul>
+<li>Attempts to read a <code v-pre>double</code> value.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="memoryreadaddressinput-memoryaddress-memoryaddress">
@@ -508,6 +565,35 @@ memory.write.char(input: memory.address, value: number)
 <li>Attempts to write a <code v-pre>char</code> value.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memorywriteucharinput-memoryaddress-value-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memorywriteucharinput-memoryaddress-value-number">#</doc-anchor-trigger>
+        <span>memory.write.uchar(input: memory.address, value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.write.uchar(input: memory.address, value: number)
+</code>
+<ul>
+<li>Attempts to write a <code v-pre>unsigned char</code> value.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memorywritesequenceinput-memoryaddress-value-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memorywritesequenceinput-memoryaddress-value-number">#</doc-anchor-trigger>
+        <span>memory.write.sequence(input: memory.address, value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.write.sequence(input: memory.address, value: string, size: number)
+</code>
+<ul>
+<li>Attempts to write a sequence of bytes to the address.</li>
+<li>Example sequences that are valid: <code v-pre>A1 B2 C3</code> or <code v-pre>A1B2C3</code></li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="memorywriteintinput-memoryaddress-value-number">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#memorywriteintinput-memoryaddress-value-number">#</doc-anchor-trigger>
@@ -534,6 +620,34 @@ memory.write.uint(input: memory.address, value: number)
 </code>
 <ul>
 <li>Attempts to write a <code v-pre>unsigned int</code> value.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memorywritefloatinput-memoryaddress-value-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memorywritefloatinput-memoryaddress-value-number">#</doc-anchor-trigger>
+        <span>memory.write.float(input: memory.address, value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.write.float(input: memory.address, value: number)
+</code>
+<ul>
+<li>Attempts to write a <code v-pre>float</code> value.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memorywritedoubleinput-memoryaddress-value-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memorywritedoubleinput-memoryaddress-value-number">#</doc-anchor-trigger>
+        <span>memory.write.double(input: memory.address, value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.write.double(input: memory.address, value: number)
+</code>
+<ul>
+<li>Attempts to write a <code v-pre>double</code> value.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="memorywriteaddressinput-memoryaddress-value-number">
