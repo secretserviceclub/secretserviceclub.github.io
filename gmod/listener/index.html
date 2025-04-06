@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.797100462732">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.797221650313">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.797100462732" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.797221650313" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.797100462732" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.797221650313" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.797100462732" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.797100462732" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.797221650313" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.797221650313" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -375,6 +375,67 @@ server_disconnect(reason: string)
 <ul>
 <li>Called when disconnected/kicked/banned from a server.</li>
 </ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="presendcusercmd-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#presendcusercmd-table">#</doc-anchor-trigger>
+        <span>presend(CUserCmd: table)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+presend(CUserCmd: table)
+</code>
+<ul>
+<li>Called right before movement packets are sent.</li>
+<li>Provides additional functions not found in the default GMod class, allowing extended control over the usercmd.</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;presend&quot;, &quot;viewangles&quot;, function(cmd)
+    cmd.angles = Angle(50, 50, 0)
+end)</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="cusercmd">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cusercmd">#</doc-anchor-trigger>
+        <span>CUserCmd</span>
+    </h4>
+</doc-anchor-target>
+<p>get/set - cmd.buttons: number<br />
+get/set - cmd.command: number<br />
+get/set - cmd.tick: number<br />
+get/set - cmd.angles: Angle<br />
+get/set - cmd.forward: number<br />
+get/set - cmd.side: number<br />
+get/set - cmd.up number<br />
+get/set - cmd.impulse: number<br />
+get/set - cmd.seed: number<br />
+get - cmd.hash: number<br />
+get/set - cmd.mousex: number<br />
+get/set - cmd.mousey: number<br />
+get - cmd.prediction: bool</p>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="wndprocvk_key-number-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#wndprocvk_key-number-boolean">#</doc-anchor-trigger>
+        <span>wndproc(vk_key: number): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+wndproc(vk_key: number): boolean
+</code>
+<ul>
+<li>Called whenever a Windows virtual key event is received.</li>
+<li>If <code v-pre>true</code> is returned, the input will be blocked from reaching the game.</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;wndproc&quot;, &quot;block_space&quot;, function(vk)
+    if vk == 0x20 then -- space key
+        return true -- block input
+    end
+end)</code></pre>
+</doc-codeblock></div>
 <div hidden>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-typescript"><code v-pre class="language-typescript"></code></pre>
