@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.797533395433">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.797533577915">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.797533395433" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.797533577915" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.797533395433" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.797533577915" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.797533395433" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.797533395433" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.797533577915" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.797533577915" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -428,15 +428,15 @@ serve:handlers(): {method: string, path: string, callback: function}[]
 <li>Gets all handlers associated with the serve.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="serveanypath-string-callback-functionreq-serve_request-res-serve_response">
+<doc-anchor-target id="serveanypath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serveanypath-string-callback-functionreq-serve_request-res-serve_response">#</doc-anchor-trigger>
-        <span>serve:any(path: string, callback: function(req: serve_request, res: serve_response))</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serveanypath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
+        <span>serve:any(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-serve:any(path: string, callback: function(req: serve_request, res: serve_response))
+serve:any(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))
 </code>
 <ul>
 <li>Any is a form of method that allows all types of methods to be seen in callback under the path.</li>
@@ -445,15 +445,15 @@ serve:any(path: string, callback: function(req: serve_request, res: serve_respon
 <li>Do note this is <strong>first-order</strong> making it called first before any other methods</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="servegetpath-string-callback-functionreq-serve_request-res-serve_response">
+<doc-anchor-target id="servegetpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#servegetpath-string-callback-functionreq-serve_request-res-serve_response">#</doc-anchor-trigger>
-        <span>serve:get(path: string, callback: function(req: serve_request, res: serve_response))</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#servegetpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
+        <span>serve:get(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-serve:get(path: string, callback: function(req: serve_request, res: serve_response))
+serve:get(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))
 </code>
 <ul>
 <li>Adds a callback for a certain path under &quot;GET&quot; requests</li>
@@ -461,75 +461,75 @@ serve:get(path: string, callback: function(req: serve_request, res: serve_respon
 <li>Requests using GET should only retrieve data and should not contain a request content.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="servepostpath-string-callback-functionreq-serve_request-res-serve_response">
+<doc-anchor-target id="servepostpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#servepostpath-string-callback-functionreq-serve_request-res-serve_response">#</doc-anchor-trigger>
-        <span>serve:post(path: string, callback: function(req: serve_request, res: serve_response))</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#servepostpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
+        <span>serve:post(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-serve:post(path: string, callback: function(req: serve_request, res: serve_response))
+serve:post(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))
 </code>
 <ul>
 <li>Adds a callback for a certain path under &quot;POST&quot; requests</li>
 <li>The HEAD method asks for a response identical to a GET request, but without a response body.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="serveheadpath-string-callback-functionreq-serve_request-res-serve_response">
+<doc-anchor-target id="serveheadpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serveheadpath-string-callback-functionreq-serve_request-res-serve_response">#</doc-anchor-trigger>
-        <span>serve:head(path: string, callback: function(req: serve_request, res: serve_response))</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serveheadpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
+        <span>serve:head(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-serve:head(path: string, callback: function(req: serve_request, res: serve_response))
+serve:head(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))
 </code>
 <ul>
 <li>Adds a callback for a certain path under &quot;HEAD&quot; requests</li>
 <li>The POST method submits an entity to the specified resource, often causing a change in state or side effects on the server.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="serveputpath-string-callback-functionreq-serve_request-res-serve_response">
+<doc-anchor-target id="serveputpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serveputpath-string-callback-functionreq-serve_request-res-serve_response">#</doc-anchor-trigger>
-        <span>serve:put(path: string, callback: function(req: serve_request, res: serve_response))</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serveputpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
+        <span>serve:put(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-serve:put(path: string, callback: function(req: serve_request, res: serve_response))
+serve:put(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))
 </code>
 <ul>
 <li>Adds a callback for a certain path under &quot;PUT&quot; requests</li>
 <li>The PUT method replaces all current representations of the target resource with the request content.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="servedeletepath-string-callback-functionreq-serve_request-res-serve_response">
+<doc-anchor-target id="servedeletepath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#servedeletepath-string-callback-functionreq-serve_request-res-serve_response">#</doc-anchor-trigger>
-        <span>serve:delete(path: string, callback: function(req: serve_request, res: serve_response))</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#servedeletepath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
+        <span>serve:delete(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-serve:delete(path: string, callback: function(req: serve_request, res: serve_response))
+serve:delete(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))
 </code>
 <ul>
 <li>Adds a callback for a certain path under &quot;DELETE&quot; requests</li>
 <li>The DELETE method deletes the specified resource.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="serveoptionspath-string-callback-functionreq-serve_request-res-serve_response">
+<doc-anchor-target id="serveoptionspath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serveoptionspath-string-callback-functionreq-serve_request-res-serve_response">#</doc-anchor-trigger>
-        <span>serve:options(path: string, callback: function(req: serve_request, res: serve_response))</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serveoptionspath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
+        <span>serve:options(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
     </h4>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-serve:options(path: string, callback: function(req: serve_request, res: serve_response))
+serve:options(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))
 </code>
 <ul>
 <li>Adds a callback for a certain path under &quot;OPTIONS&quot; requests</li>
