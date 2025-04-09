@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.797221650313">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.797533395433">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.797221650313" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.797533395433" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.797221650313" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.797533395433" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.797221650313" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.797221650313" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.797533395433" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.797533395433" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -308,6 +308,233 @@ iot.socket(url: string, headers?: {[index: string]: string}): socket_class
 <li>Upon creation, the socket isn&#x27;t activated until you invoke it to do so.</li>
 <li>Sockets work by reference, so if there is no-longer a use in lua, it will destroy itself.</li>
 </ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="iotserveport-number-serve_class">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#iotserveport-number-serve_class">#</doc-anchor-trigger>
+        <span>iot.serve(port: number): serve_class</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+iot.serve(port: number): serve_class
+</code>
+<ul>
+<li>Creates an HTTP server for requests, similar to express/deno.</li>
+<li>Do note that the server doesn&#x27;t actually start until you invoke<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve:start()
+</code></li>
+<li>Unlike client sockets, if the object gets GC&#x27;ed, it won&#x27;t cleanup the callbacks or invoke a destructor.</li>
+<li>If you &quot;lose&quot; the handle object, you can retrieve it back by simply calling the function again and its exact port number.</li>
+</ul>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>stub</span>
+</span><code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+iot.serve_socket(port: number): serve_socket_class
+</code></p>
+<ul>
+<li>A subset class for serve, acting as a socket server.</li>
+<li>Do note that the server doesn&#x27;t actually start until you invoke<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve:start()
+</code></li>
+<li>Unlike client sockets, if the object gets GC&#x27;ed, it won&#x27;t cleanup the callbacks or invoke a destructor.</li>
+<li>If you &quot;lose&quot; the handle object, you can retrieve it back by simply calling the function again and its exact port number.</li>
+</ul>
+<hr>
+<doc-anchor-target id="serve">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serve">#</doc-anchor-trigger>
+        <span>Serve</span>
+    </h2>
+</doc-anchor-target>
+<p>These are interface &amp; function definitions for how we handle <code v-pre>serve_class</code></p>
+<doc-anchor-target id="functions-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#functions-1">#</doc-anchor-trigger>
+        <span>Functions</span>
+    </h3>
+</doc-anchor-target>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="servestart-boolean">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#servestart-boolean">#</doc-anchor-trigger>
+        <span>serve:start(): boolean</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve:start(): boolean
+</code>
+<ul>
+<li>Attempts to allocate a port for HTTP connections.</li>
+<li>If this fails it will return <code v-pre>false</code>.</li>
+<li>Usually a failure indicates a port is already in-use.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="servestop">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#servestop">#</doc-anchor-trigger>
+        <span>serve:stop()</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve:stop()
+</code>
+<ul>
+<li>De-allocates and stops serving under the allocated port.</li>
+<li>This doesn&#x27;t actually destroy the object.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="serveactive-boolean">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serveactive-boolean">#</doc-anchor-trigger>
+        <span>serve:active(): boolean</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve:active(): boolean
+</code>
+<ul>
+<li>Checks if the current serve is active on its port.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="serveport-number">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serveport-number">#</doc-anchor-trigger>
+        <span>serve:port(): number</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve:port(): number
+</code>
+<ul>
+<li>Gets the current port the serve is on.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="servehandlers-method-string-path-string-callback-function">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#servehandlers-method-string-path-string-callback-function">#</doc-anchor-trigger>
+        <span>serve:handlers(): {method: string, path: string, callback: function}[]</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve:handlers(): {method: string, path: string, callback: function}[]
+</code>
+<ul>
+<li>Gets all handlers associated with the serve.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="serveanypath-string-callback-functionreq-serve_request-res-serve_response">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serveanypath-string-callback-functionreq-serve_request-res-serve_response">#</doc-anchor-trigger>
+        <span>serve:any(path: string, callback: function(req: serve_request, res: serve_response))</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve:any(path: string, callback: function(req: serve_request, res: serve_response))
+</code>
+<ul>
+<li>Any is a form of method that allows all types of methods to be seen in callback under the path.</li>
+<li>You can check the method by seeing <code v-pre>req.method</code></li>
+<li>If you set the path to <code v-pre>any</code> it will also act as a any filter, allowing you to process paths individually.</li>
+<li>Do note this is <strong>first-order</strong> making it called first before any other methods</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="servegetpath-string-callback-functionreq-serve_request-res-serve_response">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#servegetpath-string-callback-functionreq-serve_request-res-serve_response">#</doc-anchor-trigger>
+        <span>serve:get(path: string, callback: function(req: serve_request, res: serve_response))</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve:get(path: string, callback: function(req: serve_request, res: serve_response))
+</code>
+<ul>
+<li>Adds a callback for a certain path under &quot;GET&quot; requests</li>
+<li>The GET method requests a representation of the specified resource.</li>
+<li>Requests using GET should only retrieve data and should not contain a request content.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="servepostpath-string-callback-functionreq-serve_request-res-serve_response">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#servepostpath-string-callback-functionreq-serve_request-res-serve_response">#</doc-anchor-trigger>
+        <span>serve:post(path: string, callback: function(req: serve_request, res: serve_response))</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve:post(path: string, callback: function(req: serve_request, res: serve_response))
+</code>
+<ul>
+<li>Adds a callback for a certain path under &quot;POST&quot; requests</li>
+<li>The HEAD method asks for a response identical to a GET request, but without a response body.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="serveheadpath-string-callback-functionreq-serve_request-res-serve_response">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serveheadpath-string-callback-functionreq-serve_request-res-serve_response">#</doc-anchor-trigger>
+        <span>serve:head(path: string, callback: function(req: serve_request, res: serve_response))</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve:head(path: string, callback: function(req: serve_request, res: serve_response))
+</code>
+<ul>
+<li>Adds a callback for a certain path under &quot;HEAD&quot; requests</li>
+<li>The POST method submits an entity to the specified resource, often causing a change in state or side effects on the server.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="serveputpath-string-callback-functionreq-serve_request-res-serve_response">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serveputpath-string-callback-functionreq-serve_request-res-serve_response">#</doc-anchor-trigger>
+        <span>serve:put(path: string, callback: function(req: serve_request, res: serve_response))</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve:put(path: string, callback: function(req: serve_request, res: serve_response))
+</code>
+<ul>
+<li>Adds a callback for a certain path under &quot;PUT&quot; requests</li>
+<li>The PUT method replaces all current representations of the target resource with the request content.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="servedeletepath-string-callback-functionreq-serve_request-res-serve_response">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#servedeletepath-string-callback-functionreq-serve_request-res-serve_response">#</doc-anchor-trigger>
+        <span>serve:delete(path: string, callback: function(req: serve_request, res: serve_response))</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve:delete(path: string, callback: function(req: serve_request, res: serve_response))
+</code>
+<ul>
+<li>Adds a callback for a certain path under &quot;DELETE&quot; requests</li>
+<li>The DELETE method deletes the specified resource.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="serveoptionspath-string-callback-functionreq-serve_request-res-serve_response">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serveoptionspath-string-callback-functionreq-serve_request-res-serve_response">#</doc-anchor-trigger>
+        <span>serve:options(path: string, callback: function(req: serve_request, res: serve_response))</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve:options(path: string, callback: function(req: serve_request, res: serve_response))
+</code>
+<ul>
+<li>Adds a callback for a certain path under &quot;OPTIONS&quot; requests</li>
+<li>The OPTIONS method describes the communication options for the target resource.</li>
+</ul>
 <hr>
 <doc-anchor-target id="socket">
     <h2>
@@ -316,9 +543,9 @@ iot.socket(url: string, headers?: {[index: string]: string}): socket_class
     </h2>
 </doc-anchor-target>
 <p>These are interface &amp; function definitions for how we handle <code v-pre>socket_class</code></p>
-<doc-anchor-target id="functions-1">
+<doc-anchor-target id="functions-2">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#functions-1">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#functions-2">#</doc-anchor-trigger>
         <span>Functions</span>
     </h3>
 </doc-anchor-target>
@@ -714,6 +941,9 @@ pong(message: string)
 <div hidden>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-typescript"><code v-pre class="language-typescript"></code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua"></code></pre>
 </doc-codeblock></div>
 </div>
 
