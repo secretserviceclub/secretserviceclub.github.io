@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.797533577915">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.798754864301">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.797533577915" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.798754864301" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.797533577915" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.798754864301" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.797533577915" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.797533577915" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.798754864301" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.798754864301" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -327,19 +327,6 @@ serve:start()
 <li>Unlike client sockets, if the object gets GC&#x27;ed, it won&#x27;t cleanup the callbacks or invoke a destructor.</li>
 <li>If you &quot;lose&quot; the handle object, you can retrieve it back by simply calling the function again and its exact port number.</li>
 </ul>
-<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
-    <span>stub</span>
-</span><code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-iot.serve_socket(port: number): serve_socket_class
-</code></p>
-<ul>
-<li>A subset class for serve, acting as a socket server.</li>
-<li>Do note that the server doesn&#x27;t actually start until you invoke<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-serve:start()
-</code></li>
-<li>Unlike client sockets, if the object gets GC&#x27;ed, it won&#x27;t cleanup the callbacks or invoke a destructor.</li>
-<li>If you &quot;lose&quot; the handle object, you can retrieve it back by simply calling the function again and its exact port number.</li>
-</ul>
 <hr>
 <doc-anchor-target id="serve">
     <h2>
@@ -426,6 +413,50 @@ serve:handlers(): {method: string, path: string, callback: function}[]
 </code>
 <ul>
 <li>Gets all handlers associated with the serve.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="servesocketspath-string-serve_socket">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#servesocketspath-string-serve_socket">#</doc-anchor-trigger>
+        <span>serve:sockets(path: string): serve_socket[]</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve:sockets(path: string): serve_socket[]
+</code>
+<ul>
+<li>Gets all sockets associated with the serve.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="serveupgrade-serve_socket">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serveupgrade-serve_socket">#</doc-anchor-trigger>
+        <span>serve:upgrade(): serve_socket</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve:upgrade(): serve_socket
+</code>
+<ul>
+<li>Upgrades a connection into a socket.</li>
+<li>Must be used inside of a HTTP request.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="servesocketpath-string-callback-functionconnection-serve_socket-message-string">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#servesocketpath-string-callback-functionconnection-serve_socket-message-string">#</doc-anchor-trigger>
+        <span>serve:socket(path: string, callback: function(connection: serve_socket, message: string))</span>
+    </h4>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve:socket(path: string, callback: function(connection: serve_socket, message: string))
+</code>
+<ul>
+<li>Adds a callback for a certain path for socket-based messages.</li>
+<li>Do note that the path must be the same to the socket you upgraded in.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="serveanypath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
