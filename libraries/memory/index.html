@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.798754864301">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.798769780323">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.798754864301" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.798769780323" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.798754864301" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.798769780323" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.798754864301" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.798754864301" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.798769780323" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.798769780323" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -437,6 +437,8 @@ memory.read.bool(input: memory.address): boolean?
 </code>
 <ul>
 <li>Attempts to read a <code v-pre>boolean</code> value.</li>
+<li>Typically the size of a boolean is defined as 1 bit.</li>
+<li>However some systems differ claiming 1 byte or 8 bits.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="memoryreadcharinput-memoryaddress-number">
@@ -451,6 +453,7 @@ memory.read.char(input: memory.address): number?
 </code>
 <ul>
 <li>Attempts to read a <code v-pre>char</code> value.</li>
+<li>Size: 1 Byte - 8 Bits</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="memoryreaducharinput-memoryaddress-number">
@@ -465,6 +468,127 @@ memory.read.uchar(input: memory.address): number?
 </code>
 <ul>
 <li>Attempts to read a <code v-pre>unsigned char</code> value.</li>
+<li>Size: 1 Byte - 8 Bits</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memoryreadshortinput-memoryaddress-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memoryreadshortinput-memoryaddress-number">#</doc-anchor-trigger>
+        <span>memory.read.short(input: memory.address): number?</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.read.short(input: memory.address): number?
+</code>
+<ul>
+<li>Attempts to read a <code v-pre>short</code> value.</li>
+<li>Size: 2 Bytes - 16 Bits</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memoryreadushortinput-memoryaddress-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memoryreadushortinput-memoryaddress-number">#</doc-anchor-trigger>
+        <span>memory.read.ushort(input: memory.address): number?</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.read.ushort(input: memory.address): number?
+</code>
+<ul>
+<li>Attempts to read a <code v-pre>unsigned short</code> value.</li>
+<li>Size: 2 Bytes - 16 Bits</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memoryreadintinput-memoryaddress-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memoryreadintinput-memoryaddress-number">#</doc-anchor-trigger>
+        <span>memory.read.int(input: memory.address): number?</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.read.int(input: memory.address): number?
+</code>
+<ul>
+<li>Attempts to read a <code v-pre>int</code> value.</li>
+<li>Size: 4 Bytes - 32 Bits</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memoryreaduintinput-memoryaddress-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memoryreaduintinput-memoryaddress-number">#</doc-anchor-trigger>
+        <span>memory.read.uint(input: memory.address): number?</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.read.uint(input: memory.address): number?
+</code>
+<ul>
+<li>Attempts to read a <code v-pre>unsigned int</code> value.</li>
+<li>Size: 4 Bytes - 32 Bits</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memoryreadlonginput-memoryaddress-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memoryreadlonginput-memoryaddress-number">#</doc-anchor-trigger>
+        <span>memory.read.long(input: memory.address): number?</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.read.long(input: memory.address): number?
+</code>
+<ul>
+<li>Attempts to read a <code v-pre>long</code> value.</li>
+<li>Size: 4 Bytes - 32 Bits (Win) | 8 Bytes - 64 Bits (Linux)</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memoryreadulonginput-memoryaddress-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memoryreadulonginput-memoryaddress-number">#</doc-anchor-trigger>
+        <span>memory.read.ulong(input: memory.address): number?</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.read.ulong(input: memory.address): number?
+</code>
+<ul>
+<li>Attempts to read a <code v-pre>unsigned long</code> value.</li>
+<li>Size: 4 Bytes - 32 Bits (Win) | 8 Bytes - 64 Bits (Linux)</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memoryreadfloatinput-memoryaddress-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memoryreadfloatinput-memoryaddress-number">#</doc-anchor-trigger>
+        <span>memory.read.float(input: memory.address): number?</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.read.float(input: memory.address): number?
+</code>
+<ul>
+<li>Attempts to read a <code v-pre>float</code> value.</li>
+<li>Size: 4 Bytes - 32 Bits</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memoryreaddoubleinput-memoryaddress-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memoryreaddoubleinput-memoryaddress-number">#</doc-anchor-trigger>
+        <span>memory.read.double(input: memory.address): number?</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.read.double(input: memory.address): number?
+</code>
+<ul>
+<li>Attempts to read a <code v-pre>double</code> value.</li>
+<li>Size: 8 Bytes - 64 Bits</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="memoryreadsequenceinput-memoryaddress-size-number-string">
@@ -480,62 +604,6 @@ memory.read.sequence(input: memory.address, size: number): string
 <ul>
 <li>Attempts to read a sequence of bytes.</li>
 <li>Example returns: <code v-pre>A1 B2 C3</code></li>
-</ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="memoryreadintinput-memoryaddress-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#memoryreadintinput-memoryaddress-number">#</doc-anchor-trigger>
-        <span>memory.read.int(input: memory.address): number?</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-memory.read.int(input: memory.address): number?
-</code>
-<ul>
-<li>Attempts to read a <code v-pre>int</code> value.</li>
-</ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="memoryreaduintinput-memoryaddress-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#memoryreaduintinput-memoryaddress-number">#</doc-anchor-trigger>
-        <span>memory.read.uint(input: memory.address): number?</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-memory.read.uint(input: memory.address): number?
-</code>
-<ul>
-<li>Attempts to read a <code v-pre>unsigned int</code> value.</li>
-</ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="memoryreadfloatinput-memoryaddress-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#memoryreadfloatinput-memoryaddress-number">#</doc-anchor-trigger>
-        <span>memory.read.float(input: memory.address): number?</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-memory.read.float(input: memory.address): number?
-</code>
-<ul>
-<li>Attempts to read a <code v-pre>float</code> value.</li>
-</ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="memoryreaddoubleinput-memoryaddress-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#memoryreaddoubleinput-memoryaddress-number">#</doc-anchor-trigger>
-        <span>memory.read.double(input: memory.address): number?</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-memory.read.double(input: memory.address): number?
-</code>
-<ul>
-<li>Attempts to read a <code v-pre>double</code> value.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="memoryreadaddressinput-memoryaddress-memoryaddress">
@@ -564,6 +632,8 @@ memory.write.bool(input: memory.address, value: boolean)
 </code>
 <ul>
 <li>Attempts to write a <code v-pre>boolean</code> value.</li>
+<li>Typically the size of a boolean is defined as 1 bit.</li>
+<li>However some systems differ claiming 1 byte or 8 bits.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="memorywritecharinput-memoryaddress-value-number">
@@ -578,6 +648,7 @@ memory.write.char(input: memory.address, value: number)
 </code>
 <ul>
 <li>Attempts to write a <code v-pre>char</code> value.</li>
+<li>Size: 1 Byte - 8 Bits</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="memorywriteucharinput-memoryaddress-value-number">
@@ -592,6 +663,127 @@ memory.write.uchar(input: memory.address, value: number)
 </code>
 <ul>
 <li>Attempts to write a <code v-pre>unsigned char</code> value.</li>
+<li>Size: 1 Byte - 8 Bits</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memorywriteshortinput-memoryaddress-value-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memorywriteshortinput-memoryaddress-value-number">#</doc-anchor-trigger>
+        <span>memory.write.short(input: memory.address, value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.write.short(input: memory.address, value: number)
+</code>
+<ul>
+<li>Attempts to write a <code v-pre>short</code> value.</li>
+<li>Size: 2 Bytes - 16 Bits</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memorywriteushortinput-memoryaddress-value-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memorywriteushortinput-memoryaddress-value-number">#</doc-anchor-trigger>
+        <span>memory.write.ushort(input: memory.address, value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.write.ushort(input: memory.address, value: number)
+</code>
+<ul>
+<li>Attempts to write a <code v-pre>unsigned short</code> value.</li>
+<li>Size: 2 Bytes - 16 Bits</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memorywriteintinput-memoryaddress-value-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memorywriteintinput-memoryaddress-value-number">#</doc-anchor-trigger>
+        <span>memory.write.int(input: memory.address, value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.write.int(input: memory.address, value: number)
+</code>
+<ul>
+<li>Attempts to write a <code v-pre>int</code> value.</li>
+<li>Size: 4 Bytes - 32 Bits</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memorywriteuintinput-memoryaddress-value-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memorywriteuintinput-memoryaddress-value-number">#</doc-anchor-trigger>
+        <span>memory.write.uint(input: memory.address, value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.write.uint(input: memory.address, value: number)
+</code>
+<ul>
+<li>Attempts to write a <code v-pre>unsigned int</code> value.</li>
+<li>Size: 4 Bytes - 32 Bits</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memorywritelonginput-memoryaddress-value-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memorywritelonginput-memoryaddress-value-number">#</doc-anchor-trigger>
+        <span>memory.write.long(input: memory.address, value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.write.long(input: memory.address, value: number)
+</code>
+<ul>
+<li>Attempts to write a <code v-pre>long</code> value.</li>
+<li>Size: 4 Bytes - 32 Bits (Win) | 8 Bytes - 64 Bits (Linux)</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memorywriteulonginput-memoryaddress-value-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memorywriteulonginput-memoryaddress-value-number">#</doc-anchor-trigger>
+        <span>memory.write.ulong(input: memory.address, value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.write.ulong(input: memory.address, value: number)
+</code>
+<ul>
+<li>Attempts to write a <code v-pre>unsigned long</code> value.</li>
+<li>Size: 4 Bytes - 32 Bits (Win) | 8 Bytes - 64 Bits (Linux)</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memorywritefloatinput-memoryaddress-value-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memorywritefloatinput-memoryaddress-value-number">#</doc-anchor-trigger>
+        <span>memory.write.float(input: memory.address, value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.write.float(input: memory.address, value: number)
+</code>
+<ul>
+<li>Attempts to write a <code v-pre>float</code> value.</li>
+<li>Size: 4 Bytes - 32 Bits</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="memorywritedoubleinput-memoryaddress-value-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memorywritedoubleinput-memoryaddress-value-number">#</doc-anchor-trigger>
+        <span>memory.write.double(input: memory.address, value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+memory.write.double(input: memory.address, value: number)
+</code>
+<ul>
+<li>Attempts to write a <code v-pre>double</code> value.</li>
+<li>Size: 8 Bytes - 64 Bits</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="memorywritesequenceinput-memoryaddress-value-number">
@@ -607,62 +799,6 @@ memory.write.sequence(input: memory.address, value: string, size: number)
 <ul>
 <li>Attempts to write a sequence of bytes to the address.</li>
 <li>Example sequences that are valid: <code v-pre>A1 B2 C3</code> or <code v-pre>A1B2C3</code></li>
-</ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="memorywriteintinput-memoryaddress-value-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#memorywriteintinput-memoryaddress-value-number">#</doc-anchor-trigger>
-        <span>memory.write.int(input: memory.address, value: number)</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-memory.write.int(input: memory.address, value: number)
-</code>
-<ul>
-<li>Attempts to write a <code v-pre>int</code> value.</li>
-</ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="memorywriteuintinput-memoryaddress-value-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#memorywriteuintinput-memoryaddress-value-number">#</doc-anchor-trigger>
-        <span>memory.write.uint(input: memory.address, value: number)</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-memory.write.uint(input: memory.address, value: number)
-</code>
-<ul>
-<li>Attempts to write a <code v-pre>unsigned int</code> value.</li>
-</ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="memorywritefloatinput-memoryaddress-value-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#memorywritefloatinput-memoryaddress-value-number">#</doc-anchor-trigger>
-        <span>memory.write.float(input: memory.address, value: number)</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-memory.write.float(input: memory.address, value: number)
-</code>
-<ul>
-<li>Attempts to write a <code v-pre>float</code> value.</li>
-</ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="memorywritedoubleinput-memoryaddress-value-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#memorywritedoubleinput-memoryaddress-value-number">#</doc-anchor-trigger>
-        <span>memory.write.double(input: memory.address, value: number)</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-memory.write.double(input: memory.address, value: number)
-</code>
-<ul>
-<li>Attempts to write a <code v-pre>double</code> value.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="memorywriteaddressinput-memoryaddress-value-number">
