@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.798769780323">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.798934232801">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.798769780323" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.798934232801" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.798769780323" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.798934232801" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.798769780323" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.798769780323" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.798934232801" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.798934232801" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -225,6 +225,72 @@ Please use these functions simply for I/O &amp; communication.</p>
     </div>
 </div>
 <hr>
+<doc-anchor-target id="enums">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#enums">#</doc-anchor-trigger>
+        <span>Enums</span>
+    </h2>
+</doc-anchor-target>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="iotmethod-index-string-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#iotmethod-index-string-string">#</doc-anchor-trigger>
+        <span>iot.method: {[index: string]: string}</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+iot.method: {[index: string]: string}
+</code>
+<ul>
+<li>Contains a list of method procedures for HTTP/HTTPS</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="iotstatus-index-string--number-string--number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#iotstatus-index-string--number-string--number">#</doc-anchor-trigger>
+        <span>iot.status: {[index: string | number]: string | number}</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+iot.status: {[index: string | number]: string | number}
+</code>
+<ul>
+<li>Contains a list of status codes for HTTP/HTTPS</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="iotopcode-index-string--number-string--number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#iotopcode-index-string--number-string--number">#</doc-anchor-trigger>
+        <span>iot.opcode: {[index: string | number]: string | number}</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+iot.opcode: {[index: string | number]: string | number}
+</code>
+<ul>
+<li>Contains a list of opcode procedures for sockets</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="iotclosure-index-string--number-string--number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#iotclosure-index-string--number-string--number">#</doc-anchor-trigger>
+        <span>iot.closure: {[index: string | number]: string | number}</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+iot.closure: {[index: string | number]: string | number}
+</code>
+<ul>
+<li>Contains a list of closure procedures for sockets</li>
+<li>These are usually needed when dealing with<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+iot.closure.close
+</code>cases</li>
+</ul>
+<hr>
 <doc-anchor-target id="functions">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#functions">#</doc-anchor-trigger>
@@ -335,18 +401,12 @@ serve:start()
     </h2>
 </doc-anchor-target>
 <p>These are interface &amp; function definitions for how we handle <code v-pre>serve_class</code></p>
-<doc-anchor-target id="functions-1">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#functions-1">#</doc-anchor-trigger>
-        <span>Functions</span>
-    </h3>
-</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="servestart-boolean">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#servestart-boolean">#</doc-anchor-trigger>
         <span>serve:start(): boolean</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -359,10 +419,10 @@ serve:start(): boolean
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="servestop">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#servestop">#</doc-anchor-trigger>
         <span>serve:stop()</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -374,10 +434,10 @@ serve:stop()
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="serveactive-boolean">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#serveactive-boolean">#</doc-anchor-trigger>
         <span>serve:active(): boolean</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -388,10 +448,10 @@ serve:active(): boolean
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="serveport-number">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#serveport-number">#</doc-anchor-trigger>
         <span>serve:port(): number</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -402,10 +462,10 @@ serve:port(): number
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="servehandlers-method-string-path-string-callback-function">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#servehandlers-method-string-path-string-callback-function">#</doc-anchor-trigger>
         <span>serve:handlers(): {method: string, path: string, callback: function}[]</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -416,10 +476,10 @@ serve:handlers(): {method: string, path: string, callback: function}[]
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="servesocketspath-string-serve_socket">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#servesocketspath-string-serve_socket">#</doc-anchor-trigger>
         <span>serve:sockets(path: string): serve_socket[]</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -430,10 +490,10 @@ serve:sockets(path: string): serve_socket[]
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="serveupgrade-serve_socket">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#serveupgrade-serve_socket">#</doc-anchor-trigger>
         <span>serve:upgrade(): serve_socket</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -444,26 +504,29 @@ serve:upgrade(): serve_socket
 <li>Must be used inside of a HTTP request.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="servesocketpath-string-callback-functionconnection-serve_socket-message-string">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#servesocketpath-string-callback-functionconnection-serve_socket-message-string">#</doc-anchor-trigger>
-        <span>serve:socket(path: string, callback: function(connection: serve_socket, message: string))</span>
-    </h4>
+<doc-anchor-target id="servesocketpath-string-callback-functionconnection-serve_socket-opcode-number-data-string--number-extra-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#servesocketpath-string-callback-functionconnection-serve_socket-opcode-number-data-string--number-extra-string">#</doc-anchor-trigger>
+        <span>serve:socket(path: string, callback: function(connection: serve_socket, opcode: number, data: string | number, extra: string))</span>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-serve:socket(path: string, callback: function(connection: serve_socket, message: string))
+serve:socket(path: string, callback: function(connection: serve_socket, opcode: number, data: string | number, extra: string))
 </code>
 <ul>
 <li>Adds a callback for a certain path for socket-based messages.</li>
 <li>Do note that the path must be the same to the socket you upgraded in.</li>
+<li>Opcodes can be seen under<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+iot.opcode
+</code></li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="serveanypath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#serveanypath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
         <span>serve:any(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -477,10 +540,10 @@ serve:any(path: string, callback: function(req: { method: string, path: string, 
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="servegetpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#servegetpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
         <span>serve:get(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -493,10 +556,10 @@ serve:get(path: string, callback: function(req: { method: string, path: string, 
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="servepostpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#servepostpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
         <span>serve:post(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -508,10 +571,10 @@ serve:post(path: string, callback: function(req: { method: string, path: string,
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="serveheadpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#serveheadpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
         <span>serve:head(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -523,10 +586,10 @@ serve:head(path: string, callback: function(req: { method: string, path: string,
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="serveputpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#serveputpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
         <span>serve:put(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -538,10 +601,10 @@ serve:put(path: string, callback: function(req: { method: string, path: string, 
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="servedeletepath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#servedeletepath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
         <span>serve:delete(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -553,10 +616,10 @@ serve:delete(path: string, callback: function(req: { method: string, path: strin
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="serveoptionspath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#serveoptionspath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
         <span>serve:options(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -567,6 +630,100 @@ serve:options(path: string, callback: function(req: { method: string, path: stri
 <li>The OPTIONS method describes the communication options for the target resource.</li>
 </ul>
 <hr>
+<doc-anchor-target id="serve-socket">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serve-socket">#</doc-anchor-trigger>
+        <span>Serve Socket</span>
+    </h2>
+</doc-anchor-target>
+<p>These are interface &amp; function definitions for how we handle <code v-pre>serve_socket</code></p>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="serve_socketid-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serve_socketid-string">#</doc-anchor-trigger>
+        <span>serve_socket:id(): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve_socket:id(): string
+</code>
+<ul>
+<li>Gets the socket&#x27;s unique ID.</li>
+<li>Useful if you need to manually track them.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="serve_socketdisconnectcode-string--number-reason-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serve_socketdisconnectcode-string--number-reason-string">#</doc-anchor-trigger>
+        <span>serve_socket:disconnect(code?: string | number, reason?: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve_socket:disconnect(code?: string | number, reason?: string)
+</code>
+<ul>
+<li>Forces a socket to disconnect.</li>
+<li>By providing a string in the code parameter, it will become a reason with normal closure.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="serve_sockettextpayload-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serve_sockettextpayload-string">#</doc-anchor-trigger>
+        <span>serve_socket:text(payload: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve_socket:text(payload: string)
+</code>
+<ul>
+<li>Sends a text-based payload.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="serve_socketbinarypayload-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serve_socketbinarypayload-string">#</doc-anchor-trigger>
+        <span>serve_socket:binary(payload: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve_socket:binary(payload: string)
+</code>
+<ul>
+<li>Sends a binary-based payload.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="serve_socketpingpayload-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serve_socketpingpayload-string">#</doc-anchor-trigger>
+        <span>serve_socket:ping(payload?: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve_socket:ping(payload?: string)
+</code>
+<ul>
+<li>Sends a ping payload, typically used to keep connections alive.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="serve_socketpongpayload-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serve_socketpongpayload-string">#</doc-anchor-trigger>
+        <span>serve_socket:pong(payload?: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+serve_socket:pong(payload?: string)
+</code>
+<ul>
+<li>Sends a pong payload, typically used to keep connections alive.</li>
+</ul>
+<hr>
 <doc-anchor-target id="socket">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socket">#</doc-anchor-trigger>
@@ -574,18 +731,18 @@ serve:options(path: string, callback: function(req: { method: string, path: stri
     </h2>
 </doc-anchor-target>
 <p>These are interface &amp; function definitions for how we handle <code v-pre>socket_class</code></p>
-<doc-anchor-target id="functions-2">
+<doc-anchor-target id="functions-1">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#functions-2">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#functions-1">#</doc-anchor-trigger>
         <span>Functions</span>
     </h3>
 </doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketconnect">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketconnect">#</doc-anchor-trigger>
         <span>socket:connect()</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -596,10 +753,10 @@ socket:connect()
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketdisconnectreason-string">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketdisconnectreason-string">#</doc-anchor-trigger>
         <span>socket:disconnect(reason?: string)</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -610,10 +767,10 @@ socket:disconnect(reason?: string)
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="sockettextpayload-string">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#sockettextpayload-string">#</doc-anchor-trigger>
         <span>socket:text(payload: string)</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -624,10 +781,10 @@ socket:text(payload: string)
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketutf8payload-string">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketutf8payload-string">#</doc-anchor-trigger>
         <span>socket:utf8(payload: string)</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -638,10 +795,10 @@ socket:utf8(payload: string)
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketbinarypayload-string">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketbinarypayload-string">#</doc-anchor-trigger>
         <span>socket:binary(payload: string)</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -652,10 +809,10 @@ socket:binary(payload: string)
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketclosereason-string">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketclosereason-string">#</doc-anchor-trigger>
         <span>socket:close(reason?: string)</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -667,10 +824,10 @@ socket:close(reason?: string)
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketpingreason-string">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketpingreason-string">#</doc-anchor-trigger>
         <span>socket:ping(reason?: string)</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -681,10 +838,10 @@ socket:ping(message?: string)
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketget_url-string">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketget_url-string">#</doc-anchor-trigger>
         <span>socket:get_url(): string</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -695,10 +852,10 @@ socket:get_url(): string
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketget_host-string">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketget_host-string">#</doc-anchor-trigger>
         <span>socket:get_host(): string</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -709,10 +866,10 @@ socket:get_host(): string
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketget_port-string">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketget_port-string">#</doc-anchor-trigger>
         <span>socket:get_port(): string</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -723,10 +880,10 @@ socket:get_port(): string
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketget_path-string">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketget_path-string">#</doc-anchor-trigger>
         <span>socket:get_path(): string</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -737,10 +894,10 @@ socket:get_path(): string
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketheaders_addkey-string-value-string">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketheaders_addkey-string-value-string">#</doc-anchor-trigger>
         <span>socket:headers_add(key: string, value: string)</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -751,10 +908,10 @@ socket:headers_add(key: string, value: string)
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketheaders_removekey-string">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketheaders_removekey-string">#</doc-anchor-trigger>
         <span>socket:headers_remove(key: string)</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -765,10 +922,10 @@ socket:headers_remove(key: string)
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketheaders_getkey-string-string">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketheaders_getkey-string-string">#</doc-anchor-trigger>
         <span>socket:headers_get(key: string): string?</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -779,10 +936,10 @@ socket:headers_get(key: string): string?
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketheaders_allkey-string-index-string-string">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketheaders_allkey-string-index-string-string">#</doc-anchor-trigger>
         <span>socket:headers_all(key: string): {[index: string]: string}</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -793,10 +950,10 @@ socket:headers_all(key: string): {[index: string]: string}
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketis_open-boolean">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketis_open-boolean">#</doc-anchor-trigger>
         <span>socket:is_open(): boolean</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -807,10 +964,10 @@ socket:is_open(): boolean
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketis_connecting-boolean">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketis_connecting-boolean">#</doc-anchor-trigger>
         <span>socket:is_connecting(): boolean</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -821,10 +978,10 @@ socket:is_connecting(): boolean
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketis_closing-boolean">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketis_closing-boolean">#</doc-anchor-trigger>
         <span>socket:is_closing(): boolean</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -835,10 +992,10 @@ socket:is_closing(): boolean
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketis_closed-boolean">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketis_closed-boolean">#</doc-anchor-trigger>
         <span>socket:is_closed(): boolean</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -849,10 +1006,10 @@ socket:is_closed(): boolean
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="socketis_tls-boolean">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#socketis_tls-boolean">#</doc-anchor-trigger>
         <span>socket:is_tls(): boolean</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -884,10 +1041,10 @@ These can be accessed for example by: <code class="language-typescript" style="t
 </p>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="open">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#open">#</doc-anchor-trigger>
         <span>open()</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -898,10 +1055,10 @@ open()
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="errorcode-number-reason-string">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#errorcode-number-reason-string">#</doc-anchor-trigger>
         <span>error(code: number, reason: string)</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -912,10 +1069,10 @@ error(code: number, reason: string)
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="closestatus-number-reason-string">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#closestatus-number-reason-string">#</doc-anchor-trigger>
         <span>close(status: number, reason: string)</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -926,10 +1083,10 @@ close(status: number, reason: string)
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="messagepayload-string">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#messagepayload-string">#</doc-anchor-trigger>
         <span>message(payload: string)</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -940,10 +1097,10 @@ message(payload: string, is_binary: boolean)
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="pingreason-string">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#pingreason-string">#</doc-anchor-trigger>
         <span>ping(reason: string)</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
@@ -956,10 +1113,10 @@ ping(message: string)
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="pongreason-string">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#pongreason-string">#</doc-anchor-trigger>
         <span>pong(reason: string)</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">

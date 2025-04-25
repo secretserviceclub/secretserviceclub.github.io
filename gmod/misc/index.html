@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.798769780323">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.798934232801">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.798769780323" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.798934232801" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.798769780323" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.798934232801" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.798769780323" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.798769780323" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.798934232801" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.798934232801" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -477,6 +477,28 @@ misc.add_to_entity_list(entity_name: string, action: boolean)
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-lua"><code v-pre class="language-lua">secret.misc.add_to_entity_list(&quot;gmod_hands&quot;, true) -- add the entity to ents esp
 secret.misc.add_to_entity_list(&quot;gmod_hands&quot;, false) -- remove the entity from the ents esp</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="miscget_entity_list-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#miscget_entity_list-table">#</doc-anchor-trigger>
+        <span>misc.get_entity_list(): table</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+misc.get_entity_list(): table
+</code>
+<ul>
+<li>Returns a table of all known scripted entities.</li>
+<li>The keys are entity class names (e.g., &quot;prop_physics&quot;), and the values are booleans indicating whether each entity is currently selected.</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">local entities = secret.misc.get_entity_list()
+
+for name, selected in pairs(entities) do
+    print(string.format(&quot;entity: %s | selected: %s&quot;, name, tostring(selected)))
+end</code></pre>
 </doc-codeblock></div>
 <div hidden>
 <div class="codeblock-wrapper"><doc-codeblock>
