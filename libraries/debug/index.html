@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.798940373392">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.799046209490">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.798940373392" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.799046209490" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.798940373392" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.799046209490" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.798940373392" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.798940373392" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.799046209490" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.799046209490" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -487,83 +487,6 @@ debug.env(): table
 <li>Gets the current stack&#x27;s environment.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="debugdetourtarget-function-detour-function-function">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#debugdetourtarget-function-detour-function-function">#</doc-anchor-trigger>
-        <span>debug.detour(target: function, detour: function): function</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-debug.detour(target: function, detour: function): function
-</code>
-<ul>
-<li>Creates a memory-based hook towards a target lua function or C function.</li>
-</ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="debugisdetourtarget-function-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#debugisdetourtarget-function-boolean">#</doc-anchor-trigger>
-        <span>debug.isdetour(target: function): boolean</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-debug.isdetour(target: function): boolean
-</code>
-<ul>
-<li>If a function has a memory-mapping to another function.</li>
-</ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="debugoriginaltarget-function-function">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#debugoriginaltarget-function-function">#</doc-anchor-trigger>
-        <span>debug.original(target: function): function</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-debug.original(target: function): function
-</code>
-<ul>
-<li>If a function has a memory-mapping, this will return the original.</li>
-</ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="debugrestoretarget-function">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#debugrestoretarget-function">#</doc-anchor-trigger>
-        <span>debug.restore(target: function)</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-debug.restore(target: function)
-</code>
-<ul>
-<li>Restores the memory-mapped function.</li>
-</ul>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-lua"><code v-pre class="language-lua">local original
-original = debug.detour(print, function(...)
-       MsgC( Color( 255, 0, 0 ), &quot;[Detour working!]&quot; )
-       return original(...)
-end)
-
-print(&quot;This is a test!&quot;) -- Outputs: [Detour working!]This is a test!
-
-if debug.isdetour(print) then
-    print(&quot;The `print` function has been detoured.&quot;)
-else
-    print(&quot;The `print` function is not detoured.&quot;)
-end
-
-local original_print = debug.original(print)
-original_print(&quot;This bypasses the detour!&quot;)
-
-debug.restore(print) -- Restores the original `print` function.
-print(&quot;Detour has been restored!&quot;) -- Outputs normally without detour.</code></pre>
-</doc-codeblock></div>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugclonevalue-function--proto--userdata-function--proto--userdata">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debugclonevalue-function--proto--userdata-function--proto--userdata">#</doc-anchor-trigger>
@@ -858,6 +781,136 @@ debug.setstack(index: number, data: any)
 <ul>
 <li>Sets a value at an index in stack memory.</li>
 <li>Warning: this is rather dangerous and can poison the lua stack.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debughooksyncf-function-callback-function-function">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debughooksyncf-function-callback-function-function">#</doc-anchor-trigger>
+        <span>debug.hook.sync(f: function, callback: function): function</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.hook.sync(f: function, callback: function): function
+</code>
+<ul>
+<li>Creates a gc-based hook towards a target Lua/C function.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debughookasyncf-cfunction-callback-function-function">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debughookasyncf-cfunction-callback-function-function">#</doc-anchor-trigger>
+        <span>debug.hook.async(f: cfunction, callback: function): function</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<p><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>stub</span>
+</span><code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.hook.async(f: cfunction, callback: function): function
+</code></p>
+<ul>
+<li>Creates a memory-based hook towards a target C function.</li>
+<li>Unlike gc-based hooks, this cannot be found due to it being a low-level hook.</li>
+<li>This runs callbacks in a different stack environment preventing stack tracing.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debughookrestoref-function-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debughookrestoref-function-boolean">#</doc-anchor-trigger>
+        <span>debug.hook.restore(f: function): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.hook.restore(f: function): boolean
+</code>
+<ul>
+<li>Attempts to restore a Lua/C function to its original state.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debughookisf-function-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debughookisf-function-boolean">#</doc-anchor-trigger>
+        <span>debug.hook.is(f: function): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.hook.is(f: function): boolean
+</code>
+<ul>
+<li>Checks if a Lua/C function has been hooked.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debughookinside-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debughookinside-boolean">#</doc-anchor-trigger>
+        <span>debug.hook.inside(): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.hook.inside(): boolean
+</code>
+<ul>
+<li>If we are currently executing inside an active hook.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debughookoriginalf-function-function">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debughookoriginalf-function-function">#</doc-anchor-trigger>
+        <span>debug.hook.original(f: function): function?</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.hook.original(f: function): function?
+</code>
+<ul>
+<li>Fetches the original Lua/C function that has been hooked.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debughookactivef-function-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debughookactivef-function-boolean">#</doc-anchor-trigger>
+        <span>debug.hook.active(f: function): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.hook.active(f: function): boolean
+</code>
+<ul>
+<li>Checks if a Lua/C function is actively being hooked.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debughookdisablef-function-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debughookdisablef-function-boolean">#</doc-anchor-trigger>
+        <span>debug.hook.disable(f: function): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.hook.disable(f: function): boolean
+</code>
+<ul>
+<li>Disables an on-going hook from running, effectively making it the original temporarily.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debughookenablef-function-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debughookenablef-function-boolean">#</doc-anchor-trigger>
+        <span>debug.hook.enable(f: function): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.hook.enable(f: function): boolean
+</code>
+<ul>
+<li>Enables an on-going hook, allowing callbacks to be ran.</li>
 </ul>
 <doc-anchor-target id="capi">
     <h2>
