@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.799046209490">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.799048818525">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Introduction</title>
     <meta name="title" content="Introduction">
-    <meta name="description" content="Welcome Agent (or Civilian). Documentation for the full rework of scripting specializing in security and cross-application compatibility under ">
+    <meta name="description" content="Welcome Agent (or Civilian). Documentation for the ever growing API with top-tier security & functionality in-mind.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://secretserviceclub.github.io/">
@@ -20,23 +20,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secretserviceclub.github.io/">
     <meta property="og:title" content="Introduction">
-    <meta property="og:description" content="Welcome Agent (or Civilian). Documentation for the full rework of scripting specializing in security and cross-application compatibility under ">
+    <meta property="og:description" content="Welcome Agent (or Civilian). Documentation for the ever growing API with top-tier security & functionality in-mind.">
     <meta property="og:image" content="https://secretserviceclub.github.io/logo.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://secretserviceclub.github.io/">
     <meta property="twitter:title" content="Introduction">
-    <meta property="twitter:description" content="Welcome Agent (or Civilian). Documentation for the full rework of scripting specializing in security and cross-application compatibility under ">
+    <meta property="twitter:description" content="Welcome Agent (or Civilian). Documentation for the ever growing API with top-tier security & functionality in-mind.">
     <meta property="twitter:image" content="https://secretserviceclub.github.io/logo.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="resources/css/retype.css?v=3.6.0.799046209490" rel="stylesheet">
+    <link href="resources/css/retype.css?v=3.6.0.799048818525" rel="stylesheet">
 
-    <script data-cfasync="false" src="resources/js/config.js?v=3.6.0.799046209490" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="resources/js/config.js?v=3.6.0.799048818525" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.6.0.799046209490" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.6.0.799048818525" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -206,13 +206,17 @@
     </h1>
 </doc-anchor-target>
 <p><strong>Welcome Agent (or Civilian).</strong><br />
-Documentation for the full rework of scripting specializing in security and cross-application compatibility under <strong>Interstellar</strong>.<br />
-<strong>Powered By:</strong></p>
+Documentation for the ever growing API with top-tier security &amp; functionality in-mind.<br />
+<strong>Developed With:</strong></p>
 <p><figure class="content-center">
     <img src="logo.png" alt="">
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
+<div align="center">
+<h2 style="text-align:center; font-size:32px;">Interstellar</h2>
+<p><img src="https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&amp;logo=lua&amp;logoColor=white" alt="Lua" /> <img src="https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&amp;logo=c%2B%2B&amp;logoColor=white" alt="C++" /> <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&amp;logo=linux&amp;logoColor=black" alt="Linux" /> <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&amp;logo=windows&amp;logoColor=white" alt="Windows" /></p>
+</div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-red-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -226,31 +230,42 @@ Documentation for the full rework of scripting specializing in security and cros
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>Digital Rights Manager</h5>
-<p>We hold the rights to withhold information about this system.</p>
+<p>We hold the rights to withhold information about this system.<br />
+Interstellar is held under agreements with the current service provider.<br />
+Therefore internals provided by interstellar are kept hidden.</p>
         </div>
     </div>
 </div>
 <hr>
-<doc-anchor-target id="trust--safety">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#trust--safety">#</doc-anchor-trigger>
-        <span>Trust &amp; Safety</span>
-    </h3>
+<doc-anchor-target id="usage">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#usage">#</doc-anchor-trigger>
+        <span>Usage</span>
+    </h2>
 </doc-anchor-target>
-<p>We designed it such that the only caveat of an enviornment leak, is the user themselves.<br />
-We trust that <strong>YOU</strong>, won&#x27;t do something like <code v-pre>_G.&lt;api&gt; = &lt;api&gt;</code>.</p>
-<p><strong>Obfuscations</strong> are prohibited for the time being.<br />
-There is <strong>ZERO</strong> benefit to the community for doing so.</p>
-<hr>
-<doc-anchor-target id="invocations">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#invocations">#</doc-anchor-trigger>
-        <span>Invocations</span>
-    </h3>
-</doc-anchor-target>
+<p>All API functions are kept under one shared table that only you can access.<br />
+This is simply done by accessing <code v-pre>secret.*</code> a variable accessible only to your environment.<br />
+We designed it such that the only caveat of an enviornment leak, is the user themselves.<br />
+We trust that <strong>YOU</strong>, won&#x27;t do something like <code v-pre>_G.&lt;api&gt; = &lt;api&gt;</code> putting yourself at risk (all though, up to you).</p>
 <p>By design the API generated by the engine is only done when you execute something.<br />
 Your API therefore does not exist in memory until execution or compilation is perform.<br />
 This is for your safety if a malicious actor some-how has abilities to grab the API.</p>
+<hr>
+<doc-anchor-target id="trust--safety">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#trust--safety">#</doc-anchor-trigger>
+        <span>Trust &amp; Safety</span>
+    </h2>
+</doc-anchor-target>
+<p>This API is designed for the benefit of the user having more control over their environments.<br />
+However due to the nature of this system, the following is prohibited:</p>
+<ul>
+<li>Obfuscation <strong>(Minifiers Excluded)</strong></li>
+<li>User Data Collection &amp; Extraction</li>
+<li>Exposure of Confidential &amp; Personal information</li>
+</ul>
+<p>Violating these may result in account limitations or terminations.<br />
+If there is a safety issue that needs attention please contact an administrator or developer.</p>
 <hr>
 <p style="text-align:center; font-size:24px;"><i><b>Game Engine Support</b></i></p>
 <div class="table-wrapper scrollbar overflow-hidden">
@@ -290,12 +305,11 @@ if (true) {
         "please be careful on what you push into debug.getregistry() :)",
         "util.TableToJSON has a cyclic error that causes a registry leak...",
         "LuaJIT runs nearly as fast as C, if you don't bloat it with terrible loops",
-        "I like lexers, syntax and symantics, they are cool.",
+        "render targets are cool, they can cause you to bluescreen for some reason...",
         "Be warned, filling the registry causes horrible performace problems.",
         "You know, you don't have to 'hook' a function, just remap its prototype duh...",
         "I totally didn't do a deep dive on LuaJIT, who would do that to themselves?",
         "C > Lua, if you have a problem with that, then leave this site.",
-        "This isn't a project, its a side hussle, with extra effort.",
         "table.foreach is a cool function, why aren't you using it?"
     ];
 
