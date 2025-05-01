@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.799410228540">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.799458406711">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.7.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.7.0.799410228540" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.7.0.799458406711" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.799410228540" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.799458406711" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.799410228540" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.7.0.799410228540" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.799458406711" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.7.0.799458406711" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -789,6 +789,34 @@ PrintTable(debug.getupvalues(f))
 -- prints: {&quot;a&quot; = 1, &quot;b&quot; = 2, &quot;c&quot; = 3}</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debugvalidlevellevel-number-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debugvalidlevellevel-number-boolean">#</doc-anchor-trigger>
+        <span>debug.validlevel(level: number): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.validlevel(level: number): boolean
+</code>
+<ul>
+<li>Checks if the level exists and is valid.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debuggetcallstack-function">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debuggetcallstack-function">#</doc-anchor-trigger>
+        <span>debug.getcallstack(): function[]</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.getcallstack(): function[]
+</code>
+<ul>
+<li>Gets a list of functions that have been used at the current execution.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debugtypestackcount-number-string">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debugtypestackcount-number-string">#</doc-anchor-trigger>
@@ -1031,20 +1059,6 @@ L:getgc()
 <doc-anchor-target id="lnewcclosureindex-number">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#lnewcclosureindex-number">#</doc-anchor-trigger>
-        <span>L:newcclosure(index: number)</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-L:newcclosure(index: number)
-</code>
-<ul>
-<li>Creates a new cfunction closure which is untraceable.</li>
-</ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lnewcclosureindex-number-1">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lnewcclosureindex-number-1">#</doc-anchor-trigger>
         <span>L:newcclosure(index: number)</span>
     </h3>
 </doc-anchor-target>
