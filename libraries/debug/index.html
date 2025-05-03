@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.799458782304">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.799628242753">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.7.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.7.0.799458782304" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.7.0.799628242753" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.799458782304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.799628242753" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.799458782304" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.7.0.799458782304" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.799628242753" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.7.0.799628242753" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -666,6 +666,82 @@ debug.fromsignature(sig: string): function | proto | undefined
 <ul>
 <li>Attempts to look for a certain function or proto based on the given signature.</li>
 <li>Depending on parameters when you first created the signature, substle changes in a function can invalidate a signature entirely.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debugtscaninput-table-comparator-functionvalue-table-boolean-table-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debugtscaninput-table-comparator-functionvalue-table-boolean-table-string">#</doc-anchor-trigger>
+        <span>debug.tscan(input: table, comparator: function(value: table): boolean): table?, string[]?</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.tscan(input: table, comparator: function(value: table): boolean): table?, string[]?
+</code>
+<ul>
+<li>Based on the comparator, attempts to scan for another table thats associated.</li>
+<li>This works to counter-act attempts to hide tables via a proxy or other means.</li>
+<li>This returns a signature array for you to use<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.tresolve(input: table, string[]): table?
+</code>instead.</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-lua"><code v-pre class="language-lua">local function fetch()
+    local real_table = {[&quot;a&quot;] = true} -- target
+    return real_table
+end
+
+local test = setmetatable({}, {
+    __index = function(self, index)
+		return fetch()[index]
+	end
+})
+
+local test = setmetatable({}, {
+    __index = function(self, index)
+		return test[index]
+	end
+})
+
+local test = setmetatable({}, {
+    __index = test
+})
+
+-- this uses the scanner to find the hidden table
+local value, signature = debug.tscan(test, function(value)
+    return rawget(value, &quot;a&quot;)
+end)
+
+if value then
+    print(&quot;FOUND&quot;)
+    PrintTable(value)
+
+    -- this uses the signature array to find it instead of re-scanning
+    local value = debug.tresolve(test, signature)
+    
+    if value then
+        print(&quot;RESOLVED&quot;)
+        PrintTable(value)
+    end
+end</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="debugtresolveinput-table-string-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debugtresolveinput-table-string-table">#</doc-anchor-trigger>
+        <span>debug.tresolve(input: table, string[]): table?</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.tresolve(input: table, string[]): table?
+</code>
+<ul>
+<li>Like<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+debug.tscan(input: table, comparator: function(value: table): boolean): table?, string[]?
+</code></li>
+<li>However, instead of &quot;scanning&quot; it uses the already generated signature array to find the value.</li>
+<li>This is extremely efficient compared to re-scanning for the designated value via a comparator.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="debuggetconstantf-function--proto-index-number-any">
