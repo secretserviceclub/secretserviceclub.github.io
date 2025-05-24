@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.800734350410">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.801405789211">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.800734350410" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.801405789211" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.800734350410" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.801405789211" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.800734350410" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.800734350410" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.801405789211" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.801405789211" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -252,7 +252,7 @@ playerlist.remove_friend(steamid64: string)
 playerlist.is_friend(steamid64: string): boolean
 </code>
 <ul>
-<li>Checks if the specified SteamID64 is in the friend list and returns &#x27;true&#x27; if the player is a friend, otherwise &#x27;false&#x27;.</li>
+<li>Checks if the specified SteamID64 is in the friend list and returns <code v-pre>true</code> if the player is a friend, otherwise <code v-pre>false</code>.</li>
 </ul>
 <hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
@@ -295,7 +295,36 @@ playerlist.remove_priority(steamid64: string)
 playerlist.is_priority(steamid64: string): boolean
 </code>
 <ul>
-<li>Checks if the specified SteamID64 is in the priority list and returns &#x27;true&#x27; if the player is a friend, otherwise &#x27;false&#x27;.</li>
+<li>Checks if the specified SteamID64 is in the priority list and returns <code v-pre>true</code> if the player is a friend, otherwise <code v-pre>false</code>.</li>
+</ul>
+<hr>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="playerlistis_secret_usersteamid64-string-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#playerlistis_secret_usersteamid64-string-boolean">#</doc-anchor-trigger>
+        <span>playerlist.is_secret_user(steamid64: string): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+playerlist.is_secret_user(steamid64: string): boolean
+</code>
+<ul>
+<li>Returns <code v-pre>true</code> if the specified SteamID64 is a secret user (anon mode off), otherwise <code v-pre>false</code>.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="playerlistget_secret_usernamesteamid64-string-string--nil">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#playerlistget_secret_usernamesteamid64-string-string--nil">#</doc-anchor-trigger>
+        <span>playerlist.get_secret_username(steamid64: string): string | nil</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+playerlist.get_secret_username(steamid64: string): string | nil
+</code>
+<ul>
+<li>Returns the secret username for the specified SteamID64. Returns <code v-pre>nil</code> if the user is not connected or is anonymous.</li>
 </ul>
 <div hidden>
 <div class="codeblock-wrapper"><doc-codeblock>
