@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.801405789211">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.803060728755">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.801405789211" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.803060728755" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.801405789211" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.803060728755" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.801405789211" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.801405789211" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.803060728755" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.803060728755" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -684,6 +684,34 @@ paint.text.font(font_name?: string): string
 <ul>
 <li>Makes all future text renderers use a specific font</li>
 <li>Returns the current font being used currently</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="painttextget_sizetext-string-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#painttextget_sizetext-string-table">#</doc-anchor-trigger>
+        <span>paint.text.get_size(text: string): table</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.text.get_size(text: string): table
+</code>
+<ul>
+<li>Returns the width and height (in pixels) of the given text using the <code v-pre>default</code> font.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="painttextget_sizefont_name-string-text-string-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#painttextget_sizefont_name-string-text-string-table">#</doc-anchor-trigger>
+        <span>paint.text.get_size(font_name: string, text: string): table</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.text.get_size(font_name: string, text: string): table
+</code>
+<ul>
+<li>Returns the width and height (in pixels) of the given text using a specified <code v-pre>font</code>.</li>
 </ul>
 <hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
