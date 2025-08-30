@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.809899859732">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.809907580239">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.6.0.809899859732" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.809907580239" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.809899859732" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.809907580239" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.809899859732" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.809899859732" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.809907580239" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.809907580239" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -530,30 +530,6 @@ misc.get_random_source(): string
 <li>Returns a random loaded Lua source file name or path on the client.</li>
 <li><code v-pre>&quot;static source&quot;</code> in the lua tab will affect this function.</li>
 </ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="miscserver_timeoffset-number-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#miscserver_timeoffset-number-number">#</doc-anchor-trigger>
-        <span>misc.server_time(offset: number): number</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-misc.server_time(offset: number): number
-</code>
-<ul>
-<li>Returns the predicted server time based on the local player’s <code v-pre>tickbase</code>.</li>
-<li>If offset is provided, it shifts the tickbase by that amount.</li>
-</ul>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-lua"><code v-pre class="language-lua">-- get current predicted server time
-local time = secret.misc.server_time()
-
--- get server time 2 ticks ahead
-local future = secret.misc.server_time(2)
-
-print(&quot;current:&quot;, time, &quot;future:&quot;, future)</code></pre>
-</doc-codeblock></div>
 <div hidden>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-typescript"><code v-pre class="language-typescript"></code></pre>
