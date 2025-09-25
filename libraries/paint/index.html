@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.811951364825">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.812158094000">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.811951364825" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.812158094000" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.811951364825" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.812158094000" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.811951364825" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.811951364825" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.812158094000" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.812158094000" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -772,6 +772,53 @@ paint.image.round(image: image, rounding: number, top_left: paint_point, size: p
 <ul>
 <li>Creates a rectangle image with rounding</li>
 </ul>
+<hr>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="paintpolyfilledvertices-table-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#paintpolyfilledvertices-table-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
+        <span>paint.poly.filled(vertices: table, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.poly.filled(vertices: table, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+</code>
+<ul>
+<li>Creates a filled polygon from a table of vertices.</li>
+<li>Requires at least 3 vertices</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="paintpolyhollowvertices-table-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#paintpolyhollowvertices-table-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
+        <span>paint.poly.hollow(vertices: table, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+paint.poly.hollow(vertices: table, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
+</code>
+<ul>
+<li>Creates a hollow polygon from a table of vertices.</li>
+<li>Requires at least 3 vertices</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">local point1 = paint.point.vector2(40, 40)
+local point2 = paint.point.vector2(100, 40)
+local point3 = paint.point.vector2(70, 100)
+
+local white = paint.color.rgb(255, 255, 255)
+local red   = paint.color.rgb(255, 0, 0)
+
+paint.add(&quot;example&quot;, function(w, h)
+    -- filled triangle
+    paint.poly.filled({point1, point2, point3}, white)
+
+    -- hollow triangle
+    paint.poly.hollow({point1, point2, point3}, red, 2) 
+end)</code></pre>
+</doc-codeblock></div>
 <hr>
 <doc-anchor-target id="events">
     <h2>

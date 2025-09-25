@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.811951364825">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.812158094000">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.811951364825" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.812158094000" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.811951364825" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.812158094000" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.811951364825" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.811951364825" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.812158094000" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.812158094000" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -467,13 +467,14 @@ end)</code></pre>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-override_vischeck(aimbot_target_index: number, tstart: vector, tend: vector): boolean
+override_vischeck(aimbot_target_index: number, tstart: vector, tend: vector, record: boolean): boolean
 </code>
 <ul>
 <li>Called every time the cheat performs a visibility check between you and a potential aimbot target.</li>
 <li>Currently only <strong>ragebot</strong> uses this listener.</li>
 <li><strong>tstart</strong> – starting position of the trace (usually your eye position).</li>
 <li><strong>tend</strong> – ending position of the trace (usually the target hitbox).</li>
+<li><strong>record</strong> - is the trace running at a backtrack record?</li>
 <li><strong>Return value</strong>:
 <ul>
 <li><code v-pre>true</code>  → force the vischeck to succeed (target is always considered visible).</li>
@@ -484,12 +485,12 @@ override_vischeck(aimbot_target_index: number, tstart: vector, tend: vector): bo
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">-- simple override, treat everyone as visible.
-secret.listener.add(&quot;override_vischeck&quot;, &quot;always_visible&quot;, function(target_index, tstart, tend)
+secret.listener.add(&quot;override_vischeck&quot;, &quot;always_visible&quot;, function(target_index, tstart, tend, record)
     return true
 end)
 
 -- custom logic, allow vis if distance &lt; 500 units
-secret.listener.add(&quot;override_vischeck&quot;, &quot;short_range_vis&quot;, function(target_index, tstart, tend)
+secret.listener.add(&quot;override_vischeck&quot;, &quot;short_range_vis&quot;, function(target_index, tstart, tend, record)
     local dist = (tend - tstart):Length()
     if dist &lt; 500 then
         return true

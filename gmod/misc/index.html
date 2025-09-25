@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.811951364825">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.812158094000">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.811951364825" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.812158094000" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.811951364825" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.812158094000" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.811951364825" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.811951364825" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.812158094000" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.812158094000" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -301,37 +301,50 @@ misc.get_freecam_angles(): table
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-misc.mouse_event(dwFlags: number, dx: number, dy: number, dwData: number)
+misc.sendmouse(action: string, x?: number, y?: number)
 </code>
 <ul>
-<li>Simulates a mouse event by specifying various parameters such as flags, delta x, delta y, and data.</li>
+<li>Sends a mouse action directly to the engine.</li>
+<li><strong>action</strong> can be:</li>
+<li><code v-pre>&quot;left&quot;</code> – left mouse button down/up (boolean second parameter).</li>
+<li><code v-pre>&quot;right&quot;</code> – right mouse button down/up.</li>
+<li><code v-pre>&quot;move&quot;</code> – move the mouse by <code v-pre>x</code>, <code v-pre>y</code> (delta coordinates).</li>
+<li><code v-pre>&quot;wheel&quot;</code> – scroll the mouse wheel (second parameter = amount).</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">local MOUSEEVENTF_LEFTDOWN = 0x0002 
-local MOUSEEVENTF_LEFTUP = 0x0004
-secret.misc.mouse_event(MOUSEEVENTF_LEFTDOWN, 100, 100, 0) -- Press left mouse button 
-secret.misc.mouse_event(MOUSEEVENTF_LEFTUP, 100, 100, 0) -- Release left mouse button </code></pre>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">-- press left button
+secret.misc.sendmouse(&quot;left&quot;, true)
+secret.misc.sendmouse(&quot;left&quot;, false)
+
+-- move mouse to (100, 200) inside the game
+secret.misc.sendmouse(&quot;move&quot;, 100, 200)
+
+-- scroll wheel up
+secret.misc.sendmouse(&quot;wheel&quot;, 120)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="misckeybd_eventbvk-number-bscan-number-dwflags-number-dwextrainfo-number">
+<doc-anchor-target id="miscsendkeyvk-number-press-boolean">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#misckeybd_eventbvk-number-bscan-number-dwflags-number-dwextrainfo-number">#</doc-anchor-trigger>
-        <span>misc.keybd_event(bVk: number, bScan: number, dwFlags: number, dwExtraInfo: number)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#miscsendkeyvk-number-press-boolean">#</doc-anchor-trigger>
+        <span>misc.sendkey(vk: number, press: boolean)</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-misc.keybd_event(bVk: number, bScan: number, dwFlags: number, dwExtraInfo: number)
+misc.sendkey(vk: number, press: boolean)
 </code>
 <ul>
-<li>Synthesizes a keystroke. It generates a keystroke down message, a keystroke up message, or a system keystroke.</li>
+<li>Sends a key press or release to the engine.</li>
+<li>vk – virtual key code (e.g., <code v-pre>0x44</code> for D).</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">local VK_A = 0x41
-local KEYEVENTF_KEYDOWN = 0x0
-local KEYEVENTF_KEYUP = 0x2
-secret.misc.keybd_event(VK_A, 0, KEYEVENTF_KEYDOWN, 0) -- Press 'A' key
-secret.misc.keybd_event(VK_A, 0, KEYEVENTF_KEYUP, 0) -- Release 'A' key</code></pre>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">-- press and release D key
+secret.misc.sendkey(0x44, true)
+secret.misc.sendkey(0x44, false)
+
+-- press and release Space
+secret.misc.sendkey(0x20, true)
+secret.misc.sendkey(0x20, false)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="miscadd_to_player_espindex-number-text-string-color-table-position-number">
@@ -529,6 +542,20 @@ misc.get_random_source(): string
 <ul>
 <li>Returns a random loaded Lua source file name or path on the client.</li>
 <li><code v-pre>&quot;static source&quot;</code> in the lua tab will affect this function.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="misccurrent_charge-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#misccurrent_charge-number">#</doc-anchor-trigger>
+        <span>misc.current_charge(): number</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+misc.current_charge(): number
+</code>
+<ul>
+<li>Returns the current charged ticks when using tickbase shift.</li>
 </ul>
 <div hidden>
 <div class="codeblock-wrapper"><doc-codeblock>
