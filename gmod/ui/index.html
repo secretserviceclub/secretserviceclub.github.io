@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.812589269780">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.812590819746">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.812589269780" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.812590819746" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.812589269780" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.812590819746" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.812589269780" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.812589269780" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.812590819746" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.812590819746" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -320,6 +320,15 @@ ui.create_hotkey(tab: string, groupbox: string, name: string, config_name: strin
 <li>Creates a hotkey UI element within the specified tab and groupbox of the menu.</li>
 <li>Returns a numeric ID for the created element that can be used to update or remove it later.</li>
 </ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.ui.create_groupbox(&quot;lua&quot;, &quot;right&quot;, &quot;elements&quot;, 200) -- create a groupbox called &quot;elements&quot;
+
+-- create and check lua hotkeys
+secret.ui.create_hotkey(&quot;lua&quot;, &quot;elements&quot;, &quot;my hotkey&quot;, &quot;lua_hotkey&quot;)
+if secret.config.get(&quot;lua_hotkey&quot;) then
+    print(&quot;our lua hotkey is on!&quot;)
+end</code></pre>
+</doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="uicreate_dropdowntab-string-groupbox-string-name-string-config_name-string-items-table-multi-boolean-number">
     <h3>
@@ -426,13 +435,13 @@ ui.update_groupbox(tab: string, groupbox_name: string, update_value: string|tabl
 <li>Updates properties of an existing groupbox.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">-- Update groupbox name
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">-- update groupbox name
 secret.ui.update_groupbox(&quot;lua&quot;, &quot;elements&quot;, &quot;new_elements&quot;)
 
--- Update multiple properties
+-- update multiple properties
 secret.ui.update_groupbox(&quot;lua&quot;, &quot;elements&quot;, { name = &quot;new_elements&quot;, side = &quot;left&quot;, height = 150 })
 
--- Update height only
+-- update height only
 secret.ui.update_groupbox(&quot;lua&quot;, &quot;elements&quot;, 300)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
@@ -512,24 +521,29 @@ ui.notify(text: string, type: number)
 <li>2 = Error</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="uiis_keybind_activekeybind_name-string-boolean">
+<doc-anchor-target id="uiis_keybind_activekeybind_name-string-absolute-boolean--false-boolean">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#uiis_keybind_activekeybind_name-string-boolean">#</doc-anchor-trigger>
-        <span>ui.is_keybind_active(keybind_name: string): boolean</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiis_keybind_activekeybind_name-string-absolute-boolean--false-boolean">#</doc-anchor-trigger>
+        <span>ui.is_keybind_active(keybind_name: string, absolute?: boolean = false): boolean</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-ui.is_keybind_active(keybind_name: string): boolean
+ui.is_keybind_active(keybind_name: string, absolute?: boolean = false): boolean
 </code>
 <ul>
 <li>Checks if a specified keybind is currently active/pressed.</li>
+<li>Only works with built-in cheat features, not Lua-specific keybinds.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">if secret.ui.is_keybind_active(&quot;thirdperson&quot;) then
-    print(&quot;thirdperson is enabled!&quot;)
-else
-    print(&quot;thirdperson is disabled!&quot;)
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">-- check thirdperson with absolute=false (default) - returns true if in &quot;always&quot; mode or not bound
+if secret.config.get(&quot;misc_thirdperson&quot;) and secret.ui.is_keybind_active(&quot;thirdperson&quot;) then
+    print(&quot;thirdperson is enabled (always mode or key not bound)&quot;)
+end
+
+-- check thirdperson with absolute=true - only returns true if key is physically pressed --&gt; this is what the 'hotkeys' uses.
+if  secret.config.get(&quot;misc_thirdperson&quot;) and secret.ui.is_keybind_active(&quot;thirdperson&quot;, true) then
+    print(&quot;thirdperson key is currently being pressed&quot;)
 end</code></pre>
 </doc-codeblock></div>
 <div hidden>
