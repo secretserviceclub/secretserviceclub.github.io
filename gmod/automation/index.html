@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826150507249">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826156170585">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.826150507249" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.826156170585" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826150507249" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826156170585" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826150507249" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826150507249" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826156170585" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826156170585" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -432,7 +432,7 @@ secret.automation.start_routine()</code></pre>
 </tbody>
 </table>
 </div>
-<p><strong>cmd_overrides</strong> (optional table on each event) — override player commands for that step:</p>
+<p><strong>cmd_overrides</strong> — Optional table that overrides player commands while the event runs:</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -566,12 +566,14 @@ secret.automation.start_routine()</code></pre>
 </tbody>
 </table>
 </div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationget_routine-table">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationget_routine-table">#</doc-anchor-trigger>
         <span>automation.get_routine(): table</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.get_routine(): table
 </code>
@@ -584,12 +586,14 @@ for i, ev in ipairs(events) do
     print(&quot;Event &quot; .. i .. &quot; type=&quot; .. tostring(ev.type) .. &quot; wait_ms=&quot; .. tostring(ev.wait_ms))
 end</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationset_routineevents-table">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationset_routineevents-table">#</doc-anchor-trigger>
         <span>automation.set_routine(events: table)</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.set_routine(events: table)
 </code>
@@ -602,12 +606,14 @@ automation.set_routine(events: table)
     { type = secret.automation.event_type.Goto, pos = { x = 100, y = 200, z = 300 }, hold_ms = 500, goto_destination_radius = 80 }
 })</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationadd_eventevent-table">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationadd_eventevent-table">#</doc-anchor-trigger>
         <span>automation.add_event(event: table)</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.add_event(event: table)
 </code>
@@ -620,12 +626,14 @@ automation.add_event(event: table)
     command = &quot;say Hello&quot;
 })</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationinsert_eventindex-number-event-table">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationinsert_eventindex-number-event-table">#</doc-anchor-trigger>
         <span>automation.insert_event(index: number, event: table)</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.insert_event(index: number, event: table)
 </code>
@@ -635,12 +643,14 @@ automation.insert_event(index: number, event: table)
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.insert_event(1, { type = secret.automation.event_type.Wait, wait_ms = 500 })</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationremove_eventindex-number">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationremove_eventindex-number">#</doc-anchor-trigger>
         <span>automation.remove_event(index: number)</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.remove_event(index: number)
 </code>
@@ -650,12 +660,14 @@ automation.remove_event(index: number)
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.remove_event(2)</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationclear_routine">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationclear_routine">#</doc-anchor-trigger>
         <span>automation.clear_routine()</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.clear_routine()
 </code>
@@ -665,12 +677,14 @@ automation.clear_routine()
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.clear_routine()</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationstart_routine">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationstart_routine">#</doc-anchor-trigger>
         <span>automation.start_routine()</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.start_routine()
 </code>
@@ -680,12 +694,14 @@ automation.start_routine()
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.start_routine()</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationstop_routine">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationstop_routine">#</doc-anchor-trigger>
         <span>automation.stop_routine()</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.stop_routine()
 </code>
@@ -697,12 +713,14 @@ automation.stop_routine()
     secret.automation.stop_routine()
 end</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationis_routine_running-boolean">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationis_routine_running-boolean">#</doc-anchor-trigger>
         <span>automation.is_routine_running(): boolean</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.is_routine_running(): boolean
 </code>
@@ -712,12 +730,14 @@ automation.is_routine_running(): boolean
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.is_routine_running()</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationget_link_to_next-table">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationget_link_to_next-table">#</doc-anchor-trigger>
         <span>automation.get_link_to_next(): table</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.get_link_to_next(): table
 </code>
@@ -730,12 +750,14 @@ for i, linked in ipairs(links) do
     print(&quot;Step &quot; .. i .. &quot; linked to next: &quot; .. tostring(linked))
 end</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationset_link_to_nextlinks-table">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationset_link_to_nextlinks-table">#</doc-anchor-trigger>
         <span>automation.set_link_to_next(links: table)</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.set_link_to_next(links: table)
 </code>
@@ -751,12 +773,14 @@ automation.set_link_to_next(links: table)
         <span>Runtime state (during routine playback)</span>
     </h3>
 </doc-anchor-target>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationget_waypoints-table">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationget_waypoints-table">#</doc-anchor-trigger>
         <span>automation.get_waypoints(): table</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.get_waypoints(): table
 </code>
@@ -769,12 +793,14 @@ for i, wp in ipairs(waypoints) do
     print(&quot;Waypoint &quot; .. i .. &quot;: &quot; .. wp.x .. &quot;, &quot; .. wp.y .. &quot;, &quot; .. wp.z)
 end</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationget_current_step_index-number">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationget_current_step_index-number">#</doc-anchor-trigger>
         <span>automation.get_current_step_index(): number</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.get_current_step_index(): number
 </code>
@@ -785,12 +811,14 @@ automation.get_current_step_index(): number
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local step = secret.automation.get_current_step_index()
 print(&quot;Current step: &quot; .. step)</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationget_crosshair_trace_end-table">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationget_crosshair_trace_end-table">#</doc-anchor-trigger>
         <span>automation.get_crosshair_trace_end(): table</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.get_crosshair_trace_end(): table
 </code>
@@ -801,12 +829,14 @@ automation.get_crosshair_trace_end(): table
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local hit = secret.automation.get_crosshair_trace_end()
 print(hit.x, hit.y, hit.z)</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationget_current_position-table">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationget_current_position-table">#</doc-anchor-trigger>
         <span>automation.get_current_position(): table</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.get_current_position(): table
 </code>
@@ -817,12 +847,14 @@ automation.get_current_position(): table
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local pos = secret.automation.get_current_position()
 print(pos.x, pos.y, pos.z)</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationget_current_view_angles-table">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationget_current_view_angles-table">#</doc-anchor-trigger>
         <span>automation.get_current_view_angles(): table</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.get_current_view_angles(): table
 </code>
@@ -833,12 +865,14 @@ automation.get_current_view_angles(): table
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local ang = secret.automation.get_current_view_angles()
 print(&quot;Pitch: &quot; .. ang.p .. &quot; Yaw: &quot; .. ang.y)</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationsave_routinename-string-boolean">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationsave_routinename-string-boolean">#</doc-anchor-trigger>
         <span>automation.save_routine(name: string): boolean</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.save_routine(name: string): boolean
 </code>
@@ -848,12 +882,14 @@ automation.save_routine(name: string): boolean
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.save_routine(&quot;my_routine&quot;)</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationload_routinename-string-boolean">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationload_routinename-string-boolean">#</doc-anchor-trigger>
         <span>automation.load_routine(name: string): boolean</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.load_routine(name: string): boolean
 </code>
@@ -865,12 +901,14 @@ automation.load_routine(name: string): boolean
     secret.automation.start_routine()
 end</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationrun_routinename-string-boolean">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationrun_routinename-string-boolean">#</doc-anchor-trigger>
         <span>automation.run_routine(name: string): boolean</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.run_routine(name: string): boolean
 </code>
@@ -880,12 +918,14 @@ automation.run_routine(name: string): boolean
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.run_routine(&quot;my_routine&quot;)</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationlist_routines-table">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationlist_routines-table">#</doc-anchor-trigger>
         <span>automation.list_routines(): table</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.list_routines(): table
 </code>
@@ -898,12 +938,14 @@ for i, name in ipairs(names) do
     print(i .. &quot;: &quot; .. name)
 end</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationlist_lua_files-table">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationlist_lua_files-table">#</doc-anchor-trigger>
         <span>automation.list_lua_files(): table</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.list_lua_files(): table
 </code>
@@ -916,12 +958,14 @@ for i, name in ipairs(files) do
     print(i .. &quot;: &quot; .. name)
 end</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationexport_routine-string">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationexport_routine-string">#</doc-anchor-trigger>
         <span>automation.export_routine(): string</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.export_routine(): string
 </code>
@@ -931,12 +975,14 @@ automation.export_routine(): string
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local data = secret.automation.export_routine()</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationimport_routinestr-string-boolean">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationimport_routinestr-string-boolean">#</doc-anchor-trigger>
         <span>automation.import_routine(str: string): boolean</span>
     </h3>
 </doc-anchor-target>
+</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.import_routine(str: string): boolean
 </code>
@@ -956,12 +1002,14 @@ end</code></pre>
         <span>Event types and buttons</span>
     </h2>
 </doc-anchor-target>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationevent_type">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationevent_type">#</doc-anchor-trigger>
         <span>automation.event_type</span>
     </h3>
 </doc-anchor-target>
+</div>
 <p>Table of event type IDs for the <code v-pre>type</code> field:</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -1106,12 +1154,14 @@ end</code></pre>
 secret.automation.add_event({ type = secret.automation.event_type.RunCommand, command = &quot;say hi&quot; })
 secret.automation.add_event({ type = secret.automation.event_type.PressKey, button_mask = secret.automation.buttons.IN_ATTACK, hold_ms = 100 })</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationbuttons">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationbuttons">#</doc-anchor-trigger>
         <span>automation.buttons</span>
     </h3>
 </doc-anchor-target>
+</div>
 <p>Button mask constants for <code v-pre>PressKey</code>, <code v-pre>WhenButtonHeld</code>, and <code v-pre>button_mask</code>:</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
