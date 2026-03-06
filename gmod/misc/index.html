@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.820784718008">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826150303776">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>misc</title>
     <meta name="title" content="misc">
-    <meta name="description" content="Responsible for miscellaneous API features that don't require their own table.">
+    <meta name="description" content="Miscellaneous API features that don't have their own table.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://secretserviceclub.github.io/gmod/misc/">
@@ -20,23 +20,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secretserviceclub.github.io/gmod/misc/">
     <meta property="og:title" content="misc">
-    <meta property="og:description" content="Responsible for miscellaneous API features that don't require their own table.">
+    <meta property="og:description" content="Miscellaneous API features that don't have their own table.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://secretserviceclub.github.io/gmod/misc/">
     <meta property="twitter:title" content="misc">
-    <meta property="twitter:description" content="Responsible for miscellaneous API features that don't require their own table.">
+    <meta property="twitter:description" content="Miscellaneous API features that don't have their own table.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.820784718008" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.826150303776" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.820784718008" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826150303776" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.820784718008" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.820784718008" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826150303776" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826150303776" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -205,187 +205,157 @@
         <span>misc</span>
     </h1>
 </doc-anchor-target>
-<p>Responsible for miscellaneous API features that don&#x27;t require their own table.</p>
+<p>Miscellaneous API features that don&#x27;t have their own table.</p>
 <hr>
-<doc-anchor-target id="functions">
+<doc-anchor-target id="identity--screenshot">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#functions">#</doc-anchor-trigger>
-        <span>Functions</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#identity--screenshot">#</doc-anchor-trigger>
+        <span>Identity &amp; screenshot</span>
     </h2>
 </doc-anchor-target>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="miscget_username-string">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscget_username-string">#</doc-anchor-trigger>
         <span>misc.get_username(): string</span>
     </h3>
 </doc-anchor-target>
-</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 misc.get_username(): string
 </code>
 <ul>
-<li>Retrieves the current username in the cheat.</li>
+<li>Current username in the cheat.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">local username = secret.misc.get_username()
-print(&quot;Current username:&quot;, username) </code></pre>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.misc.get_username()</code></pre>
 </doc-codeblock></div>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="miscin_screenshot-boolean">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscin_screenshot-boolean">#</doc-anchor-trigger>
         <span>misc.in_screenshot(): boolean</span>
     </h3>
 </doc-anchor-target>
-</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 misc.in_screenshot(): boolean
 </code>
 <ul>
-<li>Returns true if a screenshot is being captured, otherwise false.</li>
+<li>True while a screenshot is being captured.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">if secret.misc.in_screenshot() then
-    print(&quot;Warning: Screen capture detected!&quot;)
-else
-    print(&quot;No screen capture detected.&quot;)
-end</code></pre>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.misc.in_screenshot()</code></pre>
 </doc-codeblock></div>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<hr>
+<doc-anchor-target id="freecam">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#freecam">#</doc-anchor-trigger>
+        <span>Freecam</span>
+    </h2>
+</doc-anchor-target>
 <doc-anchor-target id="miscget_freecam_pos-table">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscget_freecam_pos-table">#</doc-anchor-trigger>
         <span>misc.get_freecam_pos(): table</span>
     </h3>
 </doc-anchor-target>
-</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 misc.get_freecam_pos(): table
 </code>
 <ul>
-<li>Retrieves the current position of the freecam in the world.</li>
+<li>Freecam position <code v-pre>{ x, y, z }</code>. Nil if freecam is off.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">local freecam_pos = secret.misc.get_freecam_pos()
-
-if freecam_pos then
-    print(&quot;Freecam Position:&quot;)
-    print(&quot;X:&quot;, freecam_pos.x)
-    print(&quot;Y:&quot;, freecam_pos.y)
-    print(&quot;Z:&quot;, freecam_pos.z)
-else
-    print(&quot;Freecam is not enabled.&quot;)
-end</code></pre>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">local pos = secret.misc.get_freecam_pos()
+if pos then print(pos.x, pos.y, pos.z) end</code></pre>
 </doc-codeblock></div>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="miscget_freecam_angles-table">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscget_freecam_angles-table">#</doc-anchor-trigger>
         <span>misc.get_freecam_angles(): table</span>
     </h3>
 </doc-anchor-target>
-</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 misc.get_freecam_angles(): table
 </code>
 <ul>
-<li>Retrieves the current angles of the freecam.</li>
+<li>Freecam view angles.</li>
 </ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="miscmouse_eventdwflags-number-dx-number-dy-number-dwdata-number">
+<hr>
+<doc-anchor-target id="input">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#input">#</doc-anchor-trigger>
+        <span>Input</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="miscsendmouseaction-string-x-number-y-number">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#miscmouse_eventdwflags-number-dx-number-dy-number-dwdata-number">#</doc-anchor-trigger>
-        <span>misc.mouse_event(dwFlags: number, dx: number, dy: number, dwData: number)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#miscsendmouseaction-string-x-number-y-number">#</doc-anchor-trigger>
+        <span>misc.sendmouse(action: string, x?: number, y?: number)</span>
     </h3>
 </doc-anchor-target>
-</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 misc.sendmouse(action: string, x?: number, y?: number)
 </code>
 <ul>
-<li>Sends a mouse action directly to the engine.</li>
-<li><strong>action</strong> can be:</li>
-<li><code v-pre>&quot;left&quot;</code> – left mouse button down/up (boolean second parameter).</li>
-<li><code v-pre>&quot;right&quot;</code> – right mouse button down/up.</li>
-<li><code v-pre>&quot;move&quot;</code> – move the mouse by <code v-pre>x</code>, <code v-pre>y</code> (delta coordinates).</li>
-<li><code v-pre>&quot;wheel&quot;</code> – scroll the mouse wheel (second parameter = amount).</li>
+<li>Send a mouse action. <strong>action:</strong> <code v-pre>&quot;left&quot;</code> (down/up with boolean), <code v-pre>&quot;right&quot;</code> (down/up), <code v-pre>&quot;move&quot;</code> (dx, dy), <code v-pre>&quot;wheel&quot;</code> (amount).</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">-- press left button
-secret.misc.sendmouse(&quot;left&quot;, true)
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.misc.sendmouse(&quot;left&quot;, true)
 secret.misc.sendmouse(&quot;left&quot;, false)
-
--- move mouse to (100, 200) inside the game
 secret.misc.sendmouse(&quot;move&quot;, 100, 200)
-
--- scroll wheel up
 secret.misc.sendmouse(&quot;wheel&quot;, 120)</code></pre>
 </doc-codeblock></div>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="miscsendkeyvk-number-press-boolean">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscsendkeyvk-number-press-boolean">#</doc-anchor-trigger>
         <span>misc.sendkey(vk: number, press: boolean)</span>
     </h3>
 </doc-anchor-target>
-</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 misc.sendkey(vk: number, press: boolean)
 </code>
 <ul>
-<li>Sends a key press or release to the engine.</li>
-<li>vk – virtual key code (e.g., <code v-pre>0x44</code> for D).</li>
+<li>Send key press or release. <strong>vk</strong> is virtual key code (e.g. <code v-pre>0x44</code> = D, <code v-pre>0x20</code> = Space).</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">-- press and release D key
-secret.misc.sendkey(0x44, true)
-secret.misc.sendkey(0x44, false)
-
--- press and release Space
-secret.misc.sendkey(0x20, true)
-secret.misc.sendkey(0x20, false)</code></pre>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.misc.sendkey(0x44, true)
+secret.misc.sendkey(0x44, false)</code></pre>
 </doc-codeblock></div>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<hr>
+<doc-anchor-target id="esp">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#esp">#</doc-anchor-trigger>
+        <span>ESP</span>
+    </h2>
+</doc-anchor-target>
 <doc-anchor-target id="miscadd_to_player_espindex-number-text-string-color-table-position-number">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscadd_to_player_espindex-number-text-string-color-table-position-number">#</doc-anchor-trigger>
         <span>misc.add_to_player_esp(index: number, text: string, color: table, position: number)</span>
     </h3>
 </doc-anchor-target>
-</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 misc.add_to_player_esp(index: number, text: string, color: table, position: number)
 </code>
 <ul>
-<li>Adds an ESP element for a specific player in the game. It allows you to display additional information about the player such as armor, etc.</li>
+<li>Add custom text to a player&#x27;s ESP. <strong>position:</strong> 0 = top, 1 = bottom, 2 = right, 3 = left. <strong>color:</strong> <code v-pre>{ r, g, b, a }</code>.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">local DRAW_TOP = 0
-local DRAW_BOTTOM = 1
-local DRAW_RIGHT = 2
-local DRAW_LEFT = 3
-
-secret.listener.add(&quot;view_render_post&quot;, &quot;Api Example&quot;, function()
-  for k, v in pairs(player.GetAll()) do
-    local index = v:EntIndex()
-    secret.misc.add_to_player_esp(index, &quot;Skibidi toilet!&quot;, { 255, 255, 255, 255 }, DRAW_TOP)
-  end
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;view_render_post&quot;, &quot;example&quot;, function()
+    for _, ply in pairs(player.GetAll()) do
+        secret.misc.add_to_player_esp(ply:EntIndex(), &quot;Custom&quot;, { 255, 255, 255, 255 }, 0)
+    end
 end)</code></pre>
 </doc-codeblock></div>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="miscadd_to_ent_espindex-number-text-string-color-table-position-number">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscadd_to_ent_espindex-number-text-string-color-table-position-number">#</doc-anchor-trigger>
         <span>misc.add_to_ent_esp(index: number, text: string, color: table, position: number)</span>
     </h3>
 </doc-anchor-target>
-</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 misc.add_to_ent_esp(index: number, text: string, color: table, position: number)
 </code>
 <ul>
-<li>Adds an ESP element for a specific entity in the game. It allows you to display additional information about the entity.</li>
+<li>Add custom text to an entity&#x27;s ESP. Same position/color as player ESP. Scripted entities only.</li>
 </ul>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
@@ -399,169 +369,174 @@ misc.add_to_ent_esp(index: number, text: string, color: table, position: number)
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>This only works on scripted entities.</p>
+<p>Scripted entities only.</p>
         </div>
     </div>
 </div>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<hr>
+<doc-anchor-target id="aimbot">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#aimbot">#</doc-anchor-trigger>
+        <span>Aimbot</span>
+    </h2>
+</doc-anchor-target>
 <doc-anchor-target id="miscget_aimbot_target-number">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscget_aimbot_target-number">#</doc-anchor-trigger>
         <span>misc.get_aimbot_target(): number</span>
     </h3>
 </doc-anchor-target>
-</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 misc.get_aimbot_target(): number
 </code>
 <ul>
-<li>Returns the current aimbot target index, if the target is not valid, it will return nil.</li>
+<li>Current aimbot target entity index, or nil if none.</li>
 </ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="miscsetcvarcvar-string-value-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#miscsetcvarcvar-string-value-string">#</doc-anchor-trigger>
-        <span>misc.setcvar(cvar: string, value: string)</span>
-    </h3>
+<hr>
+<doc-anchor-target id="console--cvars">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#console--cvars">#</doc-anchor-trigger>
+        <span>Console &amp; cvars</span>
+    </h2>
 </doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-misc.setcvar(cvar: string, value: string)
-</code>
-<ul>
-<li>Allows you to set a variable (cvar) to a specified value.</li>
-</ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="miscget_address-string--false">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#miscget_address-string--false">#</doc-anchor-trigger>
-        <span>misc.get_address(): string | false</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-misc.get_address(): string | false
-</code>
-<ul>
-<li>Gets the current address of the server you are connected to.</li>
-</ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="miscis_connected-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#miscis_connected-boolean">#</doc-anchor-trigger>
-        <span>misc.is_connected(): boolean</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-misc.is_connected(): boolean
-</code>
-<ul>
-<li>Checks if you are connnected to a server.</li>
-</ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="misccommandcmd-string">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#misccommandcmd-string">#</doc-anchor-trigger>
         <span>misc.command(cmd: string)</span>
     </h3>
 </doc-anchor-target>
-</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 misc.command(cmd: string)
 </code>
 <ul>
-<li>Runs a console command in regular string format.</li>
+<li>Run a console command string.</li>
 </ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="miscsetcvarcvar-string-value-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#miscsetcvarcvar-string-value-string">#</doc-anchor-trigger>
+        <span>misc.setcvar(cvar: string, value: string)</span>
+    </h3>
+</doc-anchor-target>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+misc.setcvar(cvar: string, value: string)
+</code>
+<ul>
+<li>Set a cvar to a value.</li>
+</ul>
+<hr>
+<doc-anchor-target id="network">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#network">#</doc-anchor-trigger>
+        <span>Network</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="miscget_address-string--false">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#miscget_address-string--false">#</doc-anchor-trigger>
+        <span>misc.get_address(): string | false</span>
+    </h3>
+</doc-anchor-target>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+misc.get_address(): string | false
+</code>
+<ul>
+<li>Address of the current server, or false if not connected.</li>
+</ul>
+<doc-anchor-target id="miscis_connected-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#miscis_connected-boolean">#</doc-anchor-trigger>
+        <span>misc.is_connected(): boolean</span>
+    </h3>
+</doc-anchor-target>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+misc.is_connected(): boolean
+</code>
+<ul>
+<li>True if connected to a server.</li>
+</ul>
+<hr>
+<doc-anchor-target id="entity-list">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#entity-list">#</doc-anchor-trigger>
+        <span>Entity list</span>
+    </h2>
+</doc-anchor-target>
 <doc-anchor-target id="miscadd_to_entity_listentity_name-string-action-boolean">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscadd_to_entity_listentity_name-string-action-boolean">#</doc-anchor-trigger>
         <span>misc.add_to_entity_list(entity_name: string, action: boolean)</span>
     </h3>
 </doc-anchor-target>
-</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 misc.add_to_entity_list(entity_name: string, action: boolean)
 </code>
 <ul>
-<li>Adds or removes an entity from the entity list.</li>
-<li>Note that the entity must already be present in the entity list, which only includes scripted entities.</li>
+<li>Add (<code v-pre>true</code>) or remove (<code v-pre>false</code>) an entity from the entity list. Entity must already be in the list (scripted entities).</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.misc.add_to_entity_list(&quot;gmod_hands&quot;, true) -- add the entity to ents esp
-secret.misc.add_to_entity_list(&quot;gmod_hands&quot;, false) -- remove the entity from the ents esp</code></pre>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.misc.add_to_entity_list(&quot;gmod_hands&quot;, true)
+secret.misc.add_to_entity_list(&quot;gmod_hands&quot;, false)</code></pre>
 </doc-codeblock></div>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="miscget_entity_list-table">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscget_entity_list-table">#</doc-anchor-trigger>
         <span>misc.get_entity_list(): table</span>
     </h3>
 </doc-anchor-target>
-</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 misc.get_entity_list(): table
 </code>
 <ul>
-<li>Returns a table of all known scripted entities.</li>
-<li>The keys are entity class names (e.g., &quot;prop_physics&quot;), and the values are booleans indicating whether each entity is currently selected.</li>
+<li>Table of scripted entity class names to boolean (selected or not).</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">local entities = secret.misc.get_entity_list()
-
-for name, selected in pairs(entities) do
-    print(string.format(&quot;entity: %s | selected: %s&quot;, name, tostring(selected)))
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">for name, selected in pairs(secret.misc.get_entity_list()) do
+    print(name, selected)
 end</code></pre>
 </doc-codeblock></div>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<hr>
+<doc-anchor-target id="time--misc">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#time--misc">#</doc-anchor-trigger>
+        <span>Time &amp; misc</span>
+    </h2>
+</doc-anchor-target>
 <doc-anchor-target id="miscdesync_time-number">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miscdesync_time-number">#</doc-anchor-trigger>
         <span>misc.desync_time(): number</span>
     </h3>
 </doc-anchor-target>
-</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 misc.desync_time(): number
 </code>
 <ul>
-<li>Returns the desynced time when using the desynculator.</li>
+<li>Desynced time when using the desync feature.</li>
 </ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="miscget_random_source-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#miscget_random_source-string">#</doc-anchor-trigger>
-        <span>misc.get_random_source(): string</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-misc.get_random_source(): string
-</code>
-<ul>
-<li>Returns a random loaded Lua source file name or path on the client.</li>
-<li><code v-pre>&quot;static source&quot;</code> in the lua tab will affect this function.</li>
-</ul>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="misccurrent_charge-number">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#misccurrent_charge-number">#</doc-anchor-trigger>
         <span>misc.current_charge(): number</span>
     </h3>
 </doc-anchor-target>
-</div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 misc.current_charge(): number
 </code>
 <ul>
-<li>Returns the current charged ticks when using tickbase shift.</li>
+<li>Current charge ticks when using tickbase shift.</li>
 </ul>
-<div hidden>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-typescript"><code v-pre class="language-typescript"> </code></pre>
-</doc-codeblock></div>
-</div>
+<doc-anchor-target id="miscget_random_source-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#miscget_random_source-string">#</doc-anchor-trigger>
+        <span>misc.get_random_source(): string</span>
+    </h3>
+</doc-anchor-target>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+misc.get_random_source(): string
+</code>
+<ul>
+<li>Random loaded Lua source file name/path. Affected by &quot;static source&quot; in the Lua tab.</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
