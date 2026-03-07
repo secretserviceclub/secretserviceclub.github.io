@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826156170585">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826214167990">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.826156170585" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.826214167990" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826156170585" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826214167990" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826156170585" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826156170585" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826214167990" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826214167990" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -286,6 +286,39 @@ misc.get_freecam_angles(): table
 <ul>
 <li>Freecam view angles.</li>
 </ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="miscget_spectating-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#miscget_spectating-number">#</doc-anchor-trigger>
+        <span>misc.get_spectating(): number</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+misc.get_spectating(): number
+</code>
+<ul>
+<li>Spectated player entity index, or 0 if not spectating.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="miscstart_spectatingindex-number-firstperson-boolean-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#miscstart_spectatingindex-number-firstperson-boolean-boolean">#</doc-anchor-trigger>
+        <span>misc.start_spectating(index: number, firstperson: boolean): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+misc.start_spectating(index: number, firstperson: boolean): boolean
+</code>
+<ul>
+<li>Start spectating a player. Requires freecam to be on and a valid alive player index (not local player). <strong>firstperson:</strong> true = first person, false = third person. Returns false if not in game, freecam off, invalid index, or target not valid.</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">if secret.misc.start_spectating(ply:EntIndex(), false) then
+    print(&quot;Spectating &quot; .. ply:Nick())
+end</code></pre>
+</doc-codeblock></div>
 <hr>
 <doc-anchor-target id="input">
     <h2>
