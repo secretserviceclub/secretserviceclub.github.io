@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826214167990">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826416462474">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.826214167990" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.826416462474" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826214167990" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826416462474" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826214167990" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826214167990" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826416462474" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826416462474" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -429,6 +429,26 @@ secret.automation.start_routine()</code></pre>
 <td>number</td>
 <td>Node position Y.</td>
 </tr>
+<tr>
+<td><code v-pre>else_step_index</code></td>
+<td>number</td>
+<td>Else-branch step index for conditionals (-1 = none).</td>
+</tr>
+<tr>
+<td><code v-pre>signal_name</code></td>
+<td>string</td>
+<td>Signal name for <code v-pre>WaitForLuaSignal</code>; resume when <code v-pre>automation.signal(name)</code> is called.</td>
+</tr>
+<tr>
+<td><code v-pre>entity_classname</code></td>
+<td>string</td>
+<td>Entity class name for entity-based events.</td>
+</tr>
+<tr>
+<td><code v-pre>target_entity_index</code></td>
+<td>number</td>
+<td>Target entity index (-1 = none).</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -812,6 +832,37 @@ automation.get_current_step_index(): number
 print(&quot;Current step: &quot; .. step)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="automationjump_to_stepstep_index-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#automationjump_to_stepstep_index-number">#</doc-anchor-trigger>
+        <span>automation.jump_to_step(step_index: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+automation.jump_to_step(step_index: number)
+</code>
+<ul>
+<li>Jump to a step index in the routine (1-based). Use to skip or re-run steps during playback.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="automationsignalname-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#automationsignalname-string">#</doc-anchor-trigger>
+        <span>automation.signal(name: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+automation.signal(name: string)
+</code>
+<ul>
+<li>Fire a signal by name. Use with the <code v-pre>WaitForLuaSignal</code> event type: when the routine hits that event it waits until <code v-pre>automation.signal(name)</code> is called with the same name (empty string is valid).</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.signal(&quot;my_signal&quot;)</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationget_crosshair_trace_end-table">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automationget_crosshair_trace_end-table">#</doc-anchor-trigger>
@@ -1145,6 +1196,31 @@ end</code></pre>
 <td><code v-pre>WhenVelocityBelow</code></td>
 <td>24</td>
 <td>Trigger when velocity below value.</td>
+</tr>
+<tr>
+<td><code v-pre>WaitForLuaSignal</code></td>
+<td>25</td>
+<td>Wait until <code v-pre>automation.signal(signal_name)</code> is called.</td>
+</tr>
+<tr>
+<td><code v-pre>Stop</code></td>
+<td>26</td>
+<td>Stop the routine.</td>
+</tr>
+<tr>
+<td><code v-pre>IfEntityInBox</code></td>
+<td>27</td>
+<td>Branch if entity in box.</td>
+</tr>
+<tr>
+<td><code v-pre>WhenNearEntity</code></td>
+<td>28</td>
+<td>Trigger when near entity.</td>
+</tr>
+<tr>
+<td><code v-pre>GotoEntity</code></td>
+<td>29</td>
+<td>Goto an entity.</td>
 </tr>
 </tbody>
 </table>
