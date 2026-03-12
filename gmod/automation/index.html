@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826428619931">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826632357880">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.826428619931" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.826632357880" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826428619931" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826632357880" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826428619931" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826428619931" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826632357880" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826632357880" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -206,6 +206,7 @@
     </h1>
 </doc-anchor-target>
 <p>Allows control over the automation in lua.</p>
+<p><strong>Quick reference:</strong> Build events with <code v-pre>event_type.*</code>, add them with <code v-pre>add_event()</code> or <code v-pre>set_routine()</code>, then <code v-pre>start_routine()</code>. Use <code v-pre>automation.listener</code> for path_found, start_walking, stuck, path_finished.</p>
 <hr>
 <doc-anchor-target id="routines-and-automation">
     <h2>
@@ -258,7 +259,7 @@ secret.automation.start_routine()</code></pre>
         <span>Event table shape</span>
     </h3>
 </doc-anchor-target>
-<p>Each event in a routine is a table with the following optional fields:</p>
+<p>Each event in a routine is a table with optional fields. <strong>Common fields:</strong></p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -394,6 +395,20 @@ secret.automation.start_routine()</code></pre>
 <td>boolean</td>
 <td>Silent look (no view change).</td>
 </tr>
+</tbody>
+</table>
+</div>
+<p><strong>Conditional / goto / node fields:</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td><code v-pre>goto_look_at_waypoint</code></td>
 <td>boolean</td>
@@ -428,6 +443,11 @@ secret.automation.start_routine()</code></pre>
 <td><code v-pre>node_pos_y</code></td>
 <td>number</td>
 <td>Node position Y.</td>
+</tr>
+<tr>
+<td><code v-pre>custom_node_radius</code></td>
+<td>number</td>
+<td>Custom node radius (default 0).</td>
 </tr>
 <tr>
 <td><code v-pre>else_step_index</code></td>
@@ -586,6 +606,19 @@ secret.automation.start_routine()</code></pre>
 </tbody>
 </table>
 </div>
+<hr>
+<doc-anchor-target id="routine-api">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#routine-api">#</doc-anchor-trigger>
+        <span>Routine API</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="building-routines">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#building-routines">#</doc-anchor-trigger>
+        <span>Building routines</span>
+    </h3>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationget_routine-table">
     <h3>
@@ -697,6 +730,12 @@ automation.clear_routine()
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.clear_routine()</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="playback">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#playback">#</doc-anchor-trigger>
+        <span>Playback</span>
+    </h3>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationstart_routine">
     <h3>
@@ -750,6 +789,12 @@ automation.is_routine_running(): boolean
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.is_routine_running()</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="link-to-next">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#link-to-next">#</doc-anchor-trigger>
+        <span>Link-to-next</span>
+    </h3>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationget_link_to_next-table">
     <h3>
@@ -787,6 +832,7 @@ automation.set_link_to_next(links: table)
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.set_link_to_next({ true, true, false })</code></pre>
 </doc-codeblock></div>
+<hr>
 <doc-anchor-target id="runtime-state-during-routine-playback">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#runtime-state-during-routine-playback">#</doc-anchor-trigger>
@@ -1358,6 +1404,45 @@ secret.automation.add_event({ type = secret.automation.event_type.PressKey, butt
     hold_ms = 200
 })</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="stuck-reason-constants">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#stuck-reason-constants">#</doc-anchor-trigger>
+        <span>Stuck reason constants</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<p>Reason IDs passed to the <code v-pre>stuck</code> event callback. Exposed on <code v-pre>automation</code> (e.g. <code v-pre>secret.automation.STUCK_COLLISION_BLOCKED</code>):</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>STUCK_COLLISION_BLOCKED</code></td>
+<td>1</td>
+<td>Stuck due to collision.</td>
+</tr>
+<tr>
+<td><code v-pre>STUCK_NO_PROGRESS</code></td>
+<td>2</td>
+<td>No progress made.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.listener.add(&quot;stuck&quot;, &quot;my_script&quot;, function(reason_id)
+    if reason_id == secret.automation.STUCK_NO_PROGRESS then
+        secret.automation.stop_routine()
+    end
+end)</code></pre>
+</doc-codeblock></div>
 <hr>
 <doc-anchor-target id="events">
     <h2>
@@ -1365,7 +1450,20 @@ secret.automation.add_event({ type = secret.automation.event_type.PressKey, butt
         <span>Events</span>
     </h2>
 </doc-anchor-target>
-<p>Automation fires signals during routine playback. <code v-pre>automation.listener</code> uses the Signal API: register with <code v-pre>listener.add(name, identity, callback)</code> and unregister with <code v-pre>listener.remove(name, identity)</code>. The <code v-pre>identity</code> is a string you choose (e.g. script name) so you can remove the callback later.</p>
+<p>Automation fires signals during routine playback. <code v-pre>automation.listener</code> uses the 
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-base-border hover:border-base-border-hover rounded transition-colors duration-150">
+    <div class="flex items-center text-base-500">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Signal</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>../../libraries/signal/#library-functions</span>
+    </div>
+    <a href="../../libraries/signal/#library-functions" class="absolute block inset-0"></a>
+</div>
+ API: register with <code v-pre>listener.add(name, identity, callback)</code> and unregister with <code v-pre>listener.remove(name, identity)</code>. The <code v-pre>identity</code> is a string you choose (e.g. script name) so you can remove the callback later.</p>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="path_found">
     <h3>
@@ -1418,16 +1516,20 @@ end)</code></pre>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-stuck()
+stuck(reason_id: number)
 </code>
 <ul>
-<li>Fired when the automation detects it can’t proceed (obstruction, etc.). The engine will try to recalc the path; you can stop or adjust the routine here.</li>
+<li>Fired when the automation detects it can’t proceed (obstruction, no progress, etc.). The callback receives <strong>reason_id</strong>; use <code v-pre>automation.STUCK_COLLISION_BLOCKED</code> (1) and <code v-pre>automation.STUCK_NO_PROGRESS</code> (2) to branch. The engine may recalc the path; you can stop or adjust the routine here.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.listener.add(&quot;stuck&quot;, &quot;my_script&quot;, function()
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.listener.add(&quot;stuck&quot;, &quot;my_script&quot;, function(reason_id)
     local step = secret.automation.get_current_step_index()
     local pos = secret.automation.get_current_position()
-    print(&quot;Stuck at step &quot; .. step .. &quot; pos &quot; .. pos.x .. &quot; &quot; .. pos.y .. &quot; &quot; .. pos.z)
+    if reason_id == secret.automation.STUCK_COLLISION_BLOCKED then
+        print(&quot;Stuck: collision blocked at step &quot; .. step)
+    elseif reason_id == secret.automation.STUCK_NO_PROGRESS then
+        print(&quot;Stuck: no progress at step &quot; .. step)
+    end
     -- secret.automation.stop_routine()
 end)</code></pre>
 </doc-codeblock></div>

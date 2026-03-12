@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826428619931">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826632357880">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.826428619931" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.826632357880" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826428619931" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826632357880" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826428619931" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826428619931" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826632357880" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826632357880" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -207,12 +207,6 @@
 </doc-anchor-target>
 <p>Global signal system for multi-purpose callbacks.</p>
 <hr>
-<doc-anchor-target id="events">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#events">#</doc-anchor-trigger>
-        <span>Events</span>
-    </h2>
-</doc-anchor-target>
 <p>
 <div class="mb-6 px-5 py-4 flex justify-between relative border border-base-border hover:border-base-border-hover rounded transition-colors duration-150">
     <div class="flex items-center text-base-500">
@@ -227,6 +221,12 @@
     <a href="../../libraries/signal/#library-functions" class="absolute block inset-0"></a>
 </div>
 </p>
+<doc-anchor-target id="aimbot--triggerbot">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#aimbot--triggerbot">#</doc-anchor-trigger>
+        <span>Aimbot &amp; triggerbot</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="should_aimbot_targetentindex-number-boolean">
     <h3>
@@ -266,6 +266,102 @@ should_triggerbot_target(entIndex: number): boolean
     return true -- blocks
 end)</code></pre>
 </doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="override_vischeckaimbot_target_index-number-tstart-vector-tend-vector-record-boolean-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#override_vischeckaimbot_target_index-number-tstart-vector-tend-vector-record-boolean-boolean">#</doc-anchor-trigger>
+        <span>override_vischeck(aimbot_target_index: number, tstart: vector, tend: vector, record: boolean): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+override_vischeck(aimbot_target_index: number, tstart: vector, tend: vector, record: boolean): boolean
+</code>
+<ul>
+<li>Called every time the cheat performs a visibility check between you and a potential aimbot target.</li>
+<li>Currently only <strong>ragebot</strong> uses this listener.</li>
+<li><strong>tstart</strong> – starting position of the trace (usually your eye position).</li>
+<li><strong>tend</strong> – ending position of the trace (usually the target hitbox).</li>
+<li><strong>record</strong> - is the trace running at a backtrack record?</li>
+<li><strong>Return value</strong>:
+<ul>
+<li><code v-pre>true</code>  → force the vischeck to succeed (target is always considered visible).</li>
+<li><code v-pre>false</code> → force the vischeck to fail (target is never considered visible).</li>
+<li><code v-pre>nil</code>   → do nothing and let the default engine visibility check decide.</li>
+</ul>
+</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">-- simple override, treat everyone as visible.
+secret.listener.add(&quot;override_vischeck&quot;, &quot;always_visible&quot;, function(target_index, tstart, tend, record)
+    return true
+end)
+
+-- custom logic, allow vis if distance &lt; 500 units
+secret.listener.add(&quot;override_vischeck&quot;, &quot;short_range_vis&quot;, function(target_index, tstart, tend, record)
+    local dist = (tend - tstart):Length()
+    if dist &lt; 500 then
+        return true
+    end
+end)</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="should_aimbot_autofire-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#should_aimbot_autofire-boolean">#</doc-anchor-trigger>
+        <span>should_aimbot_autofire(): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+should_aimbot_autofire(): boolean
+</code>
+<ul>
+<li>Called every time the ragebot decides whether it should autofire.</li>
+<li>Useful for custom logic to control when the ragebot fires (e.g., based on target state, weapon, or other conditions).</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;should_aimbot_autofire&quot;, &quot;custom_logic&quot;, function()
+    -- only allow autofire if some condition is met
+    return LocalPlayer():Health() &gt; 50
+end)</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="override_aimbot_angletarget_ent_index-number-original_angle-angle-target_angle-angle-booleanangle">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#override_aimbot_angletarget_ent_index-number-original_angle-angle-target_angle-angle-booleanangle">#</doc-anchor-trigger>
+        <span>override_aimbot_angle(target_ent_index: number, original_angle: Angle, target_angle: Angle): boolean,(Angle)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+override_aimbot_angle(target_ent_index: number, original_angle: Angle, target_angle: Angle): boolean,(Angle)
+</code>
+<ul>
+<li>Lets you override the final aim angle before the aimbot uses it.</li>
+<li>return <strong>true, new_angle</strong> to apply your override.</li>
+<li>return <strong>false</strong> to use the default angle.</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;override_aimbot_angle&quot;, &quot;67&quot;, function(target_ent_index, original_angle, target_angle)
+    local target = Entity(target_ent_index)
+
+    -- override when target is low hp
+    if target and target:Health() &lt; 30 then
+        local new_ang = Angle(67, 67, 0)
+        return true, new_ang
+    end
+
+    return false
+end)</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="esp">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#esp">#</doc-anchor-trigger>
+        <span>ESP</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="should_draw_playerentindex-number-boolean">
     <h3>
@@ -389,6 +485,51 @@ esp_player_team_color(entIndex: number): table
 end)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="esp_player_name_colorentindex-number-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#esp_player_name_colorentindex-number-table">#</doc-anchor-trigger>
+        <span>esp_player_name_color(entIndex: number): table</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+esp_player_name_color(entIndex: number): table
+</code>
+<ul>
+<li>Override the color used for a player’s name in ESP. Return a table <code v-pre>{ r, g, b, a }</code> (0–255). Return nothing or a non-table to keep the default (priority/friend/dormant/config) color.</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;esp_player_name_color&quot;, &quot;my_script&quot;, function(ent_index)
+    return { r = 255, g = 100, b = 100, a = 255 }
+end)</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="esp_player_usergroup_colorentindex-number-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#esp_player_usergroup_colorentindex-number-table">#</doc-anchor-trigger>
+        <span>esp_player_usergroup_color(entIndex: number): table</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+esp_player_usergroup_color(entIndex: number): table
+</code>
+<ul>
+<li>Override the color used for a player’s usergroup text in ESP. Return a table <code v-pre>{ r, g, b, a }</code> (0–255). Return nothing or a non-table to keep the default color.</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;esp_player_usergroup_color&quot;, &quot;my_script&quot;, function(ent_index)
+    return { r = 200, g = 200, b = 255, a = 255 }
+end)</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="game-loop">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#game-loop">#</doc-anchor-trigger>
+        <span>Game loop</span>
+    </h2>
+</doc-anchor-target>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="think">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#think">#</doc-anchor-trigger>
@@ -407,6 +548,13 @@ think()
     print(&quot;spammmm!&quot;)
 end)</code></pre>
 </doc-codeblock></div>
+<hr>
+<doc-anchor-target id="rendering">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#rendering">#</doc-anchor-trigger>
+        <span>Rendering</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="paint_traverse">
     <h3>
@@ -451,6 +599,13 @@ view_render_post()
     cam.End2D()
 end)</code></pre>
 </doc-codeblock></div>
+<hr>
+<doc-anchor-target id="network">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#network">#</doc-anchor-trigger>
+        <span>Network</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="server_connectip-string-port-number-hostname-string">
     <h3>
@@ -479,6 +634,13 @@ server_disconnect(reason: string)
 <ul>
 <li>Called when disconnected/kicked/banned from a server.</li>
 </ul>
+<hr>
+<doc-anchor-target id="input--usercmd">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#input--usercmd">#</doc-anchor-trigger>
+        <span>Input &amp; usercmd</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="presendcusercmd-table">
     <h3>
@@ -501,25 +663,85 @@ presend(CUserCmd: table)
     cmd.SetWorldClicker(cmd, Vector(20, 20, 20)) -- sets our context menu angle, not present in the garry's mod class.
 end)</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="cusercmd">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#cusercmd">#</doc-anchor-trigger>
-        <span>CUserCmd</span>
-    </h4>
-</doc-anchor-target>
-<p>get/set - cmd.buttons: number<br />
-get/set - cmd.command: number<br />
-get/set - cmd.tick: number<br />
-get/set - cmd.angles: Angle<br />
-get/set - cmd.forward: number<br />
-get/set - cmd.side: number<br />
-get/set - cmd.up number<br />
-get/set - cmd.impulse: number<br />
-get/set - cmd.seed: number<br />
-get - cmd.hash: number<br />
-get/set - cmd.mousex: number<br />
-get/set - cmd.mousey: number<br />
-get - cmd.prediction: bool</p>
+<p><strong>CUserCmd</strong> — properties available on the <code v-pre>cmd</code> table:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Property</th>
+<th>Access</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>buttons</code></td>
+<td>get/set</td>
+<td>number</td>
+</tr>
+<tr>
+<td><code v-pre>command</code></td>
+<td>get/set</td>
+<td>number</td>
+</tr>
+<tr>
+<td><code v-pre>tick</code></td>
+<td>get/set</td>
+<td>number</td>
+</tr>
+<tr>
+<td><code v-pre>angles</code></td>
+<td>get/set</td>
+<td>Angle</td>
+</tr>
+<tr>
+<td><code v-pre>forward</code></td>
+<td>get/set</td>
+<td>number</td>
+</tr>
+<tr>
+<td><code v-pre>side</code></td>
+<td>get/set</td>
+<td>number</td>
+</tr>
+<tr>
+<td><code v-pre>up</code></td>
+<td>get/set</td>
+<td>number</td>
+</tr>
+<tr>
+<td><code v-pre>impulse</code></td>
+<td>get/set</td>
+<td>number</td>
+</tr>
+<tr>
+<td><code v-pre>seed</code></td>
+<td>get/set</td>
+<td>number</td>
+</tr>
+<tr>
+<td><code v-pre>hash</code></td>
+<td>get</td>
+<td>number</td>
+</tr>
+<tr>
+<td><code v-pre>mousex</code></td>
+<td>get/set</td>
+<td>number</td>
+</tr>
+<tr>
+<td><code v-pre>mousey</code></td>
+<td>get/set</td>
+<td>number</td>
+</tr>
+<tr>
+<td><code v-pre>prediction</code></td>
+<td>get</td>
+<td>bool</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="wndprocvk_key-number-boolean">
     <h3>
@@ -540,95 +762,6 @@ wndproc(vk_key: number): boolean
     if vk == 0x20 then -- space key
         return true -- block input
     end
-end)</code></pre>
-</doc-codeblock></div>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="override_vischeckaimbot_target_index-number-tstart-vector-tend-vector-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#override_vischeckaimbot_target_index-number-tstart-vector-tend-vector-boolean">#</doc-anchor-trigger>
-        <span>override_vischeck(aimbot_target_index: number, tstart: vector, tend: vector): boolean</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-override_vischeck(aimbot_target_index: number, tstart: vector, tend: vector, record: boolean): boolean
-</code>
-<ul>
-<li>Called every time the cheat performs a visibility check between you and a potential aimbot target.</li>
-<li>Currently only <strong>ragebot</strong> uses this listener.</li>
-<li><strong>tstart</strong> – starting position of the trace (usually your eye position).</li>
-<li><strong>tend</strong> – ending position of the trace (usually the target hitbox).</li>
-<li><strong>record</strong> - is the trace running at a backtrack record?</li>
-<li><strong>Return value</strong>:
-<ul>
-<li><code v-pre>true</code>  → force the vischeck to succeed (target is always considered visible).</li>
-<li><code v-pre>false</code> → force the vischeck to fail (target is never considered visible).</li>
-<li><code v-pre>nil</code>   → do nothing and let the default engine visibility check decide.</li>
-</ul>
-</li>
-</ul>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">-- simple override, treat everyone as visible.
-secret.listener.add(&quot;override_vischeck&quot;, &quot;always_visible&quot;, function(target_index, tstart, tend, record)
-    return true
-end)
-
--- custom logic, allow vis if distance &lt; 500 units
-secret.listener.add(&quot;override_vischeck&quot;, &quot;short_range_vis&quot;, function(target_index, tstart, tend, record)
-    local dist = (tend - tstart):Length()
-    if dist &lt; 500 then
-        return true
-    end
-end)</code></pre>
-</doc-codeblock></div>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="should_aimbot_autofire-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#should_aimbot_autofire-boolean">#</doc-anchor-trigger>
-        <span>should_aimbot_autofire(): boolean</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-should_aimbot_autofire(): boolean
-</code>
-<ul>
-<li>Called every time the ragebot decides whether it should autofire.</li>
-<li>Useful for custom logic to control when the ragebot fires (e.g., based on target state, weapon, or other conditions).</li>
-</ul>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;should_aimbot_autofire&quot;, &quot;custom_logic&quot;, function()
-    -- only allow autofire if some condition is met
-    return LocalPlayer():Health() &gt; 50
-end)</code></pre>
-</doc-codeblock></div>
-<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="override_aimbot_angletarget_ent_index-number-original_angle-angle-target_angle-angle-booleanangle">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#override_aimbot_angletarget_ent_index-number-original_angle-angle-target_angle-angle-booleanangle">#</doc-anchor-trigger>
-        <span>override_aimbot_angle(target_ent_index: number, original_angle: Angle, target_angle: Angle): boolean,(Angle)</span>
-    </h3>
-</doc-anchor-target>
-</div>
-<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-override_aimbot_angle(target_ent_index: number, original_angle: Angle, target_angle: Angle): boolean,(Angle)
-</code>
-<ul>
-<li>lets you override the final aim angle before the aimbot uses it.</li>
-<li>return <strong>true, new_angle</strong> to apply your override.</li>
-<li>return <strong>false</strong> to use the default angle.</li>
-</ul>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;override_aimbot_angle&quot;, &quot;67&quot;, function(target_ent_index, original_angle, target_angle)
-    local target = Entity(target_ent_index)
-
-    -- override when target is low hp
-    if target and target:Health() &lt; 30 then
-        local new_ang = Angle(67, 67, 0)
-        return true, new_ang
-    end
-
-    return false
 end)</code></pre>
 </doc-codeblock></div>
 <div hidden>

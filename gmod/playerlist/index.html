@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826428619931">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826632357880">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.826428619931" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.826632357880" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826428619931" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826632357880" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826428619931" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826428619931" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826632357880" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826632357880" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -207,10 +207,10 @@
 </doc-anchor-target>
 <p>Manages players in your current game session.</p>
 <hr>
-<doc-anchor-target id="functions">
+<doc-anchor-target id="friends">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#functions">#</doc-anchor-trigger>
-        <span>Functions</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#friends">#</doc-anchor-trigger>
+        <span>Friends</span>
     </h2>
 </doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
@@ -256,6 +256,12 @@ playerlist.is_friend(steamid64: string): boolean
 <li>Checks if the specified SteamID64 is in the friend list and returns <code v-pre>true</code> if the player is a friend, otherwise <code v-pre>false</code>.</li>
 </ul>
 <hr>
+<doc-anchor-target id="priority">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#priority">#</doc-anchor-trigger>
+        <span>Priority</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="playerlistadd_prioritysteamid64-string">
     <h3>
@@ -296,9 +302,15 @@ playerlist.remove_priority(steamid64: string)
 playerlist.is_priority(steamid64: string): boolean
 </code>
 <ul>
-<li>Checks if the specified SteamID64 is in the priority list and returns <code v-pre>true</code> if the player is a friend, otherwise <code v-pre>false</code>.</li>
+<li>Checks if the specified SteamID64 is in the priority list and returns <code v-pre>true</code> if the player is on the priority list, otherwise <code v-pre>false</code>.</li>
 </ul>
 <hr>
+<doc-anchor-target id="secret-user">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#secret-user">#</doc-anchor-trigger>
+        <span>Secret user</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="playerlistis_secret_usersteamid64-string-boolean">
     <h3>

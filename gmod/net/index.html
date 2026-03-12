@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826428619931">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826632357880">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>net</title>
     <meta name="title" content="net">
-    <meta name="description" content="Network Manipulation and Exploitation.">
+    <meta name="description" content="Network manipulation and exploitation. Use these functions to control packet sending, choke commands, run server commands, block net messages, and...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://secretserviceclub.github.io/gmod/net/">
@@ -20,23 +20,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secretserviceclub.github.io/gmod/net/">
     <meta property="og:title" content="net">
-    <meta property="og:description" content="Network Manipulation and Exploitation.">
+    <meta property="og:description" content="Network manipulation and exploitation. Use these functions to control packet sending, choke commands, run server commands, block net messages, and...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://secretserviceclub.github.io/gmod/net/">
     <meta property="twitter:title" content="net">
-    <meta property="twitter:description" content="Network Manipulation and Exploitation.">
+    <meta property="twitter:description" content="Network manipulation and exploitation. Use these functions to control packet sending, choke commands, run server commands, block net messages, and...">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.826428619931" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.826632357880" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826428619931" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826632357880" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826428619931" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826428619931" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826632357880" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826632357880" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -205,12 +205,12 @@
         <span>net</span>
     </h1>
 </doc-anchor-target>
-<p>Network Manipulation and Exploitation.</p>
+<p>Network manipulation and exploitation. Use these functions to control packet sending, choke commands, run server commands, block net messages, and read latency or server time.</p>
 <hr>
-<doc-anchor-target id="functions">
+<doc-anchor-target id="packets--choking">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#functions">#</doc-anchor-trigger>
-        <span>Functions</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#packets--choking">#</doc-anchor-trigger>
+        <span>Packets &amp; choking</span>
     </h2>
 </doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
@@ -225,10 +225,13 @@
 net.bsendpacket(state: boolean?): boolean
 </code>
 <ul>
-<li>This changes if source engine should send movement packets or not.</li>
-<li>The returned <code v-pre>boolean</code> is the last state that bsendpacket was set to.</li>
-<li>Not providing anything will simply return the state.</li>
+<li>Controls whether the Source engine sends movement packets. Returns the previous state. Omit the argument to only read the current state.</li>
 </ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">local was = secret.net.bsendpacket(false) -- stop sending packets
+secret.net.bsendpacket(was)               -- restore
+local current = secret.net.bsendpacket()  -- read only</code></pre>
+</doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="netchoked-number">
     <h3>
@@ -241,8 +244,19 @@ net.bsendpacket(state: boolean?): boolean
 net.choked(): number
 </code>
 <ul>
-<li>The amount of movement commands that have been choked before sending again</li>
+<li>Number of movement commands currently choked (not yet sent).</li>
 </ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">local n = secret.net.choked()
+print(&quot;Choked commands:&quot;, n)</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="cvars--disconnect">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cvars--disconnect">#</doc-anchor-trigger>
+        <span>CVars &amp; disconnect</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="netsetcvarcvar-string-value-string">
     <h3>
@@ -274,6 +288,16 @@ net.disconnect(reason: string)
 <ul>
 <li>Allows you to disconnect from a server with a custom disconnect reason.</li>
 </ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.net.disconnect(&quot;Leaving&quot;)</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="commands">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#commands">#</doc-anchor-trigger>
+        <span>Commands</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="netstringcmdcmd-string">
     <h3>
@@ -288,6 +312,16 @@ net.stringcmd(cmd: string)
 <ul>
 <li>Allows to send a string command from the client to the server.</li>
 </ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.net.stringcmd(&quot;retry&quot;)</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="blocking">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#blocking">#</doc-anchor-trigger>
+        <span>Blocking</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="netblockcmd-string-writestring-boolean">
     <h3>
@@ -322,6 +356,13 @@ net.unblock(cmd: string, writestring: boolean)
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.net.unblock(&quot;anticheat_ban&quot;, false) -- this unblocks net.Start, true will unblock net.WriteString</code></pre>
 </doc-codeblock></div>
+<hr>
+<doc-anchor-target id="time--latency">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#time--latency">#</doc-anchor-trigger>
+        <span>Time &amp; latency</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="netget_latencyflow-number-number">
     <h3>

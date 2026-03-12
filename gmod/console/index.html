@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826428619931">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826632357880">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>console</title>
     <meta name="title" content="console">
-    <meta name="description" content="Responsible for managing the console system within the cheat.">
+    <meta name="description" content="Manages the cheat’s custom console: log messages, register commands that users can run from the console, and execute or list those commands from Lua.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://secretserviceclub.github.io/gmod/console/">
@@ -20,23 +20,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secretserviceclub.github.io/gmod/console/">
     <meta property="og:title" content="console">
-    <meta property="og:description" content="Responsible for managing the console system within the cheat.">
+    <meta property="og:description" content="Manages the cheat’s custom console: log messages, register commands that users can run from the console, and execute or list those commands from Lua.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://secretserviceclub.github.io/gmod/console/">
     <meta property="twitter:title" content="console">
-    <meta property="twitter:description" content="Responsible for managing the console system within the cheat.">
+    <meta property="twitter:description" content="Manages the cheat’s custom console: log messages, register commands that users can run from the console, and execute or list those commands from Lua.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.826428619931" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.826632357880" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826428619931" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826632357880" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826428619931" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826428619931" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826632357880" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826632357880" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -205,12 +205,12 @@
         <span>console</span>
     </h1>
 </doc-anchor-target>
-<p>Responsible for managing the console system within the cheat.</p>
+<p>Manages the cheat’s custom console: log messages, register commands that users can run from the console, and execute or list those commands from Lua.</p>
 <hr>
-<doc-anchor-target id="functions">
+<doc-anchor-target id="logging">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#functions">#</doc-anchor-trigger>
-        <span>Functions</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#logging">#</doc-anchor-trigger>
+        <span>Logging</span>
     </h2>
 </doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
@@ -232,6 +232,13 @@ console.log(text: string, log_type: number, display_date: boolean)
 <li>3 = Message</li>
 <li>4 = Note</li>
 </ul>
+<hr>
+<doc-anchor-target id="commands">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#commands">#</doc-anchor-trigger>
+        <span>Commands</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="consoleadd_commandname-string-description-string-func-function">
     <h3>
@@ -281,7 +288,7 @@ console.get_command_list(): table
 <li>Retrieves a list of available commands.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">local commandList = secret.get_command_list()
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">local commandList = secret.console.get_command_list()
 for _, commandName in ipairs(commandList) do
     print(commandName) 
 end</code></pre>

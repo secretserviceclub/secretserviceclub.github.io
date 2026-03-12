@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826428619931">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826632357880">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>ui</title>
     <meta name="title" content="ui">
-    <meta name="description" content="Responsible for creating and managing menu elements within the cheat interface.">
+    <meta name="description" content="Create and manage menu elements (groupboxes, checkboxes, sliders, buttons, etc.) in the cheat interface. Use ">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://secretserviceclub.github.io/gmod/ui/">
@@ -20,23 +20,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secretserviceclub.github.io/gmod/ui/">
     <meta property="og:title" content="ui">
-    <meta property="og:description" content="Responsible for creating and managing menu elements within the cheat interface.">
+    <meta property="og:description" content="Create and manage menu elements (groupboxes, checkboxes, sliders, buttons, etc.) in the cheat interface. Use ">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://secretserviceclub.github.io/gmod/ui/">
     <meta property="twitter:title" content="ui">
-    <meta property="twitter:description" content="Responsible for creating and managing menu elements within the cheat interface.">
+    <meta property="twitter:description" content="Create and manage menu elements (groupboxes, checkboxes, sliders, buttons, etc.) in the cheat interface. Use ">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.826428619931" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.826632357880" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826428619931" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826632357880" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826428619931" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826428619931" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826632357880" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826632357880" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -205,12 +205,12 @@
         <span>ui</span>
     </h1>
 </doc-anchor-target>
-<p>Responsible for creating and managing menu elements within the cheat interface.</p>
+<p>Create and manage menu elements (groupboxes, checkboxes, sliders, buttons, etc.) in the cheat interface. Use <code v-pre>config_name</code> with <a href="../config/">config</a> get/set to read and save values.</p>
 <hr>
-<doc-anchor-target id="functions">
+<doc-anchor-target id="creation">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#functions">#</doc-anchor-trigger>
-        <span>Functions</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#creation">#</doc-anchor-trigger>
+        <span>Creation</span>
     </h2>
 </doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
@@ -257,7 +257,7 @@ ui.create_checkbox(tab: string, groupbox: string, name: string, config_name: str
 ui.create_button(tab: string, groupbox: string, name: string, callback: function): number
 </code>
 <ul>
-<li>Creates a checkbox UI element within the specified tab and groupbox of the menu.</li>
+<li>Creates a <strong>button</strong> UI element within the specified tab and groupbox of the menu.</li>
 <li>Returns a numeric ID for the created element that can be used to update or remove it later.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
@@ -380,6 +380,13 @@ ui.create_playerlist_button(name: string, index: number, callback: function): nu
 <li>Do note that the callback will return the index as a param.</li>
 <li>Returns a numeric ID for the created element that can be used to update or remove it later.</li>
 </ul>
+<hr>
+<doc-anchor-target id="updates--removal">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#updates--removal">#</doc-anchor-trigger>
+        <span>Updates &amp; removal</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="uiupdateindex-number-new_value-stringtable">
     <h3>
@@ -420,6 +427,13 @@ ui.remove(index: number)
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.ui.remove(checkbox_id)</code></pre>
 </doc-codeblock></div>
+<hr>
+<doc-anchor-target id="groupbox">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#groupbox">#</doc-anchor-trigger>
+        <span>Groupbox</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="uiupdate_groupboxtab-string-groupbox_name-string-update_value-stringtablenumber">
     <h3>
@@ -461,6 +475,13 @@ ui.remove_groupbox(tab: string, groupbox_name: string)
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.ui.remove_groupbox(&quot;lua&quot;, &quot;elements&quot;)</code></pre>
 </doc-codeblock></div>
+<hr>
+<doc-anchor-target id="state--notifications">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#state--notifications">#</doc-anchor-trigger>
+        <span>State &amp; notifications</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="uiclear_elements">
     <h3>

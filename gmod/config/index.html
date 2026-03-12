@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826428619931">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826632357880">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>config</title>
     <meta name="title" content="config">
-    <meta name="description" content="Responsible for getting / setting config values.">
+    <meta name="description" content="Get and set cheat configuration values. Keys are used by the menu and by ui elements (e.g. config_name">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://secretserviceclub.github.io/gmod/config/">
@@ -20,23 +20,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secretserviceclub.github.io/gmod/config/">
     <meta property="og:title" content="config">
-    <meta property="og:description" content="Responsible for getting / setting config values.">
+    <meta property="og:description" content="Get and set cheat configuration values. Keys are used by the menu and by ui elements (e.g. config_name">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://secretserviceclub.github.io/gmod/config/">
     <meta property="twitter:title" content="config">
-    <meta property="twitter:description" content="Responsible for getting / setting config values.">
+    <meta property="twitter:description" content="Get and set cheat configuration values. Keys are used by the menu and by ui elements (e.g. config_name">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.826428619931" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.826632357880" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826428619931" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826632357880" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826428619931" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826428619931" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826632357880" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826632357880" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -205,7 +205,7 @@
         <span>config</span>
     </h1>
 </doc-anchor-target>
-<p>Responsible for getting / setting config values.</p>
+<p>Get and set cheat configuration values. Keys are used by the menu and by <a href="../ui/">ui</a> elements (e.g. <code v-pre>config_name</code> in create_checkbox). Config files can be loaded by name.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -223,10 +223,10 @@
     </div>
 </div>
 <hr>
-<doc-anchor-target id="functions">
+<doc-anchor-target id="getset">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#functions">#</doc-anchor-trigger>
-        <span>Functions</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getset">#</doc-anchor-trigger>
+        <span>Get/Set</span>
     </h2>
 </doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
@@ -271,6 +271,13 @@ print(&quot;misc_auto_strafe_smooth:&quot;, strafesmooth)
 local r, g, b, a = secret.config.get(&quot;Scheme&quot;)
 print(&quot;Menu Scheme:&quot;, r, g, b, a)</code></pre>
 </doc-codeblock></div>
+<hr>
+<doc-anchor-target id="load">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#load">#</doc-anchor-trigger>
+        <span>Load</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="configloadconfig_name-string">
     <h3>

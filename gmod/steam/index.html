@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826428619931">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826632357880">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>steam</title>
     <meta name="title" content="steam">
-    <meta name="description" content="Modifications & tools to the steam client.">
+    <meta name="description" content="Modifications & tools to the Steam client.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://secretserviceclub.github.io/gmod/steam/">
@@ -20,23 +20,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secretserviceclub.github.io/gmod/steam/">
     <meta property="og:title" content="steam">
-    <meta property="og:description" content="Modifications & tools to the steam client.">
+    <meta property="og:description" content="Modifications & tools to the Steam client.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://secretserviceclub.github.io/gmod/steam/">
     <meta property="twitter:title" content="steam">
-    <meta property="twitter:description" content="Modifications & tools to the steam client.">
+    <meta property="twitter:description" content="Modifications & tools to the Steam client.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.826428619931" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.826632357880" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826428619931" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826632357880" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826428619931" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826428619931" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826632357880" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826632357880" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -205,12 +205,12 @@
         <span>steam</span>
     </h1>
 </doc-anchor-target>
-<p>Modifications &amp; tools to the steam client.</p>
+<p>Modifications &amp; tools to the Steam client.</p>
 <hr>
-<doc-anchor-target id="functions">
+<doc-anchor-target id="invites">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#functions">#</doc-anchor-trigger>
-        <span>Functions</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#invites">#</doc-anchor-trigger>
+        <span>Invites</span>
     </h2>
 </doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
@@ -227,6 +227,13 @@ steam.invite_friend(steamid64: string)
 <ul>
 <li>Sends a game invite to the specified SteamID64.</li>
 </ul>
+<hr>
+<doc-anchor-target id="name">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#name">#</doc-anchor-trigger>
+        <span>Name</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="steamset_namename-string">
     <h3>
@@ -255,6 +262,13 @@ steam.get_name(): string
 <ul>
 <li>Gets the current steam name of your account</li>
 </ul>
+<hr>
+<doc-anchor-target id="ids">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ids">#</doc-anchor-trigger>
+        <span>IDs</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="steamget_id64-string">
     <h3>
@@ -297,6 +311,13 @@ steam.get_id(): string
 <ul>
 <li>Gets the SteamID of your account</li>
 </ul>
+<hr>
+<doc-anchor-target id="achievements">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#achievements">#</doc-anchor-trigger>
+        <span>Achievements</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="steamaward_achievementachievement_id-number">
     <h3>
@@ -314,6 +335,13 @@ steam.award_achievement(achievement_id: number)
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.steam.award_achievement(10) -- unlock the garry achievement, you can also spam this.</code></pre>
 </doc-codeblock></div>
+<hr>
+<doc-anchor-target id="presence">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#presence">#</doc-anchor-trigger>
+        <span>Presence</span>
+    </h2>
+</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="steamset_presencetype-string-value-string">
     <h3>
@@ -327,7 +355,7 @@ steam.set_presence(type?: string, value?: string)
 </code>
 <ul>
 <li>Changes the game activity on your profile.</li>
-<li>Not inputing anything into <code v-pre>type</code> clears all presence.</li>
+<li>Not providing anything for <code v-pre>type</code> clears all presence.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">-- Generic allows you to modify things freely without localizations
