@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.826839656068">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.827186131161">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.826839656068" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.827186131161" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.826839656068" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.827186131161" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.826839656068" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.826839656068" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.827186131161" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.827186131161" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -301,6 +301,11 @@ secret.automation.start_routine()</code></pre>
 <td>Wait duration in milliseconds.</td>
 </tr>
 <tr>
+<td><code v-pre>wait_unit</code></td>
+<td>number</td>
+<td>Wait unit selector (engine-defined).</td>
+</tr>
+<tr>
 <td><code v-pre>command</code></td>
 <td>string</td>
 <td>Console/command string.</td>
@@ -428,6 +433,21 @@ secret.automation.start_routine()</code></pre>
 <td><code v-pre>goto_destination_radius</code></td>
 <td>number</td>
 <td>Goto: consider arrived when within this distance of destination (default 0).</td>
+</tr>
+<tr>
+<td><code v-pre>goto_entity_repath_threshold</code></td>
+<td>number</td>
+<td>GotoEntity: trigger repath when beyond this threshold (default 0).</td>
+</tr>
+<tr>
+<td><code v-pre>goto_entity_rescan_on_reach</code></td>
+<td>boolean</td>
+<td>GotoEntity: rescan when reaching the destination.</td>
+</tr>
+<tr>
+<td><code v-pre>goto_entity_allow_dormant</code></td>
+<td>boolean</td>
+<td>GotoEntity: allow dormant targets.</td>
 </tr>
 <tr>
 <td><code v-pre>parent_step_index</code></td>
@@ -871,7 +891,7 @@ end</code></pre>
 automation.get_nodes(): table
 </code>
 <ul>
-<li>Current pathfinder nodes: 1-based array of <code v-pre>{ x, y, z }</code>.</li>
+<li>Current automation nodes: 1-based array of <code v-pre>{ x, y, z }</code>.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local nodes = secret.automation.get_nodes()
@@ -981,6 +1001,59 @@ automation.get_current_view_angles(): table
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local ang = secret.automation.get_current_view_angles()
 print(&quot;Pitch: &quot; .. ang.p .. &quot; Yaw: &quot; .. ang.y)</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="automationstart_pathfinder">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#automationstart_pathfinder">#</doc-anchor-trigger>
+        <span>automation.start_pathfinder()</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+automation.start_pathfinder()
+</code>
+<ul>
+<li>Start pathfinding for the current destination (so <code v-pre>get_waypoints()</code> / <code v-pre>get_nodes()</code> update).</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.start_pathfinder()</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="automationstop_pathfinder">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#automationstop_pathfinder">#</doc-anchor-trigger>
+        <span>automation.stop_pathfinder()</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+automation.stop_pathfinder()
+</code>
+<ul>
+<li>Stops the active pathfinding process.</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">if secret.automation.is_pathfinder_active() then
+    secret.automation.stop_pathfinder()
+end</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="automationis_pathfinder_active-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#automationis_pathfinder_active-boolean">#</doc-anchor-trigger>
+        <span>automation.is_pathfinder_active(): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+automation.is_pathfinder_active(): boolean
+</code>
+<ul>
+<li>True while pathfinding is active.</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">print(&quot;Active: &quot; .. tostring(secret.automation.is_pathfinder_active()))</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
 <doc-anchor-target id="automationsave_routinename-string-boolean">
