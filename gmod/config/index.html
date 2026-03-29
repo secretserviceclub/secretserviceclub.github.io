@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.827186131161">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.828109577687">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>config</title>
     <meta name="title" content="config">
-    <meta name="description" content="Get and set cheat configuration values. Keys are used by the menu and by ui elements (e.g. config_name">
+    <meta name="description" content="Read and write cheat settings from Lua using string keys; each key has a fixed type ( bool, int, float">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://secretserviceclub.github.io/gmod/config/">
@@ -20,23 +20,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secretserviceclub.github.io/gmod/config/">
     <meta property="og:title" content="config">
-    <meta property="og:description" content="Get and set cheat configuration values. Keys are used by the menu and by ui elements (e.g. config_name">
+    <meta property="og:description" content="Read and write cheat settings from Lua using string keys; each key has a fixed type ( bool, int, float">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://secretserviceclub.github.io/gmod/config/">
     <meta property="twitter:title" content="config">
-    <meta property="twitter:description" content="Get and set cheat configuration values. Keys are used by the menu and by ui elements (e.g. config_name">
+    <meta property="twitter:description" content="Read and write cheat settings from Lua using string keys; each key has a fixed type ( bool, int, float">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.827186131161" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.828109577687" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.827186131161" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.828109577687" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.827186131161" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.827186131161" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.828109577687" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.828109577687" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -205,7 +205,7 @@
         <span>config</span>
     </h1>
 </doc-anchor-target>
-<p>Get and set cheat configuration values. Keys are used by the menu and by <a href="../ui/">ui</a> elements (e.g. <code v-pre>config_name</code> in create_checkbox). Config files can be loaded by name.</p>
+<p>Read and write cheat settings from Lua using string keys; each key has a fixed type (<code v-pre>bool</code>, <code v-pre>int</code>, <code v-pre>float</code>, <code v-pre>color</code>, <code v-pre>multi</code>, or <code v-pre>string</code>). The in-game menu and <a href="../ui/">ui</a> controls reference the same keys-often via <code v-pre>config_name</code> on a widget.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -218,64 +218,108 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>A file named config_names.txt is generated in the configs folder containing the names of the configuration keys.</p>
+<p>A file named <code v-pre>config_names.txt</code> is generated in the configs folder containing the names of the configuration keys.</p>
         </div>
     </div>
 </div>
 <hr>
-<doc-anchor-target id="getset">
+<doc-anchor-target id="get-and-set">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#getset">#</doc-anchor-trigger>
-        <span>Get/Set</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#get-and-set">#</doc-anchor-trigger>
+        <span>Get and set</span>
     </h2>
 </doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="configsetkey-string-value-any">
+<doc-anchor-target id="configgetkey-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configsetkey-string-value-any">#</doc-anchor-trigger>
-        <span>config.set(key: string, value: any)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configgetkey-string">#</doc-anchor-trigger>
+        <span>config.get(key: string)</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-config.set(key: string, value: any)
+config.get(key: string)
 </code>
 <ul>
-<li>Sets a configuration value identified by the specified key to the desired value.</li>
+<li>Reads a value by config key. Return shape depends on the key’s type:
+<ul>
+<li><strong>bool</strong> — single boolean</li>
+<li><strong>int</strong> / <strong>float</strong> — single number</li>
+<li><strong>string</strong> — single string</li>
+<li><strong>color</strong> — four values <code v-pre>r, g, b, a</code> in <strong>0–255</strong> (use multiple assignment)</li>
+<li><strong>multi</strong> — table with <strong>string</strong> keys (e.g. <code v-pre>&quot;0&quot;</code>, <code v-pre>&quot;1&quot;</code>) mapping to booleans</li>
+</ul>
+</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">local autostrafe = secret.config.get(&quot;misc_auto_strafe&quot;)
+local smooth = secret.config.get(&quot;misc_auto_strafe_smooth&quot;)
+
+local r, g, b, a = secret.config.get(&quot;Scheme&quot;)
+print(&quot;Scheme:&quot;, r, g, b, a)
+
+local multi = secret.config.get(&quot;some_multi_key&quot;)
+for k, v in pairs(multi) do
+    print(k, v)
+end</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="configsetkey-string-value-boolean--number--string--table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configsetkey-string-value-boolean--number--string--table">#</doc-anchor-trigger>
+        <span>config.set(key: string, value: boolean | number | string | table)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+config.set(key: string, value: boolean | number | string | table)
+</code>
+<ul>
+<li>Writes a value; <code v-pre>value</code> must match the key’s type:
+<ul>
+<li><strong>bool</strong> — boolean</li>
+<li><strong>int</strong> / <strong>float</strong> — number</li>
+<li><strong>string</strong> — string</li>
+<li><strong>color</strong> — table with <strong>1-based</strong> indices <code v-pre>1-4</code>, channels <strong>0–255</strong> (stored internally normalized)</li>
+<li><strong>multi</strong> — table with <strong>string</strong> keys that parse as integers and <strong>boolean</strong> values</li>
+</ul>
+</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.config.set(&quot;misc_auto_strafe&quot;, false)
 secret.config.set(&quot;misc_auto_strafe_smooth&quot;, 50)
-secret.config.set(&quot;Scheme&quot;, {255, 255, 255, 255})</code></pre>
+secret.config.set(&quot;Scheme&quot;, { 255, 255, 255, 255 })
+
+secret.config.set(&quot;some_multi_key&quot;, {
+    [&quot;0&quot;] = true,
+    [&quot;1&quot;] = false,
+})</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="configgetkey-string-any">
+<doc-anchor-target id="configtypekey-string-string">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configgetkey-string-any">#</doc-anchor-trigger>
-        <span>config.get(key: string): any</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configtypekey-string-string">#</doc-anchor-trigger>
+        <span>config.type(key: string): string</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-config.get(key: string): any
+config.type(key: string): string
 </code>
 <ul>
-<li>Retrieves the current value of a configuration parameter identified by the specified key.</li>
+<li>Returns <code v-pre>&quot;bool&quot;</code>, <code v-pre>&quot;int&quot;</code>, <code v-pre>&quot;float&quot;</code>, <code v-pre>&quot;color&quot;</code>, <code v-pre>&quot;multi&quot;</code>, or <code v-pre>&quot;string&quot;</code>.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">local autostrafe = secret.config.get(&quot;misc_auto_strafe&quot;)
-local strafesmooth = secret.config.get(&quot;misc_auto_strafe_smooth&quot;)
-print(&quot;misc_auto_strafe:&quot;, autostrafe) 
-print(&quot;misc_auto_strafe_smooth:&quot;, strafesmooth) 
-
-local r, g, b, a = secret.config.get(&quot;Scheme&quot;)
-print(&quot;Menu Scheme:&quot;, r, g, b, a)</code></pre>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">local t = secret.config.type(&quot;misc_auto_strafe&quot;)
+if t == &quot;bool&quot; then
+    -- ...
+end</code></pre>
 </doc-codeblock></div>
 <hr>
-<doc-anchor-target id="load">
+<doc-anchor-target id="files">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#load">#</doc-anchor-trigger>
-        <span>Load</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#files">#</doc-anchor-trigger>
+        <span>Files</span>
     </h2>
 </doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
@@ -290,10 +334,64 @@ print(&quot;Menu Scheme:&quot;, r, g, b, a)</code></pre>
 config.load(config_name: string)
 </code>
 <ul>
-<li>Loads an existing configuration file by its name.</li>
+<li>Loads a saved config by <strong>basename</strong> (file extension is applied internally).</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.config.load(&quot;my_config&quot;)</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="configsaveconfig_name-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configsaveconfig_name-string">#</doc-anchor-trigger>
+        <span>config.save(config_name: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+config.save(config_name: string)
+</code>
+<ul>
+<li>Saves current settings under the configs directory; creates directories when needed.</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.config.save(&quot;my_config&quot;)</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="configlist-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configlist-table">#</doc-anchor-trigger>
+        <span>config.list(): table</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+config.list(): table
+</code>
+<ul>
+<li><strong>1-based</strong> array of saved config <strong>basenames</strong> (no paths).</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">local names = secret.config.list()
+for i, name in ipairs(names) do
+    print(i, name)
+end</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="configdirectory-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configdirectory-string">#</doc-anchor-trigger>
+        <span>config.directory(): string</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+config.directory(): string
+</code>
+<ul>
+<li>Absolute path of the configs folder.</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">print(secret.config.directory())</code></pre>
 </doc-codeblock></div>
 <div hidden>
 <div class="codeblock-wrapper"><doc-codeblock>
