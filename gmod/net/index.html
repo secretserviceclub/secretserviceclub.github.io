@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.828109577687">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.834161491236">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>net</title>
     <meta name="title" content="net">
-    <meta name="description" content="Network manipulation and exploitation. Use these functions to control packet sending, choke commands, run server commands, block net messages, and...">
+    <meta name="description" content="Network manipulation and exploitation. Use these functions to control packet sending, choke commands, run server commands, build low-level Source net...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://secretserviceclub.github.io/gmod/net/">
@@ -20,23 +20,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secretserviceclub.github.io/gmod/net/">
     <meta property="og:title" content="net">
-    <meta property="og:description" content="Network manipulation and exploitation. Use these functions to control packet sending, choke commands, run server commands, block net messages, and...">
+    <meta property="og:description" content="Network manipulation and exploitation. Use these functions to control packet sending, choke commands, run server commands, build low-level Source net...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://secretserviceclub.github.io/gmod/net/">
     <meta property="twitter:title" content="net">
-    <meta property="twitter:description" content="Network manipulation and exploitation. Use these functions to control packet sending, choke commands, run server commands, block net messages, and...">
+    <meta property="twitter:description" content="Network manipulation and exploitation. Use these functions to control packet sending, choke commands, run server commands, build low-level Source net...">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.828109577687" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.834161491236" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.828109577687" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.834161491236" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.828109577687" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.828109577687" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.834161491236" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.834161491236" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -205,7 +205,7 @@
         <span>net</span>
     </h1>
 </doc-anchor-target>
-<p>Network manipulation and exploitation. Use these functions to control packet sending, choke commands, run server commands, block net messages, and read latency or server time.</p>
+<p>Network manipulation and exploitation. Use these functions to control packet sending, choke commands, run server commands, build low-level Source net messages, block net messages, and read latency or server time.</p>
 <hr>
 <doc-anchor-target id="packets--choking">
     <h2>
@@ -315,6 +315,487 @@ net.stringcmd(cmd: string)
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.net.stringcmd(&quot;retry&quot;)</code></pre>
 </doc-codeblock></div>
+<hr>
+<doc-anchor-target id="source-net-messages">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#source-net-messages">#</doc-anchor-trigger>
+        <span>Source net messages</span>
+    </h2>
+</doc-anchor-target>
+<p>Low-level API for building and sending Source engine net messages directly.<br />
+Use this when you need full control over message layout, bit widths, or message types that the high-level helpers do not cover.</p>
+<p>Most messages follow the same layout: set the message type for <code v-pre>transmit</code>, write the 6-bit header with <code v-pre>write_uint</code>, then write the payload.</p>
+<p><strong>String command</strong> (<code v-pre>string_cmd</code>)</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">local buf = secret.net.packet(4096)
+buf:set_type(secret.net.msg.string_cmd)
+buf:write_uint(secret.net.msg.string_cmd, secret.net.header_bits)
+buf:write_str(&quot;status&quot;)
+local ok = buf:transmit() -- false if not connected</code></pre>
+</doc-codeblock></div>
+<p><strong>Set convar</strong> (<code v-pre>set_convar</code>) — low-level equivalent of <code v-pre>net.setcvar</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">local buf = secret.net.packet(4096)
+buf:set_type(secret.net.msg.set_convar)
+buf:write_uint(secret.net.msg.set_convar, secret.net.header_bits)
+buf:write_u8(1)              -- number of cvars being sent
+buf:write_str(&quot;name&quot;)
+buf:write_str(&quot;My New Name&quot;)
+buf:transmit()</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="netpacketcapacity-number-msg_type-number-netpacket">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netpacketcapacity-number-msg_type-number-netpacket">#</doc-anchor-trigger>
+        <span>net.packet(capacity: number, msg_type?: number): net.packet</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+net.packet(capacity: number, msg_type?: number): net.packet
+</code>
+<ul>
+<li>Creates a writable net message buffer.</li>
+<li><code v-pre>capacity</code> must be between <code v-pre>4</code> and <code v-pre>65536</code>. The buffer is rounded up to at least 4 bytes and aligned to a 4-byte boundary.</li>
+<li>Optional <code v-pre>msg_type</code> sets the initial message type (same values as <code v-pre>secret.net.msg.*</code>). Defaults to <code v-pre>nop</code> if omitted. You can change it later with <code v-pre>set_type</code>.</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">local buf = secret.net.packet(4096)                              -- buffer only
+local buf = secret.net.packet(4096, secret.net.msg.string_cmd) -- with preset type</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="netheader_bits-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netheader_bits-number">#</doc-anchor-trigger>
+        <span>net.header_bits: number</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+net.header_bits: number
+</code>
+<ul>
+<li>Standard Source net message header size in bits. Currently <code v-pre>6</code>.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="netmsg-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netmsg-table">#</doc-anchor-trigger>
+        <span>net.msg: table</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+net.msg: table
+</code>
+<ul>
+<li>Message type IDs for <code v-pre>set_type</code>, the on-wire header in <code v-pre>write_uint</code>, and the optional second argument to <code v-pre>net.packet</code>.</li>
+</ul>
+<p><strong>Generic</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>nop</code></td>
+<td>No operation</td>
+</tr>
+<tr>
+<td><code v-pre>disconnect</code></td>
+<td>Disconnect</td>
+</tr>
+<tr>
+<td><code v-pre>file</code></td>
+<td>File transfer</td>
+</tr>
+<tr>
+<td><code v-pre>tick</code></td>
+<td>Tick</td>
+</tr>
+<tr>
+<td><code v-pre>string_cmd</code></td>
+<td>Client string command</td>
+</tr>
+<tr>
+<td><code v-pre>set_convar</code></td>
+<td>Set console variable</td>
+</tr>
+<tr>
+<td><code v-pre>signon_state</code></td>
+<td>Sign-on state</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Server → client (<code v-pre>svc_*</code>)</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>svc_print</code></td>
+<td>Console print</td>
+</tr>
+<tr>
+<td><code v-pre>svc_server_info</code></td>
+<td>Server info</td>
+</tr>
+<tr>
+<td><code v-pre>svc_send_table</code></td>
+<td>Send datatable</td>
+</tr>
+<tr>
+<td><code v-pre>svc_class_info</code></td>
+<td>Class info</td>
+</tr>
+<tr>
+<td><code v-pre>svc_set_pause</code></td>
+<td>Set pause</td>
+</tr>
+<tr>
+<td><code v-pre>svc_create_string_table</code></td>
+<td>Create string table</td>
+</tr>
+<tr>
+<td><code v-pre>svc_update_string_table</code></td>
+<td>Update string table</td>
+</tr>
+<tr>
+<td><code v-pre>svc_voice_init</code></td>
+<td>Voice init</td>
+</tr>
+<tr>
+<td><code v-pre>svc_voice_data</code></td>
+<td>Voice data</td>
+</tr>
+<tr>
+<td><code v-pre>svc_sounds</code></td>
+<td>Sound list</td>
+</tr>
+<tr>
+<td><code v-pre>svc_set_view</code></td>
+<td>Set view entity</td>
+</tr>
+<tr>
+<td><code v-pre>svc_fix_angle</code></td>
+<td>Fix angle</td>
+</tr>
+<tr>
+<td><code v-pre>svc_crosshair_angle</code></td>
+<td>Crosshair angle</td>
+</tr>
+<tr>
+<td><code v-pre>svc_bsp_decal</code></td>
+<td>BSP decal</td>
+</tr>
+<tr>
+<td><code v-pre>svc_user_message</code></td>
+<td>User message</td>
+</tr>
+<tr>
+<td><code v-pre>svc_entity_message</code></td>
+<td>Entity message</td>
+</tr>
+<tr>
+<td><code v-pre>svc_game_event</code></td>
+<td>Game event</td>
+</tr>
+<tr>
+<td><code v-pre>svc_packet_entities</code></td>
+<td>Packet entities</td>
+</tr>
+<tr>
+<td><code v-pre>svc_temp_entities</code></td>
+<td>Temp entities</td>
+</tr>
+<tr>
+<td><code v-pre>svc_prefetch</code></td>
+<td>Prefetch</td>
+</tr>
+<tr>
+<td><code v-pre>svc_menu</code></td>
+<td>Menu</td>
+</tr>
+<tr>
+<td><code v-pre>svc_game_event_list</code></td>
+<td>Game event list</td>
+</tr>
+<tr>
+<td><code v-pre>svc_get_cvar_value</code></td>
+<td>Get cvar value</td>
+</tr>
+<tr>
+<td><code v-pre>svc_cmd_key_values</code></td>
+<td>Command key values</td>
+</tr>
+<tr>
+<td><code v-pre>svc_gmod_server_to_client</code></td>
+<td>GMod server → client</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Client → server (<code v-pre>clc_*</code>)</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>clc_client_info</code></td>
+<td>Client info</td>
+</tr>
+<tr>
+<td><code v-pre>clc_move</code></td>
+<td>Movement</td>
+</tr>
+<tr>
+<td><code v-pre>clc_voice_data</code></td>
+<td>Voice data</td>
+</tr>
+<tr>
+<td><code v-pre>clc_baseline_ack</code></td>
+<td>Baseline ack</td>
+</tr>
+<tr>
+<td><code v-pre>clc_listen_events</code></td>
+<td>Listen events</td>
+</tr>
+<tr>
+<td><code v-pre>clc_respond_cvar_value</code></td>
+<td>Respond cvar value</td>
+</tr>
+<tr>
+<td><code v-pre>clc_file_crc_check</code></td>
+<td>File CRC check</td>
+</tr>
+<tr>
+<td><code v-pre>clc_save_replay</code></td>
+<td>Save replay</td>
+</tr>
+<tr>
+<td><code v-pre>clc_cmd_key_values</code></td>
+<td>Command key values</td>
+</tr>
+<tr>
+<td><code v-pre>clc_file_md5_check</code></td>
+<td>File MD5 check</td>
+</tr>
+<tr>
+<td><code v-pre>clc_gmod_client_to_server</code></td>
+<td>GMod client → server</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<doc-anchor-target id="packet">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#packet">#</doc-anchor-trigger>
+        <span>Packet</span>
+    </h2>
+</doc-anchor-target>
+<p>Methods on a <code v-pre>net.packet</code> returned by <code v-pre>secret.net.packet</code>.</p>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="packetwrite_uintvalue-number-bits-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#packetwrite_uintvalue-number-bits-number">#</doc-anchor-trigger>
+        <span>packet:write_uint(value: number, bits: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+packet:write_uint(value: number, bits: number)
+</code>
+<ul>
+<li>Writes an unsigned integer using an arbitrary bit width.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="packetwrite_u8value-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#packetwrite_u8value-number">#</doc-anchor-trigger>
+        <span>packet:write_u8(value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+packet:write_u8(value: number)
+</code>
+<ul>
+<li>Writes a single byte (<code v-pre>0</code>–<code v-pre>255</code>).</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="packetwrite_i16value-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#packetwrite_i16value-number">#</doc-anchor-trigger>
+        <span>packet:write_i16(value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+packet:write_i16(value: number)
+</code>
+<ul>
+<li>Writes a signed 16-bit integer.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="packetwrite_i32value-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#packetwrite_i32value-number">#</doc-anchor-trigger>
+        <span>packet:write_i32(value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+packet:write_i32(value: number)
+</code>
+<ul>
+<li>Writes a signed 32-bit integer.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="packetwrite_strstr-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#packetwrite_strstr-string">#</doc-anchor-trigger>
+        <span>packet:write_str(str: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+packet:write_str(str: string)
+</code>
+<ul>
+<li>Writes a null-terminated string.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="packetwrite_ubitvalue-number-bits-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#packetwrite_ubitvalue-number-bits-number">#</doc-anchor-trigger>
+        <span>packet:write_ubit(value: number, bits: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+packet:write_ubit(value: number, bits: number)
+</code>
+<ul>
+<li>Writes an unsigned bit field.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="packetwrite_u32value-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#packetwrite_u32value-number">#</doc-anchor-trigger>
+        <span>packet:write_u32(value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+packet:write_u32(value: number)
+</code>
+<ul>
+<li>Writes a 32-bit word.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="packetseek_bitbit-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#packetseek_bitbit-number">#</doc-anchor-trigger>
+        <span>packet:seek_bit(bit: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+packet:seek_bit(bit: number)
+</code>
+<ul>
+<li>Seeks the write cursor to a bit position.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="packetwrite_rawdata-string-bits-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#packetwrite_rawdata-string-bits-number">#</doc-anchor-trigger>
+        <span>packet:write_raw(data: string, bits: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+packet:write_raw(data: string, bits: number)
+</code>
+<ul>
+<li>Writes raw bits from a Lua string.</li>
+<li>Errors if <code v-pre>bits</code> is negative or exceeds the length of <code v-pre>data</code>.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="packetdata_ptr-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#packetdata_ptr-number">#</doc-anchor-trigger>
+        <span>packet:data_ptr(): number</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+packet:data_ptr(): number
+</code>
+<ul>
+<li>Returns the buffer base pointer as a number.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="packetset_typeid-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#packetset_typeid-number">#</doc-anchor-trigger>
+        <span>packet:set_type(id: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+packet:set_type(id: number)
+</code>
+<ul>
+<li>Sets the message type used when transmitting. Use a value from <code v-pre>secret.net.msg</code>.<br />
+This is separate from the on-wire header - you still need <code v-pre>write_uint(id, secret.net.header_bits)</code> in the buffer for most message types.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="packettransmitreliable-boolean-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#packettransmitreliable-boolean-boolean">#</doc-anchor-trigger>
+        <span>packet:transmit(reliable?: boolean): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+packet:transmit(reliable?: boolean): boolean
+</code>
+<ul>
+<li>Sends the message over the active net channel.</li>
+<li><code v-pre>reliable</code> defaults to <code v-pre>true</code>.</li>
+<li>Returns <code v-pre>false</code> if there is no active connection.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="packetbits_left-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#packetbits_left-number">#</doc-anchor-trigger>
+        <span>packet:bits_left(): number</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+packet:bits_left(): number
+</code>
+<ul>
+<li>Returns the number of writable bits remaining in the buffer.</li>
+</ul>
 <hr>
 <doc-anchor-target id="blocking">
     <h2>
