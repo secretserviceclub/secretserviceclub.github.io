@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.834161491236">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.835387193572">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.834161491236" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.835387193572" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.834161491236" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.835387193572" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.834161491236" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.834161491236" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.835387193572" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.835387193572" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -565,6 +565,1138 @@ end
 -- check thirdperson with absolute=true - only returns true if key is physically pressed --&gt; this is what the 'hotkeys' uses.
 if  secret.config.get(&quot;misc_thirdperson&quot;) and secret.ui.is_keybind_active(&quot;thirdperson&quot;, true) then
     print(&quot;thirdperson key is currently being pressed&quot;)
+end</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="advanced-script-windows">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#advanced-script-windows">#</doc-anchor-trigger>
+        <span>Advanced script windows</span>
+    </h2>
+</doc-anchor-target>
+<p>This is the callback-based UI API for custom script windows.
+Use it when you want to build your own menu layout with Lua.</p>
+<doc-anchor-target id="quickstart">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quickstart">#</doc-anchor-trigger>
+        <span>Quickstart</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">local ui = secret.ui
+
+local window_id = &quot;quickstart_window&quot;
+local state = { enabled = false }
+
+local function render_window()
+    local changed
+    changed, state.enabled = ui.checkbox(&quot;enabled&quot;, state.enabled)
+    ui.tooltip(&quot;this is a quickstart tooltip&quot;)
+end
+
+if not ui.window_exists(window_id) then
+    ui.window_register(window_id, &quot;quickstart&quot;, render_window, {
+        visible = true,
+        open = true,
+        size = { x = 320, y = 180 }
+    })
+end</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="window-lifecycle">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#window-lifecycle">#</doc-anchor-trigger>
+        <span>Window lifecycle</span>
+    </h2>
+</doc-anchor-target>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiwindow_registerid-string-title-string-callback-function-options-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiwindow_registerid-string-title-string-callback-function-options-table">#</doc-anchor-trigger>
+        <span>ui.window_register(id: string, title: string, callback: function, options?: table)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.window_register(id: string, title: string, callback: function, options?: table)
+</code>
+<ul>
+<li>Creates or replaces a script window and callback.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiwindow_bind_drawid-string-callback-function">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiwindow_bind_drawid-string-callback-function">#</doc-anchor-trigger>
+        <span>ui.window_bind_draw(id: string, callback: function)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.window_bind_draw(id: string, callback: function)
+</code>
+<ul>
+<li>Replaces the draw callback for an already registered window.</li>
+<li>Useful when the window metadata was created earlier and you only need to update what it renders.</li>
+<li>The window must already exist (<code v-pre>ui.window_register</code> first).</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiwindow_removeid-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiwindow_removeid-string">#</doc-anchor-trigger>
+        <span>ui.window_remove(id: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.window_remove(id: string)
+</code>
+<ul>
+<li>Removes one script window.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiwindow_existsid-string-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiwindow_existsid-string-boolean">#</doc-anchor-trigger>
+        <span>ui.window_exists(id: string): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.window_exists(id: string): boolean
+</code>
+<ul>
+<li>Checks if a window id is currently registered.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiwindow_clear_all">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiwindow_clear_all">#</doc-anchor-trigger>
+        <span>ui.window_clear_all()</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.window_clear_all()
+</code>
+<ul>
+<li>Removes all script windows created by Lua.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiwindow_set_visibleid-string-visible-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiwindow_set_visibleid-string-visible-boolean">#</doc-anchor-trigger>
+        <span>ui.window_set_visible(id: string, visible: boolean)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.window_set_visible(id: string, visible: boolean)
+</code>
+<ul>
+<li>Sets visibility.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiwindow_set_openid-string-open-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiwindow_set_openid-string-open-boolean">#</doc-anchor-trigger>
+        <span>ui.window_set_open(id: string, open: boolean)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.window_set_open(id: string, open: boolean)
+</code>
+<ul>
+<li>Sets open/closed state.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiwindow_get_openid-string-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiwindow_get_openid-string-boolean">#</doc-anchor-trigger>
+        <span>ui.window_get_open(id: string): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.window_get_open(id: string): boolean
+</code>
+<ul>
+<li>Gets open/closed state.</li>
+</ul>
+<hr>
+<doc-anchor-target id="window-options-style-colors">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#window-options-style-colors">#</doc-anchor-trigger>
+        <span>Window options, style, colors</span>
+    </h2>
+</doc-anchor-target>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiwindow_set_optionsid-string-options-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiwindow_set_optionsid-string-options-table">#</doc-anchor-trigger>
+        <span>ui.window_set_options(id: string, options: table)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.window_set_options(id: string, options: table)
+</code>
+<ul>
+<li>Updates options after registration.</li>
+<li>Full supported <code v-pre>options</code> fields:</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">{
+    -- state
+    visible = true,
+    open = true,
+
+    -- glow/shadow toggle
+    glow = true,   -- alias: shadow
+    shadow = true, -- alias of glow
+
+    -- transform
+    position = { x = 120, y = 120 }, -- or {120, 120}
+    size = { x = 420, y = 360 },     -- or {420, 360}
+    position_cond = 2, -- ImGuiCond number (optional)
+    size_cond = 2,     -- ImGuiCond number (optional)
+
+    -- window flags
+    flags = 0, -- raw ImGuiWindowFlags number (optional)
+    no_title_bar = false,
+    no_resize = false,
+    no_move = false,
+    no_scrollbar = false,
+    no_scroll_with_mouse = false,
+    no_collapse = false,
+    always_auto_resize = false,
+    no_background = false,
+    no_saved_settings = false,
+    no_focus_on_appearing = false,
+    no_bring_to_front_on_focus = false
+}</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiwindow_set_styleid-string-style-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiwindow_set_styleid-string-style-table">#</doc-anchor-trigger>
+        <span>ui.window_set_style(id: string, style: table)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.window_set_style(id: string, style: table)
+</code>
+<ul>
+<li>Sets per-window style overrides (padding, spacing, rounding, border size, alignments).</li>
+<li>Full supported <code v-pre>style</code> keys:</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">{
+    -- vec2
+    window_padding = { x = 13, y = 13 },
+    item_spacing = { x = 10, y = 10 },
+    item_inner_spacing = { x = 8, y = 8 },
+    window_title_align = { x = 0.0, y = 0.5 },
+    button_text_align = { x = 0.5, y = 0.5 },
+    selectable_text_align = { x = 0.0, y = 0.0 },
+
+    -- float
+    window_rounding = 6,
+    child_rounding = 6,
+    frame_rounding = 6,
+    popup_rounding = 6,
+    tab_rounding = 6,
+    scrollbar_rounding = 6,
+    grab_rounding = 6,
+    window_border_size = 1,
+    child_border_size = 1,
+    frame_border_size = 1,
+    popup_border_size = 1,
+    indent_spacing = 8,
+    scrollbar_size = 12,
+    grab_min_size = 10
+}</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiwindow_clear_styleid-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiwindow_clear_styleid-string">#</doc-anchor-trigger>
+        <span>ui.window_clear_style(id: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.window_clear_style(id: string)
+</code>
+<ul>
+<li>Clears style overrides.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiwindow_set_colorid-string-color_name-string-color-tabler-number-g-number-b-number-a-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiwindow_set_colorid-string-color_name-string-color-tabler-number-g-number-b-number-a-number">#</doc-anchor-trigger>
+        <span>ui.window_set_color(id: string, color_name: string, color: table|r: number, g: number, b: number, a?: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.window_set_color(id: string, color_name: string, color: table|r: number, g: number, b: number, a?: number)
+</code>
+<ul>
+<li>Sets one color override for a window.</li>
+<li><code v-pre>Shadow</code> and <code v-pre>BorderShadow</code> target the same outside glow color.</li>
+<li>Full supported <code v-pre>color_name</code> values:</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">{
+    &quot;Text&quot;, &quot;TextDisabled&quot;,
+    &quot;WindowBg&quot;, &quot;ChildBg&quot;, &quot;PopupBg&quot;,
+    &quot;Border&quot;, &quot;BorderShadow&quot;, &quot;Shadow&quot;,
+    &quot;FrameBg&quot;, &quot;FrameBgHovered&quot;, &quot;FrameBgActive&quot;,
+    &quot;TitleBg&quot;, &quot;TitleBgActive&quot;, &quot;TitleBgCollapsed&quot;,
+    &quot;MenuBarBg&quot;,
+    &quot;ScrollbarBg&quot;, &quot;ScrollbarGrab&quot;, &quot;ScrollbarGrabHovered&quot;, &quot;ScrollbarGrabActive&quot;,
+    &quot;CheckMark&quot;,
+    &quot;SliderGrab&quot;, &quot;SliderGrabActive&quot;,
+    &quot;Button&quot;, &quot;ButtonHovered&quot;, &quot;ButtonActive&quot;,
+    &quot;Header&quot;, &quot;HeaderHovered&quot;, &quot;HeaderActive&quot;,
+    &quot;Separator&quot;, &quot;SeparatorHovered&quot;, &quot;SeparatorActive&quot;,
+    &quot;ResizeGrip&quot;, &quot;ResizeGripHovered&quot;, &quot;ResizeGripActive&quot;,
+    &quot;Tab&quot;, &quot;TabHovered&quot;, &quot;TabActive&quot;, &quot;TabUnfocused&quot;, &quot;TabUnfocusedActive&quot;,
+    &quot;PlotLines&quot;, &quot;PlotLinesHovered&quot;,
+    &quot;PlotHistogram&quot;, &quot;PlotHistogramHovered&quot;,
+    &quot;TableHeaderBg&quot;, &quot;TableBorderStrong&quot;, &quot;TableBorderLight&quot;,
+    &quot;TableRowBg&quot;, &quot;TableRowBgAlt&quot;,
+    &quot;TextSelectedBg&quot;,
+    &quot;DragDropTarget&quot;,
+    &quot;NavHighlight&quot;, &quot;NavWindowingHighlight&quot;, &quot;NavWindowingDimBg&quot;,
+    &quot;ModalWindowDimBg&quot;,
+    &quot;Scheme&quot;
+}</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiwindow_clear_colorsid-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiwindow_clear_colorsid-string">#</doc-anchor-trigger>
+        <span>ui.window_clear_colors(id: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.window_clear_colors(id: string)
+</code>
+<ul>
+<li>Clears all window color overrides.</li>
+</ul>
+<hr>
+<doc-anchor-target id="widgets">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#widgets">#</doc-anchor-trigger>
+        <span>Widgets</span>
+    </h2>
+</doc-anchor-target>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uitexttext-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uitexttext-string">#</doc-anchor-trigger>
+        <span>ui.text(text: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.text(text: string)
+</code>
+<ul>
+<li>Draws text.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uitext_coloredcolor-table-text-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uitext_coloredcolor-table-text-string">#</doc-anchor-trigger>
+        <span>ui.text_colored(color: table, text: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.text_colored(color: table, text: string)
+</code>
+<ul>
+<li>Draws colored text.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uibuttonlabel-string-width-number-height-number-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uibuttonlabel-string-width-number-height-number-boolean">#</doc-anchor-trigger>
+        <span>ui.button(label: string, width?: number, height?: number): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.button(label: string, width?: number, height?: number): boolean
+</code>
+<ul>
+<li>Draws a button. Returns <code v-pre>true</code> when clicked.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uicheckboxlabel-string-value-boolean-changed-boolean-value-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uicheckboxlabel-string-value-boolean-changed-boolean-value-boolean">#</doc-anchor-trigger>
+        <span>ui.checkbox(label: string, value: boolean): (changed: boolean, value: boolean)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.checkbox(label: string, value: boolean): (changed: boolean, value: boolean)
+</code>
+<ul>
+<li>Draws a checkbox.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uitoggle">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uitoggle">#</doc-anchor-trigger>
+        <span>ui.toggle(...)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.toggle(...) -- alias of ui.checkbox(...)
+</code>
+<ul>
+<li>Alias for <code v-pre>ui.checkbox</code>.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uislider_floatlabel-string-value-number-min-number-max-number-format-string-changed-boolean-value-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uislider_floatlabel-string-value-number-min-number-max-number-format-string-changed-boolean-value-number">#</doc-anchor-trigger>
+        <span>ui.slider_float(label: string, value: number, min: number, max: number, format?: string): (changed: boolean, value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.slider_float(label: string, value: number, min: number, max: number, format?: string): (changed: boolean, value: number)
+</code>
+<ul>
+<li>Float slider.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uislider_intlabel-string-value-number-min-number-max-number-format-string-changed-boolean-value-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uislider_intlabel-string-value-number-min-number-max-number-format-string-changed-boolean-value-number">#</doc-anchor-trigger>
+        <span>ui.slider_int(label: string, value: number, min: number, max: number, format?: string): (changed: boolean, value: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.slider_int(label: string, value: number, min: number, max: number, format?: string): (changed: boolean, value: number)
+</code>
+<ul>
+<li>Int slider.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiinput_textlabel-string-value-string-max_length-number-changed-boolean-value-string">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiinput_textlabel-string-value-string-max_length-number-changed-boolean-value-string">#</doc-anchor-trigger>
+        <span>ui.input_text(label: string, value: string, max_length?: number): (changed: boolean, value: string)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.input_text(label: string, value: string, max_length?: number): (changed: boolean, value: string)
+</code>
+<ul>
+<li>Text input.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uicombolabel-string-current_index_0_based-number-items-table-changed-boolean-index_0_based-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uicombolabel-string-current_index_0_based-number-items-table-changed-boolean-index_0_based-number">#</doc-anchor-trigger>
+        <span>ui.combo(label: string, current_index_0_based: number, items: table): (changed: boolean, index_0_based: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.combo(label: string, current_index_0_based: number, items: table): (changed: boolean, index_0_based: number)
+</code>
+<ul>
+<li>Combo using zero-based index.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uicombo_simplelabel-string-current_index_1_based-number-items-table-changed-boolean-index_1_based-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uicombo_simplelabel-string-current_index_1_based-number-items-table-changed-boolean-index_1_based-number">#</doc-anchor-trigger>
+        <span>ui.combo_simple(label: string, current_index_1_based: number, items: table): (changed: boolean, index_1_based: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.combo_simple(label: string, current_index_1_based: number, items: table): (changed: boolean, index_1_based: number)
+</code>
+<ul>
+<li>Combo using one-based index.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uitabsid-string-current_index_1_based-number-labels-table-changed-boolean-index_1_based-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uitabsid-string-current_index_1_based-number-labels-table-changed-boolean-index_1_based-number">#</doc-anchor-trigger>
+        <span>ui.tabs(id: string, current_index_1_based: number, labels: table): (changed: boolean, index_1_based: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.tabs(id: string, current_index_1_based: number, labels: table): (changed: boolean, index_1_based: number)
+</code>
+<ul>
+<li>Tab selector.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uicolor_edit4label-string-r-number-g-number-b-number-a-number-flags-number-changed-boolean-r-number-g-number-b-number-a-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uicolor_edit4label-string-r-number-g-number-b-number-a-number-flags-number-changed-boolean-r-number-g-number-b-number-a-number">#</doc-anchor-trigger>
+        <span>ui.color_edit4(label: string, r: number, g: number, b: number, a: number, flags?: number): (changed: boolean, r: number, g: number, b: number, a: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.color_edit4(label: string, r: number, g: number, b: number, a: number, flags?: number): (changed: boolean, r: number, g: number, b: number, a: number)
+</code>
+<ul>
+<li>Color editor. Returns channels in 0-255.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uicolor_pickerlabel-string--changed-boolean-color-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uicolor_pickerlabel-string--changed-boolean-color-table">#</doc-anchor-trigger>
+        <span>ui.color_picker(label: string, ...): (changed: boolean, color: table)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.color_picker(label: string, color_or_channels..., picker_options?: table|number, layout_options?: table|boolean): (changed: boolean, color: table)
+</code>
+<ul>
+<li>Color picker helper.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uicolor_picker_inlinelabel-string--changed-boolean-color-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uicolor_picker_inlinelabel-string--changed-boolean-color-table">#</doc-anchor-trigger>
+        <span>ui.color_picker_inline(label: string, ...): (changed: boolean, color: table)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.color_picker_inline(label: string, color_or_channels..., picker_options?: table|number, layout_options?: table|boolean): (changed: boolean, color: table)
+</code>
+<ul>
+<li>Inline color picker helper.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uihotkeylabel-string-key-number-mode-number-allow_mode-boolean-inline-boolean-spacing-number-align_right-boolean-changed-boolean-key-number-mode-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uihotkeylabel-string-key-number-mode-number-allow_mode-boolean-inline-boolean-spacing-number-align_right-boolean-changed-boolean-key-number-mode-number">#</doc-anchor-trigger>
+        <span>ui.hotkey(label: string, key: number, mode?: number, allow_mode?: boolean, inline?: boolean, spacing?: number, align_right?: boolean): (changed: boolean, key: number, mode: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.hotkey(label: string, key: number, mode?: number, allow_mode?: boolean, inline?: boolean, spacing?: number, align_right?: boolean): (changed: boolean, key: number, mode: number)
+</code>
+<ul>
+<li>Hotkey widget.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uihotkey_inlinelabel-string-key-number-mode-number-allow_mode-boolean-spacing-number-changed-boolean-key-number-mode-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uihotkey_inlinelabel-string-key-number-mode-number-allow_mode-boolean-spacing-number-changed-boolean-key-number-mode-number">#</doc-anchor-trigger>
+        <span>ui.hotkey_inline(label: string, key: number, mode?: number, allow_mode?: boolean, spacing?: number): (changed: boolean, key: number, mode: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.hotkey_inline(label: string, key: number, mode?: number, allow_mode?: boolean, spacing?: number): (changed: boolean, key: number, mode: number)
+</code>
+<ul>
+<li>Inline hotkey widget.</li>
+</ul>
+<hr>
+<doc-anchor-target id="helpers-layout-draw">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#helpers-layout-draw">#</doc-anchor-trigger>
+        <span>Helpers, layout, draw</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="layout-helpers">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#layout-helpers">#</doc-anchor-trigger>
+        <span>Layout helpers</span>
+    </h3>
+</doc-anchor-target>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uitooltiptext-string-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uitooltiptext-string-boolean">#</doc-anchor-trigger>
+        <span>ui.tooltip(text: string): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.tooltip(text: string): boolean
+</code>
+<ul>
+<li>Shows a tooltip if the previously rendered item is hovered.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uihelp_marker_inlinetext-string-spacing-number-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uihelp_marker_inlinetext-string-spacing-number-boolean">#</doc-anchor-trigger>
+        <span>ui.help_marker_inline(text: string, spacing?: number): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.help_marker_inline(text: string, spacing?: number): boolean
+</code>
+<ul>
+<li>Draws inline <code v-pre>(?)</code> and shows tooltip on hover.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiseparator">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiseparator">#</doc-anchor-trigger>
+        <span>ui.separator()</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.separator()
+</code>
+<ul>
+<li>Draws a horizontal separator line.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uispacingamount-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uispacingamount-number">#</doc-anchor-trigger>
+        <span>ui.spacing(amount?: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.spacing(amount?: number)
+</code>
+<ul>
+<li>Adds one or more spacing rows.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uisame_lineoffset-number-spacing-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uisame_lineoffset-number-spacing-number">#</doc-anchor-trigger>
+        <span>ui.same_line(offset?: number, spacing?: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.same_line(offset?: number, spacing?: number)
+</code>
+<ul>
+<li>Places the next item on the same line.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uibegin_group">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uibegin_group">#</doc-anchor-trigger>
+        <span>ui.begin_group()</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.begin_group()
+</code>
+<ul>
+<li>Starts a group block.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiend_group">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiend_group">#</doc-anchor-trigger>
+        <span>ui.end_group()</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.end_group()
+</code>
+<ul>
+<li>Ends a group block.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uibegin_childid-string-width-number-height-number-border-boolean-flags-number-boolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uibegin_childid-string-width-number-height-number-border-boolean-flags-number-boolean">#</doc-anchor-trigger>
+        <span>ui.begin_child(id: string, width: number, height: number, border?: boolean, flags?: number): boolean</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.begin_child(id: string, width: number, height: number, border?: boolean, flags?: number): boolean
+</code>
+<ul>
+<li>Begins a child/groupbox section. Returns opened state.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiend_child">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiend_child">#</doc-anchor-trigger>
+        <span>ui.end_child()</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.end_child()
+</code>
+<ul>
+<li>Ends the current child/groupbox section.</li>
+</ul>
+<doc-anchor-target id="style-stack-helpers">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#style-stack-helpers">#</doc-anchor-trigger>
+        <span>Style stack helpers</span>
+    </h3>
+</doc-anchor-target>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uipush_colorcolor_name-string-color-table">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uipush_colorcolor_name-string-color-table">#</doc-anchor-trigger>
+        <span>ui.push_color(color_name: string, color: table)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.push_color(color_name: string, color: table)
+</code>
+<ul>
+<li>Pushes a temporary ImGui color.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uipop_colorcount-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uipop_colorcount-number">#</doc-anchor-trigger>
+        <span>ui.pop_color(count?: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.pop_color(count?: number)
+</code>
+<ul>
+<li>Pops one or more pushed colors.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uipush_style_varstyle_name-string-values">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uipush_style_varstyle_name-string-values">#</doc-anchor-trigger>
+        <span>ui.push_style_var(style_name: string, ...values)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.push_style_var(style_name: string, ...values)
+</code>
+<ul>
+<li>Pushes a temporary style var.</li>
+</ul>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uipop_style_varcount-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uipop_style_varcount-number">#</doc-anchor-trigger>
+        <span>ui.pop_style_var(count?: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.pop_style_var(count?: number)
+</code>
+<ul>
+<li>Pops one or more pushed style vars.</li>
+</ul>
+<doc-anchor-target id="draw-helpers">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#draw-helpers">#</doc-anchor-trigger>
+        <span>Draw helpers</span>
+    </h3>
+</doc-anchor-target>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uidraw_linex1-y1-x2-y2-color-thickness">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uidraw_linex1-y1-x2-y2-color-thickness">#</doc-anchor-trigger>
+        <span>ui.draw_line(x1, y1, x2, y2, color, thickness?)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.draw_line(x1, y1, x2, y2, color, thickness?)
+</code>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uidraw_rectx-y-w-h-color-rounding-thickness">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uidraw_rectx-y-w-h-color-rounding-thickness">#</doc-anchor-trigger>
+        <span>ui.draw_rect(x, y, w, h, color, rounding?, thickness?)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.draw_rect(x, y, w, h, color, rounding?, thickness?)
+</code>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uidraw_rect_filledx-y-w-h-color-rounding">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uidraw_rect_filledx-y-w-h-color-rounding">#</doc-anchor-trigger>
+        <span>ui.draw_rect_filled(x, y, w, h, color, rounding?)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.draw_rect_filled(x, y, w, h, color, rounding?)
+</code>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uidraw_circlex-y-radius-color-segments-thickness">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uidraw_circlex-y-radius-color-segments-thickness">#</doc-anchor-trigger>
+        <span>ui.draw_circle(x, y, radius, color, segments?, thickness?)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.draw_circle(x, y, radius, color, segments?, thickness?)
+</code>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uidraw_circle_filledx-y-radius-color-segments">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uidraw_circle_filledx-y-radius-color-segments">#</doc-anchor-trigger>
+        <span>ui.draw_circle_filled(x, y, radius, color, segments?)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.draw_circle_filled(x, y, radius, color, segments?)
+</code>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uidraw_textx-y-color-text">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uidraw_textx-y-color-text">#</doc-anchor-trigger>
+        <span>ui.draw_text(x, y, color, text)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.draw_text(x, y, color, text)
+</code>
+<ul>
+<li>Draw-list primitives in current window space.</li>
+</ul>
+<doc-anchor-target id="cursorwindow-helpers">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cursorwindow-helpers">#</doc-anchor-trigger>
+        <span>Cursor/window helpers</span>
+    </h3>
+</doc-anchor-target>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiget_cursor_pos-x-number-y-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiget_cursor_pos-x-number-y-number">#</doc-anchor-trigger>
+        <span>ui.get_cursor_pos(): (x: number, y: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.get_cursor_pos(): (x: number, y: number)
+</code>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiset_cursor_posx-number-y-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiset_cursor_posx-number-y-number">#</doc-anchor-trigger>
+        <span>ui.set_cursor_pos(x: number, y: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.set_cursor_pos(x: number, y: number)
+</code>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="uiget_window_size-w-number-h-number">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uiget_window_size-w-number-h-number">#</doc-anchor-trigger>
+        <span>ui.get_window_size(): (w: number, h: number)</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+ui.get_window_size(): (w: number, h: number)
+</code>
+<ul>
+<li>Cursor/window helper functions.</li>
+</ul>
+<hr>
+<doc-anchor-target id="example-1-simple-checkbox--slider">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-1-simple-checkbox--slider">#</doc-anchor-trigger>
+        <span>example 1: simple (checkbox + slider)</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">local ui = secret.ui
+
+local window_id = &quot;example_simple_window&quot;
+local state = {
+    enabled = false,
+    power = 40
+}
+
+local function render_simple()
+    local changed_enabled
+    changed_enabled, state.enabled = ui.checkbox(&quot;enabled&quot;, state.enabled)
+    ui.tooltip(&quot;turn this on or off&quot;)
+
+    local changed_power
+    changed_power, state.power = ui.slider_int(&quot;power&quot;, state.power, 0, 100, &quot;%d%%&quot;)
+    ui.tooltip(&quot;controls the power level&quot;)
+end
+
+if not ui.window_exists(window_id) then
+    ui.window_register(window_id, &quot;simple menu&quot;, render_simple, {
+        visible = true,
+        open = true,
+        size = { x = 320, y = 180 },
+        no_collapse = true
+    })
+end</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="example-2-tabs--checkboxes--colors--tooltips">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-2-tabs--checkboxes--colors--tooltips">#</doc-anchor-trigger>
+        <span>example 2: tabs + checkboxes + colors + tooltips</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">local ui = secret.ui
+
+local window_id = &quot;example_tabs_window&quot;
+local state = {
+    left_tab = 1,
+    right_tab = 1,
+    legit = true,
+    visuals = true,
+    bhop = false,
+    accent = { r = 120, g = 170, b = 255, a = 255 },
+    glow = { r = 255, g = 120, b = 80, a = 160 },
+    mode = 1
+}
+
+local function render_tabs()
+    local window_w, window_h = ui.get_window_size()
+    local child_w = (window_w - 42) * 0.5
+
+    local left_open = ui.begin_child(&quot;left group##example2&quot;, child_w, 0, true)
+    if left_open then
+        local left_tab_changed
+        left_tab_changed, state.left_tab = ui.tabs(&quot;left_tabs&quot;, state.left_tab, { &quot;main&quot;, &quot;extra&quot; })
+        ui.separator()
+
+        if state.left_tab == 1 then
+            local changed_legit
+            changed_legit, state.legit = ui.checkbox(&quot;legit enabled&quot;, state.legit)
+            ui.tooltip(&quot;main legit toggle&quot;)
+
+            local changed_visuals
+            changed_visuals, state.visuals = ui.checkbox(&quot;visuals enabled&quot;, state.visuals)
+            ui.tooltip(&quot;main visuals toggle&quot;)
+        else
+            local changed_bhop
+            changed_bhop, state.bhop = ui.checkbox(&quot;auto bhop&quot;, state.bhop)
+            ui.tooltip(&quot;example extra movement option&quot;)
+
+            local changed_mode
+            changed_mode, state.mode = ui.combo_simple(&quot;mode&quot;, state.mode, { &quot;silent&quot;, &quot;balanced&quot;, &quot;aggressive&quot; })
+            ui.help_marker_inline(&quot;switches behavior mode&quot;)
+        end
+    end
+    ui.end_child()
+
+    ui.same_line()
+
+    local right_open = ui.begin_child(&quot;right group##example2&quot;, child_w, 0, true)
+    if right_open then
+        local right_tab_changed
+        right_tab_changed, state.right_tab = ui.tabs(&quot;right_tabs&quot;, state.right_tab, { &quot;colors&quot;, &quot;glow&quot; })
+        ui.separator()
+
+        if state.right_tab == 1 then
+            ui.text(&quot;accent&quot;)
+            local changed_accent
+            changed_accent, state.accent = ui.color_picker_inline(&quot;accent_inline&quot;, state.accent, {
+                compact = true,
+                use_inputs = false
+            }, {
+                inline = true,
+                spacing = 8
+            })
+            ui.tooltip(&quot;menu accent color&quot;)
+
+            if changed_accent then
+                ui.window_set_color(window_id, &quot;Scheme&quot;, state.accent)
+            end
+        else
+            ui.text(&quot;shadow glow&quot;)
+            local changed_glow
+            changed_glow, state.glow = ui.color_picker_inline(&quot;shadow_inline&quot;, state.glow, {
+                compact = true,
+                use_inputs = false
+            }, {
+                inline = true,
+                spacing = 8
+            })
+            ui.tooltip(&quot;outside glow color&quot;)
+
+            if changed_glow then
+                ui.window_set_color(window_id, &quot;Shadow&quot;, state.glow)
+            end
+        end
+    end
+    ui.end_child()
+end
+
+if not ui.window_exists(window_id) then
+    ui.window_register(window_id, &quot;tabs menu&quot;, render_tabs, {
+        visible = true,
+        open = true,
+        size = { x = 430, y = 310 },
+        no_collapse = true
+    })
+end</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="example-3-tung-tung-menu-simple-custom-theme">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-3-tung-tung-menu-simple-custom-theme">#</doc-anchor-trigger>
+        <span>example 3: tung tung menu (simple custom theme)</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">local ui = secret.ui
+
+local window_id = &quot;tung_tung_menu&quot;
+local state = {
+    tab = 1,
+    enabled = true,
+    tung_power = 65,
+    mode = 1,
+    accent = { r = 255, g = 145, b = 82, a = 255 },
+    shadow = { r = 255, g = 126, b = 72, a = 145 }
+}
+
+local theme_applied = false
+
+local function apply_theme()
+    ui.window_set_options(window_id, { glow = true })
+
+    ui.window_set_style(window_id, {
+        window_padding = { x = 14, y = 14 },
+        item_spacing = { x = 9, y = 9 },
+        item_inner_spacing = { x = 7, y = 6 },
+        window_rounding = 8,
+        child_rounding = 7,
+        frame_rounding = 6,
+        tab_rounding = 6,
+        grab_rounding = 5,
+        window_border_size = 1,
+        child_border_size = 1,
+        frame_border_size = 1
+    })
+
+    ui.window_set_color(window_id, &quot;Text&quot;, 236, 226, 212, 255)
+    ui.window_set_color(window_id, &quot;TextDisabled&quot;, 154, 142, 130, 255)
+    ui.window_set_color(window_id, &quot;WindowBg&quot;, 24, 18, 16, 245)
+    ui.window_set_color(window_id, &quot;ChildBg&quot;, 35, 26, 22, 255)
+    ui.window_set_color(window_id, &quot;Border&quot;, 88, 64, 52, 255)
+    ui.window_set_color(window_id, &quot;FrameBg&quot;, 51, 37, 31, 255)
+    ui.window_set_color(window_id, &quot;FrameBgHovered&quot;, 74, 52, 42, 255)
+    ui.window_set_color(window_id, &quot;FrameBgActive&quot;, 92, 64, 52, 255)
+    ui.window_set_color(window_id, &quot;Button&quot;, 66, 47, 39, 255)
+    ui.window_set_color(window_id, &quot;ButtonHovered&quot;, 93, 64, 52, 255)
+    ui.window_set_color(window_id, &quot;ButtonActive&quot;, 112, 76, 61, 255)
+    ui.window_set_color(window_id, &quot;Header&quot;, 72, 51, 42, 255)
+    ui.window_set_color(window_id, &quot;HeaderHovered&quot;, 101, 69, 55, 255)
+    ui.window_set_color(window_id, &quot;HeaderActive&quot;, 120, 81, 64, 255)
+    ui.window_set_color(window_id, &quot;Tab&quot;, 58, 42, 35, 255)
+    ui.window_set_color(window_id, &quot;TabHovered&quot;, 87, 60, 48, 255)
+    ui.window_set_color(window_id, &quot;TabActive&quot;, 107, 72, 57, 255)
+    ui.window_set_color(window_id, &quot;CheckMark&quot;, state.accent)
+    ui.window_set_color(window_id, &quot;SliderGrab&quot;, state.accent)
+    ui.window_set_color(window_id, &quot;Scheme&quot;, state.accent)
+    ui.window_set_color(window_id, &quot;Shadow&quot;, state.shadow)
+end
+
+local function render_custom()
+    if not theme_applied then
+        apply_theme()
+        theme_applied = true
+    end
+
+    local window_w, window_h = ui.get_window_size()
+
+    local tab_changed
+    tab_changed, state.tab = ui.tabs(&quot;tung_tabs&quot;, state.tab, { &quot;main&quot;, &quot;colors&quot; })
+    ui.separator()
+
+    if state.tab == 1 then
+        local changed_enabled
+        changed_enabled, state.enabled = ui.checkbox(&quot;enable tung tung&quot;, state.enabled)
+        ui.tooltip(&quot;master toggle for tung tung mode&quot;)
+
+        local changed_power
+        changed_power, state.tung_power = ui.slider_int(&quot;tung power&quot;, state.tung_power, 0, 100, &quot;%d%%&quot;)
+        ui.tooltip(&quot;how strong the tung tung effect is&quot;)
+
+        local changed_mode
+        changed_mode, state.mode = ui.combo_simple(&quot;sahur mode&quot;, state.mode, { &quot;chill&quot;, &quot;normal&quot;, &quot;loud&quot; })
+    else
+        ui.text(&quot;accent&quot;)
+        local changed_accent
+        changed_accent, state.accent = ui.color_picker_inline(&quot;accent_picker&quot;, state.accent, {
+            compact = true,
+            use_inputs = false
+        }, {
+            inline = true,
+            spacing = 8
+        })
+
+        ui.text(&quot;shadow glow&quot;)
+        local changed_shadow
+        changed_shadow, state.shadow = ui.color_picker_inline(&quot;shadow_picker&quot;, state.shadow, {
+            compact = true,
+            use_inputs = false
+        }, {
+            inline = true,
+            spacing = 8
+        })
+
+        if changed_accent then ui.window_set_color(window_id, &quot;Scheme&quot;, state.accent) end
+        if changed_accent then ui.window_set_color(window_id, &quot;CheckMark&quot;, state.accent) end
+        if changed_accent then ui.window_set_color(window_id, &quot;SliderGrab&quot;, state.accent) end
+        if changed_shadow then ui.window_set_color(window_id, &quot;Shadow&quot;, state.shadow) end
+    end
+
+    ui.draw_text(12, window_h - 22, { r = 165, g = 146, b = 124, a = 255 }, &quot;current user: tung tung&quot;)
+end
+
+if not ui.window_exists(window_id) then
+    ui.window_register(window_id, &quot;tung tung menu&quot;, render_custom, {
+        visible = true,
+        open = true,
+        size = { x = 460, y = 320 },
+        no_collapse = true
+    })
 end</code></pre>
 </doc-codeblock></div>
 <div hidden>

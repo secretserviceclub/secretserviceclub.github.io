@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.834161491236">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.835387193572">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>net</title>
     <meta name="title" content="net">
-    <meta name="description" content="Network manipulation and exploitation. Use these functions to control packet sending, choke commands, run server commands, build low-level Source net...">
+    <meta name="description" content="Network manipulation and exploitation.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://secretserviceclub.github.io/gmod/net/">
@@ -20,23 +20,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secretserviceclub.github.io/gmod/net/">
     <meta property="og:title" content="net">
-    <meta property="og:description" content="Network manipulation and exploitation. Use these functions to control packet sending, choke commands, run server commands, build low-level Source net...">
+    <meta property="og:description" content="Network manipulation and exploitation.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://secretserviceclub.github.io/gmod/net/">
     <meta property="twitter:title" content="net">
-    <meta property="twitter:description" content="Network manipulation and exploitation. Use these functions to control packet sending, choke commands, run server commands, build low-level Source net...">
+    <meta property="twitter:description" content="Network manipulation and exploitation.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.834161491236" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.835387193572" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.834161491236" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.835387193572" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.834161491236" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.834161491236" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.835387193572" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.835387193572" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -205,7 +205,7 @@
         <span>net</span>
     </h1>
 </doc-anchor-target>
-<p>Network manipulation and exploitation. Use these functions to control packet sending, choke commands, run server commands, build low-level Source net messages, block net messages, and read latency or server time.</p>
+<p>Network manipulation and exploitation.</p>
 <hr>
 <doc-anchor-target id="packets--choking">
     <h2>
@@ -803,39 +803,100 @@ packet:bits_left(): number
         <span>Blocking</span>
     </h2>
 </doc-anchor-target>
+<p>Block outgoing net messages before they are sent, or incoming net messages before their <code v-pre>net.Receive</code> handler runs.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th><code v-pre>writestring</code></th>
+<th><code v-pre>incoming</code></th>
+<th>Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>false</code></td>
+<td><code v-pre>false</code> (default)</td>
+<td>Outgoing <code v-pre>net.Start</code> for the channel name</td>
+</tr>
+<tr>
+<td><code v-pre>true</code></td>
+<td><code v-pre>false</code></td>
+<td>Outgoing messages that call <code v-pre>net.WriteString</code> containing the substring</td>
+</tr>
+<tr>
+<td><code v-pre>false</code></td>
+<td><code v-pre>true</code></td>
+<td>Incoming <code v-pre>net.Receive</code> for the channel name</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="netblockcmd-string-writestring-boolean">
+<doc-anchor-target id="netblockcmd-string-writestring-boolean-incoming-boolean">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#netblockcmd-string-writestring-boolean">#</doc-anchor-trigger>
-        <span>net.block(cmd: string, writestring: boolean)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netblockcmd-string-writestring-boolean-incoming-boolean">#</doc-anchor-trigger>
+        <span>net.block(cmd: string, writestring: boolean, incoming?: boolean)</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-net.block(cmd: string, writestring: boolean)
+net.block(cmd: string, writestring: boolean, incoming?: boolean)
 </code>
 <ul>
-<li>Allows you to block a net message from being sent.</li>
+<li>Blocks a net channel or substring rule.</li>
+<li>Set <code v-pre>incoming</code> to <code v-pre>true</code> to block incoming <code v-pre>net.Receive</code> handlers for <code v-pre>cmd</code>.</li>
+<li>When <code v-pre>incoming</code> is omitted or <code v-pre>false</code>, blocking applies to outgoing traffic only.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.net.block(&quot;anticheat_ban&quot;, false) -- this blocks net.Start, true will block net.WriteString</code></pre>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">-- outgoing
+secret.net.block(&quot;anticheat_ban&quot;, false) -- blocks net.Start for this channel
+secret.net.block(&quot;bad_payload&quot;, true)    -- blocks net.WriteString containing this text
+
+-- incoming
+secret.net.block(&quot;anticheat_notify&quot;, false, true) -- blocks net.Receive for this channel</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="netunblockcmd-string-writestring-boolean">
+<doc-anchor-target id="netunblockcmd-string-writestring-boolean-incoming-boolean">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#netunblockcmd-string-writestring-boolean">#</doc-anchor-trigger>
-        <span>net.unblock(cmd: string, writestring: boolean)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netunblockcmd-string-writestring-boolean-incoming-boolean">#</doc-anchor-trigger>
+        <span>net.unblock(cmd: string, writestring: boolean, incoming?: boolean)</span>
     </h3>
 </doc-anchor-target>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
-net.unblock(cmd: string, writestring: boolean)
+net.unblock(cmd: string, writestring: boolean, incoming?: boolean)
 </code>
 <ul>
-<li>Allows you to unblock a blocked net message.</li>
+<li>Removes a block rule created with <code v-pre>net.block</code>.</li>
+<li>Pass the same <code v-pre>writestring</code> and <code v-pre>incoming</code> values you used when blocking.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.net.unblock(&quot;anticheat_ban&quot;, false) -- this unblocks net.Start, true will unblock net.WriteString</code></pre>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.net.unblock(&quot;anticheat_ban&quot;, false)            -- unblocks outgoing net.Start
+secret.net.unblock(&quot;bad_payload&quot;, true)               -- unblocks outgoing net.WriteString
+secret.net.unblock(&quot;anticheat_notify&quot;, false, true)  -- unblocks incoming net.Receive</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<doc-anchor-target id="secretblocker-on-netreceive">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#secretblocker-on-netreceive">#</doc-anchor-trigger>
+        <span>secret.blocker on net.Receive</span>
+    </h3>
+</doc-anchor-target>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+secret.blocker.add("net.Receive", id, function(channel) return true end)
+</code>
+<ul>
+<li>Lua blocker listeners can also drop incoming messages.</li>
+<li>Return <code v-pre>true</code> from the callback to block the message (same effect as <code v-pre>net.block(channel, false, true)</code>).</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.blocker.add(&quot;net.Receive&quot;, &quot;block_notify&quot;, function(channel)
+    if channel == &quot;anticheat_notify&quot; then
+        return true
+    end
+end)</code></pre>
 </doc-codeblock></div>
 <hr>
 <doc-anchor-target id="time--latency">
