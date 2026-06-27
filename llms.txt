@@ -1,0 +1,47 @@
+﻿# Introduction
+
+> Welcome Agent (or Civilian). Documentation for the ever growing API with top-tier security & functionality in-mind. Developed With:
+
+- [Introduction](https://secretserviceclub.github.io/index.md): Introduction
+- [Counter-Strike 2](https://secretserviceclub.github.io/cs2/index.md): This section is under development.
+
+## Interstellar Engine
+
+- [base](https://secretserviceclub.github.io/libraries/base/index.md): This is an expansion to the existing Lua Base library.
+- [bit](https://secretserviceclub.github.io/libraries/bit/index.md): This is an expansion to the existing Lua Bit library.
+- [coroutine](https://secretserviceclub.github.io/libraries/coroutine/index.md): This is an expansion to the existing Lua Coroutine library.
+- [debug](https://secretserviceclub.github.io/libraries/debug/index.md): This is an expansion to the existing Lua debug library. This allows you to create many ways of accessing data that would be otherwise impossible. As well as providing security features for safety of instrusions to lua-based APIs not from the Interstellar Engine.
+- [fs](https://secretserviceclub.github.io/libraries/fs/index.md): File system access with restrictions & canonical resolution. This one allows the use of "..", without breaching the workspace.
+- [iot](https://secretserviceclub.github.io/libraries/iot/index.md): IOT is a communication system to the internet. You can use this to create secure connections to external backends you create.
+- [lxz](https://secretserviceclub.github.io/libraries/lxz/index.md): LXZ is a library with an amalgamation of several compression libraries, including LZMA, ZLIB, ZSTD and more. You can view more about them on their github:
+- [math](https://secretserviceclub.github.io/libraries/math/index.md): This is an expansion to the existing Lua Math library.
+- [memory](https://secretserviceclub.github.io/libraries/memory/index.md): Memory is a direct access library to reading/writing into memory.
+- [os](https://secretserviceclub.github.io/libraries/os/index.md): This is an expansion to the existing Lua OS library.
+- [paint](https://secretserviceclub.github.io/libraries/paint/index.md): An alternative method of creating visuals & graphics on higher level access. Instead of using in-game drawing systems, this uses an external version on a separated thread.
+- [reflection](https://secretserviceclub.github.io/libraries/reflection/index.md): Responsible for lua-scripting execution and handling of API access cross-states. You can use this to also contact other lua_State instances, and create new ones.
+- [router](https://secretserviceclub.github.io/libraries/router/index.md): Allows for communication across networks via Socket IO. Essentially allowing you to communicate to whatever instances you have open from a master controller.
+- [signal](https://secretserviceclub.github.io/libraries/signal/index.md): The Lua event handler for interstate & C++ calls. You can use this to contact other lua_State objects, make calls to C++, or have C++ make calls to you. Some libraries will have a Signal section to let you know of events they have, the functions here are for those libraries.
+- [sodium](https://secretserviceclub.github.io/libraries/sodium/index.md): The popular salt-based cryptographic library from libsodium. Specializing in cryptographic practices for security various types of data. All data created by this library is formatted in hexadecimal for memory safety.
+- [string](https://secretserviceclub.github.io/libraries/string/index.md): This is an expansion to the existing Lua String library.
+- [table](https://secretserviceclub.github.io/libraries/table/index.md): This is an expansion to the existing Lua Table library.
+
+## Garry's Mod
+
+
+### linker
+
+- [linker](https://secretserviceclub.github.io/gmod/linker/index.md): Responsible for finding and retrieving lua functions that could be detoured and overwritten. Its also a powerful library utilizing reflection's interstate capabilities.
+- [detour](https://secretserviceclub.github.io/gmod/linker/detour.md): Listeners, Blockers & Overrides for the Garry's Mod functions. These are C++ made detours using linker, providing you with a unique way of changing the behaviors of functions.
+- [extern](https://secretserviceclub.github.io/gmod/linker/extern.md): These are functions that are ported to allow for easy access. This makes it easier to use instead of just relying on linker.meta(library: string, name?:
+- [hook](https://secretserviceclub.github.io/gmod/linker/hook.md): This is a first-order hook library replacement using C++. Acting as the full replacement, this is by all mean untraceable with the ability to use it interstate.
+- [ui](https://secretserviceclub.github.io/gmod/ui/index.md): Create and manage menu elements (groupboxes, checkboxes, sliders, buttons, etc.) in the cheat interface. Use config_name with config get/set to read and save values.
+- [config](https://secretserviceclub.github.io/gmod/config/index.md): Read and write cheat settings from Lua using string keys; each key has a fixed type (bool, int, float, color, multi, or string). The in-game menu and ui controls reference the same keys-often via config_name on a widget.
+- [playerlist](https://secretserviceclub.github.io/gmod/playerlist/index.md): Manages players in your current game session.
+- [listener](https://secretserviceclub.github.io/gmod/listener/index.md): Global signal system for multi-purpose callbacks.
+- [steam](https://secretserviceclub.github.io/gmod/steam/index.md): Modifications & tools to the Steam client.
+- [net](https://secretserviceclub.github.io/gmod/net/index.md): Network manipulation and exploitation.
+- [automation](https://secretserviceclub.github.io/gmod/automation/index.md): Allows control over the automation in lua.
+- [console](https://secretserviceclub.github.io/gmod/console/index.md): Manages the cheat’s custom console: log messages, register commands that users can run from the console, and execute or list those commands from Lua.
+- [misc](https://secretserviceclub.github.io/gmod/misc/index.md): Miscellaneous API features that don't have their own table.
+- [autorun](https://secretserviceclub.github.io/gmod/autorun/autorun.md): Autorun is a special folder under the luas directory. These folders get generated when needed, you can use this to create automated startup scripts.
+- [ec](https://secretserviceclub.github.io/gmod/ec/index.md): Allows you to create and access an external console for various purposes.

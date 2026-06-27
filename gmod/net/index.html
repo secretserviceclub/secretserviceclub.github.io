@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.835387193572">
+    <meta name="color-scheme" content="light dark">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835896465728">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.11.0">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>net</title>
@@ -15,211 +16,171 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://secretserviceclub.github.io/gmod/net/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://secretserviceclub.github.io/sitemap.xml">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secretserviceclub.github.io/gmod/net/">
     <meta property="og:title" content="net">
     <meta property="og:description" content="Network manipulation and exploitation.">
+    <meta property="og:site_name" content="secretservice">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://secretserviceclub.github.io/gmod/net/">
-    <meta property="twitter:title" content="net">
-    <meta property="twitter:description" content="Network manipulation and exploitation.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://secretserviceclub.github.io/gmod/net/">
+    <meta name="twitter:title" content="net">
+    <meta name="twitter:description" content="Network manipulation and exploitation.">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://secretserviceclub.github.io/gmod/net/index.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.835387193572" rel="stylesheet">
+    <link id="retype-favicon" rel="icon" href="../../favicon.png" />
+    <link href="../../resources/css/retype.css?v=4.6.0.835896465728" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.835387193572" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.835387193572" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.835387193572" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.835896465728" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.835896465728" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.835896465728" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
-        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+    <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+
+    <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+        <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+            <!-- Mobile menu button skeleton -->
+            <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-hidden rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+            <div v-cloak id="retype-sidebar-left-toggle-button"></div>
     
-        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
-            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
-                <!-- Mobile menu button skeleton -->
-                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
-                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
-        
-                <!-- Logo -->
-                <div class="flex items-center justify-between h-full py-2 md:w-75">
-                    <div class="flex items-center px-2 md:px-6">
-                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
-                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">secretservice</span>
-                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
-                    </div>
-        
-                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+            <!-- Logo -->
+            <div class="flex items-center justify-between h-full py-2 md:w-75">
+                <div class="flex items-center px-2 md:px-6">
+                    <a id="retype-branding-logo" href="https://secretserviceclub.github.io/" class="flex items-center leading-snug text-xl">
+                        <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">secretservice</span>
+                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
                 </div>
-        
-                <div class="flex justify-between md:grow">
-                    <!-- Top Nav -->
-                    <nav id="retype-header-nav" class="hidden md:flex">
-                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                        <g fill="currentColor">
-                                            <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
-                                        </g>
-                                    </svg>
-                                    <span>Website</span>
-                                </a>
-                            </li>
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/home">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                        <g fill="currentColor">
-                                            <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
-                                        </g>
-                                    </svg>
-                                    <span>Panel</span>
-                                </a>
-                            </li>
-        
-                        </ul>
-                    </nav>
-        
-                    <!-- Header Right Skeleton -->
-                    <div v-cloak class="flex justify-end grow skeleton">
-        
-                        <!-- Search input mock -->
-                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
-                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                            </div>
-                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
-                        </div>
-        
-                        <!-- Mobile search button -->
-                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                        </div>
-        
-                        <!-- Dark mode switch placeholder -->
-                        <div class="w-10 h-10 lg:ml-2"></div>
-        
-                        <!-- History button -->
-                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
-                        </div>
-                    </div>
-        
-                    <div v-cloak class="flex justify-end grow">
-                        <div id="retype-mobile-search-button"></div>
-                        <doc-search-desktop></doc-search-desktop>
-        
-                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
-                        <doc-history></doc-history>
-                    </div>
+    
+                <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+            </div>
+    
+            <div class="flex justify-between md:grow">
+                <!-- Top Nav -->
+                <nav id="retype-header-nav" class="hidden md:flex">
+                    <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
+                                </svg>
+                                <span>Website</span>
+                            </a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/home">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
+                                </svg>
+                                <span>Panel</span>
+                            </a>
+                        </li>
+    
+                    </ul>
+                </nav>
+    
+                <div v-cloak class="flex justify-end grow">
+                    <div id="retype-mobile-search-button"></div>
+                    <doc-search-desktop></doc-search-desktop>
+    
+                    <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                    <doc-history></doc-history>
                 </div>
             </div>
-        </header>
-    
-    
-        <div id="retype-container" class="container relative flex bg-white">
-            <!-- Sidebar Skeleton -->
-            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
-            
-                <div class="flex items-center h-16 px-6">
-                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
-                </div>
-            
-                <div class="pl-6 mt-1 mb-4">
-                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                </div>
-            
-                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+        </div>
+    </header>
+
+
+    <div id="retype-container" class="container relative flex bg-white">
+        <!-- Sidebar Skeleton -->
+        <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+        
+            <div class="flex items-center h-16 px-6">
+                <input id="retype-filter-input-mock" class="w-full h-10 pl-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded-lg shadow-none md:text-sm hover:border-filter-border-hover focus:outline-hidden focus:border-filter-border-focus placeholder-filter-placeholder" type="text">
+            </div>
+        
+            <div class="pl-6 mt-1 mb-4">
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            </div>
+        
+            <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                    <span class="text-xs whitespace-nowrap">Powered by</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Sidebar component -->
+        <doc-sidebar v-cloak>
+            <template #sidebar-footer>
+                <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+        
+                    <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                        <nav>
+                            <ul class="flex flex-wrap justify-center items-center">
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
+                                        </svg>
+                                        <span>Website</span>
+                                    </a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/home">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
+                                        </svg>
+                                        <span>Panel</span>
+                                    </a>
+                                </li>
+        
+                            </ul>
+                        </nav>
+                    </div>
+        
                     <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
                         <span class="text-xs whitespace-nowrap">Powered by</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
                     </a>
                 </div>
-            </div>
-            
-            <!-- Sidebar component -->
-            <doc-sidebar v-cloak>
-                <template #sidebar-footer>
-                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
-            
-                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
-                            <nav>
-                                <ul class="flex flex-wrap justify-center items-center">
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                                <g fill="currentColor">
-                                                    <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
-                                                </g>
-                                            </svg>
-                                            <span>Website</span>
-                                        </a>
-                                    </li>
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/home">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                                <g fill="currentColor">
-                                                    <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
-                                                </g>
-                                            </svg>
-                                            <span>Panel</span>
-                                        </a>
-                                    </li>
-            
-                                </ul>
-                            </nav>
-                        </div>
-            
-                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
-                            <span class="text-xs whitespace-nowrap">Powered by</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
-                        </a>
-                    </div>
-                </template>
-            </doc-sidebar>
-    
-            <div class="grow min-w-0 bg-body-bg">
-                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
-                <div class="flex">
-                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
-                        <main class="relative pb-12 lg:pt-2">
-                            <div class="retype-markdown" id="retype-content">
-                                <!-- Rendered if sidebar right is enabled -->
-                                <div id="retype-sidebar-right-toggle"></div>
-                                <!-- Page content  -->
-<doc-anchor-target id="net" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#net">#</doc-anchor-trigger>
-        <span>net</span>
-    </h1>
-</doc-anchor-target>
+            </template>
+        </doc-sidebar>
+
+        <div class="grow min-w-0 bg-body-bg">
+            <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+<div class="flex">
+    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+        <main class="relative pb-12 lg:pt-2">
+            <div class="relative retype-markdown" id="retype-content">
+                <!-- Rendered if sidebar right is enabled -->
+                <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
+                <!-- Page content  -->
+<h1 id="net">net</h1>
 <p>Network manipulation and exploitation.</p>
 <hr>
-<doc-anchor-target id="packets--choking">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#packets--choking">#</doc-anchor-trigger>
-        <span>Packets &amp; choking</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="packets--choking">Packets &amp; choking</h2>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="netbsendpacketstate-boolean-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#netbsendpacketstate-boolean-boolean">#</doc-anchor-trigger>
-        <span>net.bsendpacket(state: boolean?): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="netbsendpacketstate-boolean-boolean">net.bsendpacket(state: boolean?): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 net.bsendpacket(state: boolean?): boolean
@@ -227,18 +188,13 @@ net.bsendpacket(state: boolean?): boolean
 <ul>
 <li>Controls whether the Source engine sends movement packets. Returns the previous state. Omit the argument to only read the current state.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="netbsendpacketstate-boolean-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local was = secret.net.bsendpacket(false) -- stop sending packets
 secret.net.bsendpacket(was)               -- restore
 local current = secret.net.bsendpacket()  -- read only</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="netchoked-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#netchoked-number">#</doc-anchor-trigger>
-        <span>net.choked(): number</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="netchoked-number">net.choked(): number</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 net.choked(): number
@@ -246,24 +202,14 @@ net.choked(): number
 <ul>
 <li>Number of movement commands currently choked (not yet sent).</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="netchoked-number-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local n = secret.net.choked()
 print(&quot;Choked commands:&quot;, n)</code></pre>
 </doc-codeblock></div>
 <hr>
-<doc-anchor-target id="cvars--disconnect">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#cvars--disconnect">#</doc-anchor-trigger>
-        <span>CVars &amp; disconnect</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="cvars--disconnect">CVars &amp; disconnect</h2>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="netsetcvarcvar-string-value-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#netsetcvarcvar-string-value-string">#</doc-anchor-trigger>
-        <span>net.setcvar(cvar: string, value: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="netsetcvarcvar-string-value-string">net.setcvar(cvar: string, value: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 net.setcvar(cvar: string, value: string)
@@ -271,16 +217,11 @@ net.setcvar(cvar: string, value: string)
 <ul>
 <li>Allows you to set a network variable (cvar) to a specified value.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="netsetcvarcvar-string-value-string-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.net.setcvar(&quot;name&quot;, &quot;secretservice agent&quot;)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="netdisconnectreason-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#netdisconnectreason-string">#</doc-anchor-trigger>
-        <span>net.disconnect(reason: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="netdisconnectreason-string">net.disconnect(reason: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 net.disconnect(reason: string)
@@ -288,23 +229,13 @@ net.disconnect(reason: string)
 <ul>
 <li>Allows you to disconnect from a server with a custom disconnect reason.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="netdisconnectreason-string-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.net.disconnect(&quot;Leaving&quot;)</code></pre>
 </doc-codeblock></div>
 <hr>
-<doc-anchor-target id="commands">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#commands">#</doc-anchor-trigger>
-        <span>Commands</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="commands">Commands</h2>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="netstringcmdcmd-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#netstringcmdcmd-string">#</doc-anchor-trigger>
-        <span>net.stringcmd(cmd: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="netstringcmdcmd-string">net.stringcmd(cmd: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 net.stringcmd(cmd: string)
@@ -312,29 +243,24 @@ net.stringcmd(cmd: string)
 <ul>
 <li>Allows to send a string command from the client to the server.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="netstringcmdcmd-string-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.net.stringcmd(&quot;retry&quot;)</code></pre>
 </doc-codeblock></div>
 <hr>
-<doc-anchor-target id="source-net-messages">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#source-net-messages">#</doc-anchor-trigger>
-        <span>Source net messages</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="source-net-messages">Source net messages</h2>
 <p>Low-level API for building and sending Source engine net messages directly.<br />
 Use this when you need full control over message layout, bit widths, or message types that the high-level helpers do not cover.</p>
-<p>Most messages follow the same layout: set the message type for <code v-pre>transmit</code>, write the 6-bit header with <code v-pre>write_uint</code>, then write the payload.</p>
-<p><strong>String command</strong> (<code v-pre>string_cmd</code>)</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<p>Most messages follow the same layout: set the message type for <code translate="no" v-pre>transmit</code>, write the 6-bit header with <code translate="no" v-pre>write_uint</code>, then write the payload.</p>
+<p><strong>String command</strong> (<code translate="no" v-pre>string_cmd</code>)</p>
+<div id="source-net-messages-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local buf = secret.net.packet(4096)
 buf:set_type(secret.net.msg.string_cmd)
 buf:write_uint(secret.net.msg.string_cmd, secret.net.header_bits)
 buf:write_str(&quot;status&quot;)
 local ok = buf:transmit() -- false if not connected</code></pre>
 </doc-codeblock></div>
-<p><strong>Set convar</strong> (<code v-pre>set_convar</code>) — low-level equivalent of <code v-pre>net.setcvar</code></p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<p><strong>Set convar</strong> (<code translate="no" v-pre>set_convar</code>) — low-level equivalent of <code translate="no" v-pre>net.setcvar</code></p>
+<div id="source-net-messages-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local buf = secret.net.packet(4096)
 buf:set_type(secret.net.msg.set_convar)
 buf:write_uint(secret.net.msg.set_convar, secret.net.header_bits)
@@ -344,54 +270,48 @@ buf:write_str(&quot;My New Name&quot;)
 buf:transmit()</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="netpacketcapacity-number-msg_type-number-netpacket">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#netpacketcapacity-number-msg_type-number-netpacket">#</doc-anchor-trigger>
-        <span>net.packet(capacity: number, msg_type?: number): net.packet</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="netpacketcapacity-number-msg_type-number-netpacket">net.packet(capacity: number, msg_type?: number): net.packet</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 net.packet(capacity: number, msg_type?: number): net.packet
 </code>
 <ul>
 <li>Creates a writable net message buffer.</li>
-<li><code v-pre>capacity</code> must be between <code v-pre>4</code> and <code v-pre>65536</code>. The buffer is rounded up to at least 4 bytes and aligned to a 4-byte boundary.</li>
-<li>Optional <code v-pre>msg_type</code> sets the initial message type (same values as <code v-pre>secret.net.msg.*</code>). Defaults to <code v-pre>nop</code> if omitted. You can change it later with <code v-pre>set_type</code>.</li>
+<li><code translate="no" v-pre>capacity</code> must be between <code translate="no" v-pre>4</code> and <code translate="no" v-pre>65536</code>. The buffer is rounded up to at least 4 bytes and aligned to a 4-byte boundary.</li>
+<li>Optional <code translate="no" v-pre>msg_type</code> sets the initial message type (same values as <code translate="no" v-pre>secret.net.msg.*</code>). Defaults to <code translate="no" v-pre>nop</code> if omitted. You can change it later with <code translate="no" v-pre>set_type</code>.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="netpacketcapacity-number-msg_type-number-netpacket-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local buf = secret.net.packet(4096)                              -- buffer only
 local buf = secret.net.packet(4096, secret.net.msg.string_cmd) -- with preset type</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="netheader_bits-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#netheader_bits-number">#</doc-anchor-trigger>
-        <span>net.header_bits: number</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="netheader_bits-number">net.header_bits: number</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 net.header_bits: number
 </code>
 <ul>
-<li>Standard Source net message header size in bits. Currently <code v-pre>6</code>.</li>
+<li>Standard Source net message header size in bits. Currently <code translate="no" v-pre>6</code>.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="netmsg-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#netmsg-table">#</doc-anchor-trigger>
-        <span>net.msg: table</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="netmsg-table">net.msg: table</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 net.msg: table
 </code>
 <ul>
-<li>Message type IDs for <code v-pre>set_type</code>, the on-wire header in <code v-pre>write_uint</code>, and the optional second argument to <code v-pre>net.packet</code>.</li>
+<li>Message type IDs for <code translate="no" v-pre>set_type</code>, the on-wire header in <code translate="no" v-pre>write_uint</code>, and the optional second argument to <code translate="no" v-pre>net.packet</code>.</li>
 </ul>
 <p><strong>Generic</strong></p>
+<retype-table copy-text="| Key | Description |
+| --- | --- |
+| `nop` | No operation |
+| `disconnect` | Disconnect |
+| `file` | File transfer |
+| `tick` | Tick |
+| `string_cmd` | Client string command |
+| `set_convar` | Set console variable |
+| `signon_state` | Sign-on state |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -402,37 +322,65 @@ net.msg: table
 </thead>
 <tbody>
 <tr>
-<td><code v-pre>nop</code></td>
+<td><code translate="no" v-pre>nop</code></td>
 <td>No operation</td>
 </tr>
 <tr>
-<td><code v-pre>disconnect</code></td>
+<td><code translate="no" v-pre>disconnect</code></td>
 <td>Disconnect</td>
 </tr>
 <tr>
-<td><code v-pre>file</code></td>
+<td><code translate="no" v-pre>file</code></td>
 <td>File transfer</td>
 </tr>
 <tr>
-<td><code v-pre>tick</code></td>
+<td><code translate="no" v-pre>tick</code></td>
 <td>Tick</td>
 </tr>
 <tr>
-<td><code v-pre>string_cmd</code></td>
+<td><code translate="no" v-pre>string_cmd</code></td>
 <td>Client string command</td>
 </tr>
 <tr>
-<td><code v-pre>set_convar</code></td>
+<td><code translate="no" v-pre>set_convar</code></td>
 <td>Set console variable</td>
 </tr>
 <tr>
-<td><code v-pre>signon_state</code></td>
+<td><code translate="no" v-pre>signon_state</code></td>
 <td>Sign-on state</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p><strong>Server → client (<code v-pre>svc_*</code>)</strong></p>
+</retype-table>
+<p><strong>Server → client (<code translate="no" v-pre>svc_*</code>)</strong></p>
+<retype-table copy-text="| Key | Description |
+| --- | --- |
+| `svc_print` | Console print |
+| `svc_server_info` | Server info |
+| `svc_send_table` | Send datatable |
+| `svc_class_info` | Class info |
+| `svc_set_pause` | Set pause |
+| `svc_create_string_table` | Create string table |
+| `svc_update_string_table` | Update string table |
+| `svc_voice_init` | Voice init |
+| `svc_voice_data` | Voice data |
+| `svc_sounds` | Sound list |
+| `svc_set_view` | Set view entity |
+| `svc_fix_angle` | Fix angle |
+| `svc_crosshair_angle` | Crosshair angle |
+| `svc_bsp_decal` | BSP decal |
+| `svc_user_message` | User message |
+| `svc_entity_message` | Entity message |
+| `svc_game_event` | Game event |
+| `svc_packet_entities` | Packet entities |
+| `svc_temp_entities` | Temp entities |
+| `svc_prefetch` | Prefetch |
+| `svc_menu` | Menu |
+| `svc_game_event_list` | Game event list |
+| `svc_get_cvar_value` | Get cvar value |
+| `svc_cmd_key_values` | Command key values |
+| `svc_gmod_server_to_client` | GMod server → client |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -443,109 +391,123 @@ net.msg: table
 </thead>
 <tbody>
 <tr>
-<td><code v-pre>svc_print</code></td>
+<td><code translate="no" v-pre>svc_print</code></td>
 <td>Console print</td>
 </tr>
 <tr>
-<td><code v-pre>svc_server_info</code></td>
+<td><code translate="no" v-pre>svc_server_info</code></td>
 <td>Server info</td>
 </tr>
 <tr>
-<td><code v-pre>svc_send_table</code></td>
+<td><code translate="no" v-pre>svc_send_table</code></td>
 <td>Send datatable</td>
 </tr>
 <tr>
-<td><code v-pre>svc_class_info</code></td>
+<td><code translate="no" v-pre>svc_class_info</code></td>
 <td>Class info</td>
 </tr>
 <tr>
-<td><code v-pre>svc_set_pause</code></td>
+<td><code translate="no" v-pre>svc_set_pause</code></td>
 <td>Set pause</td>
 </tr>
 <tr>
-<td><code v-pre>svc_create_string_table</code></td>
+<td><code translate="no" v-pre>svc_create_string_table</code></td>
 <td>Create string table</td>
 </tr>
 <tr>
-<td><code v-pre>svc_update_string_table</code></td>
+<td><code translate="no" v-pre>svc_update_string_table</code></td>
 <td>Update string table</td>
 </tr>
 <tr>
-<td><code v-pre>svc_voice_init</code></td>
+<td><code translate="no" v-pre>svc_voice_init</code></td>
 <td>Voice init</td>
 </tr>
 <tr>
-<td><code v-pre>svc_voice_data</code></td>
+<td><code translate="no" v-pre>svc_voice_data</code></td>
 <td>Voice data</td>
 </tr>
 <tr>
-<td><code v-pre>svc_sounds</code></td>
+<td><code translate="no" v-pre>svc_sounds</code></td>
 <td>Sound list</td>
 </tr>
 <tr>
-<td><code v-pre>svc_set_view</code></td>
+<td><code translate="no" v-pre>svc_set_view</code></td>
 <td>Set view entity</td>
 </tr>
 <tr>
-<td><code v-pre>svc_fix_angle</code></td>
+<td><code translate="no" v-pre>svc_fix_angle</code></td>
 <td>Fix angle</td>
 </tr>
 <tr>
-<td><code v-pre>svc_crosshair_angle</code></td>
+<td><code translate="no" v-pre>svc_crosshair_angle</code></td>
 <td>Crosshair angle</td>
 </tr>
 <tr>
-<td><code v-pre>svc_bsp_decal</code></td>
+<td><code translate="no" v-pre>svc_bsp_decal</code></td>
 <td>BSP decal</td>
 </tr>
 <tr>
-<td><code v-pre>svc_user_message</code></td>
+<td><code translate="no" v-pre>svc_user_message</code></td>
 <td>User message</td>
 </tr>
 <tr>
-<td><code v-pre>svc_entity_message</code></td>
+<td><code translate="no" v-pre>svc_entity_message</code></td>
 <td>Entity message</td>
 </tr>
 <tr>
-<td><code v-pre>svc_game_event</code></td>
+<td><code translate="no" v-pre>svc_game_event</code></td>
 <td>Game event</td>
 </tr>
 <tr>
-<td><code v-pre>svc_packet_entities</code></td>
+<td><code translate="no" v-pre>svc_packet_entities</code></td>
 <td>Packet entities</td>
 </tr>
 <tr>
-<td><code v-pre>svc_temp_entities</code></td>
+<td><code translate="no" v-pre>svc_temp_entities</code></td>
 <td>Temp entities</td>
 </tr>
 <tr>
-<td><code v-pre>svc_prefetch</code></td>
+<td><code translate="no" v-pre>svc_prefetch</code></td>
 <td>Prefetch</td>
 </tr>
 <tr>
-<td><code v-pre>svc_menu</code></td>
+<td><code translate="no" v-pre>svc_menu</code></td>
 <td>Menu</td>
 </tr>
 <tr>
-<td><code v-pre>svc_game_event_list</code></td>
+<td><code translate="no" v-pre>svc_game_event_list</code></td>
 <td>Game event list</td>
 </tr>
 <tr>
-<td><code v-pre>svc_get_cvar_value</code></td>
+<td><code translate="no" v-pre>svc_get_cvar_value</code></td>
 <td>Get cvar value</td>
 </tr>
 <tr>
-<td><code v-pre>svc_cmd_key_values</code></td>
+<td><code translate="no" v-pre>svc_cmd_key_values</code></td>
 <td>Command key values</td>
 </tr>
 <tr>
-<td><code v-pre>svc_gmod_server_to_client</code></td>
+<td><code translate="no" v-pre>svc_gmod_server_to_client</code></td>
 <td>GMod server → client</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p><strong>Client → server (<code v-pre>clc_*</code>)</strong></p>
+</retype-table>
+<p><strong>Client → server (<code translate="no" v-pre>clc_*</code>)</strong></p>
+<retype-table copy-text="| Key | Description |
+| --- | --- |
+| `clc_client_info` | Client info |
+| `clc_move` | Movement |
+| `clc_voice_data` | Voice data |
+| `clc_baseline_ack` | Baseline ack |
+| `clc_listen_events` | Listen events |
+| `clc_respond_cvar_value` | Respond cvar value |
+| `clc_file_crc_check` | File CRC check |
+| `clc_save_replay` | Save replay |
+| `clc_cmd_key_values` | Command key values |
+| `clc_file_md5_check` | File MD5 check |
+| `clc_gmod_client_to_server` | GMod client → server |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -556,67 +518,58 @@ net.msg: table
 </thead>
 <tbody>
 <tr>
-<td><code v-pre>clc_client_info</code></td>
+<td><code translate="no" v-pre>clc_client_info</code></td>
 <td>Client info</td>
 </tr>
 <tr>
-<td><code v-pre>clc_move</code></td>
+<td><code translate="no" v-pre>clc_move</code></td>
 <td>Movement</td>
 </tr>
 <tr>
-<td><code v-pre>clc_voice_data</code></td>
+<td><code translate="no" v-pre>clc_voice_data</code></td>
 <td>Voice data</td>
 </tr>
 <tr>
-<td><code v-pre>clc_baseline_ack</code></td>
+<td><code translate="no" v-pre>clc_baseline_ack</code></td>
 <td>Baseline ack</td>
 </tr>
 <tr>
-<td><code v-pre>clc_listen_events</code></td>
+<td><code translate="no" v-pre>clc_listen_events</code></td>
 <td>Listen events</td>
 </tr>
 <tr>
-<td><code v-pre>clc_respond_cvar_value</code></td>
+<td><code translate="no" v-pre>clc_respond_cvar_value</code></td>
 <td>Respond cvar value</td>
 </tr>
 <tr>
-<td><code v-pre>clc_file_crc_check</code></td>
+<td><code translate="no" v-pre>clc_file_crc_check</code></td>
 <td>File CRC check</td>
 </tr>
 <tr>
-<td><code v-pre>clc_save_replay</code></td>
+<td><code translate="no" v-pre>clc_save_replay</code></td>
 <td>Save replay</td>
 </tr>
 <tr>
-<td><code v-pre>clc_cmd_key_values</code></td>
+<td><code translate="no" v-pre>clc_cmd_key_values</code></td>
 <td>Command key values</td>
 </tr>
 <tr>
-<td><code v-pre>clc_file_md5_check</code></td>
+<td><code translate="no" v-pre>clc_file_md5_check</code></td>
 <td>File MD5 check</td>
 </tr>
 <tr>
-<td><code v-pre>clc_gmod_client_to_server</code></td>
+<td><code translate="no" v-pre>clc_gmod_client_to_server</code></td>
 <td>GMod client → server</td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <hr>
-<doc-anchor-target id="packet">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#packet">#</doc-anchor-trigger>
-        <span>Packet</span>
-    </h2>
-</doc-anchor-target>
-<p>Methods on a <code v-pre>net.packet</code> returned by <code v-pre>secret.net.packet</code>.</p>
+<h2 id="packet">Packet</h2>
+<p>Methods on a <code translate="no" v-pre>net.packet</code> returned by <code translate="no" v-pre>secret.net.packet</code>.</p>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="packetwrite_uintvalue-number-bits-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#packetwrite_uintvalue-number-bits-number">#</doc-anchor-trigger>
-        <span>packet:write_uint(value: number, bits: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="packetwrite_uintvalue-number-bits-number">packet:write_uint(value: number, bits: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 packet:write_uint(value: number, bits: number)
@@ -625,26 +578,16 @@ packet:write_uint(value: number, bits: number)
 <li>Writes an unsigned integer using an arbitrary bit width.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="packetwrite_u8value-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#packetwrite_u8value-number">#</doc-anchor-trigger>
-        <span>packet:write_u8(value: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="packetwrite_u8value-number">packet:write_u8(value: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 packet:write_u8(value: number)
 </code>
 <ul>
-<li>Writes a single byte (<code v-pre>0</code>–<code v-pre>255</code>).</li>
+<li>Writes a single byte (<code translate="no" v-pre>0</code>–<code translate="no" v-pre>255</code>).</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="packetwrite_i16value-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#packetwrite_i16value-number">#</doc-anchor-trigger>
-        <span>packet:write_i16(value: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="packetwrite_i16value-number">packet:write_i16(value: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 packet:write_i16(value: number)
@@ -653,12 +596,7 @@ packet:write_i16(value: number)
 <li>Writes a signed 16-bit integer.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="packetwrite_i32value-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#packetwrite_i32value-number">#</doc-anchor-trigger>
-        <span>packet:write_i32(value: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="packetwrite_i32value-number">packet:write_i32(value: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 packet:write_i32(value: number)
@@ -667,12 +605,7 @@ packet:write_i32(value: number)
 <li>Writes a signed 32-bit integer.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="packetwrite_strstr-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#packetwrite_strstr-string">#</doc-anchor-trigger>
-        <span>packet:write_str(str: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="packetwrite_strstr-string">packet:write_str(str: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 packet:write_str(str: string)
@@ -681,12 +614,7 @@ packet:write_str(str: string)
 <li>Writes a null-terminated string.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="packetwrite_ubitvalue-number-bits-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#packetwrite_ubitvalue-number-bits-number">#</doc-anchor-trigger>
-        <span>packet:write_ubit(value: number, bits: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="packetwrite_ubitvalue-number-bits-number">packet:write_ubit(value: number, bits: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 packet:write_ubit(value: number, bits: number)
@@ -695,12 +623,7 @@ packet:write_ubit(value: number, bits: number)
 <li>Writes an unsigned bit field.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="packetwrite_u32value-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#packetwrite_u32value-number">#</doc-anchor-trigger>
-        <span>packet:write_u32(value: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="packetwrite_u32value-number">packet:write_u32(value: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 packet:write_u32(value: number)
@@ -709,12 +632,7 @@ packet:write_u32(value: number)
 <li>Writes a 32-bit word.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="packetseek_bitbit-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#packetseek_bitbit-number">#</doc-anchor-trigger>
-        <span>packet:seek_bit(bit: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="packetseek_bitbit-number">packet:seek_bit(bit: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 packet:seek_bit(bit: number)
@@ -723,27 +641,17 @@ packet:seek_bit(bit: number)
 <li>Seeks the write cursor to a bit position.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="packetwrite_rawdata-string-bits-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#packetwrite_rawdata-string-bits-number">#</doc-anchor-trigger>
-        <span>packet:write_raw(data: string, bits: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="packetwrite_rawdata-string-bits-number">packet:write_raw(data: string, bits: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 packet:write_raw(data: string, bits: number)
 </code>
 <ul>
 <li>Writes raw bits from a Lua string.</li>
-<li>Errors if <code v-pre>bits</code> is negative or exceeds the length of <code v-pre>data</code>.</li>
+<li>Errors if <code translate="no" v-pre>bits</code> is negative or exceeds the length of <code translate="no" v-pre>data</code>.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="packetdata_ptr-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#packetdata_ptr-number">#</doc-anchor-trigger>
-        <span>packet:data_ptr(): number</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="packetdata_ptr-number">packet:data_ptr(): number</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 packet:data_ptr(): number
@@ -752,43 +660,28 @@ packet:data_ptr(): number
 <li>Returns the buffer base pointer as a number.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="packetset_typeid-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#packetset_typeid-number">#</doc-anchor-trigger>
-        <span>packet:set_type(id: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="packetset_typeid-number">packet:set_type(id: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 packet:set_type(id: number)
 </code>
 <ul>
-<li>Sets the message type used when transmitting. Use a value from <code v-pre>secret.net.msg</code>.<br />
-This is separate from the on-wire header - you still need <code v-pre>write_uint(id, secret.net.header_bits)</code> in the buffer for most message types.</li>
+<li>Sets the message type used when transmitting. Use a value from <code translate="no" v-pre>secret.net.msg</code>.<br />
+This is separate from the on-wire header - you still need <code translate="no" v-pre>write_uint(id, secret.net.header_bits)</code> in the buffer for most message types.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="packettransmitreliable-boolean-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#packettransmitreliable-boolean-boolean">#</doc-anchor-trigger>
-        <span>packet:transmit(reliable?: boolean): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="packettransmitreliable-boolean-boolean">packet:transmit(reliable?: boolean): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 packet:transmit(reliable?: boolean): boolean
 </code>
 <ul>
 <li>Sends the message over the active net channel.</li>
-<li><code v-pre>reliable</code> defaults to <code v-pre>true</code>.</li>
-<li>Returns <code v-pre>false</code> if there is no active connection.</li>
+<li><code translate="no" v-pre>reliable</code> defaults to <code translate="no" v-pre>true</code>.</li>
+<li>Returns <code translate="no" v-pre>false</code> if there is no active connection.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="packetbits_left-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#packetbits_left-number">#</doc-anchor-trigger>
-        <span>packet:bits_left(): number</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="packetbits_left-number">packet:bits_left(): number</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 packet:bits_left(): number
@@ -797,58 +690,54 @@ packet:bits_left(): number
 <li>Returns the number of writable bits remaining in the buffer.</li>
 </ul>
 <hr>
-<doc-anchor-target id="blocking">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#blocking">#</doc-anchor-trigger>
-        <span>Blocking</span>
-    </h2>
-</doc-anchor-target>
-<p>Block outgoing net messages before they are sent, or incoming net messages before their <code v-pre>net.Receive</code> handler runs.</p>
+<h2 id="blocking">Blocking</h2>
+<p>Block outgoing net messages before they are sent, or incoming net messages before their <code translate="no" v-pre>net.Receive</code> handler runs.</p>
+<retype-table copy-text="| `writestring` | `incoming` | Blocks |
+|---|---|---|
+| `false` | `false` (default) | Outgoing `net.Start` for the channel name |
+| `true` | `false` | Outgoing messages that call `net.WriteString` containing the substring |
+| `false` | `true` | Incoming `net.Receive` for the channel name |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th><code v-pre>writestring</code></th>
-<th><code v-pre>incoming</code></th>
+<th><code translate="no" v-pre>writestring</code></th>
+<th><code translate="no" v-pre>incoming</code></th>
 <th>Blocks</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code v-pre>false</code></td>
-<td><code v-pre>false</code> (default)</td>
-<td>Outgoing <code v-pre>net.Start</code> for the channel name</td>
+<td><code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>false</code> (default)</td>
+<td>Outgoing <code translate="no" v-pre>net.Start</code> for the channel name</td>
 </tr>
 <tr>
-<td><code v-pre>true</code></td>
-<td><code v-pre>false</code></td>
-<td>Outgoing messages that call <code v-pre>net.WriteString</code> containing the substring</td>
+<td><code translate="no" v-pre>true</code></td>
+<td><code translate="no" v-pre>false</code></td>
+<td>Outgoing messages that call <code translate="no" v-pre>net.WriteString</code> containing the substring</td>
 </tr>
 <tr>
-<td><code v-pre>false</code></td>
-<td><code v-pre>true</code></td>
-<td>Incoming <code v-pre>net.Receive</code> for the channel name</td>
+<td><code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code></td>
+<td>Incoming <code translate="no" v-pre>net.Receive</code> for the channel name</td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="netblockcmd-string-writestring-boolean-incoming-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#netblockcmd-string-writestring-boolean-incoming-boolean">#</doc-anchor-trigger>
-        <span>net.block(cmd: string, writestring: boolean, incoming?: boolean)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="netblockcmd-string-writestring-boolean-incoming-boolean">net.block(cmd: string, writestring: boolean, incoming?: boolean)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 net.block(cmd: string, writestring: boolean, incoming?: boolean)
 </code>
 <ul>
 <li>Blocks a net channel or substring rule.</li>
-<li>Set <code v-pre>incoming</code> to <code v-pre>true</code> to block incoming <code v-pre>net.Receive</code> handlers for <code v-pre>cmd</code>.</li>
-<li>When <code v-pre>incoming</code> is omitted or <code v-pre>false</code>, blocking applies to outgoing traffic only.</li>
+<li>Set <code translate="no" v-pre>incoming</code> to <code translate="no" v-pre>true</code> to block incoming <code translate="no" v-pre>net.Receive</code> handlers for <code translate="no" v-pre>cmd</code>.</li>
+<li>When <code translate="no" v-pre>incoming</code> is omitted or <code translate="no" v-pre>false</code>, blocking applies to outgoing traffic only.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="netblockcmd-string-writestring-boolean-incoming-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">-- outgoing
 secret.net.block(&quot;anticheat_ban&quot;, false) -- blocks net.Start for this channel
 secret.net.block(&quot;bad_payload&quot;, true)    -- blocks net.WriteString containing this text
@@ -857,41 +746,31 @@ secret.net.block(&quot;bad_payload&quot;, true)    -- blocks net.WriteString con
 secret.net.block(&quot;anticheat_notify&quot;, false, true) -- blocks net.Receive for this channel</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="netunblockcmd-string-writestring-boolean-incoming-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#netunblockcmd-string-writestring-boolean-incoming-boolean">#</doc-anchor-trigger>
-        <span>net.unblock(cmd: string, writestring: boolean, incoming?: boolean)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="netunblockcmd-string-writestring-boolean-incoming-boolean">net.unblock(cmd: string, writestring: boolean, incoming?: boolean)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 net.unblock(cmd: string, writestring: boolean, incoming?: boolean)
 </code>
 <ul>
-<li>Removes a block rule created with <code v-pre>net.block</code>.</li>
-<li>Pass the same <code v-pre>writestring</code> and <code v-pre>incoming</code> values you used when blocking.</li>
+<li>Removes a block rule created with <code translate="no" v-pre>net.block</code>.</li>
+<li>Pass the same <code translate="no" v-pre>writestring</code> and <code translate="no" v-pre>incoming</code> values you used when blocking.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="netunblockcmd-string-writestring-boolean-incoming-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.net.unblock(&quot;anticheat_ban&quot;, false)            -- unblocks outgoing net.Start
 secret.net.unblock(&quot;bad_payload&quot;, true)               -- unblocks outgoing net.WriteString
 secret.net.unblock(&quot;anticheat_notify&quot;, false, true)  -- unblocks incoming net.Receive</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="secretblocker-on-netreceive">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#secretblocker-on-netreceive">#</doc-anchor-trigger>
-        <span>secret.blocker on net.Receive</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="secretblocker-on-netreceive">secret.blocker on net.Receive</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 secret.blocker.add("net.Receive", id, function(channel) return true end)
 </code>
 <ul>
 <li>Lua blocker listeners can also drop incoming messages.</li>
-<li>Return <code v-pre>true</code> from the callback to block the message (same effect as <code v-pre>net.block(channel, false, true)</code>).</li>
+<li>Return <code translate="no" v-pre>true</code> from the callback to block the message (same effect as <code translate="no" v-pre>net.block(channel, false, true)</code>).</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="secretblocker-on-netreceive-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.blocker.add(&quot;net.Receive&quot;, &quot;block_notify&quot;, function(channel)
     if channel == &quot;anticheat_notify&quot; then
         return true
@@ -899,47 +778,32 @@ secret.blocker.add("net.Receive", id, function(channel) return true end)
 end)</code></pre>
 </doc-codeblock></div>
 <hr>
-<doc-anchor-target id="time--latency">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#time--latency">#</doc-anchor-trigger>
-        <span>Time &amp; latency</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="time--latency">Time &amp; latency</h2>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="netget_latencyflow-number-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#netget_latencyflow-number-number">#</doc-anchor-trigger>
-        <span>net.get_latency(flow: number): number</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="netget_latencyflow-number-number">net.get_latency(flow: number): number</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 net.get_latency(flow: number): number
 </code>
 <ul>
 <li>Returns the current network latency for the specified direction.</li>
-<li><code v-pre>flow</code> must be <code v-pre>0</code> (outgoing) or <code v-pre>1</code> (incoming). Any invalid value defaults to <code v-pre>0</code>.</li>
+<li><code translate="no" v-pre>flow</code> must be <code translate="no" v-pre>0</code> (outgoing) or <code translate="no" v-pre>1</code> (incoming). Any invalid value defaults to <code translate="no" v-pre>0</code>.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="netget_latencyflow-number-number-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local latency_out = secret.net.get_latency(0) -- gets outgoing latency
 local latency_in = secret.net.get_latency(1) -- gets incoming latency</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="netserver_timeoffset-number-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#netserver_timeoffset-number-number">#</doc-anchor-trigger>
-        <span>net.server_time(offset: number): number</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="netserver_timeoffset-number-number">net.server_time(offset: number): number</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 net.server_time(offset: number): number
 </code>
 <ul>
-<li>Returns the predicted server time based on the local player’s <code v-pre>tickbase</code>.</li>
+<li>Returns the predicted server time based on the local player’s <code translate="no" v-pre>tickbase</code>.</li>
 <li>If offset is provided, it shifts the tickbase by that amount.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="netserver_timeoffset-number-number-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">-- get current predicted server time
 local time = secret.net.server_time()
 
@@ -949,76 +813,76 @@ local future = secret.net.server_time(2)
 print(&quot;current:&quot;, time, &quot;future:&quot;, future)</code></pre>
 </doc-codeblock></div>
 <div hidden>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="netserver_timeoffset-number-number-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-typescript"><code v-pre class="language-typescript"> </code></pre>
 </doc-codeblock></div>
 </div>
 
-                                
-                                <!-- Required only on API pages -->
-                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
-                            </div>
-                            <footer id="retype-content-footer" class="clear-both">
-                            
-                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../gmod/steam/">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                            <span>
-                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">steam</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                            
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../gmod/automation/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">automation</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
-                                    </div>
-                                </nav>
-                            </footer>
-                        </main>
                 
-                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
-                                <div id="retype-footer-links" class="print:hidden">
-                                    <ul class="flex flex-wrap items-center text-sm">
-                                    </ul>
-                                </div>
-                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
-                            </footer>
-                        </div>
-                    </div>
-                
-                    <!-- Rendered if sidebar right is enabled -->
-                    <!-- Sidebar right skeleton-->
-                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
-                        <div class="pl-5">
-                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                        </div>
-                    </div>
-                
-                    <!-- User should be able to hide sidebar right -->
-                    <doc-sidebar-right v-cloak></doc-sidebar-right>
-                </div>
-
+                <!-- Required only on API pages -->
+                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
             </div>
+            <footer id="retype-content-footer" class="clear-both">
+            
+                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../gmod/steam/">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                            <span>
+                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                <span class="block mt-1">steam</span>
+                            </span>
+                        </a>
+                    </div>
+            
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../gmod/automation/">
+                            <span>
+                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                <span class="block mt-1">automation</span>
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                        </a>
+                    </div>
+                </nav>
+            </footer>
+        </main>
+
+        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                <div id="retype-footer-links" class="print:hidden">
+                    <ul class="flex flex-wrap items-center text-sm">
+                    </ul>
+                </div>
+                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
+            </footer>
         </div>
-    
-        <doc-search-mobile></doc-search-mobile>
-        <doc-back-to-top></doc-back-to-top>
     </div>
+
+    <!-- Rendered if sidebar right is enabled -->
+    <!-- Sidebar right skeleton-->
+    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:translate-x-0 sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+        <div class="pl-5">
+            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+        </div>
+    </div>
+
+    <!-- User should be able to hide sidebar right -->
+    <doc-sidebar-right v-cloak></doc-sidebar-right>
+</div>
+
+        </div>
+    </div>
+
+    <doc-search-mobile></doc-search-mobile>
+    <doc-back-to-top></doc-back-to-top>
+</div>
 
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "net", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "net", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/gmod/net/index.md" }</script>
 </body>
 </html>

@@ -3,208 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.835387193572">
+    <meta name="color-scheme" content="light dark">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835896465728">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.11.0">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>reflection</title>
     <meta name="title" content="reflection">
-    <meta name="description" content="Responsible for lua-scripting execution and handling of API access cross-states. You can use this to also contact other lua_State instances, and...">
+    <meta name="description" content="Responsible for lua-scripting execution and handling of API access cross-states. You can use this to also contact other lua_State instances, and create new ones.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://secretserviceclub.github.io/libraries/reflection/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://secretserviceclub.github.io/sitemap.xml">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secretserviceclub.github.io/libraries/reflection/">
     <meta property="og:title" content="reflection">
-    <meta property="og:description" content="Responsible for lua-scripting execution and handling of API access cross-states. You can use this to also contact other lua_State instances, and...">
+    <meta property="og:description" content="Responsible for lua-scripting execution and handling of API access cross-states. You can use this to also contact other lua_State instances, and create new ones.">
+    <meta property="og:site_name" content="secretservice">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://secretserviceclub.github.io/libraries/reflection/">
-    <meta property="twitter:title" content="reflection">
-    <meta property="twitter:description" content="Responsible for lua-scripting execution and handling of API access cross-states. You can use this to also contact other lua_State instances, and...">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://secretserviceclub.github.io/libraries/reflection/">
+    <meta name="twitter:title" content="reflection">
+    <meta name="twitter:description" content="Responsible for lua-scripting execution and handling of API access cross-states. You can use this to also contact other lua_State instances, and create new ones.">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://secretserviceclub.github.io/libraries/reflection/index.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.835387193572" rel="stylesheet">
+    <link id="retype-favicon" rel="icon" href="../../favicon.png" />
+    <link href="../../resources/css/retype.css?v=4.6.0.835896465728" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.835387193572" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.835387193572" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.835387193572" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.835896465728" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.835896465728" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.835896465728" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
-        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+    <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+
+    <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+        <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+            <!-- Mobile menu button skeleton -->
+            <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-hidden rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+            <div v-cloak id="retype-sidebar-left-toggle-button"></div>
     
-        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
-            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
-                <!-- Mobile menu button skeleton -->
-                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
-                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
-        
-                <!-- Logo -->
-                <div class="flex items-center justify-between h-full py-2 md:w-75">
-                    <div class="flex items-center px-2 md:px-6">
-                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
-                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">secretservice</span>
-                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
-                    </div>
-        
-                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+            <!-- Logo -->
+            <div class="flex items-center justify-between h-full py-2 md:w-75">
+                <div class="flex items-center px-2 md:px-6">
+                    <a id="retype-branding-logo" href="https://secretserviceclub.github.io/" class="flex items-center leading-snug text-xl">
+                        <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">secretservice</span>
+                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
                 </div>
-        
-                <div class="flex justify-between md:grow">
-                    <!-- Top Nav -->
-                    <nav id="retype-header-nav" class="hidden md:flex">
-                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                        <g fill="currentColor">
-                                            <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
-                                        </g>
-                                    </svg>
-                                    <span>Website</span>
-                                </a>
-                            </li>
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/home">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                        <g fill="currentColor">
-                                            <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
-                                        </g>
-                                    </svg>
-                                    <span>Panel</span>
-                                </a>
-                            </li>
-        
-                        </ul>
-                    </nav>
-        
-                    <!-- Header Right Skeleton -->
-                    <div v-cloak class="flex justify-end grow skeleton">
-        
-                        <!-- Search input mock -->
-                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
-                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                            </div>
-                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
-                        </div>
-        
-                        <!-- Mobile search button -->
-                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                        </div>
-        
-                        <!-- Dark mode switch placeholder -->
-                        <div class="w-10 h-10 lg:ml-2"></div>
-        
-                        <!-- History button -->
-                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
-                        </div>
-                    </div>
-        
-                    <div v-cloak class="flex justify-end grow">
-                        <div id="retype-mobile-search-button"></div>
-                        <doc-search-desktop></doc-search-desktop>
-        
-                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
-                        <doc-history></doc-history>
-                    </div>
+    
+                <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+            </div>
+    
+            <div class="flex justify-between md:grow">
+                <!-- Top Nav -->
+                <nav id="retype-header-nav" class="hidden md:flex">
+                    <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
+                                </svg>
+                                <span>Website</span>
+                            </a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/home">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
+                                </svg>
+                                <span>Panel</span>
+                            </a>
+                        </li>
+    
+                    </ul>
+                </nav>
+    
+                <div v-cloak class="flex justify-end grow">
+                    <div id="retype-mobile-search-button"></div>
+                    <doc-search-desktop></doc-search-desktop>
+    
+                    <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                    <doc-history></doc-history>
                 </div>
             </div>
-        </header>
-    
-    
-        <div id="retype-container" class="container relative flex bg-white">
-            <!-- Sidebar Skeleton -->
-            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
-            
-                <div class="flex items-center h-16 px-6">
-                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
-                </div>
-            
-                <div class="pl-6 mt-1 mb-4">
-                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                </div>
-            
-                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+        </div>
+    </header>
+
+
+    <div id="retype-container" class="container relative flex bg-white">
+        <!-- Sidebar Skeleton -->
+        <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+        
+            <div class="flex items-center h-16 px-6">
+                <input id="retype-filter-input-mock" class="w-full h-10 pl-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded-lg shadow-none md:text-sm hover:border-filter-border-hover focus:outline-hidden focus:border-filter-border-focus placeholder-filter-placeholder" type="text">
+            </div>
+        
+            <div class="pl-6 mt-1 mb-4">
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            </div>
+        
+            <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                    <span class="text-xs whitespace-nowrap">Powered by</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Sidebar component -->
+        <doc-sidebar v-cloak>
+            <template #sidebar-footer>
+                <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+        
+                    <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                        <nav>
+                            <ul class="flex flex-wrap justify-center items-center">
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
+                                        </svg>
+                                        <span>Website</span>
+                                    </a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/home">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
+                                        </svg>
+                                        <span>Panel</span>
+                                    </a>
+                                </li>
+        
+                            </ul>
+                        </nav>
+                    </div>
+        
                     <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
                         <span class="text-xs whitespace-nowrap">Powered by</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
                     </a>
                 </div>
-            </div>
-            
-            <!-- Sidebar component -->
-            <doc-sidebar v-cloak>
-                <template #sidebar-footer>
-                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
-            
-                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
-                            <nav>
-                                <ul class="flex flex-wrap justify-center items-center">
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                                <g fill="currentColor">
-                                                    <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
-                                                </g>
-                                            </svg>
-                                            <span>Website</span>
-                                        </a>
-                                    </li>
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/home">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                                <g fill="currentColor">
-                                                    <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
-                                                </g>
-                                            </svg>
-                                            <span>Panel</span>
-                                        </a>
-                                    </li>
-            
-                                </ul>
-                            </nav>
-                        </div>
-            
-                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
-                            <span class="text-xs whitespace-nowrap">Powered by</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
-                        </a>
-                    </div>
-                </template>
-            </doc-sidebar>
-    
-            <div class="grow min-w-0 bg-body-bg">
-                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
-                <div class="flex">
-                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
-                        <main class="relative pb-12 lg:pt-2">
-                            <div class="retype-markdown" id="retype-content">
-                                <!-- Rendered if sidebar right is enabled -->
-                                <div id="retype-sidebar-right-toggle"></div>
-                                <!-- Page content  -->
-<doc-anchor-target id="reflection" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#reflection">#</doc-anchor-trigger>
-        <span>reflection</span>
-    </h1>
-</doc-anchor-target>
+            </template>
+        </doc-sidebar>
+
+        <div class="grow min-w-0 bg-body-bg">
+            <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+<div class="flex">
+    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+        <main class="relative pb-12 lg:pt-2">
+            <div class="relative retype-markdown" id="retype-content">
+                <!-- Rendered if sidebar right is enabled -->
+                <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
+                <!-- Page content  -->
+<h1 id="reflection">reflection</h1>
 <p>Responsible for lua-scripting execution and handling of API access cross-states.<br />
 You can use this to also contact other lua_State instances, and create new ones.<br />
 Do note you are responsible for spinning up new states.</p>
@@ -212,7 +183,7 @@ Do note you are responsible for spinning up new states.</p>
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -230,103 +201,63 @@ Do note you are responsible for spinning up new states.</p>
     </div>
 </div>
 <hr>
-<doc-anchor-target id="functions">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#functions">#</doc-anchor-trigger>
-        <span>Functions</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="functions">Functions</h2>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="reflectionisname-string-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#reflectionisname-string-boolean">#</doc-anchor-trigger>
-        <span>reflection.is(name: string): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="reflectionisname-string-boolean">reflection.is(name: string): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.is(name: string): boolean
 </code>
 <ul>
-<li>checks if the current execution is of a named <code v-pre>lua_State</code></li>
+<li>checks if the current execution is of a named <code translate="no" v-pre>lua_State</code></li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="reflectiongetname-string-lua_state">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#reflectiongetname-string-lua_state">#</doc-anchor-trigger>
-        <span>reflection.get(name: string): lua_State?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="reflectiongetname-string-lua_state">reflection.get(name: string): lua_State?</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.get(name: string): lua_State?
 </code>
 <ul>
-<li>attempts to locate a <code v-pre>lua_State</code></li>
+<li>attempts to locate a <code translate="no" v-pre>lua_State</code></li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="reflectioncurrent-lua_state">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#reflectioncurrent-lua_state">#</doc-anchor-trigger>
-        <span>reflection.current(): lua_State</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="reflectioncurrent-lua_state">reflection.current(): lua_State</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.current(): lua_State
 </code>
 <ul>
-<li>gets the current <code v-pre>lua_State</code> this is executed in</li>
+<li>gets the current <code translate="no" v-pre>lua_State</code> this is executed in</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="reflectionall-index-string-lua_state">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#reflectionall-index-string-lua_state">#</doc-anchor-trigger>
-        <span>reflection.all(): {[index: string]: lua_State}</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="reflectionall-index-string-lua_state">reflection.all(): {[index: string]: lua_State}</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.all(): {[index: string]: lua_State}
 </code>
 <ul>
-<li>gets all instances of <code v-pre>lua_State</code> and their names</li>
+<li>gets all instances of <code translate="no" v-pre>lua_State</code> and their names</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="reflectionnamelua_state-state-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#reflectionnamelua_state-state-string">#</doc-anchor-trigger>
-        <span>reflection.name(lua_State* state): string</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="reflectionnamelua_state-state-string">reflection.name(lua_State* state): string</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.name(lua_State* state): string
 </code>
 <ul>
-<li>converts a <code v-pre>lua_State</code> to its named counterpart</li>
+<li>converts a <code translate="no" v-pre>lua_State</code> to its named counterpart</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="reflectionexecutesource-string-name-string-state-lua_state-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#reflectionexecutesource-string-name-string-state-lua_state-string">#</doc-anchor-trigger>
-        <span>reflection.execute(source: string, name: string, state?: lua_State): string?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="reflectionexecutesource-string-name-string-state-lua_state-string">reflection.execute(source: string, name: string, state?: lua_State): string?</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.execute(source: string, name: string, state?: lua_State): string?
 </code>
 <ul>
-<li>executes lua on a <code v-pre>lua_State</code> or the current active state its in</li>
+<li>executes lua on a <code translate="no" v-pre>lua_State</code> or the current active state its in</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="reflectioncompilesource-string-name-string-function--string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#reflectioncompilesource-string-name-string-function--string">#</doc-anchor-trigger>
-        <span>reflection.compile(source: string, name: string): function | string</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="reflectioncompilesource-string-name-string-function--string">reflection.compile(source: string, name: string): function | string</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.compile(source: string, name: string): function | string
@@ -335,20 +266,15 @@ reflection.compile(source: string, name: string): function | string
 <li>compiles lua on the the current active state its in</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="reflectionopenname-string-lua_state">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#reflectionopenname-string-lua_state">#</doc-anchor-trigger>
-        <span>reflection.open(name: string): lua_State</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="reflectionopenname-string-lua_state">reflection.open(name: string): lua_State</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.open(name: string): lua_State
 </code>
 <ul>
-<li>spawns a new <code v-pre>lua_State</code> instance or returns one if it already exists</li>
+<li>spawns a new <code translate="no" v-pre>lua_State</code> instance or returns one if it already exists</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="reflectionopenname-string-lua_state-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">-- creates a new lua_State
 local state = reflection.open(&quot;lua_State.magic&quot;)
 
@@ -374,27 +300,17 @@ end, state)
 reflection.close(state)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="reflectionclosestate-lua_state">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#reflectionclosestate-lua_state">#</doc-anchor-trigger>
-        <span>reflection.close(state: lua_State)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="reflectionclosestate-lua_state">reflection.close(state: lua_State)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.close(state: lua_State)
 </code>
 <ul>
-<li>destroys a <code v-pre>lua_State</code> instance</li>
-<li>this won&#x27;t work on games with built-in <code v-pre>lua_State</code> instances</li>
+<li>destroys a <code translate="no" v-pre>lua_State</code> instance</li>
+<li>this won&#x27;t work on games with built-in <code translate="no" v-pre>lua_State</code> instances</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="reflectionstackfunc-functionl-lua_state-state-lua_state-any">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#reflectionstackfunc-functionl-lua_state-state-lua_state-any">#</doc-anchor-trigger>
-        <span>reflection.stack(func: function(L: lua_State), state?: lua_State): any...</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="reflectionstackfunc-functionl-lua_state-state-lua_state-any">reflection.stack(func: function(L: lua_State), state?: lua_State): any...</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 reflection.stack(func: function(L: lua_State), state?: lua_State): any...
@@ -403,7 +319,7 @@ reflection.stack(func: function(L: lua_State), state?: lua_State): any...
 <li>creates a stack isolated bridge to a lua_State.</li>
 <li>do note that you don&#x27;t need to do this but using this reduces the risk of overflows.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="reflectionstackfunc-functionl-lua_state-state-lua_state-any-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">-- this is in menu-state or another lua-state
 local other_state = reflection.get(&quot;other_state&quot;)
 
@@ -424,18 +340,13 @@ L:pop()
 print(res) -- 20</code></pre>
 </doc-codeblock></div>
 <hr>
-<doc-anchor-target id="lua-state">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lua-state">#</doc-anchor-trigger>
-        <span>Lua State</span>
-    </h2>
-</doc-anchor-target>
-<p>These are interface &amp; function definitions for how we handle <code v-pre>lua_State</code></p>
+<h2 id="lua-state">Lua State</h2>
+<p>These are interface &amp; function definitions for how we handle <code translate="no" v-pre>lua_State</code></p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -449,41 +360,26 @@ print(res) -- 20</code></pre>
     </div>
 </div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lexecutesource-string-name-string-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lexecutesource-string-name-string-string">#</doc-anchor-trigger>
-        <span>L:execute(source: string, name: string): string?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lexecutesource-string-name-string-string">L:execute(source: string, name: string): string?</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:execute(source: string, name: string): string?
 </code>
 <ul>
-<li>executes lua on a <code v-pre>lua_State</code>.</li>
+<li>executes lua on a <code translate="no" v-pre>lua_State</code>.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lcompilesource-string-name-string-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lcompilesource-string-name-string-string">#</doc-anchor-trigger>
-        <span>L:compile(source: string, name: string): string?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lcompilesource-string-name-string-string">L:compile(source: string, name: string): string?</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:compile(source: string, name: string): string?
 </code>
 <ul>
-<li>compiles lua on a <code v-pre>lua_State</code>.</li>
+<li>compiles lua on a <code translate="no" v-pre>lua_State</code>.</li>
 <li>do note that doing this will push the function onto the stack, consider seeing more in CAPI.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lstackfunc-functionl-lua_state-any">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lstackfunc-functionl-lua_state-any">#</doc-anchor-trigger>
-        <span>L:stack(func: function(L: lua_State)): any?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lstackfunc-functionl-lua_state-any">L:stack(func: function(L: lua_State)): any?</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:stack(func: function(L: lua_State)): any?
@@ -494,12 +390,7 @@ L:stack(func: function(L: lua_State)): any?
 </ul>
 <hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lapi-api">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lapi-api">#</doc-anchor-trigger>
-        <span>L:api(): API</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lapi-api">L:api(): API</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:api(): API
@@ -508,12 +399,7 @@ L:api(): API
 <li>Pushes the API onto the stack for access</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lcallinputs-number-outputs-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lcallinputs-number-outputs-number">#</doc-anchor-trigger>
-        <span>L:call(inputs: number, outputs: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lcallinputs-number-outputs-number">L:call(inputs: number, outputs: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:call(inputs: number, outputs: number)
@@ -522,18 +408,13 @@ L:call(inputs: number, outputs: number)
 <li>Calls a function thats pushed onto the stack</li>
 <li>This will <em>consume</em> the no. inputs first, then execute the functions</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="lcallinputs-number-outputs-number-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">L:reflection.compile(&quot;print(({...})[1])&quot;, &quot;example&quot;)
 L:pushstring(&quot;hello world&quot;)
 L:call(1, 0) -- calls &quot;example&quot; with &quot;hello world&quot;</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lpopcount-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lpopcount-number">#</doc-anchor-trigger>
-        <span>L:pop(count?: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lpopcount-number">L:pop(count?: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:pop(count?: number)
@@ -542,12 +423,7 @@ L:pop(count?: number)
 <li>Pops a value off of the stack at the top</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lremoveindex-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lremoveindex-number">#</doc-anchor-trigger>
-        <span>L:remove(index: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lremoveindex-number">L:remove(index: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:remove(index: number)
@@ -556,12 +432,7 @@ L:remove(index: number)
 <li>Removes a value at an index off of the stack</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="llengthindex-number-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#llengthindex-number-number">#</doc-anchor-trigger>
-        <span>L:length(index: number): number</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="llengthindex-number-number">L:length(index: number): number</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:length(index: number): number
@@ -570,12 +441,7 @@ L:length(index: number): number
 <li>Used to get the length of a value</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lnextindex-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lnextindex-number-boolean">#</doc-anchor-trigger>
-        <span>L:next(index: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lnextindex-number-boolean">L:next(index: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:next(index: number): boolean
@@ -583,7 +449,7 @@ L:next(index: number): boolean
 <ul>
 <li>A pair-style iterator function for going through table</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="lnextindex-number-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">L:newtable() -- example
 
 L:pushnil() -- push an invalid key to jump-start the iterator
@@ -595,12 +461,7 @@ end
 L:pop() -- pop table off stack</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lpushanyvalue-any">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lpushanyvalue-any">#</doc-anchor-trigger>
-        <span>L:pushany(value: any)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lpushanyvalue-any">L:pushany(value: any)</h3>
 </div>
 <div style="margin-bottom: 10px;"><code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:pushany(value: any)
@@ -609,12 +470,7 @@ L:pushany(value: any)
 <li>Transfers any datatype from your environment to the stack</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lgetanyindex-number-any">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lgetanyindex-number-any">#</doc-anchor-trigger>
-        <span>L:getany(index: number): any</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lgetanyindex-number-any">L:getany(index: number): any</h3>
 </div>
 <div style="margin-bottom: 10px;"><code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:getany(index: number): any
@@ -623,12 +479,7 @@ L:getany(index: number): any
 <li>Transfers any datatype from the stack to your environment</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lgettop-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lgettop-number">#</doc-anchor-trigger>
-        <span>L:gettop(): number</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lgettop-number">L:gettop(): number</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:gettop(): number
@@ -638,12 +489,7 @@ L:gettop(): number
 <li>This is useful for vararg style handling</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lgettypeindex-number-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lgettypeindex-number-number">#</doc-anchor-trigger>
-        <span>L:gettype(index: number): number</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lgettypeindex-number-number">L:gettype(index: number): number</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:gettype(index: number): number
@@ -652,12 +498,7 @@ L:gettype(index: number): number
 <li>Gets the type ID of a given value</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lgettypenameindex-number-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lgettypenameindex-number-string">#</doc-anchor-trigger>
-        <span>L:gettypename(index: number): string</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lgettypenameindex-number-string">L:gettypename(index: number): string</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:gettypename(index: number): string
@@ -667,12 +508,7 @@ L:gettypename(index: number): string
 </ul>
 <hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lnewtable">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lnewtable">#</doc-anchor-trigger>
-        <span>L:newtable()</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lnewtable">L:newtable()</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:newtable()
@@ -681,12 +517,7 @@ L:newtable()
 <li>Generates a blank table and pushes it onto the stack</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lnewrefindex-number-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lnewrefindex-number-number">#</doc-anchor-trigger>
-        <span>L:newref(index: number): number</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lnewrefindex-number-number">L:newref(index: number): number</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:newref(index: number): number
@@ -696,12 +527,7 @@ L:newref(index: number): number
 <li>This will make the value immune to the garbage collector</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lpushrefreference-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lpushrefreference-number">#</doc-anchor-trigger>
-        <span>L:pushref(reference: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lpushrefreference-number">L:pushref(reference: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:pushref(reference: number)
@@ -710,12 +536,7 @@ L:pushref(reference: number)
 <li>Pushes the referenced value back onto the stack</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lrmrefreference-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lrmrefreference-number">#</doc-anchor-trigger>
-        <span>L:rmref(reference: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lrmrefreference-number">L:rmref(reference: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:rmref(reference: number)
@@ -724,12 +545,7 @@ L:rmref(reference: number)
 <li>Removes the referenced value from registry</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lgetupvalueindex-number-id-number-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lgetupvalueindex-number-id-number-string">#</doc-anchor-trigger>
-        <span>L:getupvalue(index: number, id: number): string</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lgetupvalueindex-number-id-number-string">L:getupvalue(index: number, id: number): string</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:getupvalue(index: number, id: number): string
@@ -739,12 +555,7 @@ L:getupvalue(index: number, id: number): string
 <li>Upvalues are values passed to a function not as a parameter, but by reference</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lsetupvalueindex-number-id-number-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lsetupvalueindex-number-id-number-string">#</doc-anchor-trigger>
-        <span>L:setupvalue(index: number, id: number): string</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lsetupvalueindex-number-id-number-string">L:setupvalue(index: number, id: number): string</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:setupvalue(index: number, id: number): string
@@ -753,12 +564,7 @@ L:setupvalue(index: number, id: number): string
 <li>Sets the &quot;upvalue&quot; of a function at the top of the stack</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lgetfenvindex-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lgetfenvindex-number">#</doc-anchor-trigger>
-        <span>L:getfenv(index: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lgetfenvindex-number">L:getfenv(index: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:getfenv(index: number)
@@ -768,12 +574,7 @@ L:getfenv(index: number)
 <li>You can use this to manipulate the environment</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lsetfenvindex-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lsetfenvindex-number">#</doc-anchor-trigger>
-        <span>L:setfenv(index: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lsetfenvindex-number">L:setfenv(index: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:setfenv(index: number)
@@ -784,12 +585,7 @@ L:setfenv(index: number)
 <li>You can use this to manipulate the environment</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lgetmetatableindex-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lgetmetatableindex-number-boolean">#</doc-anchor-trigger>
-        <span>L:getmetatable(index: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lgetmetatableindex-number-boolean">L:getmetatable(index: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:getmetatable(index: number): boolean
@@ -799,12 +595,7 @@ L:getmetatable(index: number): boolean
 <li>The boolean is provided for if it fails to grab the metatable</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lsetmetatableindex-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lsetmetatableindex-number">#</doc-anchor-trigger>
-        <span>L:setmetatable(index: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lsetmetatableindex-number">L:setmetatable(index: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:setmetatable(index: number)
@@ -814,12 +605,7 @@ L:setmetatable(index: number)
 <li>This consumes the table you provide it at the top of the stack</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lgetfieldindex-number-key-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lgetfieldindex-number-key-string">#</doc-anchor-trigger>
-        <span>L:getfield(index: number, key: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lgetfieldindex-number-key-string">L:getfield(index: number, key: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:getfield(index: number, key: string)
@@ -828,12 +614,7 @@ L:getfield(index: number, key: string)
 <li>Gets the value from a table and pushes it onto the stack</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lsetfieldindex-number-key-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lsetfieldindex-number-key-string">#</doc-anchor-trigger>
-        <span>L:setfield(index: number, key: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lsetfieldindex-number-key-string">L:setfield(index: number, key: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:setfield(index: number, key: string)
@@ -843,12 +624,7 @@ L:setfield(index: number, key: string)
 <li>Index corresponds to where the table is on the stack</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lgettableindex-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lgettableindex-number">#</doc-anchor-trigger>
-        <span>L:gettable(index: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lgettableindex-number">L:gettable(index: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:gettable(index: number)
@@ -858,12 +634,7 @@ L:gettable(index: number)
 <li>This will consume a value just before it to determine the key</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lsettableindex-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lsettableindex-number">#</doc-anchor-trigger>
-        <span>L:settable(index: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lsettableindex-number">L:settable(index: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:settable(index: number)
@@ -873,12 +644,7 @@ L:settable(index: number)
 <li>The top of the stack is the key, and top-1 is the value</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lrawgetindex-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lrawgetindex-number">#</doc-anchor-trigger>
-        <span>L:rawget(index: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lrawgetindex-number">L:rawget(index: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:rawget(index: number)
@@ -889,12 +655,7 @@ L:rawget(index: number)
 <li>Unlike gettable this will not invoke metatable callbacks</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lrawsetindex-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lrawsetindex-number">#</doc-anchor-trigger>
-        <span>L:rawset(index: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lrawsetindex-number">L:rawset(index: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:rawset(index: number)
@@ -906,12 +667,7 @@ L:rawset(index: number)
 </ul>
 <hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lgetbooleanindex-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lgetbooleanindex-number-boolean">#</doc-anchor-trigger>
-        <span>L:getboolean(index: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lgetbooleanindex-number-boolean">L:getboolean(index: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:getboolean(index: number): boolean
@@ -921,12 +677,7 @@ L:getboolean(index: number): boolean
 <li>If the type is invalid, an error will be thrown</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lgetnumberindex-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lgetnumberindex-number">#</doc-anchor-trigger>
-        <span>L:getnumber(index: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lgetnumberindex-number">L:getnumber(index: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:getnumber(index: number)
@@ -936,12 +687,7 @@ L:getnumber(index: number)
 <li>If the type is invalid, an error will be thrown</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lgetstringindex-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lgetstringindex-number">#</doc-anchor-trigger>
-        <span>L:getstring(index: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lgetstringindex-number">L:getstring(index: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:getstring(index: number)
@@ -952,12 +698,7 @@ L:getstring(index: number)
 </ul>
 <hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lpushbooleanvalue-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lpushbooleanvalue-boolean">#</doc-anchor-trigger>
-        <span>L:pushboolean(value: boolean)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lpushbooleanvalue-boolean">L:pushboolean(value: boolean)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:pushboolean(value: boolean)
@@ -966,12 +707,7 @@ L:pushboolean(value: boolean)
 <li>Pushes a boolean onto the stack</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lpushnil">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lpushnil">#</doc-anchor-trigger>
-        <span>L:pushnil()</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lpushnil">L:pushnil()</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:pushnil()
@@ -980,12 +716,7 @@ L:pushnil()
 <li>Pushes a nil value onto the stack</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lpushnumbervalue-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lpushnumbervalue-number">#</doc-anchor-trigger>
-        <span>L:pushnumber(value: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lpushnumbervalue-number">L:pushnumber(value: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:pushnumber(value: number)
@@ -994,12 +725,7 @@ L:pushnumber(value: number)
 <li>Pushes a number onto the stack</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lpushstringvalue-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lpushstringvalue-string">#</doc-anchor-trigger>
-        <span>L:pushstring(value: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lpushstringvalue-string">L:pushstring(value: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:pushstring(value: string)
@@ -1008,12 +734,7 @@ L:pushstring(value: string)
 <li>Pushes a string onto the stack</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lpushfunctionvalue-function">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lpushfunctionvalue-function">#</doc-anchor-trigger>
-        <span>L:pushfunction(value: function)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lpushfunctionvalue-function">L:pushfunction(value: function)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:pushfunction(value: function) 
@@ -1022,12 +743,7 @@ L:pushfunction(value: function)
 <li>Pushes a function onto the stack</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lpushtablevalue-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lpushtablevalue-table">#</doc-anchor-trigger>
-        <span>L:pushtable(value: table)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lpushtablevalue-table">L:pushtable(value: table)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
  L:pushtable(value: table) 
@@ -1036,12 +752,7 @@ L:pushfunction(value: function)
 <li>Pushes a table onto the stack</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lpushvalueindex-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lpushvalueindex-number">#</doc-anchor-trigger>
-        <span>L:pushvalue(index: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lpushvalueindex-number">L:pushvalue(index: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:pushvalue(index: number)
@@ -1051,12 +762,7 @@ L:pushvalue(index: number)
 </ul>
 <hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lisbooleanindex-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lisbooleanindex-number-boolean">#</doc-anchor-trigger>
-        <span>L:isboolean(index: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lisbooleanindex-number-boolean">L:isboolean(index: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:isboolean(index: number): boolean
@@ -1065,12 +771,7 @@ L:isboolean(index: number): boolean
 <li>Checks if the value at index on the stack is a boolean</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="liscfunctionindex-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#liscfunctionindex-number-boolean">#</doc-anchor-trigger>
-        <span>L:iscfunction(index: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="liscfunctionindex-number-boolean">L:iscfunction(index: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:iscfunction(index: number): boolean
@@ -1079,12 +780,7 @@ L:iscfunction(index: number): boolean
 <li>Checks if the value at index on the stack is a cfunction</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lisfunctionindex-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lisfunctionindex-number-boolean">#</doc-anchor-trigger>
-        <span>L:isfunction(index: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lisfunctionindex-number-boolean">L:isfunction(index: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:isfunction(index: number): boolean
@@ -1093,12 +789,7 @@ L:isfunction(index: number): boolean
 <li>Checks if the value at index on the stack is a function</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lislightuserdataindex-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lislightuserdataindex-number-boolean">#</doc-anchor-trigger>
-        <span>L:islightuserdata(index: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lislightuserdataindex-number-boolean">L:islightuserdata(index: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:islightuserdata(index: number): boolean
@@ -1107,12 +798,7 @@ L:islightuserdata(index: number): boolean
 <li>Checks if the value at index on the stack is a lightuserdata</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lisnilindex-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lisnilindex-number-boolean">#</doc-anchor-trigger>
-        <span>L:isnil(index: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lisnilindex-number-boolean">L:isnil(index: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:isnil(index: number): boolean
@@ -1121,12 +807,7 @@ L:isnil(index: number): boolean
 <li>Checks if the value at index on the stack is nil</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lisnumberindex-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lisnumberindex-number-boolean">#</doc-anchor-trigger>
-        <span>L:isnumber(index: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lisnumberindex-number-boolean">L:isnumber(index: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:isnumber(index: number): boolean
@@ -1135,12 +816,7 @@ L:isnumber(index: number): boolean
 <li>Checks if the value at index on the stack is a number</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lisstringindex-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lisstringindex-number-boolean">#</doc-anchor-trigger>
-        <span>L:isstring(index: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lisstringindex-number-boolean">L:isstring(index: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:isstring(index: number): boolean
@@ -1149,12 +825,7 @@ L:isstring(index: number): boolean
 <li>Checks if the value at index on the stack is a string</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="listableindex-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#listableindex-number-boolean">#</doc-anchor-trigger>
-        <span>L:istable(index: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="listableindex-number-boolean">L:istable(index: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:istable(index: number): boolean
@@ -1163,12 +834,7 @@ L:istable(index: number): boolean
 <li>Checks if the value at index on the stack is a table</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="listhreadindex-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#listhreadindex-number-boolean">#</doc-anchor-trigger>
-        <span>L:isthread(index: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="listhreadindex-number-boolean">L:isthread(index: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:isthread(index: number): boolean
@@ -1177,12 +843,7 @@ L:isthread(index: number): boolean
 <li>Checks if the value at index on the stack is a thread</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="lisuserdataindex-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lisuserdataindex-number-boolean">#</doc-anchor-trigger>
-        <span>L:isuserdata(index: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="lisuserdataindex-number-boolean">L:isuserdata(index: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:isuserdata(index: number): boolean
@@ -1191,12 +852,7 @@ L:isuserdata(index: number): boolean
 <li>Checks if the value at index on the stack is a userdata</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="listypeindex-number-type-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#listypeindex-number-type-number-boolean">#</doc-anchor-trigger>
-        <span>L:istype(index: number, type: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="listypeindex-number-type-number-boolean">L:istype(index: number, type: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 L:istype(index: number, type: number): boolean
@@ -1205,76 +861,76 @@ L:istype(index: number, type: number): boolean
 <li>Checks if the value matches a specific type ID</li>
 </ul>
 <div hidden>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="listypeindex-number-type-number-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-typescript"><code v-pre class="language-typescript"> </code></pre>
 </doc-codeblock></div>
 </div>
 
-                                
-                                <!-- Required only on API pages -->
-                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
-                            </div>
-                            <footer id="retype-content-footer" class="clear-both">
-                            
-                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/paint/">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                            <span>
-                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">paint</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                            
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/router/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">router</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
-                                    </div>
-                                </nav>
-                            </footer>
-                        </main>
                 
-                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
-                                <div id="retype-footer-links" class="print:hidden">
-                                    <ul class="flex flex-wrap items-center text-sm">
-                                    </ul>
-                                </div>
-                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
-                            </footer>
-                        </div>
-                    </div>
-                
-                    <!-- Rendered if sidebar right is enabled -->
-                    <!-- Sidebar right skeleton-->
-                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
-                        <div class="pl-5">
-                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                        </div>
-                    </div>
-                
-                    <!-- User should be able to hide sidebar right -->
-                    <doc-sidebar-right v-cloak></doc-sidebar-right>
-                </div>
-
+                <!-- Required only on API pages -->
+                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
             </div>
+            <footer id="retype-content-footer" class="clear-both">
+            
+                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/paint/">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                            <span>
+                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                <span class="block mt-1">paint</span>
+                            </span>
+                        </a>
+                    </div>
+            
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/router/">
+                            <span>
+                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                <span class="block mt-1">router</span>
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                        </a>
+                    </div>
+                </nav>
+            </footer>
+        </main>
+
+        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                <div id="retype-footer-links" class="print:hidden">
+                    <ul class="flex flex-wrap items-center text-sm">
+                    </ul>
+                </div>
+                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
+            </footer>
         </div>
-    
-        <doc-search-mobile></doc-search-mobile>
-        <doc-back-to-top></doc-back-to-top>
     </div>
+
+    <!-- Rendered if sidebar right is enabled -->
+    <!-- Sidebar right skeleton-->
+    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:translate-x-0 sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+        <div class="pl-5">
+            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+        </div>
+    </div>
+
+    <!-- User should be able to hide sidebar right -->
+    <doc-sidebar-right v-cloak></doc-sidebar-right>
+</div>
+
+        </div>
+    </div>
+
+    <doc-search-mobile></doc-search-mobile>
+    <doc-back-to-top></doc-back-to-top>
+</div>
 
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "reflection", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "reflection", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/libraries/reflection/index.md" }</script>
 </body>
 </html>

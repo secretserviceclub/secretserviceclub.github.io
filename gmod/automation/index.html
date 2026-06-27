@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.835387193572">
+    <meta name="color-scheme" content="light dark">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835896465728">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.11.0">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>automation</title>
@@ -15,219 +16,184 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://secretserviceclub.github.io/gmod/automation/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://secretserviceclub.github.io/sitemap.xml">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secretserviceclub.github.io/gmod/automation/">
     <meta property="og:title" content="automation">
     <meta property="og:description" content="Allows control over the automation in lua.">
+    <meta property="og:site_name" content="secretservice">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://secretserviceclub.github.io/gmod/automation/">
-    <meta property="twitter:title" content="automation">
-    <meta property="twitter:description" content="Allows control over the automation in lua.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://secretserviceclub.github.io/gmod/automation/">
+    <meta name="twitter:title" content="automation">
+    <meta name="twitter:description" content="Allows control over the automation in lua.">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://secretserviceclub.github.io/gmod/automation/index.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.835387193572" rel="stylesheet">
+    <link id="retype-favicon" rel="icon" href="../../favicon.png" />
+    <link href="../../resources/css/retype.css?v=4.6.0.835896465728" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.835387193572" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.835387193572" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.835387193572" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.835896465728" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.835896465728" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.835896465728" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
-        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+    <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+
+    <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+        <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+            <!-- Mobile menu button skeleton -->
+            <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-hidden rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+            <div v-cloak id="retype-sidebar-left-toggle-button"></div>
     
-        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
-            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
-                <!-- Mobile menu button skeleton -->
-                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
-                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
-        
-                <!-- Logo -->
-                <div class="flex items-center justify-between h-full py-2 md:w-75">
-                    <div class="flex items-center px-2 md:px-6">
-                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
-                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">secretservice</span>
-                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
-                    </div>
-        
-                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+            <!-- Logo -->
+            <div class="flex items-center justify-between h-full py-2 md:w-75">
+                <div class="flex items-center px-2 md:px-6">
+                    <a id="retype-branding-logo" href="https://secretserviceclub.github.io/" class="flex items-center leading-snug text-xl">
+                        <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">secretservice</span>
+                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
                 </div>
-        
-                <div class="flex justify-between md:grow">
-                    <!-- Top Nav -->
-                    <nav id="retype-header-nav" class="hidden md:flex">
-                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                        <g fill="currentColor">
-                                            <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
-                                        </g>
-                                    </svg>
-                                    <span>Website</span>
-                                </a>
-                            </li>
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/home">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                        <g fill="currentColor">
-                                            <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
-                                        </g>
-                                    </svg>
-                                    <span>Panel</span>
-                                </a>
-                            </li>
-        
-                        </ul>
-                    </nav>
-        
-                    <!-- Header Right Skeleton -->
-                    <div v-cloak class="flex justify-end grow skeleton">
-        
-                        <!-- Search input mock -->
-                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
-                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                            </div>
-                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
-                        </div>
-        
-                        <!-- Mobile search button -->
-                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                        </div>
-        
-                        <!-- Dark mode switch placeholder -->
-                        <div class="w-10 h-10 lg:ml-2"></div>
-        
-                        <!-- History button -->
-                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
-                        </div>
-                    </div>
-        
-                    <div v-cloak class="flex justify-end grow">
-                        <div id="retype-mobile-search-button"></div>
-                        <doc-search-desktop></doc-search-desktop>
-        
-                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
-                        <doc-history></doc-history>
-                    </div>
+    
+                <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+            </div>
+    
+            <div class="flex justify-between md:grow">
+                <!-- Top Nav -->
+                <nav id="retype-header-nav" class="hidden md:flex">
+                    <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
+                                </svg>
+                                <span>Website</span>
+                            </a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/home">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
+                                </svg>
+                                <span>Panel</span>
+                            </a>
+                        </li>
+    
+                    </ul>
+                </nav>
+    
+                <div v-cloak class="flex justify-end grow">
+                    <div id="retype-mobile-search-button"></div>
+                    <doc-search-desktop></doc-search-desktop>
+    
+                    <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                    <doc-history></doc-history>
                 </div>
             </div>
-        </header>
-    
-    
-        <div id="retype-container" class="container relative flex bg-white">
-            <!-- Sidebar Skeleton -->
-            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
-            
-                <div class="flex items-center h-16 px-6">
-                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
-                </div>
-            
-                <div class="pl-6 mt-1 mb-4">
-                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                </div>
-            
-                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+        </div>
+    </header>
+
+
+    <div id="retype-container" class="container relative flex bg-white">
+        <!-- Sidebar Skeleton -->
+        <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+        
+            <div class="flex items-center h-16 px-6">
+                <input id="retype-filter-input-mock" class="w-full h-10 pl-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded-lg shadow-none md:text-sm hover:border-filter-border-hover focus:outline-hidden focus:border-filter-border-focus placeholder-filter-placeholder" type="text">
+            </div>
+        
+            <div class="pl-6 mt-1 mb-4">
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            </div>
+        
+            <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                    <span class="text-xs whitespace-nowrap">Powered by</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Sidebar component -->
+        <doc-sidebar v-cloak>
+            <template #sidebar-footer>
+                <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+        
+                    <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                        <nav>
+                            <ul class="flex flex-wrap justify-center items-center">
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
+                                        </svg>
+                                        <span>Website</span>
+                                    </a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/home">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
+                                        </svg>
+                                        <span>Panel</span>
+                                    </a>
+                                </li>
+        
+                            </ul>
+                        </nav>
+                    </div>
+        
                     <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
                         <span class="text-xs whitespace-nowrap">Powered by</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
                     </a>
                 </div>
-            </div>
-            
-            <!-- Sidebar component -->
-            <doc-sidebar v-cloak>
-                <template #sidebar-footer>
-                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
-            
-                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
-                            <nav>
-                                <ul class="flex flex-wrap justify-center items-center">
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                                <g fill="currentColor">
-                                                    <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
-                                                </g>
-                                            </svg>
-                                            <span>Website</span>
-                                        </a>
-                                    </li>
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/home">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                                <g fill="currentColor">
-                                                    <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
-                                                </g>
-                                            </svg>
-                                            <span>Panel</span>
-                                        </a>
-                                    </li>
-            
-                                </ul>
-                            </nav>
-                        </div>
-            
-                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
-                            <span class="text-xs whitespace-nowrap">Powered by</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
-                        </a>
-                    </div>
-                </template>
-            </doc-sidebar>
-    
-            <div class="grow min-w-0 bg-body-bg">
-                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
-                <div class="flex">
-                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
-                        <main class="relative pb-12 lg:pt-2">
-                            <div class="retype-markdown" id="retype-content">
-                                <!-- Rendered if sidebar right is enabled -->
-                                <div id="retype-sidebar-right-toggle"></div>
-                                <!-- Page content  -->
-<doc-anchor-target id="automation" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automation">#</doc-anchor-trigger>
-        <span>automation</span>
-    </h1>
-</doc-anchor-target>
+            </template>
+        </doc-sidebar>
+
+        <div class="grow min-w-0 bg-body-bg">
+            <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+<div class="flex">
+    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+        <main class="relative pb-12 lg:pt-2">
+            <div class="relative retype-markdown" id="retype-content">
+                <!-- Rendered if sidebar right is enabled -->
+                <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
+                <!-- Page content  -->
+<h1 id="automation">automation</h1>
 <p>Allows control over the automation in lua.</p>
-<p><strong>Quick reference:</strong> Build events with <code v-pre>event_type.*</code>, add them with <code v-pre>add_event()</code> or <code v-pre>set_routine()</code>, then <code v-pre>start_routine()</code>. Use <code v-pre>automation.listener</code> for path_found, start_walking, stuck, path_finished.</p>
+<p><strong>Quick reference:</strong> Build events with <code translate="no" v-pre>event_type.*</code>, add them with <code translate="no" v-pre>add_event()</code> or <code translate="no" v-pre>set_routine()</code>, then <code translate="no" v-pre>start_routine()</code>. Use <code translate="no" v-pre>automation.listener</code> for path_found, start_walking, stuck, path_finished.</p>
 <hr>
-<doc-anchor-target id="routines-and-automation">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#routines-and-automation">#</doc-anchor-trigger>
-        <span>Routines and automation</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="routines-and-automation">Routines and automation</h2>
 <p>The automation exposes a <strong>routine</strong> system: ordered lists of <strong>events</strong> (move, wait, input, Lua, etc.).</p>
-<p><strong>Typical flow:</strong> build a routine (e.g. Goto + Wait + RunCommand), optionally hook <code v-pre>automation.listener</code> to react to path_found / start_walking / stuck / path_finished, then call <code v-pre>start_routine()</code> to run the routine.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<p><strong>Typical flow:</strong> build a routine (e.g. Goto + Wait + RunCommand), optionally hook <code translate="no" v-pre>automation.listener</code> to react to path_found / start_walking / stuck / path_finished, then call <code translate="no" v-pre>start_routine()</code> to run the routine.</p>
+<div id="routines-and-automation-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.clear_routine()
 secret.automation.add_event({ type = secret.automation.event_type.Goto, pos = { x = 1000, y = 2000, z = 100 }, goto_run = true, goto_destination_radius = 100 })
 secret.automation.add_event({ type = secret.automation.event_type.Wait, wait_ms = 500 })
 secret.automation.add_event({ type = secret.automation.event_type.RunCommand, command = &quot;say arrived&quot; })
 secret.automation.start_routine()</code></pre>
 </doc-codeblock></div>
-<p>Automation lifecycle is exposed via <code v-pre>automation.listener</code>, which uses the same API as the 
+<p>Automation lifecycle is exposed via <code translate="no" v-pre>automation.listener</code>, which uses the same API as the 
 <div class="mb-6 px-5 py-4 flex justify-between relative border border-base-border hover:border-base-border-hover rounded transition-colors duration-150">
     <div class="flex items-center text-base-500">
-        <span class="inline-block mb-px">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        <span class="inline-flex items-center justify-center leading-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
         </span>
         <span class="inline-block font-medium ml-2">Signal</span>
     </div>
@@ -236,8 +202,8 @@ secret.automation.start_routine()</code></pre>
     </div>
     <a href="../../libraries/signal/#library-functions" class="absolute block inset-0"></a>
 </div>
- library: <code v-pre>add(name, identity, callback)</code> to register and <code v-pre>remove(name, identity)</code> to unregister. Use a string of your choice as <code v-pre>identity</code> (e.g. a script name) so you can remove the callback later.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+ library: <code translate="no" v-pre>add(name, identity, callback)</code> to register and <code translate="no" v-pre>remove(name, identity)</code> to unregister. Use a string of your choice as <code translate="no" v-pre>identity</code> (e.g. a script name) so you can remove the callback later.</p>
+<div id="routines-and-automation-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.listener.add(&quot;path_found&quot;, &quot;my_hook&quot;, function()
     local waypoints = secret.automation.get_waypoints()
     print(&quot;Path has &quot; .. #waypoints .. &quot; waypoints&quot;)
@@ -247,19 +213,42 @@ secret.automation.listener.add(&quot;path_finished&quot;, &quot;my_hook&quot;, f
     secret.automation.listener.remove(&quot;path_finished&quot;, &quot;my_hook&quot;)
 end)</code></pre>
 </doc-codeblock></div>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="routines-and-automation-code-3" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.clear_routine()
 secret.automation.add_event({ type = secret.automation.event_type.Wait, wait_ms = 1000 })
 secret.automation.add_event({ type = secret.automation.event_type.RunCommand, command = &quot;say Done&quot; })
 secret.automation.start_routine()</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="event-table-shape">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#event-table-shape">#</doc-anchor-trigger>
-        <span>Event table shape</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="event-table-shape">Event table shape</h3>
 <p>Each event in a routine is a table with optional fields. <strong>Common fields:</strong></p>
+<retype-table copy-text="| Field | Type | Description |
+|-------|------|-------------|
+| `type` | number | Event type. Use `automation.event_type.Goto`, `automation.event_type.Wait`, etc. (see [Event types](#event-types-and-buttons) below). |
+| `pos` | table | Position `{ x, y, z }`. |
+| `angles` | table | Angles `{ p, y }`. |
+| `button_mask` | number | Button mask for input. Use `automation.buttons.IN_ATTACK`, etc., or combine with bitwise OR (see [Buttons](#event-types-and-buttons)). |
+| `hold_ms` | number | Hold duration in milliseconds. |
+| `wait_ms` | number | Wait duration in milliseconds. |
+| `wait_unit` | number | Wait unit selector (engine-defined). |
+| `command` | string | Console/command string. |
+| `lua_code` | string | Inline Lua code to run. |
+| `lua_file` | string | Path to Lua file to run. |
+| `run_in_menu` | boolean | Whether to run Lua while in menu. |
+| `box_min` | table | Box min `{ x, y, z }`. |
+| `box_max` | table | Box max `{ x, y, z }`. |
+| `stuck_ms` | number | Stuck timeout in ms (default 2000). |
+| `forward_move` | number | Forward move value. |
+| `side_move` | number | Side move value. |
+| `mouse_dx` | number | Mouse delta X. |
+| `mouse_dy` | number | Mouse delta Y. |
+| `cmd_overrides` | table | Per-event command overrides (see below). |
+| `target_step_index` | number | Target step index for jumps (-1 = none). |
+| `repeat_count` | number | Repeat count for the step. |
+| `condition_radius` | number | Condition check radius (default 100). |
+| `condition_value` | number | Condition value (default 50). |
+| `look_lerp` | boolean | Whether to lerp look angles. |
+| `look_lerp_ms` | number | Look lerp duration in ms (default 500). |
+| `look_silent` | boolean | Silent look (no view change). |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -271,139 +260,157 @@ secret.automation.start_routine()</code></pre>
 </thead>
 <tbody>
 <tr>
-<td><code v-pre>type</code></td>
+<td><code translate="no" v-pre>type</code></td>
 <td>number</td>
-<td>Event type. Use <code v-pre>automation.event_type.Goto</code>, <code v-pre>automation.event_type.Wait</code>, etc. (see <doc-anchor-trigger to="#event-types-and-buttons">Event types</doc-anchor-trigger> below).</td>
+<td>Event type. Use <code translate="no" v-pre>automation.event_type.Goto</code>, <code translate="no" v-pre>automation.event_type.Wait</code>, etc. (see <doc-anchor-trigger to="#event-types-and-buttons">Event types</doc-anchor-trigger> below).</td>
 </tr>
 <tr>
-<td><code v-pre>pos</code></td>
+<td><code translate="no" v-pre>pos</code></td>
 <td>table</td>
-<td>Position <code v-pre>{ x, y, z }</code>.</td>
+<td>Position <code translate="no" v-pre>{ x, y, z }</code>.</td>
 </tr>
 <tr>
-<td><code v-pre>angles</code></td>
+<td><code translate="no" v-pre>angles</code></td>
 <td>table</td>
-<td>Angles <code v-pre>{ p, y }</code>.</td>
+<td>Angles <code translate="no" v-pre>{ p, y }</code>.</td>
 </tr>
 <tr>
-<td><code v-pre>button_mask</code></td>
+<td><code translate="no" v-pre>button_mask</code></td>
 <td>number</td>
-<td>Button mask for input. Use <code v-pre>automation.buttons.IN_ATTACK</code>, etc., or combine with bitwise OR (see <doc-anchor-trigger to="#event-types-and-buttons">Buttons</doc-anchor-trigger>).</td>
+<td>Button mask for input. Use <code translate="no" v-pre>automation.buttons.IN_ATTACK</code>, etc., or combine with bitwise OR (see <doc-anchor-trigger to="#event-types-and-buttons">Buttons</doc-anchor-trigger>).</td>
 </tr>
 <tr>
-<td><code v-pre>hold_ms</code></td>
+<td><code translate="no" v-pre>hold_ms</code></td>
 <td>number</td>
 <td>Hold duration in milliseconds.</td>
 </tr>
 <tr>
-<td><code v-pre>wait_ms</code></td>
+<td><code translate="no" v-pre>wait_ms</code></td>
 <td>number</td>
 <td>Wait duration in milliseconds.</td>
 </tr>
 <tr>
-<td><code v-pre>wait_unit</code></td>
+<td><code translate="no" v-pre>wait_unit</code></td>
 <td>number</td>
 <td>Wait unit selector (engine-defined).</td>
 </tr>
 <tr>
-<td><code v-pre>command</code></td>
+<td><code translate="no" v-pre>command</code></td>
 <td>string</td>
 <td>Console/command string.</td>
 </tr>
 <tr>
-<td><code v-pre>lua_code</code></td>
+<td><code translate="no" v-pre>lua_code</code></td>
 <td>string</td>
 <td>Inline Lua code to run.</td>
 </tr>
 <tr>
-<td><code v-pre>lua_file</code></td>
+<td><code translate="no" v-pre>lua_file</code></td>
 <td>string</td>
 <td>Path to Lua file to run.</td>
 </tr>
 <tr>
-<td><code v-pre>run_in_menu</code></td>
+<td><code translate="no" v-pre>run_in_menu</code></td>
 <td>boolean</td>
 <td>Whether to run Lua while in menu.</td>
 </tr>
 <tr>
-<td><code v-pre>box_min</code></td>
+<td><code translate="no" v-pre>box_min</code></td>
 <td>table</td>
-<td>Box min <code v-pre>{ x, y, z }</code>.</td>
+<td>Box min <code translate="no" v-pre>{ x, y, z }</code>.</td>
 </tr>
 <tr>
-<td><code v-pre>box_max</code></td>
+<td><code translate="no" v-pre>box_max</code></td>
 <td>table</td>
-<td>Box max <code v-pre>{ x, y, z }</code>.</td>
+<td>Box max <code translate="no" v-pre>{ x, y, z }</code>.</td>
 </tr>
 <tr>
-<td><code v-pre>stuck_ms</code></td>
+<td><code translate="no" v-pre>stuck_ms</code></td>
 <td>number</td>
 <td>Stuck timeout in ms (default 2000).</td>
 </tr>
 <tr>
-<td><code v-pre>forward_move</code></td>
+<td><code translate="no" v-pre>forward_move</code></td>
 <td>number</td>
 <td>Forward move value.</td>
 </tr>
 <tr>
-<td><code v-pre>side_move</code></td>
+<td><code translate="no" v-pre>side_move</code></td>
 <td>number</td>
 <td>Side move value.</td>
 </tr>
 <tr>
-<td><code v-pre>mouse_dx</code></td>
+<td><code translate="no" v-pre>mouse_dx</code></td>
 <td>number</td>
 <td>Mouse delta X.</td>
 </tr>
 <tr>
-<td><code v-pre>mouse_dy</code></td>
+<td><code translate="no" v-pre>mouse_dy</code></td>
 <td>number</td>
 <td>Mouse delta Y.</td>
 </tr>
 <tr>
-<td><code v-pre>cmd_overrides</code></td>
+<td><code translate="no" v-pre>cmd_overrides</code></td>
 <td>table</td>
 <td>Per-event command overrides (see below).</td>
 </tr>
 <tr>
-<td><code v-pre>target_step_index</code></td>
+<td><code translate="no" v-pre>target_step_index</code></td>
 <td>number</td>
 <td>Target step index for jumps (-1 = none).</td>
 </tr>
 <tr>
-<td><code v-pre>repeat_count</code></td>
+<td><code translate="no" v-pre>repeat_count</code></td>
 <td>number</td>
 <td>Repeat count for the step.</td>
 </tr>
 <tr>
-<td><code v-pre>condition_radius</code></td>
+<td><code translate="no" v-pre>condition_radius</code></td>
 <td>number</td>
 <td>Condition check radius (default 100).</td>
 </tr>
 <tr>
-<td><code v-pre>condition_value</code></td>
+<td><code translate="no" v-pre>condition_value</code></td>
 <td>number</td>
 <td>Condition value (default 50).</td>
 </tr>
 <tr>
-<td><code v-pre>look_lerp</code></td>
+<td><code translate="no" v-pre>look_lerp</code></td>
 <td>boolean</td>
 <td>Whether to lerp look angles.</td>
 </tr>
 <tr>
-<td><code v-pre>look_lerp_ms</code></td>
+<td><code translate="no" v-pre>look_lerp_ms</code></td>
 <td>number</td>
 <td>Look lerp duration in ms (default 500).</td>
 </tr>
 <tr>
-<td><code v-pre>look_silent</code></td>
+<td><code translate="no" v-pre>look_silent</code></td>
 <td>boolean</td>
 <td>Silent look (no view change).</td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <p><strong>Conditional / goto / node fields:</strong></p>
+<retype-table copy-text="| Field | Type | Description |
+|-------|------|-------------|
+| `goto_look_at_waypoint` | boolean | Goto: look at waypoint. |
+| `goto_look_at_waypoint_lerp_ms` | number | Goto look-at lerp ms (default 0). |
+| `goto_run` | boolean | Goto: run instead of walk. |
+| `goto_destination_radius` | number | Goto: consider arrived when within this distance of destination (default 0). |
+| `goto_entity_repath_threshold` | number | GotoEntity: trigger repath when beyond this threshold (default 0). |
+| `goto_entity_rescan_on_reach` | boolean | GotoEntity: rescan when reaching the destination. |
+| `goto_entity_allow_dormant` | boolean | GotoEntity: allow dormant targets. |
+| `parent_step_index` | number | Parent step index for hierarchy (-1 = none). |
+| `node_pos_x` | number | Node position X. |
+| `node_pos_y` | number | Node position Y. |
+| `custom_node_radius` | number | Custom node radius (default 0). |
+| `else_step_index` | number | Else-branch step index for conditionals (-1 = none). |
+| `signal_name` | string | Signal name for `WaitForLuaSignal`; resume when `automation.signal(name)` is called. |
+| `entity_classname` | string | Entity class name for entity-based events. |
+| `target_entity_index` | number | Target entity index (-1 = none). |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -415,84 +422,111 @@ secret.automation.start_routine()</code></pre>
 </thead>
 <tbody>
 <tr>
-<td><code v-pre>goto_look_at_waypoint</code></td>
+<td><code translate="no" v-pre>goto_look_at_waypoint</code></td>
 <td>boolean</td>
 <td>Goto: look at waypoint.</td>
 </tr>
 <tr>
-<td><code v-pre>goto_look_at_waypoint_lerp_ms</code></td>
+<td><code translate="no" v-pre>goto_look_at_waypoint_lerp_ms</code></td>
 <td>number</td>
 <td>Goto look-at lerp ms (default 0).</td>
 </tr>
 <tr>
-<td><code v-pre>goto_run</code></td>
+<td><code translate="no" v-pre>goto_run</code></td>
 <td>boolean</td>
 <td>Goto: run instead of walk.</td>
 </tr>
 <tr>
-<td><code v-pre>goto_destination_radius</code></td>
+<td><code translate="no" v-pre>goto_destination_radius</code></td>
 <td>number</td>
 <td>Goto: consider arrived when within this distance of destination (default 0).</td>
 </tr>
 <tr>
-<td><code v-pre>goto_entity_repath_threshold</code></td>
+<td><code translate="no" v-pre>goto_entity_repath_threshold</code></td>
 <td>number</td>
 <td>GotoEntity: trigger repath when beyond this threshold (default 0).</td>
 </tr>
 <tr>
-<td><code v-pre>goto_entity_rescan_on_reach</code></td>
+<td><code translate="no" v-pre>goto_entity_rescan_on_reach</code></td>
 <td>boolean</td>
 <td>GotoEntity: rescan when reaching the destination.</td>
 </tr>
 <tr>
-<td><code v-pre>goto_entity_allow_dormant</code></td>
+<td><code translate="no" v-pre>goto_entity_allow_dormant</code></td>
 <td>boolean</td>
 <td>GotoEntity: allow dormant targets.</td>
 </tr>
 <tr>
-<td><code v-pre>parent_step_index</code></td>
+<td><code translate="no" v-pre>parent_step_index</code></td>
 <td>number</td>
 <td>Parent step index for hierarchy (-1 = none).</td>
 </tr>
 <tr>
-<td><code v-pre>node_pos_x</code></td>
+<td><code translate="no" v-pre>node_pos_x</code></td>
 <td>number</td>
 <td>Node position X.</td>
 </tr>
 <tr>
-<td><code v-pre>node_pos_y</code></td>
+<td><code translate="no" v-pre>node_pos_y</code></td>
 <td>number</td>
 <td>Node position Y.</td>
 </tr>
 <tr>
-<td><code v-pre>custom_node_radius</code></td>
+<td><code translate="no" v-pre>custom_node_radius</code></td>
 <td>number</td>
 <td>Custom node radius (default 0).</td>
 </tr>
 <tr>
-<td><code v-pre>else_step_index</code></td>
+<td><code translate="no" v-pre>else_step_index</code></td>
 <td>number</td>
 <td>Else-branch step index for conditionals (-1 = none).</td>
 </tr>
 <tr>
-<td><code v-pre>signal_name</code></td>
+<td><code translate="no" v-pre>signal_name</code></td>
 <td>string</td>
-<td>Signal name for <code v-pre>WaitForLuaSignal</code>; resume when <code v-pre>automation.signal(name)</code> is called.</td>
+<td>Signal name for <code translate="no" v-pre>WaitForLuaSignal</code>; resume when <code translate="no" v-pre>automation.signal(name)</code> is called.</td>
 </tr>
 <tr>
-<td><code v-pre>entity_classname</code></td>
+<td><code translate="no" v-pre>entity_classname</code></td>
 <td>string</td>
 <td>Entity class name for entity-based events.</td>
 </tr>
 <tr>
-<td><code v-pre>target_entity_index</code></td>
+<td><code translate="no" v-pre>target_entity_index</code></td>
 <td>number</td>
 <td>Target entity index (-1 = none).</td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <p><strong>cmd_overrides</strong> — Optional table that overrides player commands while the event runs:</p>
+<retype-table copy-text="| Field | Type | Description |
+|-------|------|-------------|
+| `apply_viewangles` | boolean | Apply custom view angles. |
+| `viewangles` | table | View angles `{ p, y, r }`. |
+| `apply_move` | boolean | Apply custom move vector. |
+| `move` | table | Move vector `{ x, y, z }`. |
+| `apply_buttons` | boolean | Apply button mask. |
+| `buttons` | number | Button mask value. |
+| `apply_impulse` | boolean | Apply impulse. |
+| `impulse` | number | Impulse command. |
+| `apply_weaponselect` | boolean | Apply weapon select. |
+| `weaponselect` | number | Weapon slot. |
+| `apply_weaponsubtype` | boolean | Apply weapon subtype. |
+| `weaponsubtype` | number | Weapon subtype. |
+| `apply_mouse` | boolean | Apply mouse delta. |
+| `mousex` | number | Mouse X. |
+| `mousey` | number | Mouse Y. |
+| `apply_scroll_wheel` | boolean | Apply scroll wheel. |
+| `scroll_wheel_speed` | number | Scroll speed. |
+| `apply_world_clicking` | boolean | Apply world click state. |
+| `world_clicking` | boolean | World clicking on/off. |
+| `world_clicking_normal` | table | Normal `{ x, y, z }`. |
+| `apply_is_typing` | boolean | Apply typing state. |
+| `istyping` | boolean | Is typing. |
+| `apply_is_forced` | boolean | Apply forced state. |
+| `isforced` | boolean | Is forced. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -504,148 +538,134 @@ secret.automation.start_routine()</code></pre>
 </thead>
 <tbody>
 <tr>
-<td><code v-pre>apply_viewangles</code></td>
+<td><code translate="no" v-pre>apply_viewangles</code></td>
 <td>boolean</td>
 <td>Apply custom view angles.</td>
 </tr>
 <tr>
-<td><code v-pre>viewangles</code></td>
+<td><code translate="no" v-pre>viewangles</code></td>
 <td>table</td>
-<td>View angles <code v-pre>{ p, y, r }</code>.</td>
+<td>View angles <code translate="no" v-pre>{ p, y, r }</code>.</td>
 </tr>
 <tr>
-<td><code v-pre>apply_move</code></td>
+<td><code translate="no" v-pre>apply_move</code></td>
 <td>boolean</td>
 <td>Apply custom move vector.</td>
 </tr>
 <tr>
-<td><code v-pre>move</code></td>
+<td><code translate="no" v-pre>move</code></td>
 <td>table</td>
-<td>Move vector <code v-pre>{ x, y, z }</code>.</td>
+<td>Move vector <code translate="no" v-pre>{ x, y, z }</code>.</td>
 </tr>
 <tr>
-<td><code v-pre>apply_buttons</code></td>
+<td><code translate="no" v-pre>apply_buttons</code></td>
 <td>boolean</td>
 <td>Apply button mask.</td>
 </tr>
 <tr>
-<td><code v-pre>buttons</code></td>
+<td><code translate="no" v-pre>buttons</code></td>
 <td>number</td>
 <td>Button mask value.</td>
 </tr>
 <tr>
-<td><code v-pre>apply_impulse</code></td>
+<td><code translate="no" v-pre>apply_impulse</code></td>
 <td>boolean</td>
 <td>Apply impulse.</td>
 </tr>
 <tr>
-<td><code v-pre>impulse</code></td>
+<td><code translate="no" v-pre>impulse</code></td>
 <td>number</td>
 <td>Impulse command.</td>
 </tr>
 <tr>
-<td><code v-pre>apply_weaponselect</code></td>
+<td><code translate="no" v-pre>apply_weaponselect</code></td>
 <td>boolean</td>
 <td>Apply weapon select.</td>
 </tr>
 <tr>
-<td><code v-pre>weaponselect</code></td>
+<td><code translate="no" v-pre>weaponselect</code></td>
 <td>number</td>
 <td>Weapon slot.</td>
 </tr>
 <tr>
-<td><code v-pre>apply_weaponsubtype</code></td>
+<td><code translate="no" v-pre>apply_weaponsubtype</code></td>
 <td>boolean</td>
 <td>Apply weapon subtype.</td>
 </tr>
 <tr>
-<td><code v-pre>weaponsubtype</code></td>
+<td><code translate="no" v-pre>weaponsubtype</code></td>
 <td>number</td>
 <td>Weapon subtype.</td>
 </tr>
 <tr>
-<td><code v-pre>apply_mouse</code></td>
+<td><code translate="no" v-pre>apply_mouse</code></td>
 <td>boolean</td>
 <td>Apply mouse delta.</td>
 </tr>
 <tr>
-<td><code v-pre>mousex</code></td>
+<td><code translate="no" v-pre>mousex</code></td>
 <td>number</td>
 <td>Mouse X.</td>
 </tr>
 <tr>
-<td><code v-pre>mousey</code></td>
+<td><code translate="no" v-pre>mousey</code></td>
 <td>number</td>
 <td>Mouse Y.</td>
 </tr>
 <tr>
-<td><code v-pre>apply_scroll_wheel</code></td>
+<td><code translate="no" v-pre>apply_scroll_wheel</code></td>
 <td>boolean</td>
 <td>Apply scroll wheel.</td>
 </tr>
 <tr>
-<td><code v-pre>scroll_wheel_speed</code></td>
+<td><code translate="no" v-pre>scroll_wheel_speed</code></td>
 <td>number</td>
 <td>Scroll speed.</td>
 </tr>
 <tr>
-<td><code v-pre>apply_world_clicking</code></td>
+<td><code translate="no" v-pre>apply_world_clicking</code></td>
 <td>boolean</td>
 <td>Apply world click state.</td>
 </tr>
 <tr>
-<td><code v-pre>world_clicking</code></td>
+<td><code translate="no" v-pre>world_clicking</code></td>
 <td>boolean</td>
 <td>World clicking on/off.</td>
 </tr>
 <tr>
-<td><code v-pre>world_clicking_normal</code></td>
+<td><code translate="no" v-pre>world_clicking_normal</code></td>
 <td>table</td>
-<td>Normal <code v-pre>{ x, y, z }</code>.</td>
+<td>Normal <code translate="no" v-pre>{ x, y, z }</code>.</td>
 </tr>
 <tr>
-<td><code v-pre>apply_is_typing</code></td>
+<td><code translate="no" v-pre>apply_is_typing</code></td>
 <td>boolean</td>
 <td>Apply typing state.</td>
 </tr>
 <tr>
-<td><code v-pre>istyping</code></td>
+<td><code translate="no" v-pre>istyping</code></td>
 <td>boolean</td>
 <td>Is typing.</td>
 </tr>
 <tr>
-<td><code v-pre>apply_is_forced</code></td>
+<td><code translate="no" v-pre>apply_is_forced</code></td>
 <td>boolean</td>
 <td>Apply forced state.</td>
 </tr>
 <tr>
-<td><code v-pre>isforced</code></td>
+<td><code translate="no" v-pre>isforced</code></td>
 <td>boolean</td>
 <td>Is forced.</td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <hr>
-<doc-anchor-target id="routine-api">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#routine-api">#</doc-anchor-trigger>
-        <span>Routine API</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="building-routines">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#building-routines">#</doc-anchor-trigger>
-        <span>Building routines</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="routine-api">Routine API</h2>
+<h3 id="building-routines">Building routines</h3>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationget_routine-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationget_routine-table">#</doc-anchor-trigger>
-        <span>automation.get_routine(): table</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationget_routine-table">automation.get_routine(): table</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.get_routine(): table
@@ -653,19 +673,14 @@ automation.get_routine(): table
 <ul>
 <li>Current routine as 1-based array of event tables.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationget_routine-table-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local events = secret.automation.get_routine()
 for i, ev in ipairs(events) do
     print(&quot;Event &quot; .. i .. &quot; type=&quot; .. tostring(ev.type) .. &quot; wait_ms=&quot; .. tostring(ev.wait_ms))
 end</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationset_routineevents-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationset_routineevents-table">#</doc-anchor-trigger>
-        <span>automation.set_routine(events: table)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationset_routineevents-table">automation.set_routine(events: table)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.set_routine(events: table)
@@ -673,19 +688,14 @@ automation.set_routine(events: table)
 <ul>
 <li>Replace the entire routine with the given array of event tables.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationset_routineevents-table-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.set_routine({
     { type = secret.automation.event_type.Wait, wait_ms = 1000 },
     { type = secret.automation.event_type.Goto, pos = { x = 100, y = 200, z = 300 }, hold_ms = 500, goto_destination_radius = 80 }
 })</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationadd_eventevent-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationadd_eventevent-table">#</doc-anchor-trigger>
-        <span>automation.add_event(event: table)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationadd_eventevent-table">automation.add_event(event: table)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.add_event(event: table)
@@ -693,19 +703,14 @@ automation.add_event(event: table)
 <ul>
 <li>Append one event to the end of the routine.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationadd_eventevent-table-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.add_event({
     type = secret.automation.event_type.RunCommand,
     command = &quot;say Hello&quot;
 })</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationinsert_eventindex-number-event-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationinsert_eventindex-number-event-table">#</doc-anchor-trigger>
-        <span>automation.insert_event(index: number, event: table)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationinsert_eventindex-number-event-table">automation.insert_event(index: number, event: table)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.insert_event(index: number, event: table)
@@ -713,16 +718,11 @@ automation.insert_event(index: number, event: table)
 <ul>
 <li>Insert an event at 1-based index (shifts others). Index 1 = start.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationinsert_eventindex-number-event-table-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.insert_event(1, { type = secret.automation.event_type.Wait, wait_ms = 500 })</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationremove_eventindex-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationremove_eventindex-number">#</doc-anchor-trigger>
-        <span>automation.remove_event(index: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationremove_eventindex-number">automation.remove_event(index: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.remove_event(index: number)
@@ -730,16 +730,11 @@ automation.remove_event(index: number)
 <ul>
 <li>Remove event at 1-based index. No-op if index &lt; 1.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationremove_eventindex-number-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.remove_event(2)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationclear_routine">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationclear_routine">#</doc-anchor-trigger>
-        <span>automation.clear_routine()</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationclear_routine">automation.clear_routine()</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.clear_routine()
@@ -747,22 +742,12 @@ automation.clear_routine()
 <ul>
 <li>Clear all events.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationclear_routine-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.clear_routine()</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="playback">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#playback">#</doc-anchor-trigger>
-        <span>Playback</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="playback">Playback</h3>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationstart_routine">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationstart_routine">#</doc-anchor-trigger>
-        <span>automation.start_routine()</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationstart_routine">automation.start_routine()</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.start_routine()
@@ -770,16 +755,11 @@ automation.start_routine()
 <ul>
 <li>Start the current routine.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationstart_routine-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.start_routine()</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationstop_routine">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationstop_routine">#</doc-anchor-trigger>
-        <span>automation.stop_routine()</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationstop_routine">automation.stop_routine()</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.stop_routine()
@@ -787,18 +767,13 @@ automation.stop_routine()
 <ul>
 <li>Stop the running routine.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationstop_routine-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">if secret.automation.is_routine_running() then
     secret.automation.stop_routine()
 end</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationis_routine_running-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationis_routine_running-boolean">#</doc-anchor-trigger>
-        <span>automation.is_routine_running(): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationis_routine_running-boolean">automation.is_routine_running(): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.is_routine_running(): boolean
@@ -806,22 +781,12 @@ automation.is_routine_running(): boolean
 <ul>
 <li>True if a routine is running.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationis_routine_running-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.is_routine_running()</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="link-to-next">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#link-to-next">#</doc-anchor-trigger>
-        <span>Link-to-next</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="link-to-next">Link-to-next</h3>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationget_link_to_next-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationget_link_to_next-table">#</doc-anchor-trigger>
-        <span>automation.get_link_to_next(): table</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationget_link_to_next-table">automation.get_link_to_next(): table</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.get_link_to_next(): table
@@ -829,19 +794,14 @@ automation.get_link_to_next(): table
 <ul>
 <li>1-based array of booleans: per-step link-to-next (flow between steps).</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationget_link_to_next-table-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local links = secret.automation.get_link_to_next()
 for i, linked in ipairs(links) do
     print(&quot;Step &quot; .. i .. &quot; linked to next: &quot; .. tostring(linked))
 end</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationset_link_to_nextlinks-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationset_link_to_nextlinks-table">#</doc-anchor-trigger>
-        <span>automation.set_link_to_next(links: table)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationset_link_to_nextlinks-table">automation.set_link_to_next(links: table)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.set_link_to_next(links: table)
@@ -849,63 +809,43 @@ automation.set_link_to_next(links: table)
 <ul>
 <li>Set link-to-next flags: table of booleans, one per step.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationset_link_to_nextlinks-table-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.set_link_to_next({ true, true, false })</code></pre>
 </doc-codeblock></div>
 <hr>
-<doc-anchor-target id="runtime-state-during-routine-playback">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#runtime-state-during-routine-playback">#</doc-anchor-trigger>
-        <span>Runtime state (during routine playback)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="runtime-state-during-routine-playback">Runtime state (during routine playback)</h3>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationget_waypoints-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationget_waypoints-table">#</doc-anchor-trigger>
-        <span>automation.get_waypoints(): table</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationget_waypoints-table">automation.get_waypoints(): table</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.get_waypoints(): table
 </code>
 <ul>
-<li>Current routine waypoints: 1-based array of <code v-pre>{ x, y, z }</code>.</li>
+<li>Current routine waypoints: 1-based array of <code translate="no" v-pre>{ x, y, z }</code>.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationget_waypoints-table-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local waypoints = secret.automation.get_waypoints()
 for i, wp in ipairs(waypoints) do
     print(&quot;Waypoint &quot; .. i .. &quot;: &quot; .. wp.x .. &quot;, &quot; .. wp.y .. &quot;, &quot; .. wp.z)
 end</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationget_nodes-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationget_nodes-table">#</doc-anchor-trigger>
-        <span>automation.get_nodes(): table</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationget_nodes-table">automation.get_nodes(): table</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.get_nodes(): table
 </code>
 <ul>
-<li>Current automation nodes: 1-based array of <code v-pre>{ x, y, z }</code>.</li>
+<li>Current automation nodes: 1-based array of <code translate="no" v-pre>{ x, y, z }</code>.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationget_nodes-table-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local nodes = secret.automation.get_nodes()
 for i, n in ipairs(nodes) do
     print(&quot;Node &quot; .. i .. &quot;: &quot; .. n.x .. &quot;, &quot; .. n.y .. &quot;, &quot; .. n.z)
 end</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationget_current_step_index-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationget_current_step_index-number">#</doc-anchor-trigger>
-        <span>automation.get_current_step_index(): number</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationget_current_step_index-number">automation.get_current_step_index(): number</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.get_current_step_index(): number
@@ -913,17 +853,12 @@ automation.get_current_step_index(): number
 <ul>
 <li>1-based index of the step currently executing (0 when not running).</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationget_current_step_index-number-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local step = secret.automation.get_current_step_index()
 print(&quot;Current step: &quot; .. step)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationjump_to_stepstep_index-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationjump_to_stepstep_index-number">#</doc-anchor-trigger>
-        <span>automation.jump_to_step(step_index: number)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationjump_to_stepstep_index-number">automation.jump_to_step(step_index: number)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.jump_to_step(step_index: number)
@@ -932,100 +867,70 @@ automation.jump_to_step(step_index: number)
 <li>Jump to a step index in the routine (1-based). Use to skip or re-run steps during playback.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationsignalname-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationsignalname-string">#</doc-anchor-trigger>
-        <span>automation.signal(name: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationsignalname-string">automation.signal(name: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.signal(name: string)
 </code>
 <ul>
-<li>Fire a signal by name. Use with the <code v-pre>WaitForLuaSignal</code> event type: when the routine hits that event it waits until <code v-pre>automation.signal(name)</code> is called with the same name (empty string is valid).</li>
+<li>Fire a signal by name. Use with the <code translate="no" v-pre>WaitForLuaSignal</code> event type: when the routine hits that event it waits until <code translate="no" v-pre>automation.signal(name)</code> is called with the same name (empty string is valid).</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationsignalname-string-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.signal(&quot;my_signal&quot;)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationget_crosshair_trace_end-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationget_crosshair_trace_end-table">#</doc-anchor-trigger>
-        <span>automation.get_crosshair_trace_end(): table</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationget_crosshair_trace_end-table">automation.get_crosshair_trace_end(): table</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.get_crosshair_trace_end(): table
 </code>
 <ul>
-<li>World position where crosshair trace hits: <code v-pre>{ x, y, z }</code>.</li>
+<li>World position where crosshair trace hits: <code translate="no" v-pre>{ x, y, z }</code>.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationget_crosshair_trace_end-table-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local hit = secret.automation.get_crosshair_trace_end()
 print(hit.x, hit.y, hit.z)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationget_current_position-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationget_current_position-table">#</doc-anchor-trigger>
-        <span>automation.get_current_position(): table</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationget_current_position-table">automation.get_current_position(): table</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.get_current_position(): table
 </code>
 <ul>
-<li>Current player position: <code v-pre>{ x, y, z }</code>.</li>
+<li>Current player position: <code translate="no" v-pre>{ x, y, z }</code>.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationget_current_position-table-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local pos = secret.automation.get_current_position()
 print(pos.x, pos.y, pos.z)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationget_current_view_angles-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationget_current_view_angles-table">#</doc-anchor-trigger>
-        <span>automation.get_current_view_angles(): table</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationget_current_view_angles-table">automation.get_current_view_angles(): table</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.get_current_view_angles(): table
 </code>
 <ul>
-<li>Current view angles: <code v-pre>{ p, y }</code>.</li>
+<li>Current view angles: <code translate="no" v-pre>{ p, y }</code>.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationget_current_view_angles-table-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local ang = secret.automation.get_current_view_angles()
 print(&quot;Pitch: &quot; .. ang.p .. &quot; Yaw: &quot; .. ang.y)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationstart_pathfinder">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationstart_pathfinder">#</doc-anchor-trigger>
-        <span>automation.start_pathfinder()</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationstart_pathfinder">automation.start_pathfinder()</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.start_pathfinder()
 </code>
 <ul>
-<li>Start pathfinding for the current destination (so <code v-pre>get_waypoints()</code> / <code v-pre>get_nodes()</code> update).</li>
+<li>Start pathfinding for the current destination (so <code translate="no" v-pre>get_waypoints()</code> / <code translate="no" v-pre>get_nodes()</code> update).</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationstart_pathfinder-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.start_pathfinder()</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationstop_pathfinder">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationstop_pathfinder">#</doc-anchor-trigger>
-        <span>automation.stop_pathfinder()</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationstop_pathfinder">automation.stop_pathfinder()</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.stop_pathfinder()
@@ -1033,18 +938,13 @@ automation.stop_pathfinder()
 <ul>
 <li>Stops the active pathfinding process.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationstop_pathfinder-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">if secret.automation.is_pathfinder_active() then
     secret.automation.stop_pathfinder()
 end</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationis_pathfinder_active-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationis_pathfinder_active-boolean">#</doc-anchor-trigger>
-        <span>automation.is_pathfinder_active(): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationis_pathfinder_active-boolean">automation.is_pathfinder_active(): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.is_pathfinder_active(): boolean
@@ -1052,16 +952,11 @@ automation.is_pathfinder_active(): boolean
 <ul>
 <li>True while pathfinding is active.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationis_pathfinder_active-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">print(&quot;Active: &quot; .. tostring(secret.automation.is_pathfinder_active()))</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationsave_routinename-string-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationsave_routinename-string-boolean">#</doc-anchor-trigger>
-        <span>automation.save_routine(name: string): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationsave_routinename-string-boolean">automation.save_routine(name: string): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.save_routine(name: string): boolean
@@ -1069,16 +964,11 @@ automation.save_routine(name: string): boolean
 <ul>
 <li>Saves the current routine to a file by name.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationsave_routinename-string-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.save_routine(&quot;my_routine&quot;)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationload_routinename-string-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationload_routinename-string-boolean">#</doc-anchor-trigger>
-        <span>automation.load_routine(name: string): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationload_routinename-string-boolean">automation.load_routine(name: string): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.load_routine(name: string): boolean
@@ -1086,18 +976,13 @@ automation.load_routine(name: string): boolean
 <ul>
 <li>Loads a routine from a saved file by name.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationload_routinename-string-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">if secret.automation.load_routine(&quot;my_routine&quot;) then
     secret.automation.start_routine()
 end</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationrun_routinename-string-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationrun_routinename-string-boolean">#</doc-anchor-trigger>
-        <span>automation.run_routine(name: string): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationrun_routinename-string-boolean">automation.run_routine(name: string): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.run_routine(name: string): boolean
@@ -1105,16 +990,11 @@ automation.run_routine(name: string): boolean
 <ul>
 <li>Load and start a routine by name.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationrun_routinename-string-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.run_routine(&quot;my_routine&quot;)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationlist_routines-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationlist_routines-table">#</doc-anchor-trigger>
-        <span>automation.list_routines(): table</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationlist_routines-table">automation.list_routines(): table</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.list_routines(): table
@@ -1122,39 +1002,29 @@ automation.list_routines(): table
 <ul>
 <li>1-based array of saved routine names.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationlist_routines-table-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local names = secret.automation.list_routines()
 for i, name in ipairs(names) do
     print(i .. &quot;: &quot; .. name)
 end</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationlist_lua_files-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationlist_lua_files-table">#</doc-anchor-trigger>
-        <span>automation.list_lua_files(): table</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationlist_lua_files-table">automation.list_lua_files(): table</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.list_lua_files(): table
 </code>
 <ul>
-<li>1-based array of Lua file names for ExecuteLua / <code v-pre>lua_file</code>.</li>
+<li>1-based array of Lua file names for ExecuteLua / <code translate="no" v-pre>lua_file</code>.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationlist_lua_files-table-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local files = secret.automation.list_lua_files()
 for i, name in ipairs(files) do
     print(i .. &quot;: &quot; .. name)
 end</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationexport_routine-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationexport_routine-string">#</doc-anchor-trigger>
-        <span>automation.export_routine(): string</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationexport_routine-string">automation.export_routine(): string</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.export_routine(): string
@@ -1162,45 +1032,62 @@ automation.export_routine(): string
 <ul>
 <li>Serialize current routine to a string.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationexport_routine-string-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local data = secret.automation.export_routine()</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationimport_routinestr-string-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationimport_routinestr-string-boolean">#</doc-anchor-trigger>
-        <span>automation.import_routine(str: string): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationimport_routinestr-string-boolean">automation.import_routine(str: string): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 automation.import_routine(str: string): boolean
 </code>
 <ul>
-<li>Import a routine from a string (from <code v-pre>export_routine</code>).</li>
+<li>Import a routine from a string (from <code translate="no" v-pre>export_routine</code>).</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="automationimport_routinestr-string-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local exported = secret.automation.export_routine()
 if secret.automation.import_routine(exported) then
     secret.automation.start_routine()
 end</code></pre>
 </doc-codeblock></div>
 <hr>
-<doc-anchor-target id="event-types-and-buttons">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#event-types-and-buttons">#</doc-anchor-trigger>
-        <span>Event types and buttons</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="event-types-and-buttons">Event types and buttons</h2>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationevent_type">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationevent_type">#</doc-anchor-trigger>
-        <span>automation.event_type</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationevent_type">automation.event_type</h3>
 </div>
-<p>Table of event type IDs for the <code v-pre>type</code> field:</p>
+<p>Table of event type IDs for the <code translate="no" v-pre>type</code> field:</p>
+<retype-table copy-text="| Name | Value | Description |
+|------|-------|-------------|
+| `Goto` | 0 | Move to a position. |
+| `LookAt` | 1 | Look at a position or angles. |
+| `PressKey` | 2 | Press/release buttons (use `button_mask`, `hold_ms`). |
+| `RunCommand` | 3 | Run a console command (`command`). |
+| `Wait` | 4 | Wait for a duration (`wait_ms`). |
+| `ExecuteLua` | 5 | Run Lua code or file (`lua_code`, `lua_file`, `run_in_menu`). |
+| `WaitUntilInBox` | 6 | Wait until player is inside a box (`box_min`, `box_max`). |
+| `WaitUntilStuck` | 7 | Wait until stuck for `stuck_ms`. |
+| `SetMove` | 8 | Set move vector (`forward_move`, `side_move` or `cmd_overrides.move`). |
+| `SetMouse` | 9 | Set mouse delta (`mouse_dx`, `mouse_dy` or `cmd_overrides`). |
+| `SetCmd` | 10 | Set full command overrides (`cmd_overrides`). |
+| `OnStuck` | 11 | Branch when stuck. |
+| `Repeat` | 12 | Repeat a block (`repeat_count`, `target_step_index`). |
+| `IfInBox` | 13 | Branch if in box. |
+| `WhenPathFound` | 14 | Trigger when path is found. |
+| `OnArrived` | 15 | Trigger when arrived at destination. |
+| `WhenTimer` | 16 | Trigger after a timer. |
+| `WhenNearPosition` | 17 | Trigger when near a position (`condition_radius`). |
+| `WhenHealthBelow` | 18 | Trigger when health below value. |
+| `WhenLookingAt` | 19 | Trigger when looking at target. |
+| `WhenButtonHeld` | 20 | Trigger when button held. |
+| `WhenHealthAbove` | 21 | Trigger when health above value. |
+| `WhenOnGround` | 22 | Trigger when on ground. |
+| `WhenInAir` | 23 | Trigger when in air. |
+| `WhenVelocityBelow` | 24 | Trigger when velocity below value. |
+| `WaitForLuaSignal` | 25 | Wait until `automation.signal(signal_name)` is called. |
+| `Stop` | 26 | Stop the routine. |
+| `IfEntityInBox` | 27 | Branch if entity in box. |
+| `WhenNearEntity` | 28 | Trigger when near entity. |
+| `GotoEntity` | 29 | Goto an entity. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1212,172 +1099,195 @@ end</code></pre>
 </thead>
 <tbody>
 <tr>
-<td><code v-pre>Goto</code></td>
+<td><code translate="no" v-pre>Goto</code></td>
 <td>0</td>
 <td>Move to a position.</td>
 </tr>
 <tr>
-<td><code v-pre>LookAt</code></td>
+<td><code translate="no" v-pre>LookAt</code></td>
 <td>1</td>
 <td>Look at a position or angles.</td>
 </tr>
 <tr>
-<td><code v-pre>PressKey</code></td>
+<td><code translate="no" v-pre>PressKey</code></td>
 <td>2</td>
-<td>Press/release buttons (use <code v-pre>button_mask</code>, <code v-pre>hold_ms</code>).</td>
+<td>Press/release buttons (use <code translate="no" v-pre>button_mask</code>, <code translate="no" v-pre>hold_ms</code>).</td>
 </tr>
 <tr>
-<td><code v-pre>RunCommand</code></td>
+<td><code translate="no" v-pre>RunCommand</code></td>
 <td>3</td>
-<td>Run a console command (<code v-pre>command</code>).</td>
+<td>Run a console command (<code translate="no" v-pre>command</code>).</td>
 </tr>
 <tr>
-<td><code v-pre>Wait</code></td>
+<td><code translate="no" v-pre>Wait</code></td>
 <td>4</td>
-<td>Wait for a duration (<code v-pre>wait_ms</code>).</td>
+<td>Wait for a duration (<code translate="no" v-pre>wait_ms</code>).</td>
 </tr>
 <tr>
-<td><code v-pre>ExecuteLua</code></td>
+<td><code translate="no" v-pre>ExecuteLua</code></td>
 <td>5</td>
-<td>Run Lua code or file (<code v-pre>lua_code</code>, <code v-pre>lua_file</code>, <code v-pre>run_in_menu</code>).</td>
+<td>Run Lua code or file (<code translate="no" v-pre>lua_code</code>, <code translate="no" v-pre>lua_file</code>, <code translate="no" v-pre>run_in_menu</code>).</td>
 </tr>
 <tr>
-<td><code v-pre>WaitUntilInBox</code></td>
+<td><code translate="no" v-pre>WaitUntilInBox</code></td>
 <td>6</td>
-<td>Wait until player is inside a box (<code v-pre>box_min</code>, <code v-pre>box_max</code>).</td>
+<td>Wait until player is inside a box (<code translate="no" v-pre>box_min</code>, <code translate="no" v-pre>box_max</code>).</td>
 </tr>
 <tr>
-<td><code v-pre>WaitUntilStuck</code></td>
+<td><code translate="no" v-pre>WaitUntilStuck</code></td>
 <td>7</td>
-<td>Wait until stuck for <code v-pre>stuck_ms</code>.</td>
+<td>Wait until stuck for <code translate="no" v-pre>stuck_ms</code>.</td>
 </tr>
 <tr>
-<td><code v-pre>SetMove</code></td>
+<td><code translate="no" v-pre>SetMove</code></td>
 <td>8</td>
-<td>Set move vector (<code v-pre>forward_move</code>, <code v-pre>side_move</code> or <code v-pre>cmd_overrides.move</code>).</td>
+<td>Set move vector (<code translate="no" v-pre>forward_move</code>, <code translate="no" v-pre>side_move</code> or <code translate="no" v-pre>cmd_overrides.move</code>).</td>
 </tr>
 <tr>
-<td><code v-pre>SetMouse</code></td>
+<td><code translate="no" v-pre>SetMouse</code></td>
 <td>9</td>
-<td>Set mouse delta (<code v-pre>mouse_dx</code>, <code v-pre>mouse_dy</code> or <code v-pre>cmd_overrides</code>).</td>
+<td>Set mouse delta (<code translate="no" v-pre>mouse_dx</code>, <code translate="no" v-pre>mouse_dy</code> or <code translate="no" v-pre>cmd_overrides</code>).</td>
 </tr>
 <tr>
-<td><code v-pre>SetCmd</code></td>
+<td><code translate="no" v-pre>SetCmd</code></td>
 <td>10</td>
-<td>Set full command overrides (<code v-pre>cmd_overrides</code>).</td>
+<td>Set full command overrides (<code translate="no" v-pre>cmd_overrides</code>).</td>
 </tr>
 <tr>
-<td><code v-pre>OnStuck</code></td>
+<td><code translate="no" v-pre>OnStuck</code></td>
 <td>11</td>
 <td>Branch when stuck.</td>
 </tr>
 <tr>
-<td><code v-pre>Repeat</code></td>
+<td><code translate="no" v-pre>Repeat</code></td>
 <td>12</td>
-<td>Repeat a block (<code v-pre>repeat_count</code>, <code v-pre>target_step_index</code>).</td>
+<td>Repeat a block (<code translate="no" v-pre>repeat_count</code>, <code translate="no" v-pre>target_step_index</code>).</td>
 </tr>
 <tr>
-<td><code v-pre>IfInBox</code></td>
+<td><code translate="no" v-pre>IfInBox</code></td>
 <td>13</td>
 <td>Branch if in box.</td>
 </tr>
 <tr>
-<td><code v-pre>WhenPathFound</code></td>
+<td><code translate="no" v-pre>WhenPathFound</code></td>
 <td>14</td>
 <td>Trigger when path is found.</td>
 </tr>
 <tr>
-<td><code v-pre>OnArrived</code></td>
+<td><code translate="no" v-pre>OnArrived</code></td>
 <td>15</td>
 <td>Trigger when arrived at destination.</td>
 </tr>
 <tr>
-<td><code v-pre>WhenTimer</code></td>
+<td><code translate="no" v-pre>WhenTimer</code></td>
 <td>16</td>
 <td>Trigger after a timer.</td>
 </tr>
 <tr>
-<td><code v-pre>WhenNearPosition</code></td>
+<td><code translate="no" v-pre>WhenNearPosition</code></td>
 <td>17</td>
-<td>Trigger when near a position (<code v-pre>condition_radius</code>).</td>
+<td>Trigger when near a position (<code translate="no" v-pre>condition_radius</code>).</td>
 </tr>
 <tr>
-<td><code v-pre>WhenHealthBelow</code></td>
+<td><code translate="no" v-pre>WhenHealthBelow</code></td>
 <td>18</td>
 <td>Trigger when health below value.</td>
 </tr>
 <tr>
-<td><code v-pre>WhenLookingAt</code></td>
+<td><code translate="no" v-pre>WhenLookingAt</code></td>
 <td>19</td>
 <td>Trigger when looking at target.</td>
 </tr>
 <tr>
-<td><code v-pre>WhenButtonHeld</code></td>
+<td><code translate="no" v-pre>WhenButtonHeld</code></td>
 <td>20</td>
 <td>Trigger when button held.</td>
 </tr>
 <tr>
-<td><code v-pre>WhenHealthAbove</code></td>
+<td><code translate="no" v-pre>WhenHealthAbove</code></td>
 <td>21</td>
 <td>Trigger when health above value.</td>
 </tr>
 <tr>
-<td><code v-pre>WhenOnGround</code></td>
+<td><code translate="no" v-pre>WhenOnGround</code></td>
 <td>22</td>
 <td>Trigger when on ground.</td>
 </tr>
 <tr>
-<td><code v-pre>WhenInAir</code></td>
+<td><code translate="no" v-pre>WhenInAir</code></td>
 <td>23</td>
 <td>Trigger when in air.</td>
 </tr>
 <tr>
-<td><code v-pre>WhenVelocityBelow</code></td>
+<td><code translate="no" v-pre>WhenVelocityBelow</code></td>
 <td>24</td>
 <td>Trigger when velocity below value.</td>
 </tr>
 <tr>
-<td><code v-pre>WaitForLuaSignal</code></td>
+<td><code translate="no" v-pre>WaitForLuaSignal</code></td>
 <td>25</td>
-<td>Wait until <code v-pre>automation.signal(signal_name)</code> is called.</td>
+<td>Wait until <code translate="no" v-pre>automation.signal(signal_name)</code> is called.</td>
 </tr>
 <tr>
-<td><code v-pre>Stop</code></td>
+<td><code translate="no" v-pre>Stop</code></td>
 <td>26</td>
 <td>Stop the routine.</td>
 </tr>
 <tr>
-<td><code v-pre>IfEntityInBox</code></td>
+<td><code translate="no" v-pre>IfEntityInBox</code></td>
 <td>27</td>
 <td>Branch if entity in box.</td>
 </tr>
 <tr>
-<td><code v-pre>WhenNearEntity</code></td>
+<td><code translate="no" v-pre>WhenNearEntity</code></td>
 <td>28</td>
 <td>Trigger when near entity.</td>
 </tr>
 <tr>
-<td><code v-pre>GotoEntity</code></td>
+<td><code translate="no" v-pre>GotoEntity</code></td>
 <td>29</td>
 <td>Goto an entity.</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="codeblock-wrapper"><doc-codeblock>
+</retype-table>
+<div id="automationevent_type-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.add_event({ type = secret.automation.event_type.Wait, wait_ms = 1000 })
 secret.automation.add_event({ type = secret.automation.event_type.RunCommand, command = &quot;say hi&quot; })
 secret.automation.add_event({ type = secret.automation.event_type.PressKey, button_mask = secret.automation.buttons.IN_ATTACK, hold_ms = 100 })</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="automationbuttons">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automationbuttons">#</doc-anchor-trigger>
-        <span>automation.buttons</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="automationbuttons">automation.buttons</h3>
 </div>
-<p>Button mask constants for <code v-pre>PressKey</code>, <code v-pre>WhenButtonHeld</code>, and <code v-pre>button_mask</code>:</p>
+<p>Button mask constants for <code translate="no" v-pre>PressKey</code>, <code translate="no" v-pre>WhenButtonHeld</code>, and <code translate="no" v-pre>button_mask</code>:</p>
+<retype-table copy-text="| Name | Description |
+|------|-------------|
+| `IN_ATTACK` | Attack. |
+| `IN_JUMP` | Jump. |
+| `IN_DUCK` | Duck / crouch. |
+| `IN_FORWARD` | Move forward. |
+| `IN_BACK` | Move back. |
+| `IN_USE` | Use. |
+| `IN_CANCEL` | Cancel. |
+| `IN_LEFT` | Move left. |
+| `IN_RIGHT` | Move right. |
+| `IN_MOVELEFT` | Strafe left. |
+| `IN_MOVERIGHT` | Strafe right. |
+| `IN_ATTACK2` | Secondary attack. |
+| `IN_RUN` | Run. |
+| `IN_RELOAD` | Reload. |
+| `IN_ALT1` | Alt1. |
+| `IN_ALT2` | Alt2. |
+| `IN_SCORE` | Score. |
+| `IN_SPEED` | Speed. |
+| `IN_WALK` | Walk. |
+| `IN_ZOOM` | Zoom. |
+| `IN_WEAPON1` | Weapon slot 1. |
+| `IN_WEAPON2` | Weapon slot 2. |
+| `IN_BULLRUSH` | Bullrush. |
+| `IN_GRENADE1` | Grenade 1. |
+| `IN_GRENADE2` | Grenade 2. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1388,109 +1298,110 @@ secret.automation.add_event({ type = secret.automation.event_type.PressKey, butt
 </thead>
 <tbody>
 <tr>
-<td><code v-pre>IN_ATTACK</code></td>
+<td><code translate="no" v-pre>IN_ATTACK</code></td>
 <td>Attack.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_JUMP</code></td>
+<td><code translate="no" v-pre>IN_JUMP</code></td>
 <td>Jump.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_DUCK</code></td>
+<td><code translate="no" v-pre>IN_DUCK</code></td>
 <td>Duck / crouch.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_FORWARD</code></td>
+<td><code translate="no" v-pre>IN_FORWARD</code></td>
 <td>Move forward.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_BACK</code></td>
+<td><code translate="no" v-pre>IN_BACK</code></td>
 <td>Move back.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_USE</code></td>
+<td><code translate="no" v-pre>IN_USE</code></td>
 <td>Use.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_CANCEL</code></td>
+<td><code translate="no" v-pre>IN_CANCEL</code></td>
 <td>Cancel.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_LEFT</code></td>
+<td><code translate="no" v-pre>IN_LEFT</code></td>
 <td>Move left.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_RIGHT</code></td>
+<td><code translate="no" v-pre>IN_RIGHT</code></td>
 <td>Move right.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_MOVELEFT</code></td>
+<td><code translate="no" v-pre>IN_MOVELEFT</code></td>
 <td>Strafe left.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_MOVERIGHT</code></td>
+<td><code translate="no" v-pre>IN_MOVERIGHT</code></td>
 <td>Strafe right.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_ATTACK2</code></td>
+<td><code translate="no" v-pre>IN_ATTACK2</code></td>
 <td>Secondary attack.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_RUN</code></td>
+<td><code translate="no" v-pre>IN_RUN</code></td>
 <td>Run.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_RELOAD</code></td>
+<td><code translate="no" v-pre>IN_RELOAD</code></td>
 <td>Reload.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_ALT1</code></td>
+<td><code translate="no" v-pre>IN_ALT1</code></td>
 <td>Alt1.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_ALT2</code></td>
+<td><code translate="no" v-pre>IN_ALT2</code></td>
 <td>Alt2.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_SCORE</code></td>
+<td><code translate="no" v-pre>IN_SCORE</code></td>
 <td>Score.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_SPEED</code></td>
+<td><code translate="no" v-pre>IN_SPEED</code></td>
 <td>Speed.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_WALK</code></td>
+<td><code translate="no" v-pre>IN_WALK</code></td>
 <td>Walk.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_ZOOM</code></td>
+<td><code translate="no" v-pre>IN_ZOOM</code></td>
 <td>Zoom.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_WEAPON1</code></td>
+<td><code translate="no" v-pre>IN_WEAPON1</code></td>
 <td>Weapon slot 1.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_WEAPON2</code></td>
+<td><code translate="no" v-pre>IN_WEAPON2</code></td>
 <td>Weapon slot 2.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_BULLRUSH</code></td>
+<td><code translate="no" v-pre>IN_BULLRUSH</code></td>
 <td>Bullrush.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_GRENADE1</code></td>
+<td><code translate="no" v-pre>IN_GRENADE1</code></td>
 <td>Grenade 1.</td>
 </tr>
 <tr>
-<td><code v-pre>IN_GRENADE2</code></td>
+<td><code translate="no" v-pre>IN_GRENADE2</code></td>
 <td>Grenade 2.</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="codeblock-wrapper"><doc-codeblock>
+</retype-table>
+<div id="automationbuttons-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.add_event({
     type = secret.automation.event_type.PressKey,
     button_mask = secret.automation.buttons.IN_ATTACK,
@@ -1498,14 +1409,13 @@ secret.automation.add_event({ type = secret.automation.event_type.PressKey, butt
 })</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="stuck-reason-constants">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#stuck-reason-constants">#</doc-anchor-trigger>
-        <span>Stuck reason constants</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="stuck-reason-constants">Stuck reason constants</h3>
 </div>
-<p>Reason IDs passed to the <code v-pre>stuck</code> event callback. Exposed on <code v-pre>automation</code> (e.g. <code v-pre>secret.automation.STUCK_COLLISION_BLOCKED</code>):</p>
+<p>Reason IDs passed to the <code translate="no" v-pre>stuck</code> event callback. Exposed on <code translate="no" v-pre>automation</code> (e.g. <code translate="no" v-pre>secret.automation.STUCK_COLLISION_BLOCKED</code>):</p>
+<retype-table copy-text="| Name | Value | Description |
+|------|-------|-------------|
+| `STUCK_COLLISION_BLOCKED` | 1 | Stuck due to collision. |
+| `STUCK_NO_PROGRESS` | 2 | No progress made. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1517,19 +1427,20 @@ secret.automation.add_event({ type = secret.automation.event_type.PressKey, butt
 </thead>
 <tbody>
 <tr>
-<td><code v-pre>STUCK_COLLISION_BLOCKED</code></td>
+<td><code translate="no" v-pre>STUCK_COLLISION_BLOCKED</code></td>
 <td>1</td>
 <td>Stuck due to collision.</td>
 </tr>
 <tr>
-<td><code v-pre>STUCK_NO_PROGRESS</code></td>
+<td><code translate="no" v-pre>STUCK_NO_PROGRESS</code></td>
 <td>2</td>
 <td>No progress made.</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="codeblock-wrapper"><doc-codeblock>
+</retype-table>
+<div id="stuck-reason-constants-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.listener.add(&quot;stuck&quot;, &quot;my_script&quot;, function(reason_id)
     if reason_id == secret.automation.STUCK_NO_PROGRESS then
         secret.automation.stop_routine()
@@ -1537,17 +1448,12 @@ secret.automation.add_event({ type = secret.automation.event_type.PressKey, butt
 end)</code></pre>
 </doc-codeblock></div>
 <hr>
-<doc-anchor-target id="events">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#events">#</doc-anchor-trigger>
-        <span>Events</span>
-    </h2>
-</doc-anchor-target>
-<p>Automation fires signals during routine playback. <code v-pre>automation.listener</code> uses the 
+<h2 id="events">Events</h2>
+<p>Automation fires signals during routine playback. <code translate="no" v-pre>automation.listener</code> uses the 
 <div class="mb-6 px-5 py-4 flex justify-between relative border border-base-border hover:border-base-border-hover rounded transition-colors duration-150">
     <div class="flex items-center text-base-500">
-        <span class="inline-block mb-px">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        <span class="inline-flex items-center justify-center leading-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
         </span>
         <span class="inline-block font-medium ml-2">Signal</span>
     </div>
@@ -1556,22 +1462,17 @@ end)</code></pre>
     </div>
     <a href="../../libraries/signal/#library-functions" class="absolute block inset-0"></a>
 </div>
- API: register with <code v-pre>listener.add(name, identity, callback)</code> and unregister with <code v-pre>listener.remove(name, identity)</code>. The <code v-pre>identity</code> is a string you choose (e.g. script name) so you can remove the callback later.</p>
+ API: register with <code translate="no" v-pre>listener.add(name, identity, callback)</code> and unregister with <code translate="no" v-pre>listener.remove(name, identity)</code>. The <code translate="no" v-pre>identity</code> is a string you choose (e.g. script name) so you can remove the callback later.</p>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="path_found">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#path_found">#</doc-anchor-trigger>
-        <span>path_found()</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="path_found">path_found()</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 path_found()
 </code>
 <ul>
-<li>Fired when a path to the current destination has been computed. Use <code v-pre>get_waypoints()</code> to read the path.</li>
+<li>Fired when a path to the current destination has been computed. Use <code translate="no" v-pre>get_waypoints()</code> to read the path.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="path_found-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.listener.add(&quot;path_found&quot;, &quot;my_script&quot;, function()
     local waypoints = secret.automation.get_waypoints()
     for i, wp in ipairs(waypoints) do
@@ -1580,20 +1481,15 @@ path_found()
 end)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="start_walking">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#start_walking">#</doc-anchor-trigger>
-        <span>start_walking()</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="start_walking">start_walking()</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 start_walking()
 </code>
 <ul>
-<li>Fired when movement along the path begins (after path_found). Use <code v-pre>get_current_step_index()</code> to track progress.</li>
+<li>Fired when movement along the path begins (after path_found). Use <code translate="no" v-pre>get_current_step_index()</code> to track progress.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="start_walking-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.listener.add(&quot;start_walking&quot;, &quot;my_script&quot;, function()
     local step = secret.automation.get_current_step_index()
     local pos = secret.automation.get_current_position()
@@ -1601,20 +1497,15 @@ start_walking()
 end)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="stuck">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#stuck">#</doc-anchor-trigger>
-        <span>stuck()</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="stuck">stuck()</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 stuck(reason_id: number)
 </code>
 <ul>
-<li>Fired when the automation detects it can’t proceed (obstruction, no progress, etc.). The callback receives <strong>reason_id</strong>; use <code v-pre>automation.STUCK_COLLISION_BLOCKED</code> (1) and <code v-pre>automation.STUCK_NO_PROGRESS</code> (2) to branch. The engine may recalc the path; you can stop or adjust the routine here.</li>
+<li>Fired when the automation detects it can’t proceed (obstruction, no progress, etc.). The callback receives <strong>reason_id</strong>; use <code translate="no" v-pre>automation.STUCK_COLLISION_BLOCKED</code> (1) and <code translate="no" v-pre>automation.STUCK_NO_PROGRESS</code> (2) to branch. The engine may recalc the path; you can stop or adjust the routine here.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="stuck-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.listener.add(&quot;stuck&quot;, &quot;my_script&quot;, function(reason_id)
     local step = secret.automation.get_current_step_index()
     local pos = secret.automation.get_current_position()
@@ -1627,12 +1518,7 @@ stuck(reason_id: number)
 end)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="path_finished">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#path_finished">#</doc-anchor-trigger>
-        <span>path_finished()</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="path_finished">path_finished()</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 path_finished()
@@ -1640,14 +1526,14 @@ path_finished()
 <ul>
 <li>Fired when the current destination is reached. Useful to chain routines or run cleanup.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="path_finished-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.automation.listener.add(&quot;path_finished&quot;, &quot;my_script&quot;, function()
     print(&quot;Destination reached&quot;)
     secret.automation.listener.remove(&quot;path_finished&quot;, &quot;my_script&quot;)
 end)</code></pre>
 </doc-codeblock></div>
 <p>To run different logic per routine, store state and branch inside the callback:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="path_finished-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local routine_name = &quot;patrol_a&quot;
 secret.automation.listener.add(&quot;path_finished&quot;, &quot;router&quot;, function()
     if routine_name == &quot;patrol_a&quot; then
@@ -1660,76 +1546,76 @@ end)
 secret.automation.run_routine(&quot;patrol_a&quot;)</code></pre>
 </doc-codeblock></div>
 <div hidden>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="path_finished-code-3" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-typescript"><code v-pre class="language-typescript"> </code></pre>
 </doc-codeblock></div>
 </div>
 
-                                
-                                <!-- Required only on API pages -->
-                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
-                            </div>
-                            <footer id="retype-content-footer" class="clear-both">
-                            
-                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../gmod/net/">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                            <span>
-                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">net</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                            
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../gmod/console/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">console</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
-                                    </div>
-                                </nav>
-                            </footer>
-                        </main>
                 
-                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
-                                <div id="retype-footer-links" class="print:hidden">
-                                    <ul class="flex flex-wrap items-center text-sm">
-                                    </ul>
-                                </div>
-                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
-                            </footer>
-                        </div>
-                    </div>
-                
-                    <!-- Rendered if sidebar right is enabled -->
-                    <!-- Sidebar right skeleton-->
-                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
-                        <div class="pl-5">
-                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                        </div>
-                    </div>
-                
-                    <!-- User should be able to hide sidebar right -->
-                    <doc-sidebar-right v-cloak></doc-sidebar-right>
-                </div>
-
+                <!-- Required only on API pages -->
+                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
             </div>
+            <footer id="retype-content-footer" class="clear-both">
+            
+                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../gmod/net/">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                            <span>
+                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                <span class="block mt-1">net</span>
+                            </span>
+                        </a>
+                    </div>
+            
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../gmod/console/">
+                            <span>
+                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                <span class="block mt-1">console</span>
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                        </a>
+                    </div>
+                </nav>
+            </footer>
+        </main>
+
+        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                <div id="retype-footer-links" class="print:hidden">
+                    <ul class="flex flex-wrap items-center text-sm">
+                    </ul>
+                </div>
+                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
+            </footer>
         </div>
-    
-        <doc-search-mobile></doc-search-mobile>
-        <doc-back-to-top></doc-back-to-top>
     </div>
+
+    <!-- Rendered if sidebar right is enabled -->
+    <!-- Sidebar right skeleton-->
+    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:translate-x-0 sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+        <div class="pl-5">
+            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+        </div>
+    </div>
+
+    <!-- User should be able to hide sidebar right -->
+    <doc-sidebar-right v-cloak></doc-sidebar-right>
+</div>
+
+        </div>
+    </div>
+
+    <doc-search-mobile></doc-search-mobile>
+    <doc-back-to-top></doc-back-to-top>
+</div>
 
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "automation", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "automation", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/gmod/automation/index.md" }</script>
 </body>
 </html>

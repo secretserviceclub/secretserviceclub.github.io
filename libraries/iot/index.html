@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.835387193572">
+    <meta name="color-scheme" content="light dark">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835896465728">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.11.0">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>iot</title>
@@ -15,203 +16,173 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://secretserviceclub.github.io/libraries/iot/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://secretserviceclub.github.io/sitemap.xml">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secretserviceclub.github.io/libraries/iot/">
     <meta property="og:title" content="iot">
     <meta property="og:description" content="IOT is a communication system to the internet. You can use this to create secure connections to external backends you create.">
+    <meta property="og:site_name" content="secretservice">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://secretserviceclub.github.io/libraries/iot/">
-    <meta property="twitter:title" content="iot">
-    <meta property="twitter:description" content="IOT is a communication system to the internet. You can use this to create secure connections to external backends you create.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://secretserviceclub.github.io/libraries/iot/">
+    <meta name="twitter:title" content="iot">
+    <meta name="twitter:description" content="IOT is a communication system to the internet. You can use this to create secure connections to external backends you create.">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://secretserviceclub.github.io/libraries/iot/index.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.835387193572" rel="stylesheet">
+    <link id="retype-favicon" rel="icon" href="../../favicon.png" />
+    <link href="../../resources/css/retype.css?v=4.6.0.835896465728" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.835387193572" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.835387193572" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.835387193572" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.835896465728" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.835896465728" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.835896465728" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
-        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+    <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+
+    <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+        <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+            <!-- Mobile menu button skeleton -->
+            <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-hidden rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+            <div v-cloak id="retype-sidebar-left-toggle-button"></div>
     
-        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
-            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
-                <!-- Mobile menu button skeleton -->
-                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
-                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
-        
-                <!-- Logo -->
-                <div class="flex items-center justify-between h-full py-2 md:w-75">
-                    <div class="flex items-center px-2 md:px-6">
-                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
-                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">secretservice</span>
-                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
-                    </div>
-        
-                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+            <!-- Logo -->
+            <div class="flex items-center justify-between h-full py-2 md:w-75">
+                <div class="flex items-center px-2 md:px-6">
+                    <a id="retype-branding-logo" href="https://secretserviceclub.github.io/" class="flex items-center leading-snug text-xl">
+                        <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">secretservice</span>
+                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
                 </div>
-        
-                <div class="flex justify-between md:grow">
-                    <!-- Top Nav -->
-                    <nav id="retype-header-nav" class="hidden md:flex">
-                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                        <g fill="currentColor">
-                                            <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
-                                        </g>
-                                    </svg>
-                                    <span>Website</span>
-                                </a>
-                            </li>
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/home">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                        <g fill="currentColor">
-                                            <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
-                                        </g>
-                                    </svg>
-                                    <span>Panel</span>
-                                </a>
-                            </li>
-        
-                        </ul>
-                    </nav>
-        
-                    <!-- Header Right Skeleton -->
-                    <div v-cloak class="flex justify-end grow skeleton">
-        
-                        <!-- Search input mock -->
-                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
-                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                            </div>
-                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
-                        </div>
-        
-                        <!-- Mobile search button -->
-                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                        </div>
-        
-                        <!-- Dark mode switch placeholder -->
-                        <div class="w-10 h-10 lg:ml-2"></div>
-        
-                        <!-- History button -->
-                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
-                        </div>
-                    </div>
-        
-                    <div v-cloak class="flex justify-end grow">
-                        <div id="retype-mobile-search-button"></div>
-                        <doc-search-desktop></doc-search-desktop>
-        
-                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
-                        <doc-history></doc-history>
-                    </div>
+    
+                <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+            </div>
+    
+            <div class="flex justify-between md:grow">
+                <!-- Top Nav -->
+                <nav id="retype-header-nav" class="hidden md:flex">
+                    <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
+                                </svg>
+                                <span>Website</span>
+                            </a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/home">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
+                                </svg>
+                                <span>Panel</span>
+                            </a>
+                        </li>
+    
+                    </ul>
+                </nav>
+    
+                <div v-cloak class="flex justify-end grow">
+                    <div id="retype-mobile-search-button"></div>
+                    <doc-search-desktop></doc-search-desktop>
+    
+                    <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                    <doc-history></doc-history>
                 </div>
             </div>
-        </header>
-    
-    
-        <div id="retype-container" class="container relative flex bg-white">
-            <!-- Sidebar Skeleton -->
-            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
-            
-                <div class="flex items-center h-16 px-6">
-                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
-                </div>
-            
-                <div class="pl-6 mt-1 mb-4">
-                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                </div>
-            
-                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+        </div>
+    </header>
+
+
+    <div id="retype-container" class="container relative flex bg-white">
+        <!-- Sidebar Skeleton -->
+        <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+        
+            <div class="flex items-center h-16 px-6">
+                <input id="retype-filter-input-mock" class="w-full h-10 pl-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded-lg shadow-none md:text-sm hover:border-filter-border-hover focus:outline-hidden focus:border-filter-border-focus placeholder-filter-placeholder" type="text">
+            </div>
+        
+            <div class="pl-6 mt-1 mb-4">
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            </div>
+        
+            <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                    <span class="text-xs whitespace-nowrap">Powered by</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Sidebar component -->
+        <doc-sidebar v-cloak>
+            <template #sidebar-footer>
+                <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+        
+                    <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                        <nav>
+                            <ul class="flex flex-wrap justify-center items-center">
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
+                                        </svg>
+                                        <span>Website</span>
+                                    </a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/home">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
+                                        </svg>
+                                        <span>Panel</span>
+                                    </a>
+                                </li>
+        
+                            </ul>
+                        </nav>
+                    </div>
+        
                     <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
                         <span class="text-xs whitespace-nowrap">Powered by</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
                     </a>
                 </div>
-            </div>
-            
-            <!-- Sidebar component -->
-            <doc-sidebar v-cloak>
-                <template #sidebar-footer>
-                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
-            
-                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
-                            <nav>
-                                <ul class="flex flex-wrap justify-center items-center">
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                                <g fill="currentColor">
-                                                    <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
-                                                </g>
-                                            </svg>
-                                            <span>Website</span>
-                                        </a>
-                                    </li>
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/home">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                                <g fill="currentColor">
-                                                    <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
-                                                </g>
-                                            </svg>
-                                            <span>Panel</span>
-                                        </a>
-                                    </li>
-            
-                                </ul>
-                            </nav>
-                        </div>
-            
-                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
-                            <span class="text-xs whitespace-nowrap">Powered by</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
-                        </a>
-                    </div>
-                </template>
-            </doc-sidebar>
-    
-            <div class="grow min-w-0 bg-body-bg">
-                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
-                <div class="flex">
-                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
-                        <main class="relative pb-12 lg:pt-2">
-                            <div class="retype-markdown" id="retype-content">
-                                <!-- Rendered if sidebar right is enabled -->
-                                <div id="retype-sidebar-right-toggle"></div>
-                                <!-- Page content  -->
-<doc-anchor-target id="iot" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#iot">#</doc-anchor-trigger>
-        <span>iot</span>
-    </h1>
-</doc-anchor-target>
+            </template>
+        </doc-sidebar>
+
+        <div class="grow min-w-0 bg-body-bg">
+            <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+<div class="flex">
+    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+        <main class="relative pb-12 lg:pt-2">
+            <div class="relative retype-markdown" id="retype-content">
+                <!-- Rendered if sidebar right is enabled -->
+                <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
+                <!-- Page content  -->
+<h1 id="iot">iot</h1>
 <p>IOT is a communication system to the internet.<br />
 You can use this to create secure connections to external backends you create.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -226,19 +197,9 @@ Please use these functions simply for I/O &amp; communication.</p>
     </div>
 </div>
 <hr>
-<doc-anchor-target id="enums">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#enums">#</doc-anchor-trigger>
-        <span>Enums</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="enums">Enums</h2>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="iotmethod-index-string-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#iotmethod-index-string-string">#</doc-anchor-trigger>
-        <span>iot.method: {[index: string]: string}</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="iotmethod-index-string-string">iot.method: {[index: string]: string}</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 iot.method: {[index: string]: string}
@@ -247,12 +208,7 @@ iot.method: {[index: string]: string}
 <li>Contains a list of method procedures for HTTP/HTTPS</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="iotstatus-index-string--number-string--number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#iotstatus-index-string--number-string--number">#</doc-anchor-trigger>
-        <span>iot.status: {[index: string | number]: string | number}</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="iotstatus-index-string--number-string--number">iot.status: {[index: string | number]: string | number}</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 iot.status: {[index: string | number]: string | number}
@@ -261,12 +217,7 @@ iot.status: {[index: string | number]: string | number}
 <li>Contains a list of status codes for HTTP/HTTPS</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="iotopcode-index-string--number-string--number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#iotopcode-index-string--number-string--number">#</doc-anchor-trigger>
-        <span>iot.opcode: {[index: string | number]: string | number}</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="iotopcode-index-string--number-string--number">iot.opcode: {[index: string | number]: string | number}</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 iot.opcode: {[index: string | number]: string | number}
@@ -275,12 +226,7 @@ iot.opcode: {[index: string | number]: string | number}
 <li>Contains a list of opcode procedures for sockets</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="iotclosure-index-string--number-string--number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#iotclosure-index-string--number-string--number">#</doc-anchor-trigger>
-        <span>iot.closure: {[index: string | number]: string | number}</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="iotclosure-index-string--number-string--number">iot.closure: {[index: string | number]: string | number}</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 iot.closure: {[index: string | number]: string | number}
@@ -292,19 +238,9 @@ iot.closure.close
 </code>cases</li>
 </ul>
 <hr>
-<doc-anchor-target id="functions">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#functions">#</doc-anchor-trigger>
-        <span>Functions</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="functions">Functions</h2>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="iothttpurl-string-callback-functionresponse-http_response-options-http_options">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#iothttpurl-string-callback-functionresponse-http_response-options-http_options">#</doc-anchor-trigger>
-        <span>iot.http(url: string, callback?: function(response: http_response), options?: http_options)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="iothttpurl-string-callback-functionresponse-http_response-options-http_options">iot.http(url: string, callback?: function(response: http_response), options?: http_options)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 iot.http(url: string, callback?: function(response: http_response), options?: http_options)
@@ -341,31 +277,29 @@ url: string</code></pre>
 </doc-tab>
 </doc-tabs>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="iotstreamurl-string-callback-functionresponse-http_response-options-http_options">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#iotstreamurl-string-callback-functionresponse-http_response-options-http_options">#</doc-anchor-trigger>
-        <span>iot.stream(url: string, callback?: function(response: http_response), options?: http_options)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="iotstreamurl-string-callback-functionresponse-http_response-options-http_options">iot.stream(url: string, callback?: function(response: http_response), options?: http_options)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 iot.stream(url: string, callback?: function(response: http_response), options?: http_options)
 </code>
 <ul>
-<li>Similar to<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+<li>
+<p>Similar to<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 iot.http
-</code>except allows multiple returns from segments of encoded chunks.</li>
-<li>When receiving chunks, all responses will have a <code v-pre>100</code> status code for continuing.</li>
-<li>Once finished, the status code will either be <code v-pre>200</code> or a different value if it errored.</li>
-<li>Returning <code v-pre>false</code> inside the callback will cancel the stream.</li>
+</code>except allows multiple returns from segments of encoded chunks.</p>
+</li>
+<li>
+<p>When receiving chunks, all responses will have a <code translate="no" v-pre>100</code> status code for continuing.</p>
+</li>
+<li>
+<p>Once finished, the status code will either be <code translate="no" v-pre>200</code> or a different value if it errored.</p>
+</li>
+<li>
+<p>Returning <code translate="no" v-pre>false</code> inside the callback will cancel the stream.</p>
+</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="iotsocketurl-string-options-socket_options-socket_class">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#iotsocketurl-string-options-socket_options-socket_class">#</doc-anchor-trigger>
-        <span>iot.socket(url: string, options?: socket_options): socket_class</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="iotsocketurl-string-options-socket_options-socket_class">iot.socket(url: string, options?: socket_options): socket_class</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 iot.socket(url: string, headers?: {[index: string]: string}): socket_class
@@ -376,55 +310,43 @@ iot.socket(url: string, headers?: {[index: string]: string}): socket_class
 <li>Sockets work by reference, so if there is no-longer a use in lua, it will destroy itself.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="iotserveport-number-serve_class">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#iotserveport-number-serve_class">#</doc-anchor-trigger>
-        <span>iot.serve(port: number): serve_class</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="iotserveport-number-serve_class">iot.serve(port: number): serve_class</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 iot.serve(port: number): serve_class
 </code>
 <ul>
-<li>Creates an HTTP server for requests, similar to express/deno.</li>
-<li>Do note that the server doesn&#x27;t actually start until you invoke<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+<li>
+<p>Creates an HTTP server for requests, similar to express/deno.</p>
+</li>
+<li>
+<p>Do note that the server doesn&#x27;t actually start until you invoke<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve:start()
-</code></li>
-<li>Unlike client sockets, if the object gets GC&#x27;ed, it won&#x27;t cleanup the callbacks or invoke a destructor.</li>
-<li>If you &quot;lose&quot; the handle object, you can retrieve it back by simply calling the function again and its exact port number.</li>
+</code></p>
+</li>
+<li>
+<p>Unlike client sockets, if the object gets GC&#x27;ed, it won&#x27;t cleanup the callbacks or invoke a destructor.</p>
+</li>
+<li>
+<p>If you &quot;lose&quot; the handle object, you can retrieve it back by simply calling the function again and its exact port number.</p>
+</li>
 </ul>
 <hr>
-<doc-anchor-target id="serve">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serve">#</doc-anchor-trigger>
-        <span>Serve</span>
-    </h2>
-</doc-anchor-target>
-<p>These are interface &amp; function definitions for how we handle <code v-pre>serve_class</code></p>
+<h2 id="serve">Serve</h2>
+<p>These are interface &amp; function definitions for how we handle <code translate="no" v-pre>serve_class</code></p>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="servestart-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#servestart-boolean">#</doc-anchor-trigger>
-        <span>serve:start(): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="servestart-boolean">serve:start(): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve:start(): boolean
 </code>
 <ul>
 <li>Attempts to allocate a port for HTTP connections.</li>
-<li>If this fails it will return <code v-pre>false</code>.</li>
+<li>If this fails it will return <code translate="no" v-pre>false</code>.</li>
 <li>Usually a failure indicates a port is already in-use.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="servestop">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#servestop">#</doc-anchor-trigger>
-        <span>serve:stop()</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="servestop">serve:stop()</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve:stop()
@@ -434,12 +356,7 @@ serve:stop()
 <li>This doesn&#x27;t actually destroy the object.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="serveactive-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serveactive-boolean">#</doc-anchor-trigger>
-        <span>serve:active(): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="serveactive-boolean">serve:active(): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve:active(): boolean
@@ -448,12 +365,7 @@ serve:active(): boolean
 <li>Checks if the current serve is active on its port.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="serveport-number">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serveport-number">#</doc-anchor-trigger>
-        <span>serve:port(): number</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="serveport-number">serve:port(): number</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve:port(): number
@@ -462,12 +374,7 @@ serve:port(): number
 <li>Gets the current port the serve is on.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="servehandlers-method-string-path-string-callback-function">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#servehandlers-method-string-path-string-callback-function">#</doc-anchor-trigger>
-        <span>serve:handlers(): {method: string, path: string, callback: function}[]</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="servehandlers-method-string-path-string-callback-function">serve:handlers(): {method: string, path: string, callback: function}[]</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve:handlers(): {method: string, path: string, callback: function}[]
@@ -476,12 +383,7 @@ serve:handlers(): {method: string, path: string, callback: function}[]
 <li>Gets all handlers associated with the serve.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="servesocketspath-string-serve_socket">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#servesocketspath-string-serve_socket">#</doc-anchor-trigger>
-        <span>serve:sockets(path: string): serve_socket[]</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="servesocketspath-string-serve_socket">serve:sockets(path: string): serve_socket[]</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve:sockets(path: string): serve_socket[]
@@ -490,12 +392,7 @@ serve:sockets(path: string): serve_socket[]
 <li>Gets all sockets associated with the serve.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="serveupgrade-serve_socket">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serveupgrade-serve_socket">#</doc-anchor-trigger>
-        <span>serve:upgrade(): serve_socket</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="serveupgrade-serve_socket">serve:upgrade(): serve_socket</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve:upgrade(): serve_socket
@@ -505,12 +402,7 @@ serve:upgrade(): serve_socket
 <li>Must be used inside of a HTTP request.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="servesocketpath-string-callback-functionconnection-serve_socket-opcode-number-data-string--number-extra-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#servesocketpath-string-callback-functionconnection-serve_socket-opcode-number-data-string--number-extra-string">#</doc-anchor-trigger>
-        <span>serve:socket(path: string, callback: function(connection: serve_socket, opcode: number, data: string | number, extra: string))</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="servesocketpath-string-callback-functionconnection-serve_socket-opcode-number-data-string--number-extra-string">serve:socket(path: string, callback: function(connection: serve_socket, opcode: number, data: string | number, extra: string))</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve:socket(path: string, callback: function(connection: serve_socket, opcode: number, data: string | number, extra: string))
@@ -523,29 +415,19 @@ iot.opcode
 </code></li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="serveanypath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serveanypath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
-        <span>serve:any(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="serveanypath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">serve:any(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve:any(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))
 </code>
 <ul>
 <li>Any is a form of method that allows all types of methods to be seen in callback under the path.</li>
-<li>You can check the method by seeing <code v-pre>req.method</code></li>
-<li>If you set the path to <code v-pre>any</code> it will also act as a any filter, allowing you to process paths individually.</li>
+<li>You can check the method by seeing <code translate="no" v-pre>req.method</code></li>
+<li>If you set the path to <code translate="no" v-pre>any</code> it will also act as a any filter, allowing you to process paths individually.</li>
 <li>Do note this is <strong>first-order</strong> making it called first before any other methods</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="servegetpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#servegetpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
-        <span>serve:get(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="servegetpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">serve:get(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve:get(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))
@@ -556,12 +438,7 @@ serve:get(path: string, callback: function(req: { method: string, path: string, 
 <li>Requests using GET should only retrieve data and should not contain a request content.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="servepostpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#servepostpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
-        <span>serve:post(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="servepostpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">serve:post(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve:post(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))
@@ -571,12 +448,7 @@ serve:post(path: string, callback: function(req: { method: string, path: string,
 <li>The HEAD method asks for a response identical to a GET request, but without a response body.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="serveheadpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serveheadpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
-        <span>serve:head(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="serveheadpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">serve:head(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve:head(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))
@@ -586,12 +458,7 @@ serve:head(path: string, callback: function(req: { method: string, path: string,
 <li>The POST method submits an entity to the specified resource, often causing a change in state or side effects on the server.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="serveputpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serveputpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
-        <span>serve:put(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="serveputpath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">serve:put(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve:put(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))
@@ -601,12 +468,7 @@ serve:put(path: string, callback: function(req: { method: string, path: string, 
 <li>The PUT method replaces all current representations of the target resource with the request content.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="servedeletepath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#servedeletepath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
-        <span>serve:delete(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="servedeletepath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">serve:delete(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve:delete(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))
@@ -616,12 +478,7 @@ serve:delete(path: string, callback: function(req: { method: string, path: strin
 <li>The DELETE method deletes the specified resource.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="serveoptionspath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serveoptionspath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">#</doc-anchor-trigger>
-        <span>serve:options(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="serveoptionspath-string-callback-functionreq--method-string-path-string-query-string-body-string-headers-table">serve:options(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve:options(path: string, callback: function(req: { method: string, path: string, query: string, body: string, headers: table}))
@@ -631,20 +488,10 @@ serve:options(path: string, callback: function(req: { method: string, path: stri
 <li>The OPTIONS method describes the communication options for the target resource.</li>
 </ul>
 <hr>
-<doc-anchor-target id="serve-socket">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serve-socket">#</doc-anchor-trigger>
-        <span>Serve Socket</span>
-    </h2>
-</doc-anchor-target>
-<p>These are interface &amp; function definitions for how we handle <code v-pre>serve_socket</code></p>
+<h2 id="serve-socket">Serve Socket</h2>
+<p>These are interface &amp; function definitions for how we handle <code translate="no" v-pre>serve_socket</code></p>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="serve_socketid-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serve_socketid-string">#</doc-anchor-trigger>
-        <span>serve_socket:id(): string</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="serve_socketid-string">serve_socket:id(): string</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve_socket:id(): string
@@ -654,12 +501,7 @@ serve_socket:id(): string
 <li>Useful if you need to manually track them.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="serve_socketdisconnectcode-string--number-reason-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serve_socketdisconnectcode-string--number-reason-string">#</doc-anchor-trigger>
-        <span>serve_socket:disconnect(code?: string | number, reason?: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="serve_socketdisconnectcode-string--number-reason-string">serve_socket:disconnect(code?: string | number, reason?: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve_socket:disconnect(code?: string | number, reason?: string)
@@ -669,12 +511,7 @@ serve_socket:disconnect(code?: string | number, reason?: string)
 <li>By providing a string in the code parameter, it will become a reason with normal closure.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="serve_sockettextpayload-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serve_sockettextpayload-string">#</doc-anchor-trigger>
-        <span>serve_socket:text(payload: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="serve_sockettextpayload-string">serve_socket:text(payload: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve_socket:text(payload: string)
@@ -683,12 +520,7 @@ serve_socket:text(payload: string)
 <li>Sends a text-based payload.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="serve_socketbinarypayload-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serve_socketbinarypayload-string">#</doc-anchor-trigger>
-        <span>serve_socket:binary(payload: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="serve_socketbinarypayload-string">serve_socket:binary(payload: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve_socket:binary(payload: string)
@@ -697,12 +529,7 @@ serve_socket:binary(payload: string)
 <li>Sends a binary-based payload.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="serve_socketpingpayload-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serve_socketpingpayload-string">#</doc-anchor-trigger>
-        <span>serve_socket:ping(payload?: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="serve_socketpingpayload-string">serve_socket:ping(payload?: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve_socket:ping(payload?: string)
@@ -711,12 +538,7 @@ serve_socket:ping(payload?: string)
 <li>Sends a ping payload, typically used to keep connections alive.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="serve_socketpongpayload-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serve_socketpongpayload-string">#</doc-anchor-trigger>
-        <span>serve_socket:pong(payload?: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="serve_socketpongpayload-string">serve_socket:pong(payload?: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 serve_socket:pong(payload?: string)
@@ -725,26 +547,11 @@ serve_socket:pong(payload?: string)
 <li>Sends a pong payload, typically used to keep connections alive.</li>
 </ul>
 <hr>
-<doc-anchor-target id="socket">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socket">#</doc-anchor-trigger>
-        <span>Socket</span>
-    </h2>
-</doc-anchor-target>
-<p>These are interface &amp; function definitions for how we handle <code v-pre>socket_class</code></p>
-<doc-anchor-target id="functions-1">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#functions-1">#</doc-anchor-trigger>
-        <span>Functions</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="socket">Socket</h2>
+<p>These are interface &amp; function definitions for how we handle <code translate="no" v-pre>socket_class</code></p>
+<h3 id="functions-1">Functions</h3>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketconnect">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketconnect">#</doc-anchor-trigger>
-        <span>socket:connect()</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="socketconnect">socket:connect()</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:connect()
@@ -753,12 +560,7 @@ socket:connect()
 <li>Attempt to connect the socket to the constructed URL from creation.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketdisconnectreason-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketdisconnectreason-string">#</doc-anchor-trigger>
-        <span>socket:disconnect(reason?: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="socketdisconnectreason-string">socket:disconnect(reason?: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:disconnect(reason?: string)
@@ -767,12 +569,7 @@ socket:disconnect(reason?: string)
 <li>Disconnects from a socket server with a message if needed.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="sockettextpayload-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#sockettextpayload-string">#</doc-anchor-trigger>
-        <span>socket:text(payload: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="sockettextpayload-string">socket:text(payload: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:text(payload: string)
@@ -781,12 +578,7 @@ socket:text(payload: string)
 <li>Send a payload message to the socket server.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketutf8payload-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketutf8payload-string">#</doc-anchor-trigger>
-        <span>socket:utf8(payload: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="socketutf8payload-string">socket:utf8(payload: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:utf8(payload: string)
@@ -795,12 +587,7 @@ socket:utf8(payload: string)
 <li>Send a payload message to the socket server in UTF8 format.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketbinarypayload-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketbinarypayload-string">#</doc-anchor-trigger>
-        <span>socket:binary(payload: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="socketbinarypayload-string">socket:binary(payload: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:binary(payload: string)
@@ -809,12 +596,7 @@ socket:binary(payload: string)
 <li>Send a payload message to the socket server in binary format.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketclosereason-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketclosereason-string">#</doc-anchor-trigger>
-        <span>socket:close(reason?: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="socketclosereason-string">socket:close(reason?: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:close(reason?: string)
@@ -824,12 +606,7 @@ socket:close(reason?: string)
 <li>If you want to re-open the connection, simply run <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">socket.connect()</code></li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketpingreason-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketpingreason-string">#</doc-anchor-trigger>
-        <span>socket:ping(reason?: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="socketpingreason-string">socket:ping(reason?: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:ping(message?: string)
@@ -838,12 +615,7 @@ socket:ping(message?: string)
 <li>Sends a ping payload to the socket server.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketget_url-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketget_url-string">#</doc-anchor-trigger>
-        <span>socket:get_url(): string</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="socketget_url-string">socket:get_url(): string</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:get_url(): string
@@ -852,12 +624,7 @@ socket:get_url(): string
 <li>Gets the current full connection URL.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketget_host-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketget_host-string">#</doc-anchor-trigger>
-        <span>socket:get_host(): string</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="socketget_host-string">socket:get_host(): string</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:get_host(): string
@@ -866,12 +633,7 @@ socket:get_host(): string
 <li>Gets the current host from the URL.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketget_port-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketget_port-string">#</doc-anchor-trigger>
-        <span>socket:get_port(): string</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="socketget_port-string">socket:get_port(): string</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:get_port(): string
@@ -880,12 +642,7 @@ socket:get_port(): string
 <li>Gets the current port from the URL.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketget_path-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketget_path-string">#</doc-anchor-trigger>
-        <span>socket:get_path(): string</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="socketget_path-string">socket:get_path(): string</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:get_path(): string
@@ -894,12 +651,7 @@ socket:get_path(): string
 <li>Gets the current path from the URL.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketheaders_addkey-string-value-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketheaders_addkey-string-value-string">#</doc-anchor-trigger>
-        <span>socket:headers_add(key: string, value: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="socketheaders_addkey-string-value-string">socket:headers_add(key: string, value: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:headers_add(key: string, value: string)
@@ -908,12 +660,7 @@ socket:headers_add(key: string, value: string)
 <li>Adds a header to the list of headers to be sent on connection.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketheaders_removekey-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketheaders_removekey-string">#</doc-anchor-trigger>
-        <span>socket:headers_remove(key: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="socketheaders_removekey-string">socket:headers_remove(key: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:headers_remove(key: string)
@@ -922,12 +669,7 @@ socket:headers_remove(key: string)
 <li>Removes a header from the list of headers to be sent on connection.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketheaders_getkey-string-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketheaders_getkey-string-string">#</doc-anchor-trigger>
-        <span>socket:headers_get(key: string): string?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="socketheaders_getkey-string-string">socket:headers_get(key: string): string?</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:headers_get(key: string): string?
@@ -936,12 +678,7 @@ socket:headers_get(key: string): string?
 <li>Gets a header by the key-name.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketheaders_allkey-string-index-string-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketheaders_allkey-string-index-string-string">#</doc-anchor-trigger>
-        <span>socket:headers_all(key: string): {[index: string]: string}</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="socketheaders_allkey-string-index-string-string">socket:headers_all(key: string): {[index: string]: string}</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:headers_all(key: string): {[index: string]: string}
@@ -950,12 +687,7 @@ socket:headers_all(key: string): {[index: string]: string}
 <li>Gets a list of all headers applied.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketis_open-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketis_open-boolean">#</doc-anchor-trigger>
-        <span>socket:is_open(): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="socketis_open-boolean">socket:is_open(): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:is_open(): boolean
@@ -964,12 +696,7 @@ socket:is_open(): boolean
 <li>If the socket is currently connected.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketis_connecting-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketis_connecting-boolean">#</doc-anchor-trigger>
-        <span>socket:is_connecting(): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="socketis_connecting-boolean">socket:is_connecting(): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:is_connecting(): boolean
@@ -978,12 +705,7 @@ socket:is_connecting(): boolean
 <li>If the socket is currently connecting.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketis_closing-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketis_closing-boolean">#</doc-anchor-trigger>
-        <span>socket:is_closing(): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="socketis_closing-boolean">socket:is_closing(): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:is_closing(): boolean
@@ -992,12 +714,7 @@ socket:is_closing(): boolean
 <li>If the socket is currently closing.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketis_closed-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketis_closed-boolean">#</doc-anchor-trigger>
-        <span>socket:is_closed(): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="socketis_closed-boolean">socket:is_closed(): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:is_closed(): boolean
@@ -1006,12 +723,7 @@ socket:is_closed(): boolean
 <li>If the socket is currently closed.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="socketis_tls-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#socketis_tls-boolean">#</doc-anchor-trigger>
-        <span>socket:is_tls(): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="socketis_tls-boolean">socket:is_tls(): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 socket:is_tls(): boolean
@@ -1019,18 +731,13 @@ socket:is_tls(): boolean
 <ul>
 <li>If the socket is using TLS as it&#x27;s connection layer.</li>
 </ul>
-<doc-anchor-target id="events">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#events">#</doc-anchor-trigger>
-        <span>Events</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="events">Events</h3>
 <p>This internally uses the <strong>Signal</strong> library for C++ communication.<br />
 These can be accessed for example by: <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">socket_class.add(...)</code>
 <div class="mb-6 px-5 py-4 flex justify-between relative border border-base-border hover:border-base-border-hover rounded transition-colors duration-150">
     <div class="flex items-center text-base-500">
-        <span class="inline-block mb-px">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        <span class="inline-flex items-center justify-center leading-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
         </span>
         <span class="inline-block font-medium ml-2">Signal</span>
     </div>
@@ -1041,12 +748,7 @@ These can be accessed for example by: <code class="language-typescript" style="t
 </div>
 </p>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="open">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#open">#</doc-anchor-trigger>
-        <span>open()</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="open">open()</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 open()
@@ -1055,12 +757,7 @@ open()
 <li>Called when the socket engine has made a successful connection.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="errorcode-number-reason-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#errorcode-number-reason-string">#</doc-anchor-trigger>
-        <span>error(code: number, reason: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="errorcode-number-reason-string">error(code: number, reason: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 error(code: number, reason: string)
@@ -1069,12 +766,7 @@ error(code: number, reason: string)
 <li>Called if there was a connection failure.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="closestatus-number-reason-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#closestatus-number-reason-string">#</doc-anchor-trigger>
-        <span>close(status: number, reason: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="closestatus-number-reason-string">close(status: number, reason: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 close(status: number, reason: string)
@@ -1083,12 +775,7 @@ close(status: number, reason: string)
 <li>Called when the connection closes, this can contain an error reason.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="messagepayload-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#messagepayload-string">#</doc-anchor-trigger>
-        <span>message(payload: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="messagepayload-string">message(payload: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 message(payload: string, is_binary: boolean)
@@ -1097,12 +784,7 @@ message(payload: string, is_binary: boolean)
 <li>Called when a message has been received.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="pingreason-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pingreason-string">#</doc-anchor-trigger>
-        <span>ping(reason: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="pingreason-string">ping(reason: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 ping(message: string)
@@ -1113,12 +795,7 @@ ping(message: string)
 <li>However this is managed internally by interstellar.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="pongreason-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pongreason-string">#</doc-anchor-trigger>
-        <span>pong(reason: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="pongreason-string">pong(reason: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 pong(message: string)
@@ -1128,76 +805,76 @@ pong(message: string)
 <li>This can be used as an &quot;isalive&quot; status refresh.</li>
 </ul>
 <div hidden>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="pongreason-string-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-typescript"><code v-pre class="language-typescript"> </code></pre>
 </doc-codeblock></div>
 </div>
 
-                                
-                                <!-- Required only on API pages -->
-                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
-                            </div>
-                            <footer id="retype-content-footer" class="clear-both">
-                            
-                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/fs/">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                            <span>
-                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">fs</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                            
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/lxz/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">lxz</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
-                                    </div>
-                                </nav>
-                            </footer>
-                        </main>
                 
-                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
-                                <div id="retype-footer-links" class="print:hidden">
-                                    <ul class="flex flex-wrap items-center text-sm">
-                                    </ul>
-                                </div>
-                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
-                            </footer>
-                        </div>
-                    </div>
-                
-                    <!-- Rendered if sidebar right is enabled -->
-                    <!-- Sidebar right skeleton-->
-                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
-                        <div class="pl-5">
-                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                        </div>
-                    </div>
-                
-                    <!-- User should be able to hide sidebar right -->
-                    <doc-sidebar-right v-cloak></doc-sidebar-right>
-                </div>
-
+                <!-- Required only on API pages -->
+                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
             </div>
+            <footer id="retype-content-footer" class="clear-both">
+            
+                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/fs/">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                            <span>
+                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                <span class="block mt-1">fs</span>
+                            </span>
+                        </a>
+                    </div>
+            
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/lxz/">
+                            <span>
+                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                <span class="block mt-1">lxz</span>
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                        </a>
+                    </div>
+                </nav>
+            </footer>
+        </main>
+
+        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                <div id="retype-footer-links" class="print:hidden">
+                    <ul class="flex flex-wrap items-center text-sm">
+                    </ul>
+                </div>
+                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
+            </footer>
         </div>
-    
-        <doc-search-mobile></doc-search-mobile>
-        <doc-back-to-top></doc-back-to-top>
     </div>
+
+    <!-- Rendered if sidebar right is enabled -->
+    <!-- Sidebar right skeleton-->
+    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:translate-x-0 sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+        <div class="pl-5">
+            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+        </div>
+    </div>
+
+    <!-- User should be able to hide sidebar right -->
+    <doc-sidebar-right v-cloak></doc-sidebar-right>
+</div>
+
+        </div>
+    </div>
+
+    <doc-search-mobile></doc-search-mobile>
+    <doc-back-to-top></doc-back-to-top>
+</div>
 
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "iot", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "iot", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/libraries/iot/index.md" }</script>
 </body>
 </html>

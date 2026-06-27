@@ -3,221 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.835387193572">
+    <meta name="color-scheme" content="light dark">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835896465728">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.11.0">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>paint</title>
     <meta name="title" content="paint">
-    <meta name="description" content="An alternative method of creating visuals & graphics on higher level access. Instead of using in-game drawing systems, this uses an external version...">
+    <meta name="description" content="An alternative method of creating visuals & graphics on higher level access. Instead of using in-game drawing systems, this uses an external version on a separated thread.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://secretserviceclub.github.io/libraries/paint/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://secretserviceclub.github.io/sitemap.xml">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secretserviceclub.github.io/libraries/paint/">
     <meta property="og:title" content="paint">
-    <meta property="og:description" content="An alternative method of creating visuals & graphics on higher level access. Instead of using in-game drawing systems, this uses an external version...">
+    <meta property="og:description" content="An alternative method of creating visuals & graphics on higher level access. Instead of using in-game drawing systems, this uses an external version on a separated thread.">
+    <meta property="og:site_name" content="secretservice">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://secretserviceclub.github.io/libraries/paint/">
-    <meta property="twitter:title" content="paint">
-    <meta property="twitter:description" content="An alternative method of creating visuals & graphics on higher level access. Instead of using in-game drawing systems, this uses an external version...">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://secretserviceclub.github.io/libraries/paint/">
+    <meta name="twitter:title" content="paint">
+    <meta name="twitter:description" content="An alternative method of creating visuals & graphics on higher level access. Instead of using in-game drawing systems, this uses an external version on a separated thread.">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://secretserviceclub.github.io/libraries/paint/index.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.835387193572" rel="stylesheet">
+    <link id="retype-favicon" rel="icon" href="../../favicon.png" />
+    <link href="../../resources/css/retype.css?v=4.6.0.835896465728" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.835387193572" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.835387193572" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.835387193572" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.835896465728" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.835896465728" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.835896465728" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
-        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+    <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+
+    <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+        <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+            <!-- Mobile menu button skeleton -->
+            <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-hidden rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+            <div v-cloak id="retype-sidebar-left-toggle-button"></div>
     
-        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
-            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
-                <!-- Mobile menu button skeleton -->
-                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
-                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
-        
-                <!-- Logo -->
-                <div class="flex items-center justify-between h-full py-2 md:w-75">
-                    <div class="flex items-center px-2 md:px-6">
-                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
-                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">secretservice</span>
-                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
-                    </div>
-        
-                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+            <!-- Logo -->
+            <div class="flex items-center justify-between h-full py-2 md:w-75">
+                <div class="flex items-center px-2 md:px-6">
+                    <a id="retype-branding-logo" href="https://secretserviceclub.github.io/" class="flex items-center leading-snug text-xl">
+                        <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">secretservice</span>
+                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
                 </div>
-        
-                <div class="flex justify-between md:grow">
-                    <!-- Top Nav -->
-                    <nav id="retype-header-nav" class="hidden md:flex">
-                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                        <g fill="currentColor">
-                                            <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
-                                        </g>
-                                    </svg>
-                                    <span>Website</span>
-                                </a>
-                            </li>
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/home">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                        <g fill="currentColor">
-                                            <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
-                                        </g>
-                                    </svg>
-                                    <span>Panel</span>
-                                </a>
-                            </li>
-        
-                        </ul>
-                    </nav>
-        
-                    <!-- Header Right Skeleton -->
-                    <div v-cloak class="flex justify-end grow skeleton">
-        
-                        <!-- Search input mock -->
-                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
-                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                            </div>
-                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
-                        </div>
-        
-                        <!-- Mobile search button -->
-                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                        </div>
-        
-                        <!-- Dark mode switch placeholder -->
-                        <div class="w-10 h-10 lg:ml-2"></div>
-        
-                        <!-- History button -->
-                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
-                        </div>
-                    </div>
-        
-                    <div v-cloak class="flex justify-end grow">
-                        <div id="retype-mobile-search-button"></div>
-                        <doc-search-desktop></doc-search-desktop>
-        
-                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
-                        <doc-history></doc-history>
-                    </div>
+    
+                <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+            </div>
+    
+            <div class="flex justify-between md:grow">
+                <!-- Top Nav -->
+                <nav id="retype-header-nav" class="hidden md:flex">
+                    <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
+                                </svg>
+                                <span>Website</span>
+                            </a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/home">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
+                                </svg>
+                                <span>Panel</span>
+                            </a>
+                        </li>
+    
+                    </ul>
+                </nav>
+    
+                <div v-cloak class="flex justify-end grow">
+                    <div id="retype-mobile-search-button"></div>
+                    <doc-search-desktop></doc-search-desktop>
+    
+                    <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                    <doc-history></doc-history>
                 </div>
             </div>
-        </header>
-    
-    
-        <div id="retype-container" class="container relative flex bg-white">
-            <!-- Sidebar Skeleton -->
-            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
-            
-                <div class="flex items-center h-16 px-6">
-                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
-                </div>
-            
-                <div class="pl-6 mt-1 mb-4">
-                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                </div>
-            
-                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+        </div>
+    </header>
+
+
+    <div id="retype-container" class="container relative flex bg-white">
+        <!-- Sidebar Skeleton -->
+        <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+        
+            <div class="flex items-center h-16 px-6">
+                <input id="retype-filter-input-mock" class="w-full h-10 pl-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded-lg shadow-none md:text-sm hover:border-filter-border-hover focus:outline-hidden focus:border-filter-border-focus placeholder-filter-placeholder" type="text">
+            </div>
+        
+            <div class="pl-6 mt-1 mb-4">
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            </div>
+        
+            <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                    <span class="text-xs whitespace-nowrap">Powered by</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Sidebar component -->
+        <doc-sidebar v-cloak>
+            <template #sidebar-footer>
+                <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+        
+                    <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                        <nav>
+                            <ul class="flex flex-wrap justify-center items-center">
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
+                                        </svg>
+                                        <span>Website</span>
+                                    </a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/home">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
+                                        </svg>
+                                        <span>Panel</span>
+                                    </a>
+                                </li>
+        
+                            </ul>
+                        </nav>
+                    </div>
+        
                     <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
                         <span class="text-xs whitespace-nowrap">Powered by</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
                     </a>
                 </div>
-            </div>
-            
-            <!-- Sidebar component -->
-            <doc-sidebar v-cloak>
-                <template #sidebar-footer>
-                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
-            
-                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
-                            <nav>
-                                <ul class="flex flex-wrap justify-center items-center">
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                                <g fill="currentColor">
-                                                    <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
-                                                </g>
-                                            </svg>
-                                            <span>Website</span>
-                                        </a>
-                                    </li>
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/home">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                                <g fill="currentColor">
-                                                    <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
-                                                </g>
-                                            </svg>
-                                            <span>Panel</span>
-                                        </a>
-                                    </li>
-            
-                                </ul>
-                            </nav>
-                        </div>
-            
-                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
-                            <span class="text-xs whitespace-nowrap">Powered by</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
-                        </a>
-                    </div>
-                </template>
-            </doc-sidebar>
-    
-            <div class="grow min-w-0 bg-body-bg">
-                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
-                <div class="flex">
-                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
-                        <main class="relative pb-12 lg:pt-2">
-                            <div class="retype-markdown" id="retype-content">
-                                <!-- Rendered if sidebar right is enabled -->
-                                <div id="retype-sidebar-right-toggle"></div>
-                                <!-- Page content  -->
-<doc-anchor-target id="paint" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paint">#</doc-anchor-trigger>
-        <span>paint</span>
-    </h1>
-</doc-anchor-target>
+            </template>
+        </doc-sidebar>
+
+        <div class="grow min-w-0 bg-body-bg">
+            <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+<div class="flex">
+    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+        <main class="relative pb-12 lg:pt-2">
+            <div class="relative retype-markdown" id="retype-content">
+                <!-- Rendered if sidebar right is enabled -->
+                <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
+                <!-- Page content  -->
+<h1 id="paint">paint</h1>
 <p>An alternative method of creating visuals &amp; graphics on higher level access.<br />
 Instead of using in-game drawing systems, this uses an external version on a separated thread.</p>
 <hr>
-<doc-anchor-target id="optimizing">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#optimizing">#</doc-anchor-trigger>
-        <span>Optimizing</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="optimizing">Optimizing</h2>
 <p>When you perform drawing objects, its good practice to localize &amp; reuse data.<br />
 Try to minimize object creation if you can, paint.point.* may be harder to localize.<br />
 This is due to the idea of dynamically changing vectors, which can be a problem but do-able.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="optimizing-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">paint.add(&quot;example&quot;, function(w, h)
     -- don't do this, you are creating a new object every time
     local color = paint.color.rgba(255, 255, 255, 255)
@@ -237,37 +203,22 @@ paint.add(&quot;example&quot;, function(w, h)
 end)</code></pre>
 </doc-codeblock></div>
 <hr>
-<doc-anchor-target id="interstate">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#interstate">#</doc-anchor-trigger>
-        <span>Interstate</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="interstate">Interstate</h2>
 <p>Paint works everywhere no matter where you call it.<br />
 An example of this is by using linker&#x27;s ability to attach to certain events.<br />
 This allows you to have a unique way of inline calls for accurate points.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="interstate-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">linker.hook.add(&quot;Think&quot;, &quot;paint!&quot;, function()
     -- perform paint operations here as well
 end)</code></pre>
 </doc-codeblock></div>
 <hr>
-<doc-anchor-target id="types">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#types">#</doc-anchor-trigger>
-        <span>Types</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="types">Types</h2>
 <p>Paint uses two different vector types.<br />
 Both types are recognized by their index characteristics.<br />
 Which means using internal game-software mechanics like &quot;Vector&quot;, would also work.</p>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintpointvector2x-number-y-number-paint_point">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintpointvector2x-number-y-number-paint_point">#</doc-anchor-trigger>
-        <span>paint.point.vector2(x: number, y: number): paint_point</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintpointvector2x-number-y-number-paint_point">paint.point.vector2(x: number, y: number): paint_point</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.point.vector2(x: number, y: number): paint_point
@@ -276,12 +227,7 @@ paint.point.vector2(x: number, y: number): paint_point
 <li>Creates a 2D vector for paint to recognize</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintpointvector3x-number-y-number-z-number-paint_point">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintpointvector3x-number-y-number-z-number-paint_point">#</doc-anchor-trigger>
-        <span>paint.point.vector3(x: number, y: number, z: number): paint_point</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintpointvector3x-number-y-number-z-number-paint_point">paint.point.vector3(x: number, y: number, z: number): paint_point</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.point.vector3(x: number, y: number, z: number): paint_point
@@ -292,12 +238,7 @@ paint.point.vector3(x: number, y: number, z: number): paint_point
 <hr>
 <p>Paint also uses its own color system due to the fact of interop with other frameworks.</p>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintcolorrgbr-number-g-number-b-number-paint_color">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintcolorrgbr-number-g-number-b-number-paint_color">#</doc-anchor-trigger>
-        <span>paint.color.rgb(r: number, g: number, b: number): paint_color</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintcolorrgbr-number-g-number-b-number-paint_color">paint.color.rgb(r: number, g: number, b: number): paint_color</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.color.rgb(r: number, g: number, b: number): paint_color
@@ -306,12 +247,7 @@ paint.color.rgb(r: number, g: number, b: number): paint_color
 <li>Creates an RGB based color</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintcolorrgbar-number-g-number-b-number-a-number-paint_color">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintcolorrgbar-number-g-number-b-number-a-number-paint_color">#</doc-anchor-trigger>
-        <span>paint.color.rgba(r: number, g: number, b: number, a?: number): paint_color</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintcolorrgbar-number-g-number-b-number-a-number-paint_color">paint.color.rgba(r: number, g: number, b: number, a?: number): paint_color</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.color.rgba(r: number, g: number, b: number, a?: number): paint_color
@@ -320,12 +256,7 @@ paint.color.rgba(r: number, g: number, b: number, a?: number): paint_color
 <li>Creates an RGBA based color</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintcolorhexhex-string-paint_color">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintcolorhexhex-string-paint_color">#</doc-anchor-trigger>
-        <span>paint.color.hex(hex: string): paint_color</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintcolorhexhex-string-paint_color">paint.color.hex(hex: string): paint_color</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.color.hex(hex: string): paint_color
@@ -335,12 +266,7 @@ paint.color.hex(hex: string): paint_color
 <li>Accepts format #RRGGBBAA or #RRGGBB</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintcolorhsvh-number-s-number-v-number-a-number-paint_color">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintcolorhsvh-number-s-number-v-number-a-number-paint_color">#</doc-anchor-trigger>
-        <span>paint.color.hsv(h: number, s: number, v: number, a?: number): paint_color</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintcolorhsvh-number-s-number-v-number-a-number-paint_color">paint.color.hsv(h: number, s: number, v: number, a?: number): paint_color</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.color.hsv(h: number, s: number, v: number, a?: number): paint_color
@@ -349,12 +275,7 @@ paint.color.hsv(h: number, s: number, v: number, a?: number): paint_color
 <li>Creates an RGBA based color from HSV</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintcolorhslh-number-s-number-l-number-a-number-paint_color">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintcolorhslh-number-s-number-l-number-a-number-paint_color">#</doc-anchor-trigger>
-        <span>paint.color.hsl(h: number, s: number, l: number, a?: number): paint_color</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintcolorhslh-number-s-number-l-number-a-number-paint_color">paint.color.hsl(h: number, s: number, l: number, a?: number): paint_color</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.color.hsl(h: number, s: number, l: number, a?: number): paint_color
@@ -363,19 +284,9 @@ paint.color.hsl(h: number, s: number, l: number, a?: number): paint_color
 <li>Creates an RGBA based color from HSL</li>
 </ul>
 <hr>
-<doc-anchor-target id="functions">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#functions">#</doc-anchor-trigger>
-        <span>Functions</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="functions">Functions</h2>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintlinep1-paint_point-p2-paint_point-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintlinep1-paint_point-p2-paint_point-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
-        <span>paint.line(p1: paint_point, p2: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintlinep1-paint_point-p2-paint_point-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">paint.line(p1: paint_point, p2: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.line(p1: paint_point, p2: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
@@ -385,12 +296,7 @@ paint.line(p1: paint_point, p2: paint_point, color: paint_color, thickness?: num
 </ul>
 <hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintcirclefilledcenter-paint_point-color-paint_color-radius-number-outline-paint_color--0-0-0-255-outline_thickness-number--0">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintcirclefilledcenter-paint_point-color-paint_color-radius-number-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
-        <span>paint.circle.filled(center: paint_point, color: paint_color, radius: number, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintcirclefilledcenter-paint_point-color-paint_color-radius-number-outline-paint_color--0-0-0-255-outline_thickness-number--0">paint.circle.filled(center: paint_point, color: paint_color, radius: number, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.circle.filled(center: paint_point, color: paint_color, radius: number, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
@@ -399,12 +305,7 @@ paint.circle.filled(center: paint_point, color: paint_color, radius: number, out
 <li>Creates a circle around a center point that is filled</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintcirclehollowcenter-paint_point-color-paint_color-radius-number-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintcirclehollowcenter-paint_point-color-paint_color-radius-number-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
-        <span>paint.circle.hollow(center: paint_point, color: paint_color, radius: number, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintcirclehollowcenter-paint_point-color-paint_color-radius-number-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">paint.circle.hollow(center: paint_point, color: paint_color, radius: number, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.circle.hollow(center: paint_point, color: paint_color, radius: number, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
@@ -414,12 +315,7 @@ paint.circle.hollow(center: paint_point, color: paint_color, radius: number, thi
 </ul>
 <hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="painttrifilledp1-paint_point-p2-paint_point-p3-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#painttrifilledp1-paint_point-p2-paint_point-p3-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
-        <span>paint.tri.filled(p1: paint_point, p2: paint_point, p3: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="painttrifilledp1-paint_point-p2-paint_point-p3-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">paint.tri.filled(p1: paint_point, p2: paint_point, p3: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.tri.filled(p1: paint_point, p2: paint_point, p3: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
@@ -428,12 +324,7 @@ paint.tri.filled(p1: paint_point, p2: paint_point, p3: paint_point, color: paint
 <li>Creates a triangle from three points that is filled</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="painttrihollowp1-paint_point-p2-paint_point-p3-paint_point-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#painttrihollowp1-paint_point-p2-paint_point-p3-paint_point-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
-        <span>paint.tri.hollow(p1: paint_point, p2: paint_point, p3: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="painttrihollowp1-paint_point-p2-paint_point-p3-paint_point-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">paint.tri.hollow(p1: paint_point, p2: paint_point, p3: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.tri.hollow(p1: paint_point, p2: paint_point, p3: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
@@ -443,12 +334,7 @@ paint.tri.hollow(p1: paint_point, p2: paint_point, p3: paint_point, color: paint
 </ul>
 <hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintrectfilledtop_left-paint_point-size-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintrectfilledtop_left-paint_point-size-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
-        <span>paint.rect.filled(top_left: paint_point, size: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintrectfilledtop_left-paint_point-size-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">paint.rect.filled(top_left: paint_point, size: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.rect.filled(top_left: paint_point, size: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
@@ -457,12 +343,7 @@ paint.rect.filled(top_left: paint_point, size: paint_point, color: paint_color, 
 <li>Creates a rectangle that is filled</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintrecthollowtop_left-paint_point-size-paint_point-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintrecthollowtop_left-paint_point-size-paint_point-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
-        <span>paint.rect.hollow(top_left: paint_point, size: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintrecthollowtop_left-paint_point-size-paint_point-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">paint.rect.hollow(top_left: paint_point, size: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.rect.hollow(top_left: paint_point, size: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
@@ -471,12 +352,7 @@ paint.rect.hollow(top_left: paint_point, size: paint_point, color: paint_color, 
 <li>Creates a rectangle that is hollow</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintrectrfilledrounding-number-top_left-paint_point-size-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintrectrfilledrounding-number-top_left-paint_point-size-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
-        <span>paint.rect.rfilled(rounding: number, top_left: paint_point, size: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintrectrfilledrounding-number-top_left-paint_point-size-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">paint.rect.rfilled(rounding: number, top_left: paint_point, size: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.rect.rfilled(rounding: number, top_left: paint_point, size: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
@@ -485,12 +361,7 @@ paint.rect.rfilled(rounding: number, top_left: paint_point, size: paint_point, c
 <li>Creates a rectangle that is filled with rounding</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintrectrhollowrounding-number-top_left-paint_point-size-paint_point-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintrectrhollowrounding-number-top_left-paint_point-size-paint_point-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
-        <span>paint.rect.rhollow(rounding: number, top_left: paint_point, size: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintrectrhollowrounding-number-top_left-paint_point-size-paint_point-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">paint.rect.rhollow(rounding: number, top_left: paint_point, size: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.rect.rhollow(rounding: number, top_left: paint_point, size: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
@@ -499,12 +370,7 @@ paint.rect.rhollow(rounding: number, top_left: paint_point, size: paint_point, c
 <li>Creates a rectangle that is hollow with rounding</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintrectgradienttop_left-paint_point-size-paint_point-up_left-paint_color-up_right-paint_color-bottom_left-color_paint-bottom_right-color_paint-outline-paint_color--0-0-0-255-outline_thickness-number--0">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintrectgradienttop_left-paint_point-size-paint_point-up_left-paint_color-up_right-paint_color-bottom_left-color_paint-bottom_right-color_paint-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
-        <span>paint.rect.gradient(top_left: paint_point, size: paint_point, up_left: paint_color, up_right: paint_color, bottom_left: color_paint, bottom_right: color_paint, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintrectgradienttop_left-paint_point-size-paint_point-up_left-paint_color-up_right-paint_color-bottom_left-color_paint-bottom_right-color_paint-outline-paint_color--0-0-0-255-outline_thickness-number--0">paint.rect.gradient(top_left: paint_point, size: paint_point, up_left: paint_color, up_right: paint_color, bottom_left: color_paint, bottom_right: color_paint, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.rect.gradient(top_left: paint_point, size: paint_point, up_left: paint_color, up_right: paint_color, bottom_left: color_paint, bottom_right: color_paint, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
@@ -514,12 +380,7 @@ paint.rect.gradient(top_left: paint_point, size: paint_point, up_left: paint_col
 </ul>
 <hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintqrotfilledcenter-paint_point-size-paint_point-color-paint_color-rotation-number-outline-paint_color--0-0-0-255-outline_thickness-number--0">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintqrotfilledcenter-paint_point-size-paint_point-color-paint_color-rotation-number-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
-        <span>paint.qrot.filled(center: paint_point, size: paint_point, color: paint_color, rotation: number, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintqrotfilledcenter-paint_point-size-paint_point-color-paint_color-rotation-number-outline-paint_color--0-0-0-255-outline_thickness-number--0">paint.qrot.filled(center: paint_point, size: paint_point, color: paint_color, rotation: number, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.qrot.filled(center: paint_point, size: paint_point, color: paint_color, rotation: number, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
@@ -529,12 +390,7 @@ paint.qrot.filled(center: paint_point, size: paint_point, color: paint_color, ro
 <li>These rectangles are centered</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintqrothollowcenter-paint_point-size-paint_point-color-paint_color-rotation-number-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintqrothollowcenter-paint_point-size-paint_point-color-paint_color-rotation-number-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
-        <span>paint.qrot.hollow(center: paint_point, size: paint_point, color: paint_color, rotation: number, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintqrothollowcenter-paint_point-size-paint_point-color-paint_color-rotation-number-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">paint.qrot.hollow(center: paint_point, size: paint_point, color: paint_color, rotation: number, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.qrot.hollow(center: paint_point, size: paint_point, color: paint_color, rotation: number, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
@@ -545,12 +401,7 @@ paint.qrot.hollow(center: paint_point, size: paint_point, color: paint_color, ro
 </ul>
 <hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintquadfilledp1-paint_point-p2-paint_point-p3-paint_point-p4-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintquadfilledp1-paint_point-p2-paint_point-p3-paint_point-p4-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
-        <span>paint.quad.filled(p1: paint_point, p2: paint_point, p3: paint_point, p4: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintquadfilledp1-paint_point-p2-paint_point-p3-paint_point-p4-paint_point-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">paint.quad.filled(p1: paint_point, p2: paint_point, p3: paint_point, p4: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.quad.filled(p1: paint_point, p2: paint_point, p3: paint_point, p4: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
@@ -559,12 +410,7 @@ paint.quad.filled(p1: paint_point, p2: paint_point, p3: paint_point, p4: paint_p
 <li>Creates a quadrilateral that is filled</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintquadhollowp1-paint_point-p2-paint_point-p3-paint_point-p4-paint_point-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintquadhollowp1-paint_point-p2-paint_point-p3-paint_point-p4-paint_point-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
-        <span>paint.quad.hollow(p1: paint_point, p2: paint_point, p3: paint_point, p4: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintquadhollowp1-paint_point-p2-paint_point-p3-paint_point-p4-paint_point-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">paint.quad.hollow(p1: paint_point, p2: paint_point, p3: paint_point, p4: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.quad.hollow(p1: paint_point, p2: paint_point, p3: paint_point, p4: paint_point, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
@@ -574,12 +420,7 @@ paint.quad.hollow(p1: paint_point, p2: paint_point, p3: paint_point, p4: paint_p
 </ul>
 <hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="painttextleftpoint-paint_point-text-string-color-paint_color-outline-paint_color--0-0-0-255">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#painttextleftpoint-paint_point-text-string-color-paint_color-outline-paint_color--0-0-0-255">#</doc-anchor-trigger>
-        <span>paint.text.left(point: paint_point, text: string, color: paint_color, outline?: paint_color = {0, 0, 0, 255})</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="painttextleftpoint-paint_point-text-string-color-paint_color-outline-paint_color--0-0-0-255">paint.text.left(point: paint_point, text: string, color: paint_color, outline?: paint_color = {0, 0, 0, 255})</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.text.left(point: paint_point, text: string, color: paint_color, outline?: paint_color = {0, 0, 0, 255})
@@ -588,12 +429,7 @@ paint.text.left(point: paint_point, text: string, color: paint_color, outline?: 
 <li>Creates text thats aligned to the left</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="painttextcenterpoint-paint_point-text-string-color-paint_color-outline-paint_color--0-0-0-255">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#painttextcenterpoint-paint_point-text-string-color-paint_color-outline-paint_color--0-0-0-255">#</doc-anchor-trigger>
-        <span>paint.text.center(point: paint_point, text: string, color: paint_color, outline?: paint_color = {0, 0, 0, 255})</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="painttextcenterpoint-paint_point-text-string-color-paint_color-outline-paint_color--0-0-0-255">paint.text.center(point: paint_point, text: string, color: paint_color, outline?: paint_color = {0, 0, 0, 255})</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.text.center(point: paint_point, text: string, color: paint_color, outline?: paint_color = {0, 0, 0, 255})
@@ -602,12 +438,7 @@ paint.text.center(point: paint_point, text: string, color: paint_color, outline?
 <li>Creates text thats aligned to the center</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="painttextrightpoint-paint_point-text-string-color-paint_color-outline-paint_color--0-0-0-255">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#painttextrightpoint-paint_point-text-string-color-paint_color-outline-paint_color--0-0-0-255">#</doc-anchor-trigger>
-        <span>paint.text.right(point: paint_point, text: string, color: paint_color, outline?: paint_color = {0, 0, 0, 255})</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="painttextrightpoint-paint_point-text-string-color-paint_color-outline-paint_color--0-0-0-255">paint.text.right(point: paint_point, text: string, color: paint_color, outline?: paint_color = {0, 0, 0, 255})</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.text.right(point: paint_point, text: string, color: paint_color, outline?: paint_color = {0, 0, 0, 255})
@@ -616,12 +447,7 @@ paint.text.right(point: paint_point, text: string, color: paint_color, outline?:
 <li>Creates text thats aligned to the right</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="painttextbakefont_name-string-font_data-string-size-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#painttextbakefont_name-string-font_data-string-size-number-boolean">#</doc-anchor-trigger>
-        <span>paint.text.bake(font_name: string, font_data: string, size: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="painttextbakefont_name-string-font_data-string-size-number-boolean">paint.text.bake(font_name: string, font_data: string, size: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.text.bake(font_name: string, font_data: string, size: number): boolean
@@ -630,7 +456,7 @@ paint.text.bake(font_name: string, font_data: string, size: number): boolean
 <li>Bakes a font into memory, so that you can use it</li>
 <li>Fonts already created under a name will simply return true as existing</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="painttextbakefont_name-string-font_data-string-size-number-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local proggy_data = fs.read(&quot;proggy_clean.ttf&quot;)
 if not paint.text.bake(&quot;Proggy&quot;, proggy_data, 14) then
     error(&quot;Couldn't load proggy font!&quot;)
@@ -646,12 +472,7 @@ paint.add(&quot;example&quot;, function(w, h)
 end)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="painttextunbakefont_name-string-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#painttextunbakefont_name-string-boolean">#</doc-anchor-trigger>
-        <span>paint.text.unbake(font_name: string): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="painttextunbakefont_name-string-boolean">paint.text.unbake(font_name: string): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.text.unbake(font_name: string): boolean
@@ -660,12 +481,7 @@ paint.text.unbake(font_name: string): boolean
 <li>De-allocates a font from memory, effectively unloading it</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="painttextisbakedfont_name-string-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#painttextisbakedfont_name-string-boolean">#</doc-anchor-trigger>
-        <span>paint.text.isbaked(font_name: string): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="painttextisbakedfont_name-string-boolean">paint.text.isbaked(font_name: string): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.text.isbaked(font_name: string): boolean
@@ -674,12 +490,7 @@ paint.text.isbaked(font_name: string): boolean
 <li>Check if a font has been added</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="painttextfontfont_name-string-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#painttextfontfont_name-string-string">#</doc-anchor-trigger>
-        <span>paint.text.font(font_name?: string): string</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="painttextfontfont_name-string-string">paint.text.font(font_name?: string): string</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.text.font(font_name?: string): string
@@ -689,41 +500,26 @@ paint.text.font(font_name?: string): string
 <li>Returns the current font being used currently</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="painttextget_sizetext-string-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#painttextget_sizetext-string-table">#</doc-anchor-trigger>
-        <span>paint.text.get_size(text: string): table</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="painttextget_sizetext-string-table">paint.text.get_size(text: string): table</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.text.get_size(text: string): table
 </code>
 <ul>
-<li>Returns the width and height (in pixels) of the given text using the <code v-pre>default</code> font.</li>
+<li>Returns the width and height (in pixels) of the given text using the <code translate="no" v-pre>default</code> font.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="painttextget_sizefont_name-string-text-string-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#painttextget_sizefont_name-string-text-string-table">#</doc-anchor-trigger>
-        <span>paint.text.get_size(font_name: string, text: string): table</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="painttextget_sizefont_name-string-text-string-table">paint.text.get_size(font_name: string, text: string): table</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.text.get_size(font_name: string, text: string): table
 </code>
 <ul>
-<li>Returns the width and height (in pixels) of the given text using a specified <code v-pre>font</code>.</li>
+<li>Returns the width and height (in pixels) of the given text using a specified <code translate="no" v-pre>font</code>.</li>
 </ul>
 <hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintimagebakedata-string-image--false">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintimagebakedata-string-image--false">#</doc-anchor-trigger>
-        <span>paint.image.bake(data: string): image | false</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintimagebakedata-string-image--false">paint.image.bake(data: string): image | false</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.image.bake(data: string): image | false
@@ -732,7 +528,7 @@ paint.image.bake(data: string): image | false
 <li>Bakes an image into memory, so that you can use it</li>
 <li>Images are managed by reference, so if its no longer used in lua, it will eventually de-allocate</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="paintimagebakedata-string-image--false-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local data = fs.read(&quot;sample.jpg&quot;)
 local image = paint.image.bake(data)
 if not image then
@@ -747,12 +543,7 @@ paint.add(&quot;example&quot;, function(w, h)
 end)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintimagenormalimage-image-top_left-paint_point-size-paint_point-color-paint_color-outline-paint_color--0-0-0-255">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintimagenormalimage-image-top_left-paint_point-size-paint_point-color-paint_color-outline-paint_color--0-0-0-255">#</doc-anchor-trigger>
-        <span>paint.image.normal(image: image, top_left: paint_point, size: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255})</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintimagenormalimage-image-top_left-paint_point-size-paint_point-color-paint_color-outline-paint_color--0-0-0-255">paint.image.normal(image: image, top_left: paint_point, size: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255})</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.image.normal(image: image, top_left: paint_point, size: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255})
@@ -761,12 +552,7 @@ paint.image.normal(image: image, top_left: paint_point, size: paint_point, color
 <li>Creates a rectangle image</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintimageroundimage-image-rounding-number-top_left-paint_point-size-paint_point-color-paint_color-outline-paint_color--0-0-0-255">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintimageroundimage-image-rounding-number-top_left-paint_point-size-paint_point-color-paint_color-outline-paint_color--0-0-0-255">#</doc-anchor-trigger>
-        <span>paint.image.round(image: image, rounding: number, top_left: paint_point, size: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255})</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintimageroundimage-image-rounding-number-top_left-paint_point-size-paint_point-color-paint_color-outline-paint_color--0-0-0-255">paint.image.round(image: image, rounding: number, top_left: paint_point, size: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255})</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.image.round(image: image, rounding: number, top_left: paint_point, size: paint_point, color: paint_color, outline?: paint_color = {0, 0, 0, 255})
@@ -776,12 +562,7 @@ paint.image.round(image: image, rounding: number, top_left: paint_point, size: p
 </ul>
 <hr>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintpolyfilledvertices-table-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintpolyfilledvertices-table-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
-        <span>paint.poly.filled(vertices: table, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintpolyfilledvertices-table-color-paint_color-outline-paint_color--0-0-0-255-outline_thickness-number--0">paint.poly.filled(vertices: table, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.poly.filled(vertices: table, color: paint_color, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
@@ -791,12 +572,7 @@ paint.poly.filled(vertices: table, color: paint_color, outline?: paint_color = {
 <li>Requires at least 3 vertices</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paintpolyhollowvertices-table-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paintpolyhollowvertices-table-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">#</doc-anchor-trigger>
-        <span>paint.poly.hollow(vertices: table, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paintpolyhollowvertices-table-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0">paint.poly.hollow(vertices: table, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint.poly.hollow(vertices: table, color: paint_color, thickness?: number = 1, outline?: paint_color = {0, 0, 0, 255}, outline_thickness?: number = 0)
@@ -805,7 +581,7 @@ paint.poly.hollow(vertices: table, color: paint_color, thickness?: number = 1, o
 <li>Creates a hollow polygon from a table of vertices.</li>
 <li>Requires at least 3 vertices</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="paintpolyhollowvertices-table-color-paint_color-thickness-number--1-outline-paint_color--0-0-0-255-outline_thickness-number--0-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local point1 = paint.point.vector2(40, 40)
 local point2 = paint.point.vector2(100, 40)
 local point3 = paint.point.vector2(70, 100)
@@ -822,15 +598,10 @@ paint.add(&quot;example&quot;, function(w, h)
 end)</code></pre>
 </doc-codeblock></div>
 <hr>
-<doc-anchor-target id="events">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#events">#</doc-anchor-trigger>
-        <span>Events</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="events">Events</h2>
 <p>Paint uses a slightly different type of <strong>Signal</strong><br />
 You don&#x27;t have to provide a name, instead its just an identifier.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="events-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">-- instead of:
 paint.listener.add(&quot;paint&quot;, &quot;identity&quot;, function(w, h) end)
 -- its:
@@ -838,76 +609,76 @@ paint.add(&quot;identity&quot;, function(w, h) end)</code></pre>
 </doc-codeblock></div>
 <p>This is to make it simpler since paint really only has one event handler.</p>
 <div hidden>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="events-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-typescript"><code v-pre class="language-typescript"> </code></pre>
 </doc-codeblock></div>
 </div>
 
-                                
-                                <!-- Required only on API pages -->
-                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
-                            </div>
-                            <footer id="retype-content-footer" class="clear-both">
-                            
-                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/os/">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                            <span>
-                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">os</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                            
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/reflection/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">reflection</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
-                                    </div>
-                                </nav>
-                            </footer>
-                        </main>
                 
-                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
-                                <div id="retype-footer-links" class="print:hidden">
-                                    <ul class="flex flex-wrap items-center text-sm">
-                                    </ul>
-                                </div>
-                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
-                            </footer>
-                        </div>
-                    </div>
-                
-                    <!-- Rendered if sidebar right is enabled -->
-                    <!-- Sidebar right skeleton-->
-                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
-                        <div class="pl-5">
-                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                        </div>
-                    </div>
-                
-                    <!-- User should be able to hide sidebar right -->
-                    <doc-sidebar-right v-cloak></doc-sidebar-right>
-                </div>
-
+                <!-- Required only on API pages -->
+                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
             </div>
+            <footer id="retype-content-footer" class="clear-both">
+            
+                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/os/">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                            <span>
+                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                <span class="block mt-1">os</span>
+                            </span>
+                        </a>
+                    </div>
+            
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../libraries/reflection/">
+                            <span>
+                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                <span class="block mt-1">reflection</span>
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                        </a>
+                    </div>
+                </nav>
+            </footer>
+        </main>
+
+        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                <div id="retype-footer-links" class="print:hidden">
+                    <ul class="flex flex-wrap items-center text-sm">
+                    </ul>
+                </div>
+                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
+            </footer>
         </div>
-    
-        <doc-search-mobile></doc-search-mobile>
-        <doc-back-to-top></doc-back-to-top>
     </div>
+
+    <!-- Rendered if sidebar right is enabled -->
+    <!-- Sidebar right skeleton-->
+    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:translate-x-0 sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+        <div class="pl-5">
+            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+        </div>
+    </div>
+
+    <!-- User should be able to hide sidebar right -->
+    <doc-sidebar-right v-cloak></doc-sidebar-right>
+</div>
+
+        </div>
+    </div>
+
+    <doc-search-mobile></doc-search-mobile>
+    <doc-back-to-top></doc-back-to-top>
+</div>
 
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "paint", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "paint", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/libraries/paint/index.md" }</script>
 </body>
 </html>

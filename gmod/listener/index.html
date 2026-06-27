@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.835387193572">
+    <meta name="color-scheme" content="light dark">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835896465728">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.11.0">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>listener</title>
@@ -15,203 +16,173 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://secretserviceclub.github.io/gmod/listener/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://secretserviceclub.github.io/sitemap.xml">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secretserviceclub.github.io/gmod/listener/">
     <meta property="og:title" content="listener">
     <meta property="og:description" content="Global signal system for multi-purpose callbacks.">
+    <meta property="og:site_name" content="secretservice">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://secretserviceclub.github.io/gmod/listener/">
-    <meta property="twitter:title" content="listener">
-    <meta property="twitter:description" content="Global signal system for multi-purpose callbacks.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://secretserviceclub.github.io/gmod/listener/">
+    <meta name="twitter:title" content="listener">
+    <meta name="twitter:description" content="Global signal system for multi-purpose callbacks.">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://secretserviceclub.github.io/gmod/listener/index.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.835387193572" rel="stylesheet">
+    <link id="retype-favicon" rel="icon" href="../../favicon.png" />
+    <link href="../../resources/css/retype.css?v=4.6.0.835896465728" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.835387193572" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.835387193572" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.835387193572" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.835896465728" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.835896465728" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.835896465728" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
-        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+    <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+
+    <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+        <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+            <!-- Mobile menu button skeleton -->
+            <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-hidden rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+            <div v-cloak id="retype-sidebar-left-toggle-button"></div>
     
-        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
-            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
-                <!-- Mobile menu button skeleton -->
-                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
-                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
-        
-                <!-- Logo -->
-                <div class="flex items-center justify-between h-full py-2 md:w-75">
-                    <div class="flex items-center px-2 md:px-6">
-                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
-                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">secretservice</span>
-                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
-                    </div>
-        
-                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+            <!-- Logo -->
+            <div class="flex items-center justify-between h-full py-2 md:w-75">
+                <div class="flex items-center px-2 md:px-6">
+                    <a id="retype-branding-logo" href="https://secretserviceclub.github.io/" class="flex items-center leading-snug text-xl">
+                        <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">secretservice</span>
+                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
                 </div>
-        
-                <div class="flex justify-between md:grow">
-                    <!-- Top Nav -->
-                    <nav id="retype-header-nav" class="hidden md:flex">
-                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                        <g fill="currentColor">
-                                            <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
-                                        </g>
-                                    </svg>
-                                    <span>Website</span>
-                                </a>
-                            </li>
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/home">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                        <g fill="currentColor">
-                                            <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
-                                        </g>
-                                    </svg>
-                                    <span>Panel</span>
-                                </a>
-                            </li>
-        
-                        </ul>
-                    </nav>
-        
-                    <!-- Header Right Skeleton -->
-                    <div v-cloak class="flex justify-end grow skeleton">
-        
-                        <!-- Search input mock -->
-                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
-                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                            </div>
-                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
-                        </div>
-        
-                        <!-- Mobile search button -->
-                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                        </div>
-        
-                        <!-- Dark mode switch placeholder -->
-                        <div class="w-10 h-10 lg:ml-2"></div>
-        
-                        <!-- History button -->
-                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
-                        </div>
-                    </div>
-        
-                    <div v-cloak class="flex justify-end grow">
-                        <div id="retype-mobile-search-button"></div>
-                        <doc-search-desktop></doc-search-desktop>
-        
-                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
-                        <doc-history></doc-history>
-                    </div>
+    
+                <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+            </div>
+    
+            <div class="flex justify-between md:grow">
+                <!-- Top Nav -->
+                <nav id="retype-header-nav" class="hidden md:flex">
+                    <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
+                                </svg>
+                                <span>Website</span>
+                            </a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/home">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
+                                </svg>
+                                <span>Panel</span>
+                            </a>
+                        </li>
+    
+                    </ul>
+                </nav>
+    
+                <div v-cloak class="flex justify-end grow">
+                    <div id="retype-mobile-search-button"></div>
+                    <doc-search-desktop></doc-search-desktop>
+    
+                    <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                    <doc-history></doc-history>
                 </div>
             </div>
-        </header>
-    
-    
-        <div id="retype-container" class="container relative flex bg-white">
-            <!-- Sidebar Skeleton -->
-            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
-            
-                <div class="flex items-center h-16 px-6">
-                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
-                </div>
-            
-                <div class="pl-6 mt-1 mb-4">
-                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                </div>
-            
-                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+        </div>
+    </header>
+
+
+    <div id="retype-container" class="container relative flex bg-white">
+        <!-- Sidebar Skeleton -->
+        <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+        
+            <div class="flex items-center h-16 px-6">
+                <input id="retype-filter-input-mock" class="w-full h-10 pl-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded-lg shadow-none md:text-sm hover:border-filter-border-hover focus:outline-hidden focus:border-filter-border-focus placeholder-filter-placeholder" type="text">
+            </div>
+        
+            <div class="pl-6 mt-1 mb-4">
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            </div>
+        
+            <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                    <span class="text-xs whitespace-nowrap">Powered by</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Sidebar component -->
+        <doc-sidebar v-cloak>
+            <template #sidebar-footer>
+                <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+        
+                    <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                        <nav>
+                            <ul class="flex flex-wrap justify-center items-center">
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
+                                        </svg>
+                                        <span>Website</span>
+                                    </a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://secretservice.club/home">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
+                                        </svg>
+                                        <span>Panel</span>
+                                    </a>
+                                </li>
+        
+                            </ul>
+                        </nav>
+                    </div>
+        
                     <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
                         <span class="text-xs whitespace-nowrap">Powered by</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
                     </a>
                 </div>
-            </div>
-            
-            <!-- Sidebar component -->
-            <doc-sidebar v-cloak>
-                <template #sidebar-footer>
-                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
-            
-                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
-                            <nav>
-                                <ul class="flex flex-wrap justify-center items-center">
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                                <g fill="currentColor">
-                                                    <path d="M0 3.75C0 2.784.784 2 1.75 2h20.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 22.25 22H1.75A1.75 1.75 0 0 1 0 20.25ZM22.5 7h-21v13.25c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25Zm-10-3.5v2h10V3.75a.25.25 0 0 0-.25-.25ZM7 3.5v2h4v-2Zm-5.25 0a.25.25 0 0 0-.25.25V5.5h4v-2Z"/>
-                                                </g>
-                                            </svg>
-                                            <span>Website</span>
-                                        </a>
-                                    </li>
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://secretservice.club/home">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                                <g fill="currentColor">
-                                                    <path d="M12 .25a.75.75 0 0 1 .673.418l3.058 6.197 6.839.994a.75.75 0 0 1 .415 1.279l-4.948 4.823 1.168 6.811a.751.751 0 0 1-1.088.791L12 18.347l-6.117 3.216a.75.75 0 0 1-1.088-.79l1.168-6.812-4.948-4.823a.75.75 0 0 1 .416-1.28l6.838-.993L11.328.668A.75.75 0 0 1 12 .25Zm0 2.445L9.44 7.882a.75.75 0 0 1-.565.41l-5.725.832 4.143 4.038a.748.748 0 0 1 .215.664l-.978 5.702 5.121-2.692a.75.75 0 0 1 .698 0l5.12 2.692-.977-5.702a.748.748 0 0 1 .215-.664l4.143-4.038-5.725-.831a.75.75 0 0 1-.565-.41L12 2.694Z"/>
-                                                </g>
-                                            </svg>
-                                            <span>Panel</span>
-                                        </a>
-                                    </li>
-            
-                                </ul>
-                            </nav>
-                        </div>
-            
-                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
-                            <span class="text-xs whitespace-nowrap">Powered by</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
-                        </a>
-                    </div>
-                </template>
-            </doc-sidebar>
-    
-            <div class="grow min-w-0 bg-body-bg">
-                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
-                <div class="flex">
-                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
-                        <main class="relative pb-12 lg:pt-2">
-                            <div class="retype-markdown" id="retype-content">
-                                <!-- Rendered if sidebar right is enabled -->
-                                <div id="retype-sidebar-right-toggle"></div>
-                                <!-- Page content  -->
-<doc-anchor-target id="listener" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#listener">#</doc-anchor-trigger>
-        <span>listener</span>
-    </h1>
-</doc-anchor-target>
+            </template>
+        </doc-sidebar>
+
+        <div class="grow min-w-0 bg-body-bg">
+            <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+<div class="flex">
+    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+        <main class="relative pb-12 lg:pt-2">
+            <div class="relative retype-markdown" id="retype-content">
+                <!-- Rendered if sidebar right is enabled -->
+                <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
+                <!-- Page content  -->
+<h1 id="listener">listener</h1>
 <p>Global signal system for multi-purpose callbacks.</p>
 <hr>
 <p>
 <div class="mb-6 px-5 py-4 flex justify-between relative border border-base-border hover:border-base-border-hover rounded transition-colors duration-150">
     <div class="flex items-center text-base-500">
-        <span class="inline-block mb-px">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        <span class="inline-flex items-center justify-center leading-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
         </span>
         <span class="inline-block font-medium ml-2">Signal</span>
     </div>
@@ -221,19 +192,9 @@
     <a href="../../libraries/signal/#library-functions" class="absolute block inset-0"></a>
 </div>
 </p>
-<doc-anchor-target id="aimbot--triggerbot">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#aimbot--triggerbot">#</doc-anchor-trigger>
-        <span>Aimbot &amp; triggerbot</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="aimbot--triggerbot">Aimbot &amp; triggerbot</h2>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="should_aimbot_targetentindex-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#should_aimbot_targetentindex-number-boolean">#</doc-anchor-trigger>
-        <span>should_aimbot_target(entIndex: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="should_aimbot_targetentindex-number-boolean">should_aimbot_target(entIndex: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 should_aimbot_target(entIndex: number): boolean
@@ -242,18 +203,13 @@ should_aimbot_target(entIndex: number): boolean
 <li>Determines if the player should be targeted by the aimbot or not.</li>
 <li>Also applies to legit bot.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="should_aimbot_targetentindex-number-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;should_aimbot_target&quot;, &quot;notarget&quot;, function(index)
     return true -- blocks
 end)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="should_triggerbot_targetentindex-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#should_triggerbot_targetentindex-number-boolean">#</doc-anchor-trigger>
-        <span>should_triggerbot_target(entIndex: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="should_triggerbot_targetentindex-number-boolean">should_triggerbot_target(entIndex: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 should_triggerbot_target(entIndex: number): boolean
@@ -261,18 +217,13 @@ should_triggerbot_target(entIndex: number): boolean
 <ul>
 <li>Determines if the player should be targeted by the triggerbot.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="should_triggerbot_targetentindex-number-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;should_triggerbot_target&quot;, &quot;notrigger&quot;, function(index)
     return true -- blocks
 end)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="override_vischeckaimbot_target_index-number-tstart-vector-tend-vector-record-boolean-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#override_vischeckaimbot_target_index-number-tstart-vector-tend-vector-record-boolean-boolean">#</doc-anchor-trigger>
-        <span>override_vischeck(aimbot_target_index: number, tstart: vector, tend: vector, record: boolean): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="override_vischeckaimbot_target_index-number-tstart-vector-tend-vector-record-boolean-boolean">override_vischeck(aimbot_target_index: number, tstart: vector, tend: vector, record: boolean): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 override_vischeck(aimbot_target_index: number, tstart: vector, tend: vector, record: boolean): boolean
@@ -285,13 +236,13 @@ override_vischeck(aimbot_target_index: number, tstart: vector, tend: vector, rec
 <li><strong>record</strong> - is the trace running at a backtrack record?</li>
 <li><strong>Return value</strong>:
 <ul>
-<li><code v-pre>true</code>  → force the vischeck to succeed (target is always considered visible).</li>
-<li><code v-pre>false</code> → force the vischeck to fail (target is never considered visible).</li>
-<li><code v-pre>nil</code>   → do nothing and let the default engine visibility check decide.</li>
+<li><code translate="no" v-pre>true</code>  → force the vischeck to succeed (target is always considered visible).</li>
+<li><code translate="no" v-pre>false</code> → force the vischeck to fail (target is never considered visible).</li>
+<li><code translate="no" v-pre>nil</code>   → do nothing and let the default engine visibility check decide.</li>
 </ul>
 </li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="override_vischeckaimbot_target_index-number-tstart-vector-tend-vector-record-boolean-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">-- simple override, treat everyone as visible.
 secret.listener.add(&quot;override_vischeck&quot;, &quot;always_visible&quot;, function(target_index, tstart, tend, record)
     return true
@@ -306,12 +257,7 @@ secret.listener.add(&quot;override_vischeck&quot;, &quot;short_range_vis&quot;, 
 end)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="should_aimbot_autofire-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#should_aimbot_autofire-boolean">#</doc-anchor-trigger>
-        <span>should_aimbot_autofire(): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="should_aimbot_autofire-boolean">should_aimbot_autofire(): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 should_aimbot_autofire(): boolean
@@ -320,19 +266,14 @@ should_aimbot_autofire(): boolean
 <li>Called every time the ragebot decides whether it should autofire.</li>
 <li>Useful for custom logic to control when the ragebot fires (e.g., based on target state, weapon, or other conditions).</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="should_aimbot_autofire-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;should_aimbot_autofire&quot;, &quot;custom_logic&quot;, function()
     -- only allow autofire if some condition is met
     return LocalPlayer():Health() &gt; 50
 end)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="override_aimbot_angletarget_ent_index-number-original_angle-angle-target_angle-angle-booleanangle">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#override_aimbot_angletarget_ent_index-number-original_angle-angle-target_angle-angle-booleanangle">#</doc-anchor-trigger>
-        <span>override_aimbot_angle(target_ent_index: number, original_angle: Angle, target_angle: Angle): boolean,(Angle)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="override_aimbot_angletarget_ent_index-number-original_angle-angle-target_angle-angle-booleanangle">override_aimbot_angle(target_ent_index: number, original_angle: Angle, target_angle: Angle): boolean,(Angle)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 override_aimbot_angle(target_ent_index: number, original_angle: Angle, target_angle: Angle): boolean,(Angle)
@@ -342,7 +283,7 @@ override_aimbot_angle(target_ent_index: number, original_angle: Angle, target_an
 <li>return <strong>true, new_angle</strong> to apply your override.</li>
 <li>return <strong>false</strong> to use the default angle.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="override_aimbot_angletarget_ent_index-number-original_angle-angle-target_angle-angle-booleanangle-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;override_aimbot_angle&quot;, &quot;67&quot;, function(target_ent_index, original_angle, target_angle)
     local target = Entity(target_ent_index)
 
@@ -356,19 +297,9 @@ override_aimbot_angle(target_ent_index: number, original_angle: Angle, target_an
 end)</code></pre>
 </doc-codeblock></div>
 <hr>
-<doc-anchor-target id="esp">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#esp">#</doc-anchor-trigger>
-        <span>ESP</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="esp">ESP</h2>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="should_draw_playerentindex-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#should_draw_playerentindex-number-boolean">#</doc-anchor-trigger>
-        <span>should_draw_player(entIndex: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="should_draw_playerentindex-number-boolean">should_draw_player(entIndex: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 should_draw_player(entIndex: number): boolean
@@ -376,18 +307,13 @@ should_draw_player(entIndex: number): boolean
 <ul>
 <li>Determines if the player should be drawn in the esp or not.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="should_draw_playerentindex-number-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;should_draw_player&quot;, &quot;nodraw&quot;, function(index)
     return true -- blocks
 end)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="should_draw_entityentindex-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#should_draw_entityentindex-number-boolean">#</doc-anchor-trigger>
-        <span>should_draw_entity(entIndex: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="should_draw_entityentindex-number-boolean">should_draw_entity(entIndex: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 should_draw_entity(entIndex: number): boolean
@@ -395,147 +321,517 @@ should_draw_entity(entIndex: number): boolean
 <ul>
 <li>Determines if an entity should be drawn in the esp or not.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="should_draw_entityentindex-number-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;should_draw_entity&quot;, &quot;nodraw&quot;, function(index)
     return true -- blocks
 end)</code></pre>
 </doc-codeblock></div>
+<h3 id="player-overrides">Player overrides</h3>
+<p>Global overrides run <strong>before</strong> the ESP-specific listeners below (<code translate="no" v-pre>esp_player_name</code>, <code translate="no" v-pre>esp_player_usergroup</code>, <code translate="no" v-pre>esp_player_team_name</code>, <code translate="no" v-pre>esp_player_team_color</code>). They affect the <strong>playerlist</strong> and the baseline values ESP builds from.</p>
+<p>Use <strong>override</strong> listeners when you want one RP name, usergroup, or team everywhere (playerlist, staff detection, team filter labels, etc.). Use <strong>esp_player_</strong>* listeners when you only want a different display on ESP (for example a nickname on ESP while the playerlist keeps the real RP name).</p>
+<p>The first registered callback that returns a non-<code translate="no" v-pre>nil</code> value wins for each override event.</p>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="esp_player_nameentindex-number-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#esp_player_nameentindex-number-string">#</doc-anchor-trigger>
-        <span>esp_player_name(entIndex: number): string</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="override_player_rpname">override_player_rpname(entIndex: number): string</h3>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+override_player_rpname(entIndex: number): string
+</code>
+<ul>
+<li>Overrides the RP name of a player globally (playerlist, ESP baseline, staff checks, etc.).</li>
+<li>If a non-empty string is returned, that value is used as the player&#x27;s RP name.</li>
+<li>Does <strong>not</strong> change the steam name shown when <strong>display steam name</strong> is enabled in the playerlist.</li>
+<li><doc-anchor-trigger to="#esp_player_name"><code translate="no" v-pre>esp_player_name</code></doc-anchor-trigger> can still override the name shown on ESP only.</li>
+</ul>
+<div id="override_player_rpname-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;override_player_rpname&quot;, &quot;real_name&quot;, function(index)
+    return &quot;Maverick Trevillian&quot;
+end)
+
+secret.listener.add(&quot;esp_player_name&quot;, &quot;nickname&quot;, function(index)
+    return &quot;67 kid&quot; -- playerlist shows Maverick Trevillian; ESP shows 67 kid
+end)</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<h3 id="override_player_usergroup">override_player_usergroup(entIndex: number): string</h3>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+override_player_usergroup(entIndex: number): string
+</code>
+<ul>
+<li>Overrides the usergroup of a player globally (playerlist, ESP baseline, staff highlight, etc.).</li>
+<li>If a non-empty string is returned, that value is used as the player&#x27;s usergroup.</li>
+<li><doc-anchor-trigger to="#esp_player_usergroup"><code translate="no" v-pre>esp_player_usergroup</code></doc-anchor-trigger> can still override the usergroup shown on ESP only.</li>
+</ul>
+<div id="override_player_usergroup-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;override_player_usergroup&quot;, &quot;real_usergroup&quot;, function(index)
+    return &quot;admin&quot;
+end)</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<h3 id="override_player_team">override_player_team(entIndex: number, teamIndex: number): table</h3>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+override_player_team(entIndex: number, teamIndex: number): table
+</code>
+<ul>
+<li>Overrides team information for a <strong>specific player</strong> globally (playerlist, ESP baseline, team filter labels, etc.).</li>
+<li>Return a table to apply the override. All fields are optional; omitted fields keep the current value.</li>
+</ul>
+<retype-table copy-text="| Field | Type | Description |
+|-------|------|-------------|
+| `index` | number | Team index shown in the playerlist (e.g. `1`) |
+| `name` | string | Team name |
+| `color` | table | `{ r, g, b, a? }` team color (0–255) |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>index</code></td>
+<td>number</td>
+<td>Team index shown in the playerlist (e.g. <code translate="no" v-pre>1</code>)</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>name</code></td>
+<td>string</td>
+<td>Team name</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>color</code></td>
+<td>table</td>
+<td><code translate="no" v-pre>{ r, g, b, a? }</code> team color (0–255)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<ul>
+<li><doc-anchor-trigger to="#esp_player_team_name"><code translate="no" v-pre>esp_player_team_name</code></doc-anchor-trigger> and <doc-anchor-trigger to="#esp_player_team_color"><code translate="no" v-pre>esp_player_team_color</code></doc-anchor-trigger> can still override team display on ESP only.</li>
+</ul>
+<div id="override_player_team-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;override_player_team&quot;, &quot;real_team&quot;, function(ent_index, team_index)
+    return {
+        index = 1,
+        name  = &quot;Sigma Squad&quot;,
+        color = { r = 255, g = 175, b = 50 }
+    }
+end)</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<h3 id="esp_player_name">esp_player_name(entIndex: number): string</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 esp_player_name(entIndex: number): string
 </code>
 <ul>
-<li>Allows overriding the name shown for a player in the ESP.</li>
-<li>If a string is returned, the ESP will display that value instead of the player’s real name.</li>
-<li>Returning <code v-pre>nil</code> or a non-string will cause the default name to be used.</li>
+<li>Overrides the name shown for a player <strong>on ESP only</strong>.</li>
+<li>Runs after <doc-anchor-trigger to="#override_player_rpname"><code translate="no" v-pre>override_player_rpname</code></doc-anchor-trigger> (if registered).</li>
+<li>If a non-empty string is returned, the ESP will display that value instead of the global RP name.</li>
+<li>Returning <code translate="no" v-pre>nil</code> or a non-string will cause the default name to be used.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="esp_player_name-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;esp_player_name&quot;, &quot;custom_name&quot;, function(index)
-    return &quot;67 kid&quot; -- esp will now show the player's name as &quot;67 kid&quot;
+    return &quot;67 kid&quot; -- esp only; playerlist still uses override_player_rpname / game RP name
 end)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="esp_player_usergroupentindex-number-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#esp_player_usergroupentindex-number-string">#</doc-anchor-trigger>
-        <span>esp_player_usergroup(entIndex: number): string</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="esp_player_usergroup">esp_player_usergroup(entIndex: number): string</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 esp_player_usergroup(entIndex: number): string
 </code>
 <ul>
-<li>Allows overriding the usergroup shown for a player in the ESP.</li>
-<li>If a string is returned, the ESP will display that value instead of the player’s real usergroup.</li>
-<li>Returning <code v-pre>nil</code> or a non-string will cause the default usergroup to be used.</li>
+<li>Overrides the usergroup shown for a player <strong>on ESP only</strong>.</li>
+<li>Runs after <doc-anchor-trigger to="#override_player_usergroup"><code translate="no" v-pre>override_player_usergroup</code></doc-anchor-trigger> (if registered).</li>
+<li>If a non-empty string is returned, the ESP will display that value instead of the global usergroup.</li>
+<li>Returning <code translate="no" v-pre>nil</code> or a non-string will cause the default usergroup to be used.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;esp_player_usergroup&quot;, &quot;custom_name&quot;, function(index)
-    return &quot;admin&quot; -- esp will now show the player's usergroup as &quot;admin&quot;
+<div id="esp_player_usergroup-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;esp_player_usergroup&quot;, &quot;custom_usergroup&quot;, function(index)
+    return &quot;admin&quot;
 end)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="esp_player_team_nameentindex-number-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#esp_player_team_nameentindex-number-string">#</doc-anchor-trigger>
-        <span>esp_player_team_name(entIndex: number): string</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="esp_player_team_name">esp_player_team_name(entIndex: number): string</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 esp_player_team_name(entIndex: number): string
 </code>
 <ul>
-<li>Allows overriding the name shown for a player’s team in ESP.</li>
-<li>If a string is returned, the ESP will display that value instead of the default team name.</li>
-<li>Returning <code v-pre>nil</code> or a non-string will cause the default team name to be used.</li>
+<li>Overrides the team name shown for a player <strong>on ESP only</strong>.</li>
+<li>Runs after <doc-anchor-trigger to="#override_player_team"><code translate="no" v-pre>override_player_team</code></doc-anchor-trigger> (if registered).</li>
+<li>If a non-empty string is returned, the ESP will display that value instead of the global team name.</li>
+<li>Returning <code translate="no" v-pre>nil</code> or a non-string will cause the default team name to be used.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="esp_player_team_name-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;esp_player_team_name&quot;, &quot;custom_team&quot;, function(index)
     return &quot;sigma squad&quot;
 end)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="esp_player_team_colorentindex-number-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#esp_player_team_colorentindex-number-table">#</doc-anchor-trigger>
-        <span>esp_player_team_color(entIndex: number): table</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="esp_player_team_color">esp_player_team_color(entIndex: number): table</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 esp_player_team_color(entIndex: number): table
 </code>
 <ul>
-<li>Allows overriding the color used for a player’s team in ESP.</li>
-<li>Do note that it also affects all globally used team colors.</li>
-<li>The listener must return a table with r, g, b, and optionally a.</li>
+<li>Overrides the team color used for a player <strong>on ESP only</strong> (team text, team-based box color, etc.).</li>
+<li>Runs after <doc-anchor-trigger to="#override_player_team"><code translate="no" v-pre>override_player_team</code></doc-anchor-trigger> (if registered).</li>
+<li>Return a table with <code translate="no" v-pre>r</code>, <code translate="no" v-pre>g</code>, <code translate="no" v-pre>b</code>, and optionally <code translate="no" v-pre>a</code> (0–255).</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="esp_player_team_color-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;esp_player_team_color&quot;, &quot;pink_team&quot;, function(index)
     return { r = 255, g = 50, b = 200 }
 end)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="esp_player_name_colorentindex-number-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#esp_player_name_colorentindex-number-table">#</doc-anchor-trigger>
-        <span>esp_player_name_color(entIndex: number): table</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="esp_player_name_colorentindex-number-table">esp_player_name_color(entIndex: number): table</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 esp_player_name_color(entIndex: number): table
 </code>
 <ul>
-<li>Override the color used for a player’s name in ESP. Return a table <code v-pre>{ r, g, b, a }</code> (0–255). Return nothing or a non-table to keep the default (priority/friend/dormant/config) color.</li>
+<li>Override the color used for a player’s name in ESP. Return a table <code translate="no" v-pre>{ r, g, b, a }</code> (0–255). Return nothing or a non-table to keep the default (priority/friend/dormant/config) color.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="esp_player_name_colorentindex-number-table-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;esp_player_name_color&quot;, &quot;my_script&quot;, function(ent_index)
     return { r = 255, g = 100, b = 100, a = 255 }
 end)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="esp_player_usergroup_colorentindex-number-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#esp_player_usergroup_colorentindex-number-table">#</doc-anchor-trigger>
-        <span>esp_player_usergroup_color(entIndex: number): table</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="esp_player_usergroup_colorentindex-number-table">esp_player_usergroup_color(entIndex: number): table</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 esp_player_usergroup_color(entIndex: number): table
 </code>
 <ul>
-<li>Override the color used for a player’s usergroup text in ESP. Return a table <code v-pre>{ r, g, b, a }</code> (0–255). Return nothing or a non-table to keep the default color.</li>
+<li>Override the color used for a player’s usergroup text in ESP. Return a table <code translate="no" v-pre>{ r, g, b, a }</code> (0–255). Return nothing or a non-table to keep the default color.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="esp_player_usergroup_colorentindex-number-table-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;esp_player_usergroup_color&quot;, &quot;my_script&quot;, function(ent_index)
     return { r = 200, g = 200, b = 255, a = 255 }
 end)</code></pre>
 </doc-codeblock></div>
-<hr>
-<doc-anchor-target id="game-loop">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#game-loop">#</doc-anchor-trigger>
-        <span>Game loop</span>
-    </h2>
-</doc-anchor-target>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="think">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#think">#</doc-anchor-trigger>
-        <span>think()</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="draw_player_esp">draw_player_esp(ctx: table): draw_item | draw_item[]</h3>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+draw_player_esp(ctx: table): draw_item | draw_item[]
+</code>
+<ul>
+<li>Used for drawing custom elements on player ESP.</li>
+<li>Context fields such as <code translate="no" v-pre>name</code>, <code translate="no" v-pre>usergroup</code>, and <code translate="no" v-pre>team</code> reflect <strong>ESP display values</strong> (after global overrides and ESP-specific listeners).</li>
+</ul>
+<p><strong>Context (<code translate="no" v-pre>ctx</code>) fields:</strong></p>
+<retype-table copy-text="| Field | Type | Description |
+|-------|------|-------------|
+| `index` | number | Player entity index |
+| `name` | string | Player name |
+| `usergroup` | string | Usergroup |
+| `team` | string | Team name |
+| `weapon` | string | Active weapon name |
+| `hp` | number | Current health |
+| `hp_max` | number | Max health |
+| `armor` | number | Current armor |
+| `armor_max` | number | Max armor |
+| `distance` | number | Distance from local player |
+| `simulation` | number | Simulation time |
+| `alive` | boolean | Is alive |
+| `dormant` | boolean | Is dormant |
+| `visible` | boolean | Is visible to local player |
+| `friend` | boolean | Marked as friend |
+| `priority` | boolean | Marked as priority |
+| `team_color` | table | `{ r, g, b, a }` team color |
+| `bounds` | table | Screen bounding box `{ x, y, w, h }` |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>index</code></td>
+<td>number</td>
+<td>Player entity index</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>name</code></td>
+<td>string</td>
+<td>Player name</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>usergroup</code></td>
+<td>string</td>
+<td>Usergroup</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>team</code></td>
+<td>string</td>
+<td>Team name</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>weapon</code></td>
+<td>string</td>
+<td>Active weapon name</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>hp</code></td>
+<td>number</td>
+<td>Current health</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>hp_max</code></td>
+<td>number</td>
+<td>Max health</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>armor</code></td>
+<td>number</td>
+<td>Current armor</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>armor_max</code></td>
+<td>number</td>
+<td>Max armor</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>distance</code></td>
+<td>number</td>
+<td>Distance from local player</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>simulation</code></td>
+<td>number</td>
+<td>Simulation time</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>alive</code></td>
+<td>boolean</td>
+<td>Is alive</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>dormant</code></td>
+<td>boolean</td>
+<td>Is dormant</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>visible</code></td>
+<td>boolean</td>
+<td>Is visible to local player</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>friend</code></td>
+<td>boolean</td>
+<td>Marked as friend</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>priority</code></td>
+<td>boolean</td>
+<td>Marked as priority</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>team_color</code></td>
+<td>table</td>
+<td><code translate="no" v-pre>{ r, g, b, a }</code> team color</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>bounds</code></td>
+<td>table</td>
+<td>Screen bounding box <code translate="no" v-pre>{ x, y, w, h }</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<p><strong>Draw item fields:</strong></p>
+<retype-table copy-text="| Field | Type | Default | Description |
+|-------|------|---------|-------------|
+| `text` | string | — | Text to draw (**required**) |
+| `color` | table | white | `{ r, g, b, a }` or `{ 255, 80, 80, 255 }` |
+| `position` | string \| number | `&quot;bottom&quot;` | `&quot;top&quot;`, `&quot;bottom&quot;`, `&quot;right&quot;`, `&quot;left&quot;` or `0`–`3` |
+| `outline` | boolean | `true` | Draw text outline |
+| `side_font` | boolean | `false` | Use the narrow side ESP font |
+| `x` | number | — | Absolute screen X (overrides `position`) |
+| `y` | number | — | Absolute screen Y (overrides `position`) |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>text</code></td>
+<td>string</td>
+<td>—</td>
+<td>Text to draw (<strong>required</strong>)</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>color</code></td>
+<td>table</td>
+<td>white</td>
+<td><code translate="no" v-pre>{ r, g, b, a }</code> or <code translate="no" v-pre>{ 255, 80, 80, 255 }</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>position</code></td>
+<td>string | number</td>
+<td><code translate="no" v-pre>&quot;bottom&quot;</code></td>
+<td><code translate="no" v-pre>&quot;top&quot;</code>, <code translate="no" v-pre>&quot;bottom&quot;</code>, <code translate="no" v-pre>&quot;right&quot;</code>, <code translate="no" v-pre>&quot;left&quot;</code> or <code translate="no" v-pre>0</code>–<code translate="no" v-pre>3</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>outline</code></td>
+<td>boolean</td>
+<td><code translate="no" v-pre>true</code></td>
+<td>Draw text outline</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>side_font</code></td>
+<td>boolean</td>
+<td><code translate="no" v-pre>false</code></td>
+<td>Use the narrow side ESP font</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>x</code></td>
+<td>number</td>
+<td>—</td>
+<td>Absolute screen X (overrides <code translate="no" v-pre>position</code>)</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>y</code></td>
+<td>number</td>
+<td>—</td>
+<td>Absolute screen Y (overrides <code translate="no" v-pre>position</code>)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<ul>
+<li><strong>Position values:</strong> <code translate="no" v-pre>0</code> / <code translate="no" v-pre>&quot;top&quot;</code>, <code translate="no" v-pre>1</code> / <code translate="no" v-pre>&quot;bottom&quot;</code>, <code translate="no" v-pre>2</code> / <code translate="no" v-pre>&quot;right&quot;</code>, <code translate="no" v-pre>3</code> / <code translate="no" v-pre>&quot;left&quot;</code>.</li>
+<li>Friend, priority, and dormant targets may override your <code translate="no" v-pre>color</code> the same way built-in ESP does.</li>
+</ul>
+<div id="draw_player_esp-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;draw_player_esp&quot;, &quot;my_player_esp&quot;, function(ctx)
+    return {
+        text = &quot;custom tag&quot;,
+        color = { 255, 80, 80, 255 },
+        position = &quot;top&quot;
+    }
+end)
+
+secret.listener.add(&quot;draw_player_esp&quot;, &quot;multi_line&quot;, function(ctx)
+    if ctx.dormant then return end
+
+    return {
+        { text = ctx.name, position = &quot;top&quot;, color = { r = 255, g = 255, b = 255 } },
+        { text = ctx.weapon, position = &quot;bottom&quot;, side_font = true },
+    }
+end)</code></pre>
+</doc-codeblock></div>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<h3 id="draw_entity_esp">draw_entity_esp(ctx: table): draw_item | draw_item[]</h3>
+</div>
+<code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
+draw_entity_esp(ctx: table): draw_item | draw_item[]
+</code>
+<ul>
+<li>Used for drawing custom elements on entity ESP</li>
+<li>Scripted entities only.</li>
+</ul>
+<p><strong>Context (<code translate="no" v-pre>ctx</code>) fields:</strong></p>
+<retype-table copy-text="| Field | Type | Description |
+|-------|------|-------------|
+| `index` | number | Entity index |
+| `name` | string | Entity / class name |
+| `distance` | number | Distance from local player |
+| `dormant` | boolean | Is dormant |
+| `scripted` | boolean | Is a scripted entity |
+| `has_owner` | boolean | Has an owner entity |
+| `team_color` | table | `{ r, g, b, a }` team color |
+| `bounds` | table | Screen bounding box `{ x, y, w, h }` |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>index</code></td>
+<td>number</td>
+<td>Entity index</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>name</code></td>
+<td>string</td>
+<td>Entity / class name</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>distance</code></td>
+<td>number</td>
+<td>Distance from local player</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>dormant</code></td>
+<td>boolean</td>
+<td>Is dormant</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>scripted</code></td>
+<td>boolean</td>
+<td>Is a scripted entity</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>has_owner</code></td>
+<td>boolean</td>
+<td>Has an owner entity</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>team_color</code></td>
+<td>table</td>
+<td><code translate="no" v-pre>{ r, g, b, a }</code> team color</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>bounds</code></td>
+<td>table</td>
+<td>Screen bounding box <code translate="no" v-pre>{ x, y, w, h }</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<div id="draw_entity_esp-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;draw_entity_esp&quot;, &quot;ent_tags&quot;, function(ctx)
+    if not ctx.scripted then return end
+
+    return {
+        text = ctx.name,
+        color = { r = 200, g = 255, b = 200, a = 255 },
+        position = &quot;right&quot;
+    }
+end)</code></pre>
+</doc-codeblock></div>
+<hr>
+<h2 id="game-loop">Game loop</h2>
+<div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
+<h3 id="think">think()</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 think()
@@ -543,25 +839,15 @@ think()
 <ul>
 <li>Called every frame.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="think-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;think&quot;, &quot;spam_console&quot;, function()
     print(&quot;spammmm!&quot;)
 end)</code></pre>
 </doc-codeblock></div>
 <hr>
-<doc-anchor-target id="rendering">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#rendering">#</doc-anchor-trigger>
-        <span>Rendering</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="rendering">Rendering</h2>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="paint_traverse">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paint_traverse">#</doc-anchor-trigger>
-        <span>paint_traverse()</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paint_traverse">paint_traverse()</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 paint_traverse()
@@ -570,19 +856,14 @@ paint_traverse()
 <li>Mostly used for custom drawing.</li>
 <li>This is a 2D render context.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="paint_traverse-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;paint_traverse&quot;, &quot;draw_box&quot;, function()
     surface.SetDrawColor(255,255,255,255)
     surface.DrawRect(25, 25, 100, 100)
 end)</code></pre>
 </doc-codeblock></div>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="view_render_post">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#view_render_post">#</doc-anchor-trigger>
-        <span>view_render_post()</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="view_render_post">view_render_post()</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 view_render_post()
@@ -591,7 +872,7 @@ view_render_post()
 <li>Occurs after ViewRender has been ran, usually used for screengrab proof esp.</li>
 <li>This is a 3D render context.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="view_render_post-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;view_render_post&quot;, &quot;draw_2d_box&quot;, function()
     cam.Start2D()
     surface.SetDrawColor(255,255,255,255)
@@ -600,19 +881,9 @@ view_render_post()
 end)</code></pre>
 </doc-codeblock></div>
 <hr>
-<doc-anchor-target id="network">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#network">#</doc-anchor-trigger>
-        <span>Network</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="network">Network</h2>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="server_connectip-string-port-number-hostname-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#server_connectip-string-port-number-hostname-string">#</doc-anchor-trigger>
-        <span>server_connect(ip: string, port: number, hostname: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="server_connectip-string-port-number-hostname-string">server_connect(ip: string, port: number, hostname: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 server_connect(ip: string, port: number, hostname: string)
@@ -621,12 +892,7 @@ server_connect(ip: string, port: number, hostname: string)
 <li>Called when connecting to a server.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="server_disconnectreason-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#server_disconnectreason-string">#</doc-anchor-trigger>
-        <span>server_disconnect(reason: string)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="server_disconnectreason-string">server_disconnect(reason: string)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 server_disconnect(reason: string)
@@ -635,35 +901,40 @@ server_disconnect(reason: string)
 <li>Called when disconnected/kicked/banned from a server.</li>
 </ul>
 <hr>
-<doc-anchor-target id="input--usercmd">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#input--usercmd">#</doc-anchor-trigger>
-        <span>Input &amp; usercmd</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="input--usercmd">Input &amp; usercmd</h2>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="presendcusercmd-table">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#presendcusercmd-table">#</doc-anchor-trigger>
-        <span>presend(CUserCmd: table)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="presendcusercmd-table">presend(CUserCmd: table)</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 presend(CUserCmd: table)
 </code>
 <ul>
 <li>Called right before movement packets are sent.</li>
-<li>Provides full access to the native Garry&#x27;s Mod <code v-pre>CUserCmd</code> class.</li>
+<li>Provides full access to the native Garry&#x27;s Mod <code translate="no" v-pre>CUserCmd</code> class.</li>
 <li>Provides additional functions not found in the default GMod class, allowing extended control over the usercmd.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="presendcusercmd-table-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;presend&quot;, &quot;viewangles&quot;, function(cmd)
     cmd.angles = Angle(50, 50, 0) -- sets our viewangles
     cmd.SetWorldClicker(cmd, Vector(20, 20, 20)) -- sets our context menu angle, not present in the garry's mod class.
 end)</code></pre>
 </doc-codeblock></div>
-<p><strong>CUserCmd</strong> — properties available on the <code v-pre>cmd</code> table:</p>
+<p><strong>CUserCmd</strong> — properties available on the <code translate="no" v-pre>cmd</code> table:</p>
+<retype-table copy-text="| Property | Access | Type |
+|----------|--------|------|
+| `buttons` | get/set | number |
+| `command` | get/set | number |
+| `tick` | get/set | number |
+| `angles` | get/set | Angle |
+| `forward` | get/set | number |
+| `side` | get/set | number |
+| `up` | get/set | number |
+| `impulse` | get/set | number |
+| `seed` | get/set | number |
+| `hash` | get | number |
+| `mousex` | get/set | number |
+| `mousey` | get/set | number |
+| `prediction` | get | bool |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -675,89 +946,85 @@ end)</code></pre>
 </thead>
 <tbody>
 <tr>
-<td><code v-pre>buttons</code></td>
+<td><code translate="no" v-pre>buttons</code></td>
 <td>get/set</td>
 <td>number</td>
 </tr>
 <tr>
-<td><code v-pre>command</code></td>
+<td><code translate="no" v-pre>command</code></td>
 <td>get/set</td>
 <td>number</td>
 </tr>
 <tr>
-<td><code v-pre>tick</code></td>
+<td><code translate="no" v-pre>tick</code></td>
 <td>get/set</td>
 <td>number</td>
 </tr>
 <tr>
-<td><code v-pre>angles</code></td>
+<td><code translate="no" v-pre>angles</code></td>
 <td>get/set</td>
 <td>Angle</td>
 </tr>
 <tr>
-<td><code v-pre>forward</code></td>
+<td><code translate="no" v-pre>forward</code></td>
 <td>get/set</td>
 <td>number</td>
 </tr>
 <tr>
-<td><code v-pre>side</code></td>
+<td><code translate="no" v-pre>side</code></td>
 <td>get/set</td>
 <td>number</td>
 </tr>
 <tr>
-<td><code v-pre>up</code></td>
+<td><code translate="no" v-pre>up</code></td>
 <td>get/set</td>
 <td>number</td>
 </tr>
 <tr>
-<td><code v-pre>impulse</code></td>
+<td><code translate="no" v-pre>impulse</code></td>
 <td>get/set</td>
 <td>number</td>
 </tr>
 <tr>
-<td><code v-pre>seed</code></td>
+<td><code translate="no" v-pre>seed</code></td>
 <td>get/set</td>
 <td>number</td>
 </tr>
 <tr>
-<td><code v-pre>hash</code></td>
+<td><code translate="no" v-pre>hash</code></td>
 <td>get</td>
 <td>number</td>
 </tr>
 <tr>
-<td><code v-pre>mousex</code></td>
+<td><code translate="no" v-pre>mousex</code></td>
 <td>get/set</td>
 <td>number</td>
 </tr>
 <tr>
-<td><code v-pre>mousey</code></td>
+<td><code translate="no" v-pre>mousey</code></td>
 <td>get/set</td>
 <td>number</td>
 </tr>
 <tr>
-<td><code v-pre>prediction</code></td>
+<td><code translate="no" v-pre>prediction</code></td>
 <td>get</td>
 <td>bool</td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
-<doc-anchor-target id="wndprocvk_key-number-boolean">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#wndprocvk_key-number-boolean">#</doc-anchor-trigger>
-        <span>wndproc(vk_key: number): boolean</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="wndprocvk_key-number-boolean">wndproc(vk_key: number): boolean</h3>
 </div>
 <code class="language-typescript" style="text-align:center; font-size:16px; white-space:pre-wrap; word-break:break-word;">
 wndproc(vk_key: number): boolean
 </code>
 <ul>
 <li>Called whenever a Windows virtual key event is received.</li>
-<li>If <code v-pre>true</code> is returned, the input will be blocked from reaching the game.</li>
+<li>If <code translate="no" v-pre>true</code> is returned, the input will be blocked from reaching the game.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="wndprocvk_key-number-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">secret.listener.add(&quot;wndproc&quot;, &quot;block_space&quot;, function(vk)
     if vk == 0x20 then -- space key
         return true -- block input
@@ -765,76 +1032,76 @@ wndproc(vk_key: number): boolean
 end)</code></pre>
 </doc-codeblock></div>
 <div hidden>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="wndprocvk_key-number-boolean-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-typescript"><code v-pre class="language-typescript"> </code></pre>
 </doc-codeblock></div>
 </div>
 
-                                
-                                <!-- Required only on API pages -->
-                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
-                            </div>
-                            <footer id="retype-content-footer" class="clear-both">
-                            
-                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../gmod/playerlist/">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                            <span>
-                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">playerlist</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                            
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../gmod/steam/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">steam</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
-                                    </div>
-                                </nav>
-                            </footer>
-                        </main>
                 
-                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
-                                <div id="retype-footer-links" class="print:hidden">
-                                    <ul class="flex flex-wrap items-center text-sm">
-                                    </ul>
-                                </div>
-                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
-                            </footer>
-                        </div>
-                    </div>
-                
-                    <!-- Rendered if sidebar right is enabled -->
-                    <!-- Sidebar right skeleton-->
-                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
-                        <div class="pl-5">
-                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                        </div>
-                    </div>
-                
-                    <!-- User should be able to hide sidebar right -->
-                    <doc-sidebar-right v-cloak></doc-sidebar-right>
-                </div>
-
+                <!-- Required only on API pages -->
+                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
             </div>
+            <footer id="retype-content-footer" class="clear-both">
+            
+                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../gmod/playerlist/">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                            <span>
+                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                <span class="block mt-1">playerlist</span>
+                            </span>
+                        </a>
+                    </div>
+            
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../gmod/steam/">
+                            <span>
+                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                <span class="block mt-1">steam</span>
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                        </a>
+                    </div>
+                </nav>
+            </footer>
+        </main>
+
+        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                <div id="retype-footer-links" class="print:hidden">
+                    <ul class="flex flex-wrap items-center text-sm">
+                    </ul>
+                </div>
+                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
+            </footer>
         </div>
-    
-        <doc-search-mobile></doc-search-mobile>
-        <doc-back-to-top></doc-back-to-top>
     </div>
+
+    <!-- Rendered if sidebar right is enabled -->
+    <!-- Sidebar right skeleton-->
+    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:translate-x-0 sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+        <div class="pl-5">
+            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+        </div>
+    </div>
+
+    <!-- User should be able to hide sidebar right -->
+    <doc-sidebar-right v-cloak></doc-sidebar-right>
+</div>
+
+        </div>
+    </div>
+
+    <doc-search-mobile></doc-search-mobile>
+    <doc-back-to-top></doc-back-to-top>
+</div>
 
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "listener", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "listener", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/gmod/listener/index.md" }</script>
 </body>
 </html>
