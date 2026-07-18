@@ -45,7 +45,7 @@ If there is a safety issue that needs attention please contact an administrator 
 Game Engine | Support Status {.compact}
 --- | ---
 **GMOD** | **Supported**
-**CS2** | **Planned-Locked**
+**CS2** | **Supported**
 
 <p id="message-container" style="text-align:right; font-size:6px;">
 Help, Help, Help, Help, Help, AAAAAAAAAAAAAA
