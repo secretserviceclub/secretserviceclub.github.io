@@ -3,7 +3,6 @@
 > Welcome Agent (or Civilian). Documentation for the ever growing API with top-tier security & functionality in-mind. Developed With:
 
 - [Introduction](https://secretserviceclub.github.io/index.md): Introduction
-- [Counter-Strike 2](https://secretserviceclub.github.io/cs2/index.md): This section is under development.
 
 ## Interstellar Engine
 
@@ -45,3 +44,19 @@
 - [misc](https://secretserviceclub.github.io/gmod/misc/index.md): Miscellaneous API features that don't have their own table.
 - [autorun](https://secretserviceclub.github.io/gmod/autorun/autorun.md): Autorun is a special folder under the luas directory. These folders get generated when needed, you can use this to create automated startup scripts.
 - [ec](https://secretserviceclub.github.io/gmod/ec/index.md): Allows you to create and access an external console for various purposes.
+
+## Counter-Strike 2
+
+- [trace](https://secretserviceclub.github.io/cs2/trace/index.md): World / entity line and hull traces.
+- [math](https://secretserviceclub.github.io/cs2/math/index.md): Angle helpers on top of the standard Lua math library.
+- [cvar](https://secretserviceclub.github.io/cs2/cvar/index.md): Read and write engine convars.
+- [steam](https://secretserviceclub.github.io/cs2/steam/index.md): Modifications & tools to the Steam client.
+- [ui](https://secretserviceclub.github.io/cs2/ui/index.md): Create and manage menu elements (groupboxes, checkboxes, sliders, buttons, etc.) in the cheat interface. Use config_name with config get/set to read and save values.
+- [config](https://secretserviceclub.github.io/cs2/config/index.md): Read and write cheat settings from Lua using string keys; each key has a fixed type (bool, int, float, color, multi, or string). The in-game menu and ui controls reference the same keys-often via config_name on a widget.
+- [playerlist](https://secretserviceclub.github.io/cs2/playerlist/index.md): Check if players are Secret Service users.
+- [panorama](https://secretserviceclub.github.io/cs2/panorama/index.md): Run Panorama JavaScript and call UI APIs from Lua.
+- [listener](https://secretserviceclub.github.io/cs2/listener/index.md): Callbacks for game / paint / cmd events.
+- [cmd](https://secretserviceclub.github.io/cs2/cmd/index.md): Modify the current usercmd from createmove.
+- [entities](https://secretserviceclub.github.io/cs2/entities/index.md): Access players and controllers in the entity list.
+- [globalvars](https://secretserviceclub.github.io/cs2/globalvars/index.md): Read-only engine globals.
+- [game](https://secretserviceclub.github.io/cs2/game/index.md): Helpers for the current match, local player, screen projection, and view angles.
