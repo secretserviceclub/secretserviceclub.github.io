@@ -670,7 +670,7 @@ entity:set(field: string, ..., value: any): boolean
 </code>
 
 - Sets a schema field. Last argument is the value. Returns `true` on success.
-- Same naming rules as `get` — use `"ClassName->field"` for inherited fields.
+- Same naming rules as `get`. Use `"ClassName->field"` for inherited fields.
 - Vector values accept `{ x, y, z }` or `{ 1, 2, 3 }`.
 
 ```lua
