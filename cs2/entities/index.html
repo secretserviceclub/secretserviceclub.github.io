@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837727842158">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837728348205">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.png" />
-    <link href="../../resources/css/retype.css?v=4.6.0.837727842158" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837728348205" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837727842158" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837728348205" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837727842158" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.837727842158" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837728348205" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.837728348205" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -666,8 +666,8 @@ entity:get(field: string, ...): any | nil
 </code>
 <ul>
 <li>Returns a schema field value, or <code translate="no" v-pre>nil</code> if missing / unsupported.</li>
-<li>Extra string args follow pointer fields (e.g. <code translate="no" v-pre>ent:get(&quot;m_pCollision&quot;, &quot;m_vecMins&quot;)</code>).</li>
-<li>Optional form: <code translate="no" v-pre>&quot;ClassName-&gt;field&quot;</code> (e.g. <code translate="no" v-pre>&quot;C_BaseEntity-&gt;m_iHealth&quot;</code>).</li>
+<li>Prefer <code translate="no" v-pre>&quot;ClassName-&gt;field&quot;</code> (e.g. <code translate="no" v-pre>&quot;C_BaseEntity-&gt;m_iHealth&quot;</code>). Bare names only resolve when the field is declared on the entity&#x27;s own class.</li>
+<li>Extra string args follow pointer fields (e.g. <code translate="no" v-pre>ent:get(&quot;C_BaseEntity-&gt;m_pCollision&quot;, &quot;m_vecMins&quot;)</code>).</li>
 <li>Vectors / angles return <code translate="no" v-pre>{ x, y, z }</code>. Colors return <code translate="no" v-pre>{ r, g, b, a }</code>. Pointers / handles return numbers.</li>
 </ul>
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
@@ -678,14 +678,15 @@ entity:set(field: string, ..., value: any): boolean
 </code>
 <ul>
 <li>Sets a schema field. Last argument is the value. Returns <code translate="no" v-pre>true</code> on success.</li>
+<li>Same naming rules as <code translate="no" v-pre>get</code> — use <code translate="no" v-pre>&quot;ClassName-&gt;field&quot;</code> for inherited fields.</li>
 <li>Vector values accept <code translate="no" v-pre>{ x, y, z }</code> or <code translate="no" v-pre>{ 1, 2, 3 }</code>.</li>
 </ul>
 <div id="entitysetfield-string--value-any-boolean-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-lua"><code v-pre class="language-lua">local me = secret.game.local_player()
 if me and me:valid() then
-    print(me:get(&quot;m_iHealth&quot;))
-    me:set(&quot;m_iHealth&quot;, 50)
-    local mins = me:get(&quot;m_pCollision&quot;, &quot;m_vecMins&quot;)
+    print(me:get(&quot;C_BaseEntity-&gt;m_iHealth&quot;))
+    me:set(&quot;C_BaseEntity-&gt;m_iHealth&quot;, 50)
+    PrintTable(me:get(&quot;C_BaseEntity-&gt;m_pCollision&quot;, &quot;m_vecMins&quot;))
 end</code></pre>
 </doc-codeblock></div>
 <div id="entitysetfield-string--value-any-boolean-code-2" class="codeblock-wrapper"><doc-codeblock>

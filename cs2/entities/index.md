@@ -655,8 +655,8 @@ entity:get(field: string, ...): any | nil
 </code>
 
 - Returns a schema field value, or `nil` if missing / unsupported.
-- Extra string args follow pointer fields (e.g. `ent:get("m_pCollision", "m_vecMins")`).
-- Optional form: `"ClassName->field"` (e.g. `"C_BaseEntity->m_iHealth"`).
+- Prefer `"ClassName->field"` (e.g. `"C_BaseEntity->m_iHealth"`). Bare names only resolve when the field is declared on the entity's own class.
+- Extra string args follow pointer fields (e.g. `ent:get("C_BaseEntity->m_pCollision", "m_vecMins")`).
 - Vectors / angles return `{ x, y, z }`. Colors return `{ r, g, b, a }`. Pointers / handles return numbers.
 
 <div style="opacity: 0; height: 0; width: 0; overflow: hidden; pointer-events: auto;">
@@ -670,14 +670,15 @@ entity:set(field: string, ..., value: any): boolean
 </code>
 
 - Sets a schema field. Last argument is the value. Returns `true` on success.
+- Same naming rules as `get` — use `"ClassName->field"` for inherited fields.
 - Vector values accept `{ x, y, z }` or `{ 1, 2, 3 }`.
 
 ```lua
 local me = secret.game.local_player()
 if me and me:valid() then
-    print(me:get("m_iHealth"))
-    me:set("m_iHealth", 50)
-    local mins = me:get("m_pCollision", "m_vecMins")
+    print(me:get("C_BaseEntity->m_iHealth"))
+    me:set("C_BaseEntity->m_iHealth", 50)
+    PrintTable(me:get("C_BaseEntity->m_pCollision", "m_vecMins"))
 end
 ```
 
